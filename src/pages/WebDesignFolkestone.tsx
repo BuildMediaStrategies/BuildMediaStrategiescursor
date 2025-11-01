@@ -1,14 +1,16 @@
-import SEO from '../components/SEO';
+import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
 
 export default function WebDesignFolkestone() {
   return (
     <>
-      <SEO
-        title="Folkestone Web Design | BuildMediaStrategies"
+      <SEOWrapper
+        title="Folkestone Web Design"
         description="Professional web design and development in Folkestone, Kent. Modern websites that help local businesses grow and succeed."
         canonical="https://buildmediastrategies.com/web-design-folkestone"
-        keywords="web design Folkestone, website design Folkestone Kent, web developer Folkestone, React websites Folkestone"
+        schemaType="location"
+        keywords="web design Folkestone, website design Folkestone Kent, web developer Folkestone, React websites Folkestone, Folkestone web design services"
+        ogType="website"
       />
 
       <div className="min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>

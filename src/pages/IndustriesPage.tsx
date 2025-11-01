@@ -1,14 +1,20 @@
-import SEO from '../components/SEO';
+import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
 
 export default function IndustriesPage() {
   return (
     <>
-      <SEO
-        title="Construction & Trades Specialists | BuildMediaStrategies"
+      <SEOWrapper
+        title="Construction & Trades Specialists"
         description="We build websites and AI systems exclusively for construction and trades businesses. Win more contracts, cut admin time, and scale operations across Kent."
         canonical="https://buildmediastrategies.com/industries"
-        keywords="construction websites, trades web design, contractor websites Kent, construction business automation, trades lead generation"
+        schemaType="service"
+        keywords="construction websites, trades web design, contractor websites Kent, construction business automation, trades lead generation, builder websites"
+        ogType="website"
+        customSchema={{
+          "@type": ["LocalBusiness", "ProfessionalService"],
+          "serviceType": "Construction & Trades Web Design"
+        }}
       />
 
       <a href="#main-content" className="skip-to-content">

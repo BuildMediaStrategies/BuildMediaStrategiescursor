@@ -1,4 +1,4 @@
-import SEO from '../components/SEO';
+import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
 import { Timeline } from '../components/ui/timeline';
 
@@ -272,52 +272,16 @@ export default function AIOperationsPage() {
 
   return (
     <>
-      <SEO
-        title="AI Operations Dover, Deal, Kent | BuildMediaStrategies"
+      <SEOWrapper
+        title="AI Operations Dover, Deal, Kent"
         description="AI automation services in Dover, Deal, Canterbury, and Folkestone. Scale operations, automate workflows, and multiply team output without hiring additional staff."
         canonical="https://buildmediastrategies.com/ai-operations"
-        keywords="AI operations Dover, business automation Deal, AI automation Kent, Canterbury AI services, Folkestone automation, workflow automation"
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "serviceType": "AI Operations and Automation Services",
-          "provider": {
-            "@type": "LocalBusiness",
-            "name": "BuildMediaStrategies",
-            "image": "https://buildmediastrategies.com/logo.png",
-            "description": "AI operations and automation services in Kent. Helping businesses across Dover, Deal, Canterbury, and Folkestone scale with intelligent systems.",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Dover",
-              "addressRegion": "Kent",
-              "addressCountry": "GB"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": "51.1279",
-              "longitude": "1.3134"
-            },
-            "url": "https://buildmediastrategies.com/ai-operations",
-            "telephone": "+447915738448",
-            "priceRange": "££",
-            "areaServed": [
-              { "@type": "City", "name": "Dover" },
-              { "@type": "City", "name": "Deal" },
-              { "@type": "City", "name": "Canterbury" },
-              { "@type": "City", "name": "Folkestone" }
-            ]
-          },
-          "description": "Intelligent AI systems that automate workflows, eliminate bottlenecks, and scale operations. Custom automation solutions that multiply team output without adding headcount.",
-          "areaServed": [
-            { "@type": "City", "name": "Dover" },
-            { "@type": "City", "name": "Deal" },
-            { "@type": "City", "name": "Canterbury" },
-            { "@type": "City", "name": "Folkestone" }
-          ],
-          "offers": {
-            "@type": "Offer",
-            "availability": "https://schema.org/InStock"
-          }
+        schemaType="service"
+        keywords="AI operations Dover, business automation Deal, AI automation Kent, Canterbury AI services, Folkestone automation, workflow automation, intelligent automation"
+        ogType="website"
+        customSchema={{
+          "@type": ["LocalBusiness", "ProfessionalService"],
+          "serviceType": "AI Operations and Automation Services"
         }}
       />
 

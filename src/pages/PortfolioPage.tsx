@@ -1,4 +1,4 @@
-import SEO from '../components/SEO';
+import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
 import ProjectCard from '../components/ProjectCard';
 
@@ -84,11 +84,13 @@ export default function PortfolioPage() {
 
   return (
     <>
-      <SEO
-        title="Portfolio - Client Work | BuildMediaStrategies"
+      <SEOWrapper
+        title="Portfolio - Client Work"
         description="Our work with charities, trades, and creative businesses across Dover, Deal, Canterbury, and Folkestone. Custom websites and AI operations that deliver real results."
         canonical="https://buildmediastrategies.com/portfolio"
-        keywords="portfolio, web design projects, AI operations case studies, client work Kent, website examples Dover"
+        schemaType="portfolio"
+        keywords="portfolio, web design projects, AI operations case studies, client work Kent, website examples Dover, project showcase"
+        ogType="website"
       />
 
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 lg:px-11 py-5 bg-black bg-opacity-30 backdrop-blur-sm">

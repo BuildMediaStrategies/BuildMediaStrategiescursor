@@ -1,14 +1,16 @@
-import SEO from '../components/SEO';
+import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
 
 export default function WebDesignDover() {
   return (
     <>
-      <SEO
-        title="Dover Web Design | BuildMediaStrategies"
+      <SEOWrapper
+        title="Dover Web Design"
         description="Professional web design services in Dover, Kent. Custom React websites that help local businesses grow online."
         canonical="https://buildmediastrategies.com/web-design-dover"
-        keywords="web design Dover, website design Dover Kent, web developer Dover, React websites Dover"
+        schemaType="location"
+        keywords="web design Dover, website design Dover Kent, web developer Dover, React websites Dover, Dover web design services"
+        ogType="website"
       />
 
       <div className="min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>

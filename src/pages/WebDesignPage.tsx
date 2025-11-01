@@ -1,5 +1,5 @@
 import { Zap, Target, Smartphone, Cpu, Shield, TrendingUp } from 'lucide-react';
-import SEO from '../components/SEO';
+import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
 import { BentoCard, BentoGrid } from '../components/ui/bento-grid';
 
@@ -89,52 +89,16 @@ export default function WebDesignPage() {
 
   return (
     <>
-      <SEO
-        title="Web Design Dover, Deal, Kent | BuildMediaStrategies"
+      <SEOWrapper
+        title="Web Design Dover, Deal, Kent"
         description="Professional web design services in Dover, Deal, Canterbury, and Folkestone. Fast, mobile-first websites that convert visitors into customers and drive measurable growth."
         canonical="https://buildmediastrategies.com/web-design"
-        keywords="web design Dover, web design Deal, web design Kent, Canterbury web design, Folkestone web design, mobile website design"
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "serviceType": "Web Design Services",
-          "provider": {
-            "@type": "LocalBusiness",
-            "name": "BuildMediaStrategies",
-            "image": "https://buildmediastrategies.com/logo.png",
-            "description": "Professional web design and development services in Kent. Creating custom websites for businesses across Dover, Deal, Canterbury, and Folkestone.",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Dover",
-              "addressRegion": "Kent",
-              "addressCountry": "GB"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": "51.1279",
-              "longitude": "1.3134"
-            },
-            "url": "https://buildmediastrategies.com/web-design",
-            "telephone": "+447915738448",
-            "priceRange": "££",
-            "areaServed": [
-              { "@type": "City", "name": "Dover" },
-              { "@type": "City", "name": "Deal" },
-              { "@type": "City", "name": "Canterbury" },
-              { "@type": "City", "name": "Folkestone" }
-            ]
-          },
-          "description": "Custom web design services that convert visitors into customers. High-performance websites optimized for speed, conversions, and growth.",
-          "areaServed": [
-            { "@type": "City", "name": "Dover" },
-            { "@type": "City", "name": "Deal" },
-            { "@type": "City", "name": "Canterbury" },
-            { "@type": "City", "name": "Folkestone" }
-          ],
-          "offers": {
-            "@type": "Offer",
-            "availability": "https://schema.org/InStock"
-          }
+        schemaType="service"
+        keywords="web design Dover, web design Deal, web design Kent, Canterbury web design, Folkestone web design, mobile website design, responsive web design Kent"
+        ogType="website"
+        customSchema={{
+          "@type": ["LocalBusiness", "ProfessionalService"],
+          "serviceType": "Web Design Services"
         }}
       />
 

@@ -1,14 +1,16 @@
-import SEO from '../components/SEO';
+import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
 
 export default function WebDesignDeal() {
   return (
     <>
-      <SEO
-        title="Deal Web Design | BuildMediaStrategies"
+      <SEOWrapper
+        title="Deal Web Design"
         description="Custom web design and development in Deal, Kent. Modern React websites built for local businesses to succeed online."
         canonical="https://buildmediastrategies.com/web-design-deal"
-        keywords="web design Deal, website design Deal Kent, web developer Deal, React websites Deal"
+        schemaType="location"
+        keywords="web design Deal, website design Deal Kent, web developer Deal, React websites Deal, Deal web design services"
+        ogType="website"
       />
 
       <div className="min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>

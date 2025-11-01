@@ -1,6 +1,6 @@
 import { useState, useEffect, FormEvent } from 'react';
 import { createClient } from '@supabase/supabase-js';
-import SEO from '../components/SEO';
+import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
 
 const supabase = createClient(
@@ -77,10 +77,13 @@ export default function ContactPage() {
   if (isSuccess) {
     return (
       <>
-        <SEO
-          title="Contact Us | BuildMediaStrategies"
+        <SEOWrapper
+          title="Contact Us"
           description="Get in touch with BuildMediaStrategies. We build custom websites and AI operations for businesses across Dover, Deal, Canterbury, and Folkestone."
           canonical="https://buildmediastrategies.com/contact"
+          schemaType="homepage"
+          keywords="contact BuildMediaStrategies, web design inquiry, AI operations contact, Kent business contact"
+          ogType="website"
         />
         <a href="#main-content" className="skip-to-content">
           Skip to main content
@@ -146,10 +149,13 @@ export default function ContactPage() {
 
   return (
     <>
-      <SEO
-        title="Contact Us | BuildMediaStrategies"
+      <SEOWrapper
+        title="Contact Us"
         description="Get in touch with BuildMediaStrategies. We build custom websites and AI operations for businesses across Dover, Deal, Canterbury, and Folkestone."
         canonical="https://buildmediastrategies.com/contact"
+        schemaType="homepage"
+        keywords="contact BuildMediaStrategies, web design inquiry, AI operations contact, Kent business contact"
+        ogType="website"
       />
       <a href="#main-content" className="skip-to-content">
         Skip to main content

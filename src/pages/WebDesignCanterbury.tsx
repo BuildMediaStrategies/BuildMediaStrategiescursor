@@ -1,14 +1,16 @@
-import SEO from '../components/SEO';
+import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
 
 export default function WebDesignCanterbury() {
   return (
     <>
-      <SEO
-        title="Canterbury Web Design | BuildMediaStrategies"
+      <SEOWrapper
+        title="Canterbury Web Design"
         description="Expert web design services in Canterbury, Kent. Custom React websites that help businesses stand out in this historic city."
         canonical="https://buildmediastrategies.com/web-design-canterbury"
-        keywords="web design Canterbury, website design Canterbury Kent, web developer Canterbury, React websites Canterbury"
+        schemaType="location"
+        keywords="web design Canterbury, website design Canterbury Kent, web developer Canterbury, React websites Canterbury, Canterbury web design services"
+        ogType="website"
       />
 
       <div className="min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>
