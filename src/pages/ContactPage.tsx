@@ -1,0 +1,350 @@
+import { useState, useEffect, FormEvent } from 'react';
+import { createClient } from '@supabase/supabase-js';
+import SEO from '../components/SEO';
+import Footer from '../components/Footer';
+
+const supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_ANON_KEY
+);
+
+export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    message: '',
+    gdprConsent: false,
+    honeypot: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState('');
+  const [formLoadTime] = useState(Date.now());
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setError('');
+
+    if (formData.honeypot) {
+      setError('Invalid submission detected.');
+      return;
+    }
+
+    const timeElapsed = Date.now() - formLoadTime;
+    if (timeElapsed < 2000) {
+      setError('Please take your time filling out the form.');
+      return;
+    }
+
+    if (!formData.gdprConsent) {
+      setError('Please accept the privacy policy to continue.');
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const { error: submitError } = await supabase
+        .from('contact_submissions')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone || null,
+            company: formData.company || null,
+            message: formData.message,
+            gdpr_consent: formData.gdprConsent,
+          },
+        ]);
+
+      if (submitError) throw submitError;
+
+      setIsSuccess(true);
+    } catch (err) {
+      setError('Something went wrong. Please try again or email us directly.');
+      console.error('Contact form error:', err);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  if (isSuccess) {
+    return (
+      <>
+        <SEO
+          title="Contact Us | BuildMediaStrategies"
+          description="Get in touch with BuildMediaStrategies. We build custom websites and AI operations for businesses across Dover, Deal, Canterbury, and Folkestone."
+          canonical="https://buildmediastrategies.com/contact"
+        />
+        <a href="#main-content" className="skip-to-content">
+          Skip to main content
+        </a>
+
+        <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 lg:px-11 py-5 bg-black bg-opacity-30 backdrop-blur-sm" role="navigation" aria-label="Main navigation">
+          <a href="/" className="flex items-center space-x-2" aria-label="BuildMediaStrategies home">
+            <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center" aria-hidden="true">
+              <div className="w-3.5 h-3.5 bg-black rounded-full"></div>
+            </div>
+            <span className="text-white font-normal text-lg">BuildMediaStrategies</span>
+          </a>
+
+          <div className="hidden md:flex items-center space-x-7">
+            <a href="/web-design" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Web Design</a>
+            <a href="/ai-operations" className="text-white cursor-pointer hover:text-gray-300 transition-colors">AI Operations</a>
+            <a href="/portfolio" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Portfolio</a>
+            <a href="/#testimonials" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Testimonials</a>
+            <a href="/contact" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Contact</a>
+          </div>
+
+          <button className="md:hidden text-white" aria-label="Open mobile menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          </button>
+        </nav>
+
+        <main id="main-content" className="bg-black min-h-screen pt-24" style={{ backgroundColor: '#0A0A0A' }}>
+          <div className="max-w-2xl mx-auto px-5 py-20">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6" aria-hidden="true">
+                <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h1 className="text-4xl lg:text-5xl font-sans font-bold text-white mb-4">
+                Message Received
+              </h1>
+              <p className="text-lg font-sans font-normal mb-8 leading-relaxed" style={{ color: '#BBBBBB' }}>
+                Thanks for reaching out. We will get back to you within one business day.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="/"
+                  className="px-8 py-3 bg-white text-black font-sans font-medium hover:bg-gray-200 transition-colors text-center"
+                >
+                  Back to Home
+                </a>
+                <a
+                  href="/portfolio"
+                  className="px-8 py-3 border border-white text-white font-sans font-medium hover:bg-white hover:text-black transition-colors text-center"
+                >
+                  View Portfolio
+                </a>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <Footer />
+      </>
+    );
+  }
+
+  return (
+    <>
+      <SEO
+        title="Contact Us | BuildMediaStrategies"
+        description="Get in touch with BuildMediaStrategies. We build custom websites and AI operations for businesses across Dover, Deal, Canterbury, and Folkestone."
+        canonical="https://buildmediastrategies.com/contact"
+      />
+      <a href="#main-content" className="skip-to-content">
+        Skip to main content
+      </a>
+
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 lg:px-11 py-5 bg-black bg-opacity-30 backdrop-blur-sm" role="navigation" aria-label="Main navigation">
+        <a href="/" className="flex items-center space-x-2" aria-label="BuildMediaStrategies home">
+          <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center" aria-hidden="true">
+            <div className="w-3.5 h-3.5 bg-black rounded-full"></div>
+          </div>
+          <span className="text-white font-normal text-lg">BuildMediaStrategies</span>
+        </a>
+
+        <div className="hidden md:flex items-center space-x-7">
+          <a href="/web-design" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Web Design</a>
+          <a href="/ai-operations" className="text-white cursor-pointer hover:text-gray-300 transition-colors">AI Operations</a>
+          <a href="/portfolio" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Portfolio</a>
+          <a href="/#testimonials" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Testimonials</a>
+          <a href="/contact" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Contact</a>
+        </div>
+
+        <button className="md:hidden text-white" aria-label="Open mobile menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </nav>
+
+      <main id="main-content" className="bg-black min-h-screen pt-24" style={{ backgroundColor: '#0A0A0A' }}>
+        <div className="max-w-4xl mx-auto px-5 sm:px-6 py-12 sm:py-16 lg:py-20">
+          <div className="text-center mb-12 sm:mb-16">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-white mb-4 sm:mb-6 leading-tight">
+              Let's Build Something
+              <span className="block bg-gradient-to-b from-white to-gray-600 bg-clip-text text-transparent">
+                Exceptional Together
+              </span>
+            </h1>
+            <p className="text-lg sm:text-xl font-sans font-normal leading-relaxed max-w-2xl mx-auto" style={{ color: '#BBBBBB' }}>
+              Tell us about your project and we'll get back to you within 24 hours.
+            </p>
+          </div>
+
+          <div className="max-w-2xl mx-auto">
+
+            <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
+            <div className="hidden">
+              <label htmlFor="website">Website</label>
+              <input
+                type="text"
+                id="website"
+                name="website"
+                value={formData.honeypot}
+                onChange={(e) => setFormData({ ...formData, honeypot: e.target.value })}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
+
+              <div className="group">
+                <label htmlFor="name" className="block text-white font-sans font-medium mb-3 text-sm tracking-wide uppercase">
+                  Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="w-full px-5 py-4 bg-transparent text-white border-b-2 border-gray-800 focus:border-white focus:outline-none transition-all duration-300 text-lg placeholder-gray-700"
+                  placeholder="Your full name"
+                />
+              </div>
+
+              <div className="group">
+                <label htmlFor="email" className="block text-white font-sans font-medium mb-3 text-sm tracking-wide uppercase">
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full px-5 py-4 bg-transparent text-white border-b-2 border-gray-800 focus:border-white focus:outline-none transition-all duration-300 text-lg placeholder-gray-700"
+                  placeholder="your@email.com"
+                />
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+                <div className="group">
+                  <label htmlFor="phone" className="block text-white font-sans font-medium mb-3 text-sm tracking-wide uppercase">
+                    Phone
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className="w-full px-5 py-4 bg-transparent text-white border-b-2 border-gray-800 focus:border-white focus:outline-none transition-all duration-300 text-lg placeholder-gray-700"
+                    placeholder="+44 123 456 7890"
+                  />
+                </div>
+
+                <div className="group">
+                  <label htmlFor="company" className="block text-white font-sans font-medium mb-3 text-sm tracking-wide uppercase">
+                    Company
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    value={formData.company}
+                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                    className="w-full px-5 py-4 bg-transparent text-white border-b-2 border-gray-800 focus:border-white focus:outline-none transition-all duration-300 text-lg placeholder-gray-700"
+                    placeholder="Your company name"
+                  />
+                </div>
+              </div>
+
+              <div className="group">
+                <label htmlFor="message" className="block text-white font-sans font-medium mb-3 text-sm tracking-wide uppercase">
+                  Message *
+                </label>
+                <textarea
+                  id="message"
+                  required
+                  rows={6}
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  className="w-full px-5 py-4 bg-transparent text-white border-b-2 border-gray-800 focus:border-white focus:outline-none transition-all duration-300 text-lg resize-none placeholder-gray-700"
+                  placeholder="Tell us about your project..."
+                />
+              </div>
+
+              <div className="flex items-start gap-4 pt-4 bg-gray-900 bg-opacity-30 p-4 rounded-lg border border-gray-800">
+                <input
+                  type="checkbox"
+                  id="gdpr"
+                  required
+                  checked={formData.gdprConsent}
+                  onChange={(e) => setFormData({ ...formData, gdprConsent: e.target.checked })}
+                  className="mt-1.5 w-5 h-5 bg-transparent border-2 border-gray-600 rounded focus:ring-2 focus:ring-white focus:border-white accent-white cursor-pointer flex-shrink-0"
+                />
+                <label htmlFor="gdpr" className="text-sm sm:text-base font-sans font-normal leading-relaxed cursor-pointer text-white">
+                  I consent to BuildMediaStrategies collecting and storing my personal information for the purpose of responding to my inquiry. By submitting this form, you agree to our <a href="#" className="underline hover:text-gray-300 focus:outline focus:outline-2 focus:outline-white">Privacy Policy</a>. *
+                </label>
+              </div>
+
+              {error && (
+                <div className="p-4 border border-red-500 bg-red-950 bg-opacity-20 rounded-lg">
+                  <p className="text-sm font-sans font-normal text-red-400">{error}</p>
+                </div>
+              )}
+
+              <div className="pt-4">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full px-10 py-5 bg-white text-black font-sans font-bold text-lg rounded-full hover:bg-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none uppercase tracking-wide"
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        {/* Map Section */}
+        <div className="w-full py-12 sm:py-16 lg:py-20" style={{ backgroundColor: '#000000' }}>
+          <div className="max-w-7xl mx-auto px-5 sm:px-6">
+            <div className="text-center mb-10 sm:mb-12">
+              <h2 className="text-3xl sm:text-4xl font-sans font-bold text-white mb-3 sm:mb-4">
+                Find Us
+              </h2>
+              <p className="text-base sm:text-lg font-sans font-normal" style={{ color: '#BBBBBB' }}>
+                Serving businesses across Kent and beyond
+              </p>
+            </div>
+            <div className="relative w-full h-96 sm:h-[500px] bg-gradient-to-br from-gray-900 to-black rounded-2xl overflow-hidden border border-gray-800">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20">
+                    <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <p className="text-xl sm:text-2xl font-sans font-bold text-white mb-2">Kent, United Kingdom</p>
+                  <p className="text-sm sm:text-base font-sans font-normal" style={{ color: '#BBBBBB' }}>Dover • Deal • Canterbury • Folkestone</p>
+                </div>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <Footer />
+    </>
+  );
+}

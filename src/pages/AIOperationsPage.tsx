@@ -1,0 +1,434 @@
+import SEO from '../components/SEO';
+import Footer from '../components/Footer';
+import { Timeline } from '../components/ui/timeline';
+
+export default function AIOperationsPage() {
+  const aiServicesData = [
+    {
+      title: "Lead Generation",
+      content: (
+        <div>
+          <h3 className="text-2xl sm:text-3xl font-sans font-bold text-white mb-4">
+            Lead Generation & Qualification
+          </h3>
+          <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6" style={{ color: '#BBBBBB' }}>
+            AI that captures inquiries, qualifies leads based on your criteria, and routes high-value prospects to your sales team. Respond instantly to every inquiry, filter out time-wasters, and focus only on opportunities worth pursuing.
+          </p>
+          <div className="mb-6">
+            <div className="flex gap-2 items-start text-white text-sm sm:text-base mb-2">
+              <span className="text-white">•</span>
+              <span style={{ color: '#BBBBBB' }}>Instant response to all inquiries 24/7</span>
+            </div>
+            <div className="flex gap-2 items-start text-white text-sm sm:text-base mb-2">
+              <span className="text-white">•</span>
+              <span style={{ color: '#BBBBBB' }}>Automatic lead scoring and qualification</span>
+            </div>
+            <div className="flex gap-2 items-start text-white text-sm sm:text-base">
+              <span className="text-white">•</span>
+              <span style={{ color: '#BBBBBB' }}>Smart routing to the right team member</span>
+            </div>
+          </div>
+          <img
+            src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="AI chatbot interface qualifying leads on laptop screen"
+            className="w-full rounded-lg object-cover h-48 md:h-64 lg:h-80 shadow-lg"
+            loading="lazy"
+          />
+        </div>
+      ),
+    },
+    {
+      title: "HR Operations",
+      content: (
+        <div>
+          <h3 className="text-2xl sm:text-3xl font-sans font-bold text-white mb-4">
+            HR Operations & Onboarding
+          </h3>
+          <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6" style={{ color: '#BBBBBB' }}>
+            Automate employee onboarding, time tracking, leave requests, and performance reviews. AI handles the paperwork and scheduling while HR focuses on strategic initiatives and employee development.
+          </p>
+          <div className="mb-6">
+            <div className="flex gap-2 items-start text-white text-sm sm:text-base mb-2">
+              <span className="text-white">•</span>
+              <span style={{ color: '#BBBBBB' }}>Automated onboarding workflows</span>
+            </div>
+            <div className="flex gap-2 items-start text-white text-sm sm:text-base mb-2">
+              <span className="text-white">•</span>
+              <span style={{ color: '#BBBBBB' }}>Smart time tracking and leave management</span>
+            </div>
+            <div className="flex gap-2 items-start text-white text-sm sm:text-base">
+              <span className="text-white">•</span>
+              <span style={{ color: '#BBBBBB' }}>Digital performance review systems</span>
+            </div>
+          </div>
+          <img
+            src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="HR professional reviewing automated employee onboarding dashboard"
+            className="w-full rounded-lg object-cover h-48 md:h-64 lg:h-80 shadow-lg"
+            loading="lazy"
+          />
+        </div>
+      ),
+    },
+    {
+      title: "Finance & Invoicing",
+      content: (
+        <div>
+          <h3 className="text-2xl sm:text-3xl font-sans font-bold text-white mb-4">
+            Finance & Invoicing
+          </h3>
+          <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6" style={{ color: '#BBBBBB' }}>
+            Intelligent systems that generate invoices, track payments, send reminders, and reconcile accounts automatically. Get paid faster while eliminating hours of manual bookkeeping every week.
+          </p>
+          <div className="mb-6">
+            <div className="flex gap-2 items-start text-white text-sm sm:text-base mb-2">
+              <span className="text-white">•</span>
+              <span style={{ color: '#BBBBBB' }}>Automatic invoice generation and delivery</span>
+            </div>
+            <div className="flex gap-2 items-start text-white text-sm sm:text-base mb-2">
+              <span className="text-white">•</span>
+              <span style={{ color: '#BBBBBB' }}>Payment tracking and reminders</span>
+            </div>
+            <div className="flex gap-2 items-start text-white text-sm sm:text-base">
+              <span className="text-white">•</span>
+              <span style={{ color: '#BBBBBB' }}>Automated account reconciliation</span>
+            </div>
+          </div>
+          <img
+            src="https://images.pexels.com/photos/6863332/pexels-photo-6863332.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="Automated finance dashboard showing invoices and payment tracking"
+            className="w-full rounded-lg object-cover h-48 md:h-64 lg:h-80 shadow-lg"
+            loading="lazy"
+          />
+        </div>
+      ),
+    },
+    {
+      title: "Social Media",
+      content: (
+        <div>
+          <h3 className="text-2xl sm:text-3xl font-sans font-bold text-white mb-4">
+            Social Media Management
+          </h3>
+          <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6" style={{ color: '#BBBBBB' }}>
+            AI-powered content creation, scheduling, and engagement monitoring. Maintain consistent social presence without dedicating staff hours to posting and responding to comments.
+          </p>
+          <div className="mb-6">
+            <div className="flex gap-2 items-start text-white text-sm sm:text-base mb-2">
+              <span className="text-white">•</span>
+              <span style={{ color: '#BBBBBB' }}>AI content generation and scheduling</span>
+            </div>
+            <div className="flex gap-2 items-start text-white text-sm sm:text-base mb-2">
+              <span className="text-white">•</span>
+              <span style={{ color: '#BBBBBB' }}>Automated engagement monitoring</span>
+            </div>
+            <div className="flex gap-2 items-start text-white text-sm sm:text-base">
+              <span className="text-white">•</span>
+              <span style={{ color: '#BBBBBB' }}>Smart response suggestions</span>
+            </div>
+          </div>
+          <img
+            src="https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="Social media management dashboard showing scheduled posts and analytics"
+            className="w-full rounded-lg object-cover h-48 md:h-64 lg:h-80 shadow-lg"
+            loading="lazy"
+          />
+        </div>
+      ),
+    },
+    {
+      title: "Call Handling",
+      content: (
+        <div>
+          <h3 className="text-2xl sm:text-3xl font-sans font-bold text-white mb-4">
+            Call Handling & Scheduling
+          </h3>
+          <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6" style={{ color: '#BBBBBB' }}>
+            AI phone systems that answer calls, qualify inquiries, book appointments, and handle routine questions. Never miss a lead because someone called after hours or during busy periods.
+          </p>
+          <div className="mb-6">
+            <div className="flex gap-2 items-start text-white text-sm sm:text-base mb-2">
+              <span className="text-white">•</span>
+              <span style={{ color: '#BBBBBB' }}>24/7 call answering and routing</span>
+            </div>
+            <div className="flex gap-2 items-start text-white text-sm sm:text-base mb-2">
+              <span className="text-white">•</span>
+              <span style={{ color: '#BBBBBB' }}>Automatic appointment scheduling</span>
+            </div>
+            <div className="flex gap-2 items-start text-white text-sm sm:text-base">
+              <span className="text-white">•</span>
+              <span style={{ color: '#BBBBBB' }}>Intelligent call qualification</span>
+            </div>
+          </div>
+          <img
+            src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="Professional on phone call with AI assistance system"
+            className="w-full rounded-lg object-cover h-48 md:h-64 lg:h-80 shadow-lg"
+            loading="lazy"
+          />
+        </div>
+      ),
+    },
+    {
+      title: "Customer Support",
+      content: (
+        <div>
+          <h3 className="text-2xl sm:text-3xl font-sans font-bold text-white mb-4">
+            Customer Support
+          </h3>
+          <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6" style={{ color: '#BBBBBB' }}>
+            Smart chatbots and email automation that resolve common issues instantly. Route complex problems to human staff while handling routine inquiries automatically. Faster resolution, happier customers.
+          </p>
+          <div className="mb-6">
+            <div className="flex gap-2 items-start text-white text-sm sm:text-base mb-2">
+              <span className="text-white">•</span>
+              <span style={{ color: '#BBBBBB' }}>Instant resolution of common issues</span>
+            </div>
+            <div className="flex gap-2 items-start text-white text-sm sm:text-base mb-2">
+              <span className="text-white">•</span>
+              <span style={{ color: '#BBBBBB' }}>Smart ticket routing and prioritization</span>
+            </div>
+            <div className="flex gap-2 items-start text-white text-sm sm:text-base">
+              <span className="text-white">•</span>
+              <span style={{ color: '#BBBBBB' }}>Automated email responses</span>
+            </div>
+          </div>
+          <img
+            src="https://images.pexels.com/photos/5698853/pexels-photo-5698853.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="Customer support agent using AI-powered helpdesk system"
+            className="w-full rounded-lg object-cover h-48 md:h-64 lg:h-80 shadow-lg"
+            loading="lazy"
+          />
+        </div>
+      ),
+    },
+    {
+      title: "Recruitment",
+      content: (
+        <div>
+          <h3 className="text-2xl sm:text-3xl font-sans font-bold text-white mb-4">
+            Recruitment Automation
+          </h3>
+          <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6" style={{ color: '#BBBBBB' }}>
+            AI that screens resumes, schedules interviews, and manages candidate communication. Identify top talent faster while dramatically reducing time spent on manual candidate evaluation.
+          </p>
+          <div className="mb-6">
+            <div className="flex gap-2 items-start text-white text-sm sm:text-base mb-2">
+              <span className="text-white">•</span>
+              <span style={{ color: '#BBBBBB' }}>Automated resume screening and ranking</span>
+            </div>
+            <div className="flex gap-2 items-start text-white text-sm sm:text-base mb-2">
+              <span className="text-white">•</span>
+              <span style={{ color: '#BBBBBB' }}>Smart interview scheduling</span>
+            </div>
+            <div className="flex gap-2 items-start text-white text-sm sm:text-base">
+              <span className="text-white">•</span>
+              <span style={{ color: '#BBBBBB' }}>Candidate communication automation</span>
+            </div>
+          </div>
+          <img
+            src="https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="HR manager reviewing AI-filtered candidate profiles on screen"
+            className="w-full rounded-lg object-cover h-48 md:h-64 lg:h-80 shadow-lg"
+            loading="lazy"
+          />
+        </div>
+      ),
+    },
+    {
+      title: "Project Management",
+      content: (
+        <div>
+          <h3 className="text-2xl sm:text-3xl font-sans font-bold text-white mb-4">
+            Project Management
+          </h3>
+          <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6" style={{ color: '#BBBBBB' }}>
+            Automated task assignment, progress tracking, deadline reminders, and status reporting. AI keeps projects moving forward by handling coordination work that usually requires constant manual oversight.
+          </p>
+          <div className="mb-6">
+            <div className="flex gap-2 items-start text-white text-sm sm:text-base mb-2">
+              <span className="text-white">•</span>
+              <span style={{ color: '#BBBBBB' }}>Intelligent task assignment and tracking</span>
+            </div>
+            <div className="flex gap-2 items-start text-white text-sm sm:text-base mb-2">
+              <span className="text-white">•</span>
+              <span style={{ color: '#BBBBBB' }}>Automated deadline reminders</span>
+            </div>
+            <div className="flex gap-2 items-start text-white text-sm sm:text-base">
+              <span className="text-white">•</span>
+              <span style={{ color: '#BBBBBB' }}>Real-time progress reporting</span>
+            </div>
+          </div>
+          <img
+            src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="Project management dashboard with automated task tracking and timelines"
+            className="w-full rounded-lg object-cover h-48 md:h-64 lg:h-80 shadow-lg"
+            loading="lazy"
+          />
+        </div>
+      ),
+    },
+  ];
+
+  return (
+    <>
+      <SEO
+        title="AI Operations Dover, Deal, Kent | BuildMediaStrategies"
+        description="AI automation services in Dover, Deal, Canterbury, and Folkestone. Scale operations, automate workflows, and multiply team output without hiring additional staff."
+        canonical="https://buildmediastrategies.com/ai-operations"
+        keywords="AI operations Dover, business automation Deal, AI automation Kent, Canterbury AI services, Folkestone automation, workflow automation"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "serviceType": "AI Operations and Automation Services",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "BuildMediaStrategies",
+            "image": "https://buildmediastrategies.com/logo.png",
+            "description": "AI operations and automation services in Kent. Helping businesses across Dover, Deal, Canterbury, and Folkestone scale with intelligent systems.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Dover",
+              "addressRegion": "Kent",
+              "addressCountry": "GB"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "51.1279",
+              "longitude": "1.3134"
+            },
+            "url": "https://buildmediastrategies.com/ai-operations",
+            "telephone": "+447915738448",
+            "priceRange": "££",
+            "areaServed": [
+              { "@type": "City", "name": "Dover" },
+              { "@type": "City", "name": "Deal" },
+              { "@type": "City", "name": "Canterbury" },
+              { "@type": "City", "name": "Folkestone" }
+            ]
+          },
+          "description": "Intelligent AI systems that automate workflows, eliminate bottlenecks, and scale operations. Custom automation solutions that multiply team output without adding headcount.",
+          "areaServed": [
+            { "@type": "City", "name": "Dover" },
+            { "@type": "City", "name": "Deal" },
+            { "@type": "City", "name": "Canterbury" },
+            { "@type": "City", "name": "Folkestone" }
+          ],
+          "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock"
+          }
+        }}
+      />
+
+      <a href="#main-content" className="skip-to-content">
+        Skip to main content
+      </a>
+
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 lg:px-11 py-5 bg-black bg-opacity-30 backdrop-blur-sm" role="navigation" aria-label="Main navigation">
+        <a href="/" className="flex items-center space-x-2" aria-label="BuildMediaStrategies home">
+          <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center" aria-hidden="true">
+            <div className="w-3.5 h-3.5 bg-black rounded-full"></div>
+          </div>
+          <span className="text-white font-normal text-lg">BuildMediaStrategies</span>
+        </a>
+
+        <div className="hidden md:flex items-center space-x-7">
+          <a href="/web-design" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Web Design</a>
+          <a href="/ai-operations" className="text-white cursor-pointer hover:text-gray-300 transition-colors">AI Operations</a>
+          <a href="/industries" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Industries</a>
+          <a href="/portfolio" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Portfolio</a>
+          <a href="/#testimonials" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Testimonials</a>
+          <a href="/contact" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Contact</a>
+        </div>
+
+        <button className="md:hidden text-white" aria-label="Open mobile menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <line x1="4" x2="20" y1="12" y2="12"/>
+            <line x1="4" x2="20" y1="6" y2="6"/>
+            <line x1="4" x2="20" y1="18" y2="18"/>
+          </svg>
+        </button>
+      </nav>
+
+      <main id="main-content" className="bg-black min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>
+        <section className="pt-32 pb-12 px-5 lg:px-11" aria-labelledby="hero-heading">
+          <div className="max-w-5xl mx-auto text-center">
+            <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-white mb-6 leading-tight">
+              AI Systems That
+              <span className="block bg-gradient-to-b from-white to-gray-600 bg-clip-text text-transparent">
+                Multiply Output
+              </span>
+            </h1>
+            <p className="text-lg sm:text-xl font-sans font-normal leading-relaxed max-w-3xl mx-auto mb-10" style={{ color: '#BBBBBB' }}>
+              Stop spending hours on repetitive tasks. Intelligent automation that handles the work your team hates, so they can focus on what actually drives revenue.
+            </p>
+            <a
+              href="/contact"
+              className="inline-block px-8 py-4 bg-white text-black font-sans font-medium hover:bg-gray-100 transition-colors text-center"
+            >
+              Explore AI Solutions
+            </a>
+          </div>
+        </section>
+
+        <section className="py-8 lg:py-12 px-5 lg:px-11 border-t border-gray-800">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl sm:text-4xl font-sans font-bold text-white mb-6 leading-tight">
+              The Problem
+            </h2>
+            <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-8" style={{ color: '#BBBBBB' }}>
+              Your team is drowning in administrative work. Hours lost to data entry, lead qualification, scheduling, and repetitive communication. Meanwhile, the work that actually grows your business gets pushed aside.
+            </p>
+            <p className="text-base sm:text-lg font-sans font-normal leading-relaxed" style={{ color: '#BBBBBB' }}>
+              Hiring more people costs money and creates management overhead. AI automation multiplies your existing team's output without the expense or complexity of growing headcount.
+            </p>
+          </div>
+        </section>
+
+        <section className="py-8 lg:py-12 px-5 lg:px-11 border-t border-gray-800">
+          <div className="max-w-5xl mx-auto text-center mb-8">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-white mb-6 leading-tight">
+              What We Automate
+            </h2>
+            <p className="text-base sm:text-lg font-sans font-normal" style={{ color: '#BBBBBB' }}>
+              Custom AI systems built for your specific workflows
+            </p>
+          </div>
+        </section>
+
+        <Timeline data={aiServicesData} />
+
+        <section className="py-20 lg:py-24 px-5 lg:px-11 bg-black border-t border-gray-800">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-white mb-6 leading-tight">
+              Ready To Scale
+              <span className="block bg-gradient-to-b from-white to-gray-600 bg-clip-text text-transparent">
+                Without Hiring?
+              </span>
+            </h2>
+            <p className="text-base sm:text-lg font-sans font-normal mb-10 leading-relaxed max-w-2xl mx-auto" style={{ color: '#BBBBBB' }}>
+              Let's build AI systems that multiply your team's output and free them to focus on high-value work that actually grows your business.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/contact"
+                className="inline-block px-8 py-4 bg-white text-black font-sans font-medium hover:bg-gray-100 transition-colors text-center"
+              >
+                Book a Consultation
+              </a>
+              <a
+                href="/portfolio"
+                className="inline-block px-8 py-4 border border-white text-white font-sans font-medium hover:bg-white hover:text-black transition-colors text-center"
+              >
+                View Case Studies
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </>
+  );
+}
