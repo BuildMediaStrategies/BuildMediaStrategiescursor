@@ -11,6 +11,8 @@ import WebDesignDeal from './pages/WebDesignDeal';
 import WebDesignCanterbury from './pages/WebDesignCanterbury';
 import WebDesignFolkestone from './pages/WebDesignFolkestone';
 import ExitIntentPopup from './components/Conversion/ExitIntentPopup';
+import ROICalculatorPage from './pages/tools/ROICalculator';
+import SpeedCheckerPage from './pages/tools/SpeedChecker';
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
         <Route path="/web-design-deal" element={<WebDesignDeal />} />
         <Route path="/web-design-canterbury" element={<WebDesignCanterbury />} />
         <Route path="/web-design-folkestone" element={<WebDesignFolkestone />} />
+        <Route path="/tools/roi-calculator" element={<ROICalculatorPage />} />
+        <Route path="/tools/speed-checker" element={<SpeedCheckerPage />} />
       </Routes>
     </Router>
   );

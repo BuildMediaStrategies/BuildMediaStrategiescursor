@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
-import { AlertTriangle, CheckCircle2, Loader2, Zap } from 'lucide-react';
-import { generateSpeedResults, SpeedResults } from '../../lib/utils/speedSimulator';
+import { AlertTriangle, Loader2, Zap } from 'lucide-react';
+import { checkWebsiteSpeed, CheckWebsiteSpeedResult } from '../../lib/utils/speedChecker';
 
 interface FormState {
   url: string;
@@ -21,13 +21,14 @@ const pct = (n: number) => `${Math.round(n)}%`;
 export default function WebsiteSpeedChecker() {
   const [form, setForm] = useState<FormState>({ url: '' });
   const [loading, setLoading] = useState(false);
-  const [results, setResults] = useState<SpeedResults | null>(null);
+  const [results, setResults] = useState<CheckWebsiteSpeedResult | null>(null);
+  const [error, setError] = useState<string | undefined>(undefined);
 
-  const fasterPct = useMemo(() => {
-    if (!results) return 0;
-    const diff = results.userLoadTime - results.ourLoadTime;
-    if (diff <= 0) return 0;
-    return Math.max(0, Math.round(((results.userLoadTime / results.ourLoadTime) - 1) * 100));
+  const mobileVsDesktop = useMemo(() => {
+    if (!results) return { faster: 'mobile', diffSec: 0 } as const;
+    const a = results.mobile.speedIndexSec;
+    const b = results.desktop.speedIndexSec;
+    return a <= b ? { faster: 'mobile', diffSec: +(b - a).toFixed(2) } : { faster: 'desktop', diffSec: +(a - b).toFixed(2) };
   }, [results]);
 
   const onSubmit = async (e: React.FormEvent) => {
@@ -38,18 +39,24 @@ export default function WebsiteSpeedChecker() {
       return;
     }
     setForm((f) => ({ ...f, error: undefined }));
+    setError(undefined);
     setLoading(true);
     setResults(null);
-    // Simulate network delay
-    await new Promise((r) => setTimeout(r, 800));
-    const r = generateSpeedResults(value);
-    setResults(r);
-    setLoading(false);
+    try {
+      // Real PageSpeed Insights call – can take 15–30 seconds
+      const r = await checkWebsiteSpeed(value);
+      setResults(r);
+    } catch (err: any) {
+      setError(err?.message || 'Failed to fetch PageSpeed Insights. Try again later.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const barWidth = (time: number) => {
-    const max = 7; // reference max seconds
-    const pct = Math.min(100, (time / max) * 100);
+    // Display scale 0..10s
+    const max = 10;
+    const pct = Math.min(100, Math.max(0, (time / max) * 100));
     return pct + '%';
   };
 
@@ -92,96 +99,111 @@ export default function WebsiteSpeedChecker() {
               disabled={loading}
               className="inline-flex items-center justify-center whitespace-nowrap px-5 py-3 rounded-lg text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 transition-all shadow-md disabled:opacity-60"
             >
-              {loading ? (<><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Checking...</>) : 'Check Speed'}
+              {loading ? (<><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Running PSI...</>) : 'Check Speed'}
             </button>
           </div>
           {form.error && <p className="text-sm text-red-600 mt-2">{form.error}</p>}
+          {loading && <p className="text-sm text-gray-600 mt-2">Real PageSpeed Insights analysis can take 15–30 seconds.</p>}
+          {error && <p className="text-sm text-red-600 mt-2">{error}</p>}
         </form>
 
         {/* Results */}
         <div className={`px-6 py-6 transition-all duration-500 ${results ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}`}>
           {results && (
             <div className="space-y-8">
-              {/* A) Speed Comparison Bars */}
+              {/* A) Performance Scores */}
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Speed Comparison</h3>
-                <div className="space-y-3">
-                  {/* Your Website */}
-                  <div>
-                    <div className="flex items-center justify-between text-sm text-gray-600 mb-1">
-                      <span>Your Website</span>
-                      <span className="text-gray-700 font-medium">{results.userLoadTime.toFixed(2)}s</span>
-                    </div>
-                    <div className="h-3 bg-red-100 rounded-full overflow-hidden border border-red-200">
-                      <div className="h-full bg-red-500" style={{ width: barWidth(results.userLoadTime) }} />
-                    </div>
-                  </div>
-
-                  {/* Our Sites */}
-                  <div>
-                    <div className="flex items-center justify-between text-sm text-gray-600 mb-1">
-                      <span>Our Sites</span>
-                      <span className="text-gray-700 font-medium">{results.ourLoadTime.toFixed(2)}s</span>
-                    </div>
-                    <div className="h-3 bg-emerald-100 rounded-full overflow-hidden border border-emerald-200">
-                      <div className="h-full bg-emerald-500" style={{ width: barWidth(results.ourLoadTime) }} />
-                    </div>
-                  </div>
-
-                  {/* Badge */}
-                  <div className="mt-2 inline-flex items-center gap-2 rounded-full px-3 py-1 bg-emerald-100 text-emerald-700 text-sm border border-emerald-200">
-                    <CheckCircle2 className="w-4 h-4" />
-                    <span>{fasterPct}% faster</span>
-                  </div>
-
-                  <p className="text-sm text-gray-600 mt-2">That means more conversions, better SEO, happier visitors.</p>
-                </div>
-              </div>
-
-              {/* B) Score Comparison */}
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Mobile Performance</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Performance Scores</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className={`rounded-xl p-4 border ${scoreColor(results.userMobileScore)}`}>
-                    <div className="text-sm font-medium">Your Mobile Score</div>
-                    <div className="text-3xl font-bold">{results.userMobileScore}</div>
+                  <div className={`rounded-xl p-4 border ${scoreColor(results.mobileScore)}`}>
+                    <div className="text-sm font-medium">Mobile Score</div>
+                    <div className="text-3xl font-bold">{results.mobileScore}</div>
                   </div>
-                  <div className={`rounded-xl p-4 border bg-emerald-100 text-emerald-700 border-emerald-200`}>
-                    <div className="text-sm font-medium">Our Mobile Score</div>
-                    <div className="text-3xl font-bold">{results.ourMobileScore}</div>
+                  <div className={`rounded-xl p-4 border ${scoreColor(results.desktopScore)}`}>
+                    <div className="text-sm font-medium">Desktop Score</div>
+                    <div className="text-3xl font-bold">{results.desktopScore}</div>
                   </div>
                 </div>
               </div>
 
-              {/* C) Why This Matters */}
-              <div className="rounded-xl border border-red-200 bg-red-50 p-5">
+              {/* B) Speed Index Comparison Bars */}
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Speed Index (lower is better)</h3>
+                <div className="space-y-3">
+                  <div>
+                    <div className="flex items-center justify-between text-sm text-gray-600 mb-1">
+                      <span>Mobile</span>
+                      <span className="text-gray-700 font-medium">{results.mobile.speedIndexSec.toFixed(2)}s</span>
+                    </div>
+                    <div className="h-3 bg-blue-100 rounded-full overflow-hidden border border-blue-200">
+                      <div className="h-full bg-blue-500" style={{ width: barWidth(results.mobile.speedIndexSec) }} />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex items-center justify-between text-sm text-gray-600 mb-1">
+                      <span>Desktop</span>
+                      <span className="text-gray-700 font-medium">{results.desktop.speedIndexSec.toFixed(2)}s</span>
+                    </div>
+                    <div className="h-3 bg-purple-100 rounded-full overflow-hidden border border-purple-200">
+                      <div className="h-full bg-purple-500" style={{ width: barWidth(results.desktop.speedIndexSec) }} />
+                    </div>
+                  </div>
+                  {mobileVsDesktop.diffSec > 0 && (
+                    <p className="text-sm text-gray-600 mt-1">{mobileVsDesktop.faster === 'mobile' ? 'Mobile' : 'Desktop'} appears ~{mobileVsDesktop.diffSec}s faster by Speed Index.</p>
+                  )}
+                </div>
+              </div>
+
+              {/* C) Core Web Vitals */}
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Core Web Vitals</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="rounded-xl p-4 border border-gray-200">
+                    <div className="text-sm font-medium text-gray-700 mb-2">Mobile</div>
+                    <div className="grid grid-cols-3 gap-3 text-center">
+                      <div>
+                        <div className="text-xs text-gray-600">FCP</div>
+                        <div className="text-lg font-semibold text-gray-900">{results.mobile.fcpSec}s</div>
+                      </div>
+                      <div>
+                        <div className="text-xs text-gray-600">LCP</div>
+                        <div className="text-lg font-semibold text-gray-900">{results.mobile.lcpSec}s</div>
+                      </div>
+                      <div>
+                        <div className="text-xs text-gray-600">CLS</div>
+                        <div className="text-lg font-semibold text-gray-900">{results.mobile.cls}</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="rounded-xl p-4 border border-gray-200">
+                    <div className="text-sm font-medium text-gray-700 mb-2">Desktop</div>
+                    <div className="grid grid-cols-3 gap-3 text-center">
+                      <div>
+                        <div className="text-xs text-gray-600">FCP</div>
+                        <div className="text-lg font-semibold text-gray-900">{results.desktop.fcpSec}s</div>
+                      </div>
+                      <div>
+                        <div className="text-xs text-gray-600">LCP</div>
+                        <div className="text-lg font-semibold text-gray-900">{results.desktop.lcpSec}s</div>
+                      </div>
+                      <div>
+                        <div className="text-xs text-gray-600">CLS</div>
+                        <div className="text-lg font-semibold text-gray-900">{results.desktop.cls}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-xs text-gray-500 mt-2">Metrics are fetched directly from Google PageSpeed Insights for the requested URL.</p>
+              </div>
+
+              {/* D) Info Note */}
+              <div className="rounded-xl border border-blue-200 bg-blue-50 p-5">
                 <div className="flex items-start gap-3">
-                  <div className="mt-0.5"><AlertTriangle className="w-5 h-5 text-red-600" /></div>
+                  <div className="mt-0.5"><AlertTriangle className="w-5 h-5 text-blue-600" /></div>
                   <div>
-                    <div className="font-semibold text-red-700 mb-1">Why This Matters:</div>
-                    <ul className="list-disc ml-5 text-sm text-red-700 space-y-1">
-                      <li>53% of mobile users abandon sites over 3 seconds</li>
-                      <li>1 second delay = 7% reduction in conversions</li>
-                      <li>Google uses speed as a ranking factor</li>
-                      <li>Slow sites cost you thousands in lost revenue</li>
-                    </ul>
+                    <div className="font-semibold text-blue-700 mb-1">About these results</div>
+                    <p className="text-sm text-blue-700">Scores and metrics shown are direct from Google PageSpeed Insights with no manipulation. Reruns may vary slightly due to test conditions.</p>
                   </div>
-                </div>
-              </div>
-
-              {/* D) Final CTA */}
-              <div className="rounded-xl p-5 bg-gradient-to-r from-blue-50 to-purple-50 border border-gray-100">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                  <div>
-                    <div className="text-gray-900 font-semibold">Ready to Speed Up Your Site?</div>
-                    <div className="text-gray-600 text-sm">Get a free consultation on how we can make your site lightning-fast</div>
-                  </div>
-                  <a
-                    href="/contact"
-                    className="inline-flex items-center justify-center px-5 py-3 rounded-lg text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 transition-all shadow-md"
-                  >
-                    <Zap className="w-4 h-4 mr-2" /> Get Your Free Speed Optimization Plan
-                  </a>
                 </div>
               </div>
             </div>

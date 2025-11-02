@@ -150,12 +150,20 @@ export default function HomePage() {
             High-performance <a href="/web-design" className="text-white hover:underline">websites</a> that drive sales.<br /> <a href="/ai-operations" className="text-white hover:underline">AI systems</a> that multiply your team's output.
           </p>
 
-          <a
-            href="/contact"
-            className="inline-block px-7 sm:px-6 py-3.5 sm:py-3 bg-black text-white font-normal rounded-full border border-gray-700 hover:border-gray-500 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 transform hover:-translate-y-1 active:scale-95 opacity-0 animate-fadeInDelay"
-          >
-            Get Started Today
-          </a>
+          <div className="flex flex-col sm:flex-row items-center gap-3">
+            <a
+              href="/contact"
+              className="inline-block px-7 sm:px-6 py-3.5 sm:py-3 bg-black text-white font-normal rounded-full border border-gray-700 hover:border-gray-500 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 transform hover:-translate-y-1 active:scale-95 opacity-0 animate-fadeInDelay"
+            >
+              Get Started Today
+            </a>
+            <a
+              href="/tools/speed-checker"
+              className="inline-block px-7 sm:px-6 py-3.5 sm:py-3 bg-white/5 text-white font-normal rounded-full border border-gray-700 hover:border-gray-500 transition-all duration-300 opacity-0 animate-fadeInDelay"
+            >
+              Check Your Site Speed
+            </a>
+          </div>
         </header>
 
         {/* Hide the bottom fade on mobile to avoid dimming the browsers */}
