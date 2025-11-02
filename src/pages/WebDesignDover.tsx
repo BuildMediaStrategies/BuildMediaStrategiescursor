@@ -1,4 +1,4 @@
-import SEO from '../components/SEO';
+import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
 
 export default function WebDesignDover() {

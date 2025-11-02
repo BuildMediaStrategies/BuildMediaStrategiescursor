@@ -1,5 +1,5 @@
 import { Zap, Target, Smartphone, Cpu, Shield, TrendingUp } from 'lucide-react';
-import SEO from '../components/SEO';
+import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
 import { BentoCard, BentoGrid } from '../components/ui/bento-grid';
 

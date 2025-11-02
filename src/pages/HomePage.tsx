@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
-import SEO from '../components/SEO';
+import SEOWrapper from '../components/SEO/SEOWrapper';
 import LogoCloud from '../components/LogoCloud';
 import StatisticsSection from '../components/StatisticsSection';
 import DashboardSection from '../components/DashboardSection';
@@ -20,11 +20,13 @@ export default function HomePage() {
 
   return (
     <>
-      <SEO
-        title="BuildMediaStrategies | Web Design & AI Operations in Kent"
-        description="High-performance websites and AI operations for businesses across Dover, Deal, Canterbury, and Folkestone. Drive sales and scale operations."
+      <SEOWrapper
+        title="Web Design & AI Operations in Kent"
+        description="High-performance websites and AI operations for businesses across Dover, Deal, Canterbury, and Folkestone. Drive sales and scale operations with custom web design and intelligent automation."
         canonical="https://buildmediastrategies.com/"
-        keywords="web design Kent, AI operations, business websites Dover, Canterbury web design, Folkestone web developer"
+        schemaType="homepage"
+        keywords="web design Kent, AI operations, business websites Dover, Canterbury web design, Folkestone web developer, AI automation Kent, web development Deal"
+        ogType="website"
       />
       <a href="#main-content" className="skip-to-content">Skip to main content</a>
 
