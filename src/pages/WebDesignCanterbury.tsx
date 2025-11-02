@@ -5,10 +5,10 @@ export default function WebDesignCanterbury() {
   return (
     <>
       <SEO
-        title="Canterbury Web Design | BuildMediaStrategies"
-        description="Expert web design services in Canterbury, Kent. Custom React websites that help businesses stand out in this historic city."
+        title="Web Design Canterbury Kent | Modern Websites Canterbury Businesses"
+        description="Professional web design in Canterbury, Kent. Fast, mobile-optimized websites that drive business growth. Serving Canterbury and surrounding areas."
         canonical="https://buildmediastrategies.com/web-design-canterbury"
-        keywords="web design Canterbury, website design Canterbury Kent, web developer Canterbury, React websites Canterbury"
+        keywords="web design Canterbury, Canterbury web designer, websites Canterbury Kent"
       />
 
       <div className="min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>

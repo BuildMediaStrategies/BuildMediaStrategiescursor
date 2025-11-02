@@ -5,10 +5,10 @@ export default function WebDesignFolkestone() {
   return (
     <>
       <SEO
-        title="Folkestone Web Design | BuildMediaStrategies"
-        description="Professional web design and development in Folkestone, Kent. Modern websites that help local businesses grow and succeed."
+        title="Web Design Folkestone Kent | Professional Websites Folkestone"
+        description="Web design services in Folkestone, Kent. Modern, fast-loading websites for local businesses. Professional development, local expertise."
         canonical="https://buildmediastrategies.com/web-design-folkestone"
-        keywords="web design Folkestone, website design Folkestone Kent, web developer Folkestone, React websites Folkestone"
+        keywords="web design Folkestone, Folkestone web designer, websites Folkestone Kent"
       />
 
       <div className="min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>

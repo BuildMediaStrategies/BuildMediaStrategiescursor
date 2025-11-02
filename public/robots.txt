@@ -1,4 +1,21 @@
+# BuildMediaStrategies - Robots.txt
 User-agent: *
 Allow: /
 
+# Sitemap
 Sitemap: https://buildmediastrategies.com/sitemap.xml
+
+# Block admin/dev paths if any exist
+Disallow: /api/
+Disallow: /_next/
+
+# Allow everything else
+Allow: /web-design
+Allow: /ai-operations
+Allow: /portfolio
+Allow: /contact
+Allow: /industries
+Allow: /web-design-dover
+Allow: /web-design-deal
+Allow: /web-design-canterbury
+Allow: /web-design-folkestone

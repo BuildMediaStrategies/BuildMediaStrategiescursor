@@ -5,10 +5,10 @@ export default function WebDesignDover() {
   return (
     <>
       <SEO
-        title="Dover Web Design | BuildMediaStrategies"
-        description="Professional web design services in Dover, Kent. Custom React websites that help local businesses grow online."
+        title="Web Design Dover Kent | Modern Websites for Dover Businesses"
+        description="Professional web design services in Dover, Kent. Fast, mobile-friendly websites that convert visitors to customers. Modern technology, local service."
         canonical="https://buildmediastrategies.com/web-design-dover"
-        keywords="web design Dover, website design Dover Kent, web developer Dover, React websites Dover"
+        keywords="web design Dover, Dover web designer, websites Dover Kent, Dover business websites"
       />
 
       <div className="min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>

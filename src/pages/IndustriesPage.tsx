@@ -5,10 +5,10 @@ export default function IndustriesPage() {
   return (
     <>
       <SEO
-        title="Construction & Trades Specialists | BuildMediaStrategies"
-        description="We build websites and AI systems exclusively for construction and trades businesses. Win more contracts, cut admin time, and scale operations across Kent."
+        title="Industries We Serve | Web Design & AI Across Kent"
+        description="Specialized web design and AI automation for retail, professional services, tourism, and hospitality businesses across Kent."
         canonical="https://buildmediastrategies.com/industries"
-        keywords="construction websites, trades web design, contractor websites Kent, construction business automation, trades lead generation"
+        keywords="Kent business websites, industry-specific web design, Kent AI solutions"
       />
 
       <a href="#main-content" className="skip-to-content">

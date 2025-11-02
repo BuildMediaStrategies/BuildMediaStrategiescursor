@@ -90,11 +90,13 @@ export default function WebDesignPage() {
   return (
     <>
       <SEO
-        title="Web Design Dover, Deal, Kent | BuildMediaStrategies"
-        description="Professional web design services in Dover, Deal, Canterbury, and Folkestone. Fast, mobile-first websites that convert visitors into customers and drive measurable growth."
+        title="Modern Web Design Kent | Fast, Conversion-Focused Websites"
+        description="Professional web design services across Kent. We build lightning-fast websites that actually convert. Modern React development, not WordPress. Serving Dover, Deal, Canterbury, Folkestone."
         canonical="https://buildmediastrategies.com/web-design"
-        keywords="web design Dover, web design Deal, web design Kent, Canterbury web design, Folkestone web design, mobile website design"
-        schema={{
+        keywords="web design Kent, modern websites, fast web design, React websites Dover Deal Canterbury"
+      />
+      {/* Schema structured data - keeping for SEO */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
           "serviceType": "Web Design Services",
@@ -135,8 +137,7 @@ export default function WebDesignPage() {
             "@type": "Offer",
             "availability": "https://schema.org/InStock"
           }
-        }}
-      />
+        })}} />
 
       <a href="#main-content" className="skip-to-content">
         Skip to main content

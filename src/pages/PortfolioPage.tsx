@@ -85,10 +85,10 @@ export default function PortfolioPage() {
   return (
     <>
       <SEO
-        title="Portfolio - Client Work | BuildMediaStrategies"
-        description="Our work with charities, trades, and creative businesses across Dover, Deal, Canterbury, and Folkestone. Custom websites and AI operations that deliver real results."
+        title="Our Work | Client Results & Case Studies | Kent Web Design"
+        description="See how we've helped Kent businesses increase conversions by 180%, cut load times by 75%, and grow revenue. Real results, real clients."
         canonical="https://buildmediastrategies.com/portfolio"
-        keywords="portfolio, web design projects, AI operations case studies, client work Kent, website examples Dover"
+        keywords="web design portfolio Kent, case studies, client results Dover Deal"
       />
 
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 lg:px-11 py-5 bg-black bg-opacity-30 backdrop-blur-sm">

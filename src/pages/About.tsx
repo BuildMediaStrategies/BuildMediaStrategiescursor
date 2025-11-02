@@ -1,0 +1,21 @@
+import React from 'react';
+import SEOWrapper from '../components/SEO/SEOWrapper';
+
+const baseUrl = 'https://buildmediastrategies.co.uk';
+
+export default function About() {
+  const canonical = baseUrl + '/about';
+  return (
+    <SEOWrapper
+      title="About | Build Media Strategies"
+      description="We help Kent businesses grow with performant design, SEO, and automation."
+      canonical={canonical}
+    >
+      <section className="max-w-4xl mx-auto px-6 py-12 space-y-4">
+        <h1 className="text-3xl font-bold">About</h1>
+        <p className="text-gray-300">We’re a performance-first agency based in Kent, UK.</p>
+      </section>
+    </SEOWrapper>
+  );
+}
+

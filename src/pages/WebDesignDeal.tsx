@@ -5,10 +5,10 @@ export default function WebDesignDeal() {
   return (
     <>
       <SEO
-        title="Deal Web Design | BuildMediaStrategies"
-        description="Custom web design and development in Deal, Kent. Modern React websites built for local businesses to succeed online."
+        title="Web Design Deal Kent | Professional Websites for Deal Businesses"
+        description="Web design services in Deal, Kent. We build fast, conversion-focused websites for local businesses. Modern development, proven results."
         canonical="https://buildmediastrategies.com/web-design-deal"
-        keywords="web design Deal, website design Deal Kent, web developer Deal, React websites Deal"
+        keywords="web design Deal, Deal web designer, websites Deal Kent, Deal business websites"
       />
 
       <div className="min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>

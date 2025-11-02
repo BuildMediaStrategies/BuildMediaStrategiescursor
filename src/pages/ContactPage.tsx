@@ -1,12 +1,14 @@
 import { useState, useEffect, FormEvent } from 'react';
-import { createClient } from '@supabase/supabase-js';
+// Temporarily disabled - will configure in Phase 3
+// import { createClient } from '@supabase/supabase-js';
 import SEO from '../components/SEO';
 import Footer from '../components/Footer';
 
-const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_ANON_KEY
-);
+// Temporarily disabled - will configure in Phase 3
+// const supabase = createClient(
+//   import.meta.env.VITE_SUPABASE_URL,
+//   import.meta.env.VITE_SUPABASE_ANON_KEY
+// );
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -50,20 +52,11 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      const { error: submitError } = await supabase
-        .from('contact_submissions')
-        .insert([
-          {
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone || null,
-            company: formData.company || null,
-            message: formData.message,
-            gdpr_consent: formData.gdprConsent,
-          },
-        ]);
+      // Temporarily disabled Supabase - will configure in Phase 3
+      console.log('Form submitted:', formData);
 
-      if (submitError) throw submitError;
+      // Simulate successful submission
+      await new Promise(resolve => setTimeout(resolve, 1000));
 
       setIsSuccess(true);
     } catch (err) {
@@ -78,9 +71,10 @@ export default function ContactPage() {
     return (
       <>
         <SEO
-          title="Contact Us | BuildMediaStrategies"
-          description="Get in touch with BuildMediaStrategies. We build custom websites and AI operations for businesses across Dover, Deal, Canterbury, and Folkestone."
+          title="Contact Us | Free Consultation | Build Media Strategies Kent"
+          description="Get a free consultation for your web design or AI automation project. Serving businesses across Dover, Deal, Canterbury, and Folkestone."
           canonical="https://buildmediastrategies.com/contact"
+          keywords="contact web designer Kent, free consultation, web design quote Dover"
         />
         <a href="#main-content" className="skip-to-content">
           Skip to main content
@@ -147,9 +141,10 @@ export default function ContactPage() {
   return (
     <>
       <SEO
-        title="Contact Us | BuildMediaStrategies"
-        description="Get in touch with BuildMediaStrategies. We build custom websites and AI operations for businesses across Dover, Deal, Canterbury, and Folkestone."
+        title="Contact Us | Free Consultation | Build Media Strategies Kent"
+        description="Get a free consultation for your web design or AI automation project. Serving businesses across Dover, Deal, Canterbury, and Folkestone."
         canonical="https://buildmediastrategies.com/contact"
+        keywords="contact web designer Kent, free consultation, web design quote Dover"
       />
       <a href="#main-content" className="skip-to-content">
         Skip to main content

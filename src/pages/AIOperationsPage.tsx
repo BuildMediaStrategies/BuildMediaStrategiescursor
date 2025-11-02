@@ -273,11 +273,13 @@ export default function AIOperationsPage() {
   return (
     <>
       <SEO
-        title="AI Operations Dover, Deal, Kent | BuildMediaStrategies"
-        description="AI automation services in Dover, Deal, Canterbury, and Folkestone. Scale operations, automate workflows, and multiply team output without hiring additional staff."
+        title="AI Business Automation Kent | Cut Costs, Save Time"
+        description="AI automation for Kent businesses. Automate customer service, scheduling, and repetitive tasks. See ROI in weeks, not months. Real automation that works 24/7."
         canonical="https://buildmediastrategies.com/ai-operations"
-        keywords="AI operations Dover, business automation Deal, AI automation Kent, Canterbury AI services, Folkestone automation, workflow automation"
-        schema={{
+        keywords="AI automation Kent, business automation, AI operations Dover, workflow automation"
+      />
+      {/* Schema structured data - keeping for SEO */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
           "serviceType": "AI Operations and Automation Services",
@@ -318,8 +320,7 @@ export default function AIOperationsPage() {
             "@type": "Offer",
             "availability": "https://schema.org/InStock"
           }
-        }}
-      />
+        })}} />
 
       <a href="#main-content" className="skip-to-content">
         Skip to main content
