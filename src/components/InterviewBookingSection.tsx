@@ -50,6 +50,9 @@ export default function InterviewBookingSection() {
             <img
               src="/assets/ChatGPT Image Oct 12, 2025, 11_58_36 AM.png"
               alt="Modern web dashboard interface showing analytics, metrics, and user engagement data visualization"
+              loading="lazy"
+              width={800}
+              height={600}
               className="w-full h-auto"
             />
           </div>

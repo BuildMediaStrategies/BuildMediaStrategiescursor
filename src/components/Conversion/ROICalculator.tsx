@@ -1,147 +1,253 @@
-import React, { useMemo, useState } from 'react';
-
-interface CalculatorState {
-  hoursPerWeek: number;
-  hourlyRate: number;
-}
-
-const formatGBP = (amount: number): string =>
-  new Intl.NumberFormat('en-GB', {
-    style: 'currency',
-    currency: 'GBP',
-    maximumFractionDigits: 0,
-  }).format(Math.round(amount));
+import { useState } from 'react';
+import { TrendingUp, Clock, DollarSign } from 'lucide-react';
 
 export default function ROICalculator() {
-  const [state, setState] = useState<CalculatorState>({ hoursPerWeek: 10, hourlyRate: 25 });
+  const [hours, setHours] = useState(10);
+  const [hourlyRate, setHourlyRate] = useState(25);
   const [showResults, setShowResults] = useState(false);
 
-  const weeklySavings = useMemo(() => state.hoursPerWeek * state.hourlyRate * 0.75, [state]);
-  const yearlySavings = useMemo(() => weeklySavings * 52, [weeklySavings]);
-  const fiveYearSavings = useMemo(() => yearlySavings * 5, [yearlySavings]);
+  // Calculations (75% time saved with AI automation)
+  const weeklySavings = hours * hourlyRate * 0.75;
+  const yearlySavings = weeklySavings * 52;
+  const fiveYearSavings = yearlySavings * 5;
 
-  const percent = (value: number, min: number, max: number) => ((value - min) / (max - min)) * 100;
+  const handleCalculate = () => {
+    setShowResults(true);
+  };
 
   return (
-    <div className="w-full max-w-3xl mx-auto">
-      <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-        {/* Accent header */}
-        <div className="bg-gradient-to-r from-blue-50 to-purple-50 px-6 py-5">
-          <h3 className="text-xl font-semibold text-gray-900">AI Automation ROI Calculator</h3>
-          <p className="text-sm text-gray-600 mt-1">Estimate how much time and money you can save by automating repetitive work.</p>
+    <div
+      className="rounded-2xl sm:rounded-3xl p-8 shadow-2xl relative overflow-hidden"
+      style={{ backgroundColor: '#1A1A1A', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)' }}
+    >
+      {/* Subtle texture overlay */}
+      <div
+        className="absolute inset-0 opacity-5"
+        style={{
+          backgroundImage: `
+            linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%),
+            linear-gradient(-45deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%)
+          `,
+          backgroundSize: '20px 20px'
+        }}
+        aria-hidden="true"
+      />
+
+      {/* Content */}
+      <div className="relative z-10">
+        {/* Header */}
+        <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+          Calculate Your{' '}
+          <span className="bg-gradient-to-b from-white to-gray-600 bg-clip-text text-transparent">
+            AI Automation Savings
+          </span>
+        </h2>
+        <p className="text-lg text-gray-300 mb-8">
+          See how much time and money AI could save your business
+        </p>
+
+        {/* Sliders */}
+        <div className="space-y-8 mb-8">
+          {/* Hours Slider */}
+          <div>
+            <label className="block text-sm text-gray-400 mb-2">
+              Hours per week spent on repetitive tasks
+            </label>
+            <div className="mb-4">
+              <input
+                type="range"
+                min="1"
+                max="40"
+                value={hours}
+                onChange={(e) => setHours(Number(e.target.value))}
+                className="w-full h-2 rounded-full appearance-none bg-gray-700 slider"
+                style={{
+                  background: `linear-gradient(to right, #3b82f6 0%, #8b5cf6 ${(hours / 40) * 100}%, #4b5563 ${(hours / 40) * 100}%, #4b5563 100%)`
+                }}
+              />
+            </div>
+            <div className="text-3xl font-bold text-white">
+              {hours} hours per week
+            </div>
+          </div>
+
+          {/* Hourly Rate Slider */}
+          <div>
+            <label className="block text-sm text-gray-400 mb-2">
+              Average hourly cost (£)
+            </label>
+            <div className="mb-4">
+              <input
+                type="range"
+                min="10"
+                max="100"
+                value={hourlyRate}
+                onChange={(e) => setHourlyRate(Number(e.target.value))}
+                className="w-full h-2 rounded-full appearance-none bg-gray-700 slider"
+                style={{
+                  background: `linear-gradient(to right, #3b82f6 0%, #8b5cf6 ${((hourlyRate - 10) / 90) * 100}%, #4b5563 ${((hourlyRate - 10) / 90) * 100}%, #4b5563 100%)`
+                }}
+              />
+            </div>
+            <div className="text-3xl font-bold text-white">
+              £{hourlyRate}/hour
+            </div>
+          </div>
         </div>
 
-        {/* Controls */}
-        <div className="p-6 space-y-8">
-          {/* Hours per week */}
-          <div>
-            <div className="flex items-baseline justify-between mb-3">
-              <label className="text-sm font-medium text-gray-700">Hours per week on repetitive tasks</label>
-              <span className="text-sm text-gray-500">{state.hoursPerWeek} hrs</span>
-            </div>
-            <div className="relative pt-6">
-              <div
-                className="absolute -top-1 left-0 translate-x-[-50%] text-xs text-gray-700 bg-white border border-gray-200 rounded px-2 py-0.5 shadow-sm"
-                style={{ left: `${percent(state.hoursPerWeek, 1, 40)}%` }}
-              >
-                {state.hoursPerWeek} hrs
-              </div>
-              <input
-                type="range"
-                min={1}
-                max={40}
-                step={1}
-                value={state.hoursPerWeek}
-                onChange={(e) => setState((s) => ({ ...s, hoursPerWeek: Number(e.target.value) }))}
-                className="w-full appearance-none h-2 rounded-full bg-gray-200 focus:outline-none focus:ring-0"
-              />
-              <div className="flex justify-between text-xs text-gray-400 mt-1">
-                <span>1</span>
-                <span>40</span>
-              </div>
-            </div>
-          </div>
+        {/* Calculate Button */}
+        <button
+          onClick={handleCalculate}
+          className="w-full px-7 py-3.5 border border-gray-600 text-white font-sans font-medium rounded-full hover:border-gray-400 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 mb-8"
+        >
+          Calculate My Savings
+        </button>
 
-          {/* Hourly rate */}
-          <div>
-            <div className="flex items-baseline justify-between mb-3">
-              <label className="text-sm font-medium text-gray-700">Average hourly cost (£)</label>
-              <span className="text-sm text-gray-500">£{state.hourlyRate}</span>
-            </div>
-            <div className="relative pt-6">
-              <div
-                className="absolute -top-1 left-0 translate-x-[-50%] text-xs text-gray-700 bg-white border border-gray-200 rounded px-2 py-0.5 shadow-sm"
-                style={{ left: `${percent(state.hourlyRate, 10, 100)}%` }}
-              >
-                £{state.hourlyRate}
-              </div>
-              <input
-                type="range"
-                min={10}
-                max={100}
-                step={1}
-                value={state.hourlyRate}
-                onChange={(e) => setState((s) => ({ ...s, hourlyRate: Number(e.target.value) }))}
-                className="w-full appearance-none h-2 rounded-full bg-gray-200 focus:outline-none focus:ring-0"
-              />
-              <div className="flex justify-between text-xs text-gray-400 mt-1">
-                <span>£10</span>
-                <span>£100</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Preview + CTA */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-2">
-            <div className="text-sm text-gray-600">
-              Estimated yearly savings: <span className="font-semibold text-[#10b981]">{formatGBP(yearlySavings)}</span>
-            </div>
-            <button
-              onClick={() => setShowResults(true)}
-              className="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 rounded-lg text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 transition-all shadow-md"
+        {/* Results Section */}
+        {showResults && (
+          <div className="mt-8 space-y-6 animate-fadeInUp">
+            {/* Main Result Card */}
+            <div
+              className="rounded-xl p-6 border-2"
+              style={{
+                background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%)',
+                borderColor: 'rgba(34, 197, 94, 0.2)'
+              }}
             >
-              Calculate My Savings
-            </button>
-          </div>
-        </div>
-
-        {/* Results */}
-        <div className={`px-6 pb-6 transition-all duration-500 ${showResults ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
-          <div className="space-y-4">
-            <div className="rounded-xl bg-emerald-50 border border-emerald-100 p-5">
-              <div className="text-emerald-700 text-sm">Your projected yearly savings</div>
-              <div className="text-3xl sm:text-4xl font-bold text-[#10b981]">{formatGBP(yearlySavings)}</div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="rounded-xl border border-gray-100 p-5 bg-white">
-                <div className="text-gray-500 text-sm">Weekly savings</div>
-                <div className="text-2xl font-semibold text-[#10b981]">{formatGBP(weeklySavings)}</div>
+              <div className="text-sm text-gray-400 mb-2">Potential Yearly Savings</div>
+              <div className="text-5xl font-bold mb-2" style={{ color: '#22c55e' }}>
+                £{Math.round(yearlySavings).toLocaleString()}
               </div>
-              <div className="rounded-xl border border-gray-100 p-5 bg-white">
-                <div className="text-gray-500 text-sm">5-year projection</div>
-                <div className="text-2xl font-semibold text-[#10b981]">{formatGBP(fiveYearSavings)}</div>
+              <div className="text-sm text-gray-400">
+                That's £{Math.round(weeklySavings)} per week
               </div>
             </div>
 
-            {/* CTA gradient box */}
-            <div className="rounded-xl p-5 bg-gradient-to-r from-blue-50 to-purple-50 border border-gray-100">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                <div>
-                  <div className="text-gray-900 font-semibold">Ready to unlock these savings?</div>
-                  <div className="text-gray-600 text-sm">Book a free 30-minute consultation</div>
+            {/* Two smaller metrics */}
+            <div className="grid md:grid-cols-2 gap-4">
+              {/* Weekly Savings */}
+              <div
+                className="rounded-lg p-4 border"
+                style={{
+                  background: 'rgba(59, 130, 246, 0.1)',
+                  borderColor: 'rgba(59, 130, 246, 0.2)'
+                }}
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <Clock className="w-4 h-4 text-blue-400" />
+                  <div className="text-sm text-gray-400">Weekly Savings</div>
                 </div>
-                <a
-                  href="/contact"
-                  className="inline-flex items-center justify-center px-5 py-3 rounded-lg text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 transition-all shadow-md"
-                >
-                  Book Free Consultation
-                </a>
+                <div className="text-2xl font-bold text-blue-400">
+                  £{Math.round(weeklySavings)}
+                </div>
+              </div>
+
+              {/* 5-Year Projection */}
+              <div
+                className="rounded-lg p-4 border"
+                style={{
+                  background: 'rgba(139, 92, 246, 0.1)',
+                  borderColor: 'rgba(139, 92, 246, 0.2)'
+                }}
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <TrendingUp className="w-4 h-4 text-purple-400" />
+                  <div className="text-sm text-gray-400">5 Year Projection</div>
+                </div>
+                <div className="text-2xl font-bold text-purple-400">
+                  £{Math.round(fiveYearSavings).toLocaleString()}
+                </div>
               </div>
             </div>
+
+            {/* What This Means */}
+            <div className="bg-black/50 rounded-xl p-6">
+              <h3 className="text-xl font-bold text-white mb-4">
+                What This Means For Your Business
+              </h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3 text-gray-300">
+                  <span className="text-green-500 mt-1">✓</span>
+                  <span>Free up {Math.round(hours * 0.75)} hours per week for strategic work</span>
+                </li>
+                <li className="flex items-start gap-3 text-gray-300">
+                  <span className="text-green-500 mt-1">✓</span>
+                  <span>Reduce operational costs by 75%</span>
+                </li>
+                <li className="flex items-start gap-3 text-gray-300">
+                  <span className="text-green-500 mt-1">✓</span>
+                  <span>24/7 automated customer service</span>
+                </li>
+                <li className="flex items-start gap-3 text-gray-300">
+                  <span className="text-green-500 mt-1">✓</span>
+                  <span>ROI typically achieved in 3-6 months</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Final CTA Card */}
+            <div
+              className="rounded-xl p-8 text-center border"
+              style={{
+                background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(59, 130, 246, 0.15) 100%)',
+                borderColor: 'rgba(139, 92, 246, 0.3)'
+              }}
+            >
+              <h3 className="text-2xl font-bold text-white mb-3">
+                Ready to unlock these savings?
+              </h3>
+              <p className="text-gray-300 mb-6">
+                Book a free consultation to see exactly how we can automate your business
+              </p>
+              <a
+                href="/contact"
+                className="inline-block px-7 py-3.5 border border-gray-600 text-white font-sans font-medium rounded-full hover:border-gray-400 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95"
+              >
+                Book Free Consultation
+              </a>
+            </div>
           </div>
-        </div>
+        )}
       </div>
+
+      {/* CSS for slider and animations */}
+      <style>{`
+        .slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          background: white;
+          cursor: pointer;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .slider::-moz-range-thumb {
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          background: white;
+          cursor: pointer;
+          border: none;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-fadeInUp {
+          animation: fadeInUp 500ms ease-out;
+        }
+      `}</style>
     </div>
   );
 }

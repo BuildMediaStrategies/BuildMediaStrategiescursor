@@ -1,202 +1,211 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useState, useEffect, useCallback, FormEvent } from 'react';
+import { X } from 'lucide-react';
 
-type ExitIntentPopupProps = {
-  cooldownDays?: number;
-  activationDelayMs?: number;
-  mobileDelayMs?: number;
-};
+const STORAGE_KEY = 'exitIntentShown';
+const COOLDOWN_DAYS = 7;
+const ACTIVATION_DELAY_MS = 3000;
+const MIN_DESKTOP_WIDTH = 768;
 
-const STORAGE_KEY = 'exitIntentShownAt';
-
-export default function ExitIntentPopup({
-  cooldownDays = 7,
-  activationDelayMs = 3000,
-  mobileDelayMs = 6000,
-}: ExitIntentPopupProps) {
-  const [open, setOpen] = useState(false);
+export default function ExitIntentPopup() {
+  const [isVisible, setIsVisible] = useState(false);
   const [email, setEmail] = useState('');
-  const [error, setError] = useState<string | null>(null);
-  const [submitting, setSubmitting] = useState(false);
-  const [mobileNudge, setMobileNudge] = useState(false);
-
-  const cooldownMs = useMemo(() => cooldownDays * 24 * 60 * 60 * 1000, [cooldownDays]);
-
-  const isDesktop = useMemo(() => (typeof window !== 'undefined' ? window.innerWidth >= 1024 : true), []);
-
-  const eligibleToShow = useCallback(() => {
-    try {
-      const last = localStorage.getItem(STORAGE_KEY);
-      if (!last) return true;
-      const ts = Number(last);
-      if (Number.isNaN(ts)) return true;
-      return Date.now() - ts > cooldownMs;
-    } catch {
-      return true;
-    }
-  }, [cooldownMs]);
-
-  const markShown = useCallback(() => {
-    try {
-      localStorage.setItem(STORAGE_KEY, String(Date.now()));
-    } catch {
-      // ignore storage errors
-    }
-  }, []);
+  const [hasShown, setHasShown] = useState(false);
 
   useEffect(() => {
-    let removeListener: (() => void) | null = null;
-    const timer = window.setTimeout(() => {
-      if (!eligibleToShow()) return;
-      if (isDesktop) {
-        const onMouseLeave = (e: MouseEvent) => {
-          if (e.clientY <= 0) {
-            setOpen(true);
-            markShown();
-            if (removeListener) removeListener();
-          }
-        };
-        window.addEventListener('mouseleave', onMouseLeave);
-        removeListener = () => window.removeEventListener('mouseleave', onMouseLeave);
-      } else {
-        // Mobile: show a simplified nudge after a delay, without exit trigger
-        const mobileTimer = window.setTimeout(() => {
-          if (eligibleToShow()) {
-            setMobileNudge(true);
-            markShown();
-          }
-        }, mobileDelayMs);
-        removeListener = () => window.clearTimeout(mobileTimer);
-      }
-    }, activationDelayMs);
+    // Check localStorage for cooldown
+    const lastShown = localStorage.getItem(STORAGE_KEY);
+    const sevenDaysAgo = Date.now() - (COOLDOWN_DAYS * 24 * 60 * 60 * 1000);
 
-    return () => {
-      window.clearTimeout(timer);
-      if (removeListener) removeListener();
-    };
-  }, [eligibleToShow, isDesktop, markShown, activationDelayMs, mobileDelayMs]);
-
-  const close = useCallback(() => {
-    setOpen(false);
-    setMobileNudge(false);
-  }, []);
-
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') close();
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [close]);
-
-  const validEmail = useMemo(() => /^(?:[a-zA-Z0-9_'^&\/+\-])+(?:\.(?:[a-zA-Z0-9_'^&\/+\-])+)*@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/i.test(email), [email]);
-
-  const onSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validEmail) {
-      setError('Please enter a valid email address');
+    if (lastShown && parseInt(lastShown) > sevenDaysAgo) {
+      setHasShown(true);
       return;
     }
-    setError(null);
-    setSubmitting(true);
-    try {
-      await new Promise((r) => setTimeout(r, 600));
-      console.log('Exit-intent lead:', { email, source: window.location.pathname, at: new Date().toISOString() });
-      close();
-    } finally {
-      setSubmitting(false);
+
+    // Desktop only (mobile is too intrusive)
+    if (window.innerWidth < MIN_DESKTOP_WIDTH) return;
+
+    // Delay activation by 3 seconds
+    const activationTimer = setTimeout(() => {
+      const handleMouseLeave = (e: MouseEvent) => {
+        if (e.clientY <= 0 && !hasShown) {
+          setIsVisible(true);
+          setHasShown(true);
+          localStorage.setItem(STORAGE_KEY, Date.now().toString());
+        }
+      };
+
+      document.addEventListener('mouseleave', handleMouseLeave);
+
+      return () => {
+        document.removeEventListener('mouseleave', handleMouseLeave);
+      };
+    }, ACTIVATION_DELAY_MS);
+
+    return () => clearTimeout(activationTimer);
+  }, [hasShown]);
+
+  // ESC key to close
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isVisible) {
+        setIsVisible(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isVisible]);
+
+  const handleClose = useCallback(() => {
+    setIsVisible(false);
+  }, []);
+
+  const handleOverlayClick = useCallback((e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      handleClose();
     }
+  }, [handleClose]);
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+
+    // TODO: Send to email service/database/CRM
+    console.log('Exit intent email captured:', email);
+    console.log('Timestamp:', new Date().toISOString());
+    console.log('Page:', window.location.pathname);
+
+    // Show success message
+    alert('Thank you! We\'ll send you the AI automation guide shortly.');
+
+    // Close popup
+    setIsVisible(false);
+    setEmail('');
   };
 
-  // Simplified mobile version (small bottom card)
-  if (mobileNudge && !open) {
-    return (
-      <div className="fixed inset-x-0 bottom-4 z-40 px-4">
-        <div className="mx-auto max-w-xl rounded-2xl bg-white text-black shadow-2xl border border-gray-200 p-4">
-          <div className="flex items-start gap-3">
-            <div className="h-10 w-10 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500" />
-            <div className="flex-1">
-              <div className="text-sm font-semibold">Before you go</div>
-              <div className="text-xs text-gray-600">Get a free AI automation assessment</div>
-              <form className="mt-2 flex gap-2" onSubmit={onSubmit} aria-label="Mobile lead capture">
-                <input
-                  type="email"
-                  className="flex-1 rounded-md border border-gray-300 px-3 py-2 text-sm"
-                  placeholder="Email address"
-                  aria-label="Email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-                <button disabled={submitting} className="rounded-md bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 px-3 py-2 text-white text-sm disabled:opacity-60" type="submit">
-                  {submitting ? 'Sending...' : 'Get'}
-                </button>
-              </form>
-              {error && <p className="mt-1 text-xs text-red-600" role="alert">{error}</p>}
-            </div>
-            <button className="text-gray-500 hover:text-gray-700" aria-label="Close" onClick={close}>×</button>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (!open) return null;
+  if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm animate-fadeIn"
+      onClick={handleOverlayClick}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="exit-popup-title"
+    >
       <div
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="exit-intent-title"
-        className="relative w-full max-w-2xl mx-4 rounded-2xl bg-white text-black shadow-2xl transform transition-all animate-[fadeIn_200ms_ease-out]"
+        className="relative w-full max-w-lg mx-4 rounded-2xl shadow-2xl transform scale-95 animate-scaleIn"
+        style={{ backgroundColor: '#1A1A1A', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)' }}
+        onClick={(e) => e.stopPropagation()}
       >
-        <div className="absolute right-3 top-3">
-          <button aria-label="Close" onClick={close} className="h-8 w-8 grid place-items-center rounded-full hover:bg-gray-100 text-gray-600">×</button>
-        </div>
-        <div className="h-2 rounded-t-2xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500" />
-        <div className="p-6 sm:p-8">
-          <h3 id="exit-intent-title" className="text-2xl font-bold mb-1">Wait! Before You Go...</h3>
-          <p className="text-gray-600 mb-6">See how much AI automation could save your business</p>
+        {/* Subtle texture overlay */}
+        <div
+          className="absolute inset-0 opacity-5 rounded-2xl pointer-events-none"
+          style={{
+            backgroundImage: `
+              linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%),
+              linear-gradient(-45deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%)
+            `,
+            backgroundSize: '20px 20px'
+          }}
+          aria-hidden="true"
+        />
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
-            <div className="rounded-xl border border-gray-200 p-4 text-center">
-              <div className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 text-lg font-bold">75% Time Saved</div>
-              <div className="text-xs text-gray-500">Average workflow reduction</div>
+        {/* Close Button */}
+        <button
+          onClick={handleClose}
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-200 transition-colors z-10"
+          aria-label="Close popup"
+        >
+          <X className="w-6 h-6" />
+        </button>
+
+        {/* Content */}
+        <div className="relative z-10 p-8">
+          {/* Header */}
+          <h2 id="exit-popup-title" className="text-3xl font-bold text-white mb-3">
+            Before You{' '}
+            <span className="bg-gradient-to-b from-white to-gray-600 bg-clip-text text-transparent">
+              Go...
+            </span>
+          </h2>
+          <p className="text-lg text-gray-300 mb-6">
+            See how much you could save with AI automation
+          </p>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-3 gap-4 mb-6 rounded-xl p-6" style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)' }}>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-white">75%</div>
+              <div className="text-sm text-gray-400 mt-1">Time Saved</div>
             </div>
-            <div className="rounded-xl border border-gray-200 p-4 text-center">
-              <div className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 text-lg font-bold">24/7 Availability</div>
-              <div className="text-xs text-gray-500">Always-on automations</div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-white">24/7</div>
+              <div className="text-sm text-gray-400 mt-1">Available</div>
             </div>
-            <div className="rounded-xl border border-gray-200 p-4 text-center">
-              <div className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-pink-500 text-lg font-bold">10x ROI Average</div>
-              <div className="text-xs text-gray-500">Typical client outcomes</div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-white">10x</div>
+              <div className="text-sm text-gray-400 mt-1">ROI Average</div>
             </div>
           </div>
 
-          <form onSubmit={onSubmit} aria-label="Exit intent lead capture" className="flex flex-col sm:flex-row gap-3">
-            <label className="sr-only" htmlFor="exit-email">Email address</label>
+          <p className="text-xs text-gray-500 text-center mb-6">
+            Based on our client results across Kent
+          </p>
+
+          {/* Form */}
+          <form onSubmit={handleSubmit}>
             <input
-              id="exit-email"
               type="email"
-              className="flex-1 rounded-xl border border-gray-300 px-4 py-3"
-              placeholder="Email address"
-              aria-invalid={!!error}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
               required
+              className="w-full px-4 py-3 rounded-lg mb-4 bg-black/50 border border-gray-700 text-white placeholder-gray-500 focus:border-gray-500 focus:outline-none transition-colors"
             />
             <button
               type="submit"
-              disabled={submitting}
-              className="rounded-xl px-5 py-3 text-white bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 hover:opacity-95 disabled:opacity-60"
+              className="w-full px-7 py-3.5 border border-gray-600 text-white font-sans font-medium rounded-full hover:border-gray-400 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95"
             >
-              {submitting ? 'Sending...' : 'Get Your Free AI Automation Assessment'}
+              Get Your Free AI Assessment
             </button>
           </form>
-          {error && <p className="mt-2 text-sm text-red-600" role="alert">{error}</p>}
-          <p className="mt-3 text-xs text-gray-500">No spam. Unsubscribe anytime.</p>
+
+          <p className="text-xs text-gray-500 text-center mt-3">
+            No spam. Unsubscribe anytime.
+          </p>
         </div>
       </div>
+
+      {/* CSS for animations */}
+      <style>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes scaleIn {
+          from {
+            transform: scale(0.95);
+            opacity: 0;
+          }
+          to {
+            transform: scale(1);
+            opacity: 1;
+          }
+        }
+
+        .animate-fadeIn {
+          animation: fadeIn 300ms ease-out;
+        }
+
+        .animate-scaleIn {
+          animation: scaleIn 300ms ease-out;
+        }
+      `}</style>
     </div>
   );
 }

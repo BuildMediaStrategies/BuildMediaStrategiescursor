@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import SEOWrapper from '../components/SEO/SEOWrapper';
 import LogoCloud from '../components/LogoCloud';
@@ -6,13 +6,15 @@ import StatisticsSection from '../components/StatisticsSection';
 import DashboardSection from '../components/DashboardSection';
 import SecuritySection from '../components/SecuritySection';
 import InterviewBookingSection from '../components/InterviewBookingSection';
-import EffortlessSecuritySection from '../components/EffortlessSecuritySection';
-import TestimonialsSection from '../components/TestimonialsSection';
-import FAQSection from '../components/FAQSection';
-import CTABanner from '../components/CTABanner';
-import GoogleReviews from '../components/GoogleReviews';
 import Footer from '../components/Footer';
 import RegistrationModal from '../components/RegistrationModal';
+import {
+  LazyTestimonialsSection,
+  LazyFAQSection,
+  LazyGoogleReviews,
+  LazyCTABanner,
+  LazyEffortlessSecuritySection,
+} from '../lib/utils/lazyComponents';
 
 export default function HomePage() {
   const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false);
@@ -43,6 +45,8 @@ export default function HomePage() {
           aria-hidden="true"
           loading="eager"
           fetchpriority="high"
+          width={1920}
+          height={1080}
           className="pointer-events-none select-none absolute inset-0 w-full h-full z-0"
           style={{
             // Desktop: fill and lift
@@ -165,11 +169,27 @@ export default function HomePage() {
         <DashboardSection />
         <div id="security"><SecuritySection /></div>
         <InterviewBookingSection />
-        <EffortlessSecuritySection />
-        <div id="testimonials"><TestimonialsSection /></div>
-        <div id="faq"><FAQSection /></div>
-        <CTABanner />
-        <GoogleReviews />
+
+        {/* Lazy-loaded sections below the fold */}
+        <Suspense fallback={<div className="py-20" style={{ backgroundColor: '#0A0A0A' }} />}>
+          <LazyEffortlessSecuritySection />
+        </Suspense>
+
+        <Suspense fallback={<div className="py-20" style={{ backgroundColor: '#0A0A0A' }} />}>
+          <div id="testimonials"><LazyTestimonialsSection /></div>
+        </Suspense>
+
+        <Suspense fallback={<div className="py-20" style={{ backgroundColor: '#0A0A0A' }} />}>
+          <div id="faq"><LazyFAQSection /></div>
+        </Suspense>
+
+        <Suspense fallback={<div className="py-20" style={{ backgroundColor: '#0A0A0A' }} />}>
+          <LazyCTABanner />
+        </Suspense>
+
+        <Suspense fallback={<div className="py-20" style={{ backgroundColor: '#0A0A0A' }} />}>
+          <LazyGoogleReviews />
+        </Suspense>
       </main>
 
       <Footer />

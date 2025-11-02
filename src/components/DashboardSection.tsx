@@ -31,12 +31,15 @@ export default function DashboardSection() {
 
           {/* Left Section: Dashboard Visualization */}
           <div className="lg:order-1 relative">
-            <video 
+            <video
               src="https://res.cloudinary.com/doevp9obh/video/upload/v1759016097/Image_Animation_Video_Ready_hvsl7j.mov"
               autoPlay
               loop
               muted
               playsInline
+              preload="metadata"
+              width={800}
+              height={600}
               className="w-full h-auto rounded-2xl"
             />
           </div>

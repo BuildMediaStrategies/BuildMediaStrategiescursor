@@ -5,14 +5,17 @@ import AIOperationsPage from './pages/AIOperationsPage';
 import IndustriesPage from './pages/IndustriesPage';
 import PortfolioPage from './pages/PortfolioPage';
 import ContactPage from './pages/ContactPage';
+import KentServicesPage from './pages/KentServicesPage';
 import WebDesignDover from './pages/WebDesignDover';
 import WebDesignDeal from './pages/WebDesignDeal';
 import WebDesignCanterbury from './pages/WebDesignCanterbury';
 import WebDesignFolkestone from './pages/WebDesignFolkestone';
+import ExitIntentPopup from './components/Conversion/ExitIntentPopup';
 
 function App() {
   return (
     <Router>
+      <ExitIntentPopup />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/web-design" element={<WebDesignPage />} />
@@ -20,6 +23,7 @@ function App() {
         <Route path="/industries" element={<IndustriesPage />} />
         <Route path="/portfolio" element={<PortfolioPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/kent-services" element={<KentServicesPage />} />
         <Route path="/web-design-dover" element={<WebDesignDover />} />
         <Route path="/web-design-deal" element={<WebDesignDeal />} />
         <Route path="/web-design-canterbury" element={<WebDesignCanterbury />} />
