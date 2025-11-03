@@ -21,6 +21,14 @@ type Strategy = 'mobile' | 'desktop';
 
 const PSI_ENDPOINT = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
 
+const API_KEYS = [
+  'AIzaSyBHzDkiDWUf0IOfqP8b0fIHAWbV2lKk0m0',
+  'AIzaSyAla1ajnYhu3tg8SpbUklnsTtA4-vUMQbw',
+  'AIzaSyBiCRbqFFCza8eyWqy_OXrV3f1hihAcgKI',
+  'AIzaSyCVof3a5o3yyhabV4KdW2UGu1l4yhVLBZw',
+  'AIzaSyBUSt55stKvZKqi0i1fNkP6NRacVkBRDDw',
+];
+
 function parseMetrics(lhr: any): PsiMetrics {
   const audits = lhr?.lighthouseResult?.audits ?? {};
   const categoryScore = lhr?.lighthouseResult?.categories?.performance?.score ?? 0;
@@ -45,12 +53,10 @@ function parseMetrics(lhr: any): PsiMetrics {
   };
 }
 
-async function runPsi(url: string, strategy: Strategy, apiKey?: string) {
-  const params = new URLSearchParams({ url, strategy, category: 'PERFORMANCE' });
-  const key = apiKey || (typeof import.meta !== 'undefined' ? (import.meta as any).env?.VITE_GOOGLE_PSI_API_KEY : undefined);
-  if (key) params.set('key', key);
-
+async function runPsiWithKey(url: string, strategy: Strategy, apiKey: string) {
+  const params = new URLSearchParams({ url, strategy, category: 'PERFORMANCE', key: apiKey });
   const resp = await fetch(`${PSI_ENDPOINT}?${params.toString()}`);
+
   if (!resp.ok) {
     if (resp.status === 429) {
       throw new Error('QUOTA_EXCEEDED');
@@ -58,8 +64,29 @@ async function runPsi(url: string, strategy: Strategy, apiKey?: string) {
     const text = await resp.text().catch(() => '');
     throw new Error(`PSI ${strategy} request failed: ${resp.status} ${resp.statusText} ${text}`.trim());
   }
+
   const data = await resp.json();
   return parseMetrics(data);
+}
+
+async function runPsi(url: string, strategy: Strategy, apiKey?: string) {
+  const keysToTry = apiKey ? [apiKey] : API_KEYS;
+
+  let lastError: Error | null = null;
+
+  for (const key of keysToTry) {
+    try {
+      return await runPsiWithKey(url, strategy, key);
+    } catch (err: any) {
+      if (err?.message === 'QUOTA_EXCEEDED') {
+        lastError = err;
+        continue;
+      }
+      throw err;
+    }
+  }
+
+  throw lastError || new Error('All API keys exhausted');
 }
 
 export async function checkWebsiteSpeed(inputUrl: string, options?: { apiKey?: string }): Promise<CheckWebsiteSpeedResult> {
