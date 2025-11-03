@@ -12,10 +12,10 @@ export default function Navigation() {
   ];
 
   const itemClass = ({ isActive }: { isActive: boolean }) =>
-    `px-3 py-2 rounded-3xl transition-all duration-300 ${
+    `px-3 py-2 rounded-3xl transition-all duration-300 font-bold ${
       isActive
         ? 'text-white bg-white/10 shadow-[0_0_20px_rgba(168,85,247,0.35)]'
-        : 'text-gray-300 hover:text-white hover:bg-white/5 hover:shadow-[0_0_16px_rgba(168,85,247,0.25)]'
+        : 'text-white hover:bg-white/5 hover:shadow-[0_0_16px_rgba(168,85,247,0.25)]'
     }`;
 
   return (
@@ -37,7 +37,7 @@ export default function Navigation() {
         aria-label="Toggle menu"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className="md:hidden text-white rounded-2xl px-3 py-2 border border-white/10 hover:border-white/30 transition-all duration-300"
+        className="md:hidden text-white font-bold rounded-2xl px-3 py-2 border border-white/10 hover:border-white/30 transition-all duration-300"
       >
         Menu
       </button>
@@ -48,8 +48,8 @@ export default function Navigation() {
               key={l.to}
               to={l.to}
               className={({ isActive }) =>
-                `block px-4 py-3 rounded-2xl transition-all duration-300 ${
-                  isActive ? 'bg-white/10 text-white' : 'text-gray-300 hover:text-white hover:bg-white/5'
+                `block px-4 py-3 rounded-2xl transition-all duration-300 font-bold ${
+                  isActive ? 'bg-white/10 text-white' : 'text-white hover:bg-white/5'
                 }`
               }
               onClick={() => setOpen(false)}
