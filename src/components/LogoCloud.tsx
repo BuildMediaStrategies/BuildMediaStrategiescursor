@@ -18,8 +18,19 @@ export default function LogoCloud() {
           </div>
 
           <div className="relative py-6 md:w-[calc(100%-11rem)]">
+            {/* Invisible preloader to ensure CureCancer asset is cached before the slider uses it */}
+            <div className="hidden" aria-hidden="true">
+              <img
+                src="/assets/curecancer-white.png?v=1"
+                alt=""
+                width={1}
+                height={1}
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+
             <InfiniteSlider speed={30} speedOnHover={20} gap={120}>
-              
               {/* UCL (new icon-only logo, matches SOS size) */}
               <div className="flex">
                 <img
