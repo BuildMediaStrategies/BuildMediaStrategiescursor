@@ -15,9 +15,25 @@ dist-ssr
 !.vscode/extensions.json
 .idea
 .DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
 .env
+
+# Lighthouse CI reports
+.lighthouseci/
+*.lhr.json
+*.lhr.html
+
+# Build outputs
+build/
+
+# Environment
+.env.local
+
+# Cache
+.cache/
+.vite/
