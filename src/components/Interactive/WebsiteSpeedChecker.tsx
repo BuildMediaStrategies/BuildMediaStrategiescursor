@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { AlertTriangle, Loader2, Zap } from 'lucide-react';
 import { checkWebsiteSpeed, CheckWebsiteSpeedResult } from '../../lib/utils/speedChecker';
+import { trackToolUsage, trackCTAClick } from '../../lib/analytics/conversions';
 
 interface FormState {
   url: string;
@@ -46,6 +47,15 @@ export default function WebsiteSpeedChecker() {
       // Real PageSpeed Insights call – can take 15–30 seconds
       const r = await checkWebsiteSpeed(value);
       setResults(r);
+      try {
+        trackToolUsage('speed_checker', {
+          url: value,
+          mobile_score: r.mobileScore,
+          desktop_score: r.desktopScore,
+          mobile_lcp: r.mobile.lcpSec,
+          desktop_lcp: r.desktop.lcpSec,
+        });
+      } catch {}
     } catch (err: any) {
       setError(err?.message || 'Failed to fetch PageSpeed Insights. Try again later.');
     } finally {

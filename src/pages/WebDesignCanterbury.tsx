@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 export default function WebDesignCanterbury() {
   return (
     <>
-      <SEO
+      <SEOWrapper
         title="Web Design Canterbury Kent | Modern Websites Canterbury Businesses"
         description="Professional web design in Canterbury, Kent. Fast, mobile-optimized websites that drive business growth. Serving Canterbury and surrounding areas."
         canonical="https://buildmediastrategies.com/web-design-canterbury"

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { TrendingUp, Clock, DollarSign } from 'lucide-react';
+import { trackToolUsage, trackCTAClick } from '../../lib/analytics/conversions';
 
 export default function ROICalculator() {
   const [hours, setHours] = useState(10);
@@ -13,6 +14,14 @@ export default function ROICalculator() {
 
   const handleCalculate = () => {
     setShowResults(true);
+    try {
+      trackToolUsage('roi_calculator', {
+        hours,
+        hourly_rate: hourlyRate,
+        weekly_savings: Math.round(weeklySavings),
+        yearly_savings: Math.round(yearlySavings),
+      });
+    } catch {}
   };
 
   return (
@@ -201,6 +210,9 @@ export default function ROICalculator() {
               </p>
               <a
                 href="/contact"
+                onClick={() => {
+                  try { trackCTAClick('roi_calculator_contact', { page: window.location.pathname }); } catch {}
+                }}
                 className="inline-block px-7 py-3.5 border border-gray-600 text-white font-sans font-medium rounded-full hover:border-gray-400 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95"
               >
                 Book Free Consultation

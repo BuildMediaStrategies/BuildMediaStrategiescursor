@@ -1,6 +1,9 @@
+import { Helmet } from 'react-helmet-async';
 import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
 import ProjectCard from '../components/ProjectCard';
+
+const pexels = (id: string, format: 'webp' | 'avif' = 'webp') => `/pexels/${id}.${format}`;
 
 export default function PortfolioPage() {
   const projects = [
@@ -18,10 +21,14 @@ export default function PortfolioPage() {
         'Real-time analytics dashboard for campaign performance',
       ],
       images: [
-        'https://images.pexels.com/photos/6647039/pexels-photo-6647039.jpeg?auto=compress&cs=tinysrgb&w=1200',
-        'https://images.pexels.com/photos/6647112/pexels-photo-6647112.jpeg?auto=compress&cs=tinysrgb&w=1200',
-        'https://images.pexels.com/photos/6647028/pexels-photo-6647028.jpeg?auto=compress&cs=tinysrgb&w=1200',
+        pexels('pexels-6647039', 'avif'),
+        pexels('pexels-6647112'),
+        pexels('pexels-6647028'),
       ],
+      priorityImage: true,
+      imageWidth: 1200,
+      imageHeight: 800,
+      imageSizes: '(max-width: 1024px) 100vw, 60vw',
     },
     {
       title: 'SOS Electrical',
@@ -37,9 +44,9 @@ export default function PortfolioPage() {
         'Lead tracking dashboard with conversion analytics',
       ],
       images: [
-        'https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=1200',
-        'https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=1200',
-        'https://images.pexels.com/photos/162539/architecture-building-amsterdam-blue-sky-162539.jpeg?auto=compress&cs=tinysrgb&w=1200',
+        pexels('pexels-257736'),
+        pexels('pexels-1249611'),
+        pexels('architecture-building-amsterdam-blue-sky-162539'),
       ],
     },
     {
@@ -56,9 +63,9 @@ export default function PortfolioPage() {
         'Content management system for easy product updates',
       ],
       images: [
-        'https://images.pexels.com/photos/4065876/pexels-photo-4065876.jpeg?auto=compress&cs=tinysrgb&w=1200',
-        'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1200',
-        'https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&cs=tinysrgb&w=1200',
+        pexels('pexels-4065876'),
+        pexels('pexels-3184292'),
+        pexels('pexels-3184296'),
       ],
     },
     {
@@ -75,21 +82,30 @@ export default function PortfolioPage() {
         'Document automation for contracts and work orders',
       ],
       images: [
-        'https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=1200',
-        'https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg?auto=compress&cs=tinysrgb&w=1200',
-        'https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1200',
+        pexels('pexels-1648776'),
+        pexels('pexels-1090638'),
+        pexels('pexels-276724'),
       ],
     },
   ];
 
   return (
     <>
-      <SEO
+      <SEOWrapper
         title="Our Work | Client Results & Case Studies | Kent Web Design"
         description="See how we've helped Kent businesses increase conversions by 180%, cut load times by 75%, and grow revenue. Real results, real clients."
         canonical="https://buildmediastrategies.com/portfolio"
         keywords="web design portfolio Kent, case studies, client results Dover Deal"
       />
+      <Helmet>
+        <link
+          rel="preload"
+          as="image"
+          href="/pexels/pexels-6647039.avif"
+          type="image/avif"
+          fetchpriority="high"
+        />
+      </Helmet>
 
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 lg:px-11 py-5 bg-black bg-opacity-30 backdrop-blur-sm">
         <a href="/" className="flex items-center space-x-2">
@@ -141,6 +157,10 @@ export default function PortfolioPage() {
                 features={project.features}
                 images={project.images}
                 imageOnRight={index % 2 === 0}
+                priorityImage={project.priorityImage}
+                imageWidth={project.imageWidth}
+                imageHeight={project.imageHeight}
+                imageSizes={project.imageSizes}
               />
             ))}
           </div>

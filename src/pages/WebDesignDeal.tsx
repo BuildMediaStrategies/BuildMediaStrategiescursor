@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 export default function WebDesignDeal() {
   return (
     <>
-      <SEO
+      <SEOWrapper
         title="Web Design Deal Kent | Professional Websites for Deal Businesses"
         description="Web design services in Deal, Kent. We build fast, conversion-focused websites for local businesses. Modern development, proven results."
         canonical="https://buildmediastrategies.com/web-design-deal"

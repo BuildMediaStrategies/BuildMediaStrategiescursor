@@ -1,8 +1,18 @@
 import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
 import { Timeline } from '../components/ui/timeline';
+import { PexelsImage } from '../components/media/PexelsImage';
 
 export default function AIOperationsPage() {
+  const cardImage = (id: string, alt: string) => (
+    <PexelsImage
+      id={id}
+      alt={alt}
+      loading="lazy"
+      imgClassName="w-full rounded-lg object-cover h-48 md:h-64 lg:h-80 shadow-lg"
+    />
+  );
+
   const aiServicesData = [
     {
       title: "Lead Generation",
@@ -28,12 +38,7 @@ export default function AIOperationsPage() {
               <span style={{ color: '#BBBBBB' }}>Smart routing to the right team member</span>
             </div>
           </div>
-          <img
-            src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200"
-            alt="AI chatbot interface qualifying leads on laptop screen"
-            className="w-full rounded-lg object-cover h-48 md:h-64 lg:h-80 shadow-lg"
-            loading="lazy"
-          />
+          {cardImage('pexels-3184465', 'AI chatbot interface qualifying leads on laptop screen')}
         </div>
       ),
     },
@@ -61,12 +66,7 @@ export default function AIOperationsPage() {
               <span style={{ color: '#BBBBBB' }}>Digital performance review systems</span>
             </div>
           </div>
-          <img
-            src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1200"
-            alt="HR professional reviewing automated employee onboarding dashboard"
-            className="w-full rounded-lg object-cover h-48 md:h-64 lg:h-80 shadow-lg"
-            loading="lazy"
-          />
+          {cardImage('pexels-3183197', 'HR professional reviewing automated employee onboarding dashboard')}
         </div>
       ),
     },
@@ -94,12 +94,7 @@ export default function AIOperationsPage() {
               <span style={{ color: '#BBBBBB' }}>Automated account reconciliation</span>
             </div>
           </div>
-          <img
-            src="https://images.pexels.com/photos/6863332/pexels-photo-6863332.jpeg?auto=compress&cs=tinysrgb&w=1200"
-            alt="Automated finance dashboard showing invoices and payment tracking"
-            className="w-full rounded-lg object-cover h-48 md:h-64 lg:h-80 shadow-lg"
-            loading="lazy"
-          />
+          {cardImage('pexels-6863332', 'Automated finance dashboard showing invoices and payment tracking')}
         </div>
       ),
     },
@@ -127,12 +122,7 @@ export default function AIOperationsPage() {
               <span style={{ color: '#BBBBBB' }}>Smart response suggestions</span>
             </div>
           </div>
-          <img
-            src="https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=1200"
-            alt="Social media management dashboard showing scheduled posts and analytics"
-            className="w-full rounded-lg object-cover h-48 md:h-64 lg:h-80 shadow-lg"
-            loading="lazy"
-          />
+          {cardImage('pexels-267350', 'Social media management dashboard showing scheduled posts and analytics')}
         </div>
       ),
     },
@@ -160,12 +150,7 @@ export default function AIOperationsPage() {
               <span style={{ color: '#BBBBBB' }}>Intelligent call qualification</span>
             </div>
           </div>
-          <img
-            src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=1200"
-            alt="Professional on phone call with AI assistance system"
-            className="w-full rounded-lg object-cover h-48 md:h-64 lg:h-80 shadow-lg"
-            loading="lazy"
-          />
+          {cardImage('pexels-7688336', 'Professional on phone call with AI assistance system')}
         </div>
       ),
     },
@@ -193,12 +178,7 @@ export default function AIOperationsPage() {
               <span style={{ color: '#BBBBBB' }}>Automated email responses</span>
             </div>
           </div>
-          <img
-            src="https://images.pexels.com/photos/5698853/pexels-photo-5698853.jpeg?auto=compress&cs=tinysrgb&w=1200"
-            alt="Customer support agent using AI-powered helpdesk system"
-            className="w-full rounded-lg object-cover h-48 md:h-64 lg:h-80 shadow-lg"
-            loading="lazy"
-          />
+          {cardImage('pexels-5698853', 'Customer support agent using AI-powered helpdesk system')}
         </div>
       ),
     },
@@ -226,12 +206,7 @@ export default function AIOperationsPage() {
               <span style={{ color: '#BBBBBB' }}>Candidate communication automation</span>
             </div>
           </div>
-          <img
-            src="https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=1200"
-            alt="HR manager reviewing AI-filtered candidate profiles on screen"
-            className="w-full rounded-lg object-cover h-48 md:h-64 lg:h-80 shadow-lg"
-            loading="lazy"
-          />
+          {cardImage('pexels-5668473', 'HR manager reviewing AI-filtered candidate profiles on screen')}
         </div>
       ),
     },
@@ -259,12 +234,7 @@ export default function AIOperationsPage() {
               <span style={{ color: '#BBBBBB' }}>Real-time progress reporting</span>
             </div>
           </div>
-          <img
-            src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200"
-            alt="Project management dashboard with automated task tracking and timelines"
-            className="w-full rounded-lg object-cover h-48 md:h-64 lg:h-80 shadow-lg"
-            loading="lazy"
-          />
+          {cardImage('pexels-3183150', 'Project management dashboard with automated task tracking and timelines')}
         </div>
       ),
     },
@@ -272,7 +242,7 @@ export default function AIOperationsPage() {
 
   return (
     <>
-      <SEO
+      <SEOWrapper
         title="AI Business Automation Kent | Cut Costs, Save Time"
         description="AI automation for Kent businesses. Automate customer service, scheduling, and repetitive tasks. See ROI in weeks, not months. Real automation that works 24/7."
         canonical="https://buildmediastrategies.com/ai-operations"

@@ -10,6 +10,10 @@ interface ProjectCardProps {
   features: string[];
   images: string[];
   imageOnRight?: boolean;
+  priorityImage?: boolean;
+  imageWidth?: number;
+  imageHeight?: number;
+  imageSizes?: string;
 }
 
 export default function ProjectCard({
@@ -21,15 +25,24 @@ export default function ProjectCard({
   features,
   images,
   imageOnRight = false,
+  priorityImage = false,
+  imageWidth = 1200,
+  imageHeight = 800,
+  imageSizes = '(max-width: 1024px) 100vw, 50vw',
 }: ProjectCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [visibleIndices, setVisibleIndices] = useState<number[]>([0]);
 
   useEffect(() => {
     if (images.length <= 1) return;
 
     const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+      setCurrentImageIndex((prev) => {
+        const next = prev === images.length - 1 ? 0 : prev + 1;
+        setVisibleIndices((existing) => (existing.includes(next) ? existing : [...existing, next]));
+        return next;
+      });
     }, 4000);
 
     return () => clearInterval(interval);
@@ -45,16 +58,24 @@ export default function ProjectCard({
   const ImageSection = () => (
     <div className="relative bg-black aspect-[4/3] lg:aspect-auto overflow-hidden">
       <div className="relative w-full h-full">
-        {images.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt={`${title} screenshot ${index + 1}`}
-            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-            style={{ opacity: index === currentImageIndex ? 1 : 0 }}
-            loading="lazy"
-          />
-        ))}
+        {images.map((image, index) =>
+          visibleIndices.includes(index) ? (
+            <img
+              key={index}
+              src={image}
+              alt={`${title} screenshot ${index + 1}`}
+              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+              style={{ opacity: index === currentImageIndex ? 1 : 0 }}
+              loading={priorityImage && index === 0 ? 'eager' : 'lazy'}
+              fetchpriority={priorityImage && index === 0 ? 'high' : undefined}
+              decoding="async"
+              width={imageWidth}
+              height={imageHeight}
+              sizes={imageSizes}
+              srcSet={`${image.replace(/(\.[^.]+)$/u, '-sm$1')} 600w, ${image} 1200w`}
+            />
+          ) : null
+        )}
       </div>
 
       {images.length > 1 && (

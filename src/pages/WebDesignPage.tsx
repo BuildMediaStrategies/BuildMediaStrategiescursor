@@ -2,6 +2,7 @@ import { Zap, Target, Smartphone, Cpu, Shield, TrendingUp } from 'lucide-react';
 import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
 import { BentoCard, BentoGrid } from '../components/ui/bento-grid';
+import { PexelsImage } from '../components/media/PexelsImage';
 
 export default function WebDesignPage() {
   const features = [
@@ -10,13 +11,13 @@ export default function WebDesignPage() {
       name: "Conversion Focused",
       description: "Every element designed to turn visitors into customers. Strategic placement and intuitive navigation that drives action.",
       href: "/contact",
-      cta: "Get Started",
+      cta: "See Conversion Playbook",
       background: (
-        <img
-          src="https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        <PexelsImage
+          id="pexels-326503"
           alt="Website conversion analytics"
           loading="lazy"
-          className="absolute inset-0 h-full w-full object-cover opacity-60"
+          imgClassName="absolute inset-0 h-full w-full object-cover opacity-60"
         />
       ),
       className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
@@ -26,13 +27,13 @@ export default function WebDesignPage() {
       name: "Lightning Fast",
       description: "Sub-2-second load times guaranteed. Speed optimization built into every stage of development.",
       href: "/contact",
-      cta: "Learn More",
+      cta: "Review Speed Optimisation",
       background: (
-        <img
-          src="https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        <PexelsImage
+          id="pexels-270404"
           alt="Fast website performance metrics"
           loading="lazy"
-          className="absolute inset-0 h-full w-full object-cover opacity-60"
+          imgClassName="absolute inset-0 h-full w-full object-cover opacity-60"
         />
       ),
       className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
@@ -42,13 +43,13 @@ export default function WebDesignPage() {
       name: "Mobile First",
       description: "Perfect experience on every device. Responsive design that works flawlessly everywhere.",
       href: "/contact",
-      cta: "Learn More",
+      cta: "Explore Mobile Experience",
       background: (
-        <img
-          src="https://images.pexels.com/photos/57690/pexels-photo-57690.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        <PexelsImage
+          id="pexels-57690"
           alt="Mobile responsive website design"
           loading="lazy"
-          className="absolute inset-0 h-full w-full object-cover opacity-60"
+          imgClassName="absolute inset-0 h-full w-full object-cover opacity-60"
         />
       ),
       className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
@@ -58,13 +59,13 @@ export default function WebDesignPage() {
       name: "AI Integration",
       description: "Smart systems that qualify leads, answer questions, and work 24/7.",
       href: "/contact",
-      cta: "Learn More",
+      cta: "Discover AI Integration",
       background: (
-        <img
-          src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        <PexelsImage
+          id="pexels-3861969"
           alt="AI chatbot integration on website"
           loading="lazy"
-          className="absolute inset-0 h-full w-full object-cover opacity-60"
+          imgClassName="absolute inset-0 h-full w-full object-cover opacity-60"
         />
       ),
       className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
@@ -74,13 +75,13 @@ export default function WebDesignPage() {
       name: "SEO Optimized",
       description: "Built-in best practices. Structured data, meta tags, and technical optimization included.",
       href: "/contact",
-      cta: "Learn More",
+      cta: "Check SEO Blueprint",
       background: (
-        <img
-          src="https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        <PexelsImage
+          id="pexels-270637"
           alt="SEO optimization dashboard"
           loading="lazy"
-          className="absolute inset-0 h-full w-full object-cover opacity-60"
+          imgClassName="absolute inset-0 h-full w-full object-cover opacity-60"
         />
       ),
       className: "lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4",
@@ -89,7 +90,7 @@ export default function WebDesignPage() {
 
   return (
     <>
-      <SEO
+      <SEOWrapper
         title="Modern Web Design Kent | Fast, Conversion-Focused Websites"
         description="Professional web design services across Kent. We build lightning-fast websites that actually convert. Modern React development, not WordPress. Serving Dover, Deal, Canterbury, Folkestone."
         canonical="https://buildmediastrategies.com/web-design"

@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, FormEvent } from 'react';
+import { trackExitIntent } from '../../lib/analytics/conversions';
 import { X } from 'lucide-react';
 
 const STORAGE_KEY = 'exitIntentShown';
@@ -31,6 +32,7 @@ export default function ExitIntentPopup() {
           setIsVisible(true);
           setHasShown(true);
           localStorage.setItem(STORAGE_KEY, Date.now().toString());
+          try { trackExitIntent('shown', { page: window.location.pathname }); } catch {}
         }
       };
 
@@ -58,6 +60,7 @@ export default function ExitIntentPopup() {
 
   const handleClose = useCallback(() => {
     setIsVisible(false);
+    try { trackExitIntent('dismiss', { page: window.location.pathname }); } catch {}
   }, []);
 
   const handleOverlayClick = useCallback((e: React.MouseEvent) => {
@@ -76,6 +79,8 @@ export default function ExitIntentPopup() {
 
     // Show success message
     alert('Thank you! We\'ll send you the AI automation guide shortly.');
+
+    try { trackExitIntent('capture', { page: window.location.pathname }); } catch {}
 
     // Close popup
     setIsVisible(false);

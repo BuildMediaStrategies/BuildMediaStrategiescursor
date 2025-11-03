@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 export default function WebDesignFolkestone() {
   return (
     <>
-      <SEO
+      <SEOWrapper
         title="Web Design Folkestone Kent | Professional Websites Folkestone"
         description="Web design services in Folkestone, Kent. Modern, fast-loading websites for local businesses. Professional development, local expertise."
         canonical="https://buildmediastrategies.com/web-design-folkestone"

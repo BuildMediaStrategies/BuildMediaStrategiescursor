@@ -1,13 +1,13 @@
-import { useState, Suspense } from 'react';
+import { useState, Suspense, lazy } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import SEOWrapper from '../components/SEO/SEOWrapper';
-import LogoCloud from '../components/LogoCloud';
-import StatisticsSection from '../components/StatisticsSection';
-import DashboardSection from '../components/DashboardSection';
-import SecuritySection from '../components/SecuritySection';
-import InterviewBookingSection from '../components/InterviewBookingSection';
-import Footer from '../components/Footer';
-import RegistrationModal from '../components/RegistrationModal';
+const LogoCloud = lazy(() => import('../components/LogoCloud'));
+const StatisticsSection = lazy(() => import('../components/StatisticsSection'));
+const DashboardSection = lazy(() => import('../components/DashboardSection'));
+const SecuritySection = lazy(() => import('../components/SecuritySection'));
+const InterviewBookingSection = lazy(() => import('../components/InterviewBookingSection'));
+const Footer = lazy(() => import('../components/Footer'));
+const RegistrationModal = lazy(() => import('../components/RegistrationModal'));
 import {
   LazyTestimonialsSection,
   LazyFAQSection,
@@ -15,6 +15,7 @@ import {
   LazyCTABanner,
   LazyEffortlessSecuritySection,
 } from '../lib/utils/lazyComponents';
+import { trackCTAClick } from '../lib/analytics/conversions';
 
 export default function HomePage() {
   const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false);
@@ -38,25 +39,30 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-black" />
 
         {/* HERO IMAGE */}
-        <img
-          id="hero-img"
-          src="/hero-image.png"
-          alt=""
-          aria-hidden="true"
-          loading="eager"
-          fetchpriority="high"
-          width={1920}
-          height={1080}
-          className="pointer-events-none select-none absolute inset-0 w-full h-full z-0"
-          style={{
-            // Desktop: fill and lift
-            objectFit: 'cover',
-            objectPosition: 'center 50%',
-            transform: 'translateY(18vh)',
-            willChange: 'transform',
-            filter: 'brightness(0.9) contrast(1.1)',
-          }}
-        />
+        <picture>
+          <source srcSet="/hero-image.avif" type="image/avif" />
+          <source srcSet="/hero-image.webp" type="image/webp" />
+          <img
+            id="hero-img"
+            src="/hero-image.png"
+            alt=""
+            aria-hidden="true"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+            width={1920}
+            height={1080}
+            className="pointer-events-none select-none absolute inset-0 w-full h-full z-0"
+            style={{
+              // Desktop: fill and lift
+              objectFit: 'cover',
+              objectPosition: 'center 50%',
+              transform: 'translateY(18vh)',
+              willChange: 'transform',
+              filter: 'brightness(0.9) contrast(1.1)',
+            }}
+          />
+        </picture>
 
         {/* Mobile overrides (show full browsers, remove dim at bottom) */}
         <style>{`
@@ -153,12 +159,14 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-center gap-3">
             <a
               href="/contact"
+              onClick={() => { try { trackCTAClick('home_contact_cta', { page: window.location.pathname }); } catch {} }}
               className="inline-block px-7 sm:px-6 py-3.5 sm:py-3 bg-black text-white font-normal rounded-full border border-gray-700 hover:border-gray-500 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 transform hover:-translate-y-1 active:scale-95 opacity-0 animate-fadeInDelay"
             >
               Get Started Today
             </a>
             <a
               href="/tools/speed-checker"
+              onClick={() => { try { trackCTAClick('home_speed_checker_cta', { page: window.location.pathname }); } catch {} }}
               className="inline-block px-7 sm:px-6 py-3.5 sm:py-3 bg-white/5 text-white font-normal rounded-full border border-gray-700 hover:border-gray-500 transition-all duration-300 opacity-0 animate-fadeInDelay"
             >
               Check Your Site Speed
@@ -172,11 +180,21 @@ export default function HomePage() {
 
       {/* REST OF PAGE */}
       <main id="main-content">
-        <div id="partners"><LogoCloud /></div>
-        <div id="features"><StatisticsSection /></div>
-        <DashboardSection />
-        <div id="security"><SecuritySection /></div>
-        <InterviewBookingSection />
+        <Suspense fallback={null}>
+          <div id="partners"><LogoCloud /></div>
+        </Suspense>
+        <Suspense fallback={null}>
+          <div id="features"><StatisticsSection /></div>
+        </Suspense>
+        <Suspense fallback={null}>
+          <DashboardSection />
+        </Suspense>
+        <Suspense fallback={null}>
+          <div id="security"><SecuritySection /></div>
+        </Suspense>
+        <Suspense fallback={null}>
+          <InterviewBookingSection />
+        </Suspense>
 
         {/* Lazy-loaded sections below the fold */}
         <Suspense fallback={<div className="py-20" style={{ backgroundColor: '#0A0A0A' }} />}>
@@ -200,8 +218,12 @@ export default function HomePage() {
         </Suspense>
       </main>
 
-      <Footer />
-      <RegistrationModal isOpen={isRegistrationModalOpen} onClose={() => setIsRegistrationModalOpen(false)} />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
+      <Suspense fallback={null}>
+        <RegistrationModal isOpen={isRegistrationModalOpen} onClose={() => setIsRegistrationModalOpen(false)} />
+      </Suspense>
     </>
   );
 }

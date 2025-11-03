@@ -1,4 +1,5 @@
 import { useState, useEffect, FormEvent } from 'react';
+import { trackFormSubmission } from '../lib/analytics/conversions';
 // Temporarily disabled - will configure in Phase 3
 // import { createClient } from '@supabase/supabase-js';
 import SEO from '../components/SEO';
@@ -59,6 +60,9 @@ export default function ContactPage() {
       await new Promise(resolve => setTimeout(resolve, 1000));
 
       setIsSuccess(true);
+      try {
+        trackFormSubmission('contact', { page: window.location.pathname });
+      } catch {}
     } catch (err) {
       setError('Something went wrong. Please try again or email us directly.');
       console.error('Contact form error:', err);

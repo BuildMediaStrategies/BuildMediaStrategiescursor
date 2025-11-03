@@ -1,10 +1,11 @@
 import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
+import { PexelsImage } from '../components/media/PexelsImage';
 
 export default function IndustriesPage() {
   return (
     <>
-      <SEO
+      <SEOWrapper
         title="Industries We Serve | Web Design & AI Across Kent"
         description="Specialized web design and AI automation for retail, professional services, tourism, and hospitality businesses across Kent."
         canonical="https://buildmediastrategies.com/industries"
@@ -71,22 +72,26 @@ export default function IndustriesPage() {
                 </p>
               </div>
               <div className="order-1 lg:order-2">
-                <img
-                  src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                <PexelsImage
+                  id="pexels-1216589"
                   alt="Construction workers at building site reviewing project plans"
-                  className="w-full h-auto"
-                  loading="lazy"
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
+                  width={1400}
+                  height={933}
+                  imgClassName="w-full h-auto"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
               <div>
-                <img
-                  src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                <PexelsImage
+                  id="pexels-257736"
                   alt="Electrician working on electrical panel installation"
-                  className="w-full h-auto"
                   loading="lazy"
+                  imgClassName="w-full h-auto"
                 />
               </div>
               <div>
@@ -115,11 +120,11 @@ export default function IndustriesPage() {
                 </p>
               </div>
               <div className="order-1 lg:order-2">
-                <img
-                  src="https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                <PexelsImage
+                  id="pexels-585419"
                   alt="Construction team collaborating on large building project"
-                  className="w-full h-auto"
                   loading="lazy"
+                  imgClassName="w-full h-auto"
                 />
               </div>
             </div>

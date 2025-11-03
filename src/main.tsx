@@ -4,6 +4,10 @@ import { HelmetProvider } from 'react-helmet-async';
 import App from './App.tsx';
 import './index.css';
 import { measurePerformance } from './lib/analytics/performance';
+import { initGA } from './lib/analytics/googleAnalytics';
+
+// Initialize GA (no-op if no measurement ID configured)
+initGA();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
