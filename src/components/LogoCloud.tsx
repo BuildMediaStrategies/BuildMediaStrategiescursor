@@ -16,75 +16,75 @@ export default function LogoCloud() {
                             gap={112}>
                             <div className="flex">
                                 <img
-                                    className="mx-auto h-5 w-fit brightness-0 invert"
+                                    className="mx-auto h-12 w-fit brightness-0 invert"
                                     src="/assets/ucl-logo@2x.png"
                                     alt="UCL Logo"
-                                    height="20"
+                                    height="48"
                                     width="auto"
                                 />
                             </div>
 
                             <div className="flex">
                                 <img
-                                    className="mx-auto h-4 w-fit brightness-0 invert"
+                                    className="mx-auto h-10 w-fit brightness-0 invert"
                                     src="/assets/HAMILTON NEXUS.png"
                                     alt="Hamilton Nexus Logo"
-                                    height="16"
+                                    height="40"
                                     width="auto"
                                 />
                             </div>
                             <div className="flex">
                                 <img
-                                    className="mx-auto h-4 w-fit brightness-0 invert"
+                                    className="mx-auto h-10 w-fit brightness-0 invert"
                                     src="/assets/github logo.png"
                                     alt="GitHub Logo"
-                                    height="16"
+                                    height="40"
                                     width="auto"
                                 />
                             </div>
                             <div className="flex">
                                 <img
-                                    className="mx-auto h-5 w-fit brightness-0 invert"
+                                    className="mx-auto h-12 w-fit brightness-0 invert"
                                     src="/assets/Cursor-Ai-Logo-PNG-SVG-Vector-300x300-1.png"
                                     alt="Cursor AI Logo"
-                                    height="20"
+                                    height="48"
                                     width="auto"
                                 />
                             </div>
                             <div className="flex">
                                 <img
-                                    className="mx-auto h-5 w-fit brightness-0 invert"
+                                    className="mx-auto h-12 w-fit brightness-0 invert"
                                     src="/assets/SOS NEW TP LOGO.png"
                                     alt="SOS Logo"
-                                    height="20"
+                                    height="48"
                                     width="auto"
                                 />
                             </div>
                             <div className="flex">
                                 <img
-                                    className="mx-auto h-4 w-fit brightness-0 invert"
+                                    className="mx-auto h-10 w-fit brightness-0 invert"
                                     src="/assets/ucl-logo@2x.png"
                                     alt="UCL Logo"
-                                    height="16"
+                                    height="40"
                                     width="auto"
                                 />
                             </div>
                             <div className="flex">
                                 <img
-                                    className="mx-auto h-7 w-fit brightness-0 invert"
+                                    className="mx-auto h-14 w-fit brightness-0 invert"
                                     src="/assets/HAMILTON NEXUS.png"
                                     alt="Hamilton Nexus Logo"
-                                    height="28"
+                                    height="56"
                                     width="auto"
                                 />
                             </div>
 
                             <div className="flex">
                                 <img
-                                    className="mx-auto h-6 w-fit brightness-0 invert"
+                                    className="mx-auto h-12 w-fit brightness-0 invert"
                                     src="/assets/github logo.png"
                                     alt="GitHub Logo"
-                                    height="24"
+                                    height="48"
                                     width="auto"
                                 />
                             </div>
