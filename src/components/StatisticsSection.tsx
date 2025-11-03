@@ -17,52 +17,52 @@ export default function StatisticsSection() {
 
         {/* Statistics Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 lg:gap-8 place-items-center">
-          {/* Client Satisfaction Column */}
+          {/* Average Rating Column */}
           <div className="text-center md:text-left">
             <p className="text-sm font-sans font-normal mb-2" style={{ color: '#BBBBBB' }}>
-              Client Satisfaction
+              Avg Rating
             </p>
             <div className="text-5xl sm:text-6xl font-sans font-bold bg-gradient-to-r from-white to-gray-600 bg-clip-text text-transparent mb-2">
-              98%
+              5.0
             </div>
             <p className="text-sm font-sans font-light" style={{ color: '#BBBBBB' }}>
               Partner with confidence.
             </p>
           </div>
 
-          {/* Projects Delivered Column */}
+          {/* Systems Delivered Column */}
           <div className="text-center md:text-left">
             <p className="text-sm font-sans font-normal mb-2" style={{ color: '#BBBBBB' }}>
-              Projects Delivered
+              Systems Delivered
             </p>
             <div className="text-5xl sm:text-6xl font-sans font-bold bg-gradient-to-r from-white to-gray-600 bg-clip-text text-transparent mb-2">
-              500+
+              25+
             </div>
             <p className="text-sm font-sans font-light" style={{ color: '#BBBBBB' }}>
               Experience that delivers.
             </p>
           </div>
 
-          {/* Page Load Speed Column */}
+          {/* Client Satisfaction Column */}
           <div className="text-center md:text-left">
             <p className="text-sm font-sans font-normal mb-2" style={{ color: '#BBBBBB' }}>
-              Avg Load Speed
+              Client Satisfaction
             </p>
             <div className="text-5xl sm:text-6xl font-sans font-bold bg-gradient-to-r from-white to-gray-600 bg-clip-text text-transparent mb-2">
-              1.2s
+              100%
             </div>
             <p className="text-sm font-sans font-light" style={{ color: '#BBBBBB' }}>
-              Speed that converts.
+              Trusted by businesses.
             </p>
           </div>
 
-          {/* ROI Increase Column */}
+          {/* Conversion Lift Column */}
           <div className="text-center md:text-left">
             <p className="text-sm font-sans font-normal mb-2" style={{ color: '#BBBBBB' }}>
-              Avg ROI Increase
+              Avg Conversion Lift
             </p>
             <div className="text-5xl sm:text-6xl font-sans font-bold bg-gradient-to-r from-white to-gray-600 bg-clip-text text-transparent mb-2">
-              3.5x
+              160%
             </div>
             <p className="text-sm font-sans font-light" style={{ color: '#BBBBBB' }}>
               Growth you can measure.

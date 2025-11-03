@@ -8,7 +8,6 @@ const InterviewBookingSection = lazy(() => import('../components/InterviewBookin
 const Footer = lazy(() => import('../components/Footer'));
 const RegistrationModal = lazy(() => import('../components/RegistrationModal'));
 const TrustBar = lazy(() => import('../components/SocialProof/TrustBar'));
-const StatsCounter = lazy(() => import('../components/SocialProof/StatsCounter'));
 import {
   LazyTestimonialsSection,
   LazyFAQSection,
@@ -131,9 +130,6 @@ export default function HomePage() {
         </Suspense>
         <Suspense fallback={null}>
           <div id="features"><StatisticsSection /></div>
-        </Suspense>
-        <Suspense fallback={null}>
-          <StatsCounter />
         </Suspense>
         <Suspense fallback={null}>
           <DashboardSection />
