@@ -1,5 +1,4 @@
 import { useState, Suspense, lazy } from 'react';
-import { ChevronDown, Menu, X } from 'lucide-react';
 import SEOWrapper from '../components/SEO/SEOWrapper';
 const LogoCloud = lazy(() => import('../components/LogoCloud'));
 const StatisticsSection = lazy(() => import('../components/StatisticsSection'));
@@ -21,7 +20,6 @@ import { trackCTAClick } from '../lib/analytics/conversions';
 
 export default function HomePage() {
   const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <>
@@ -85,63 +83,6 @@ export default function HomePage() {
 
         {/* Readability veil */}
         <div id="hero-veil" className="absolute inset-0 z-10 bg-gradient-to-b from-black/0 via-black/20 to-black/40" />
-
-        {/* NAV */}
-        <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 lg:px-11 py-5 bg-black bg-opacity-30 backdrop-blur-sm animate-fadeIn" role="navigation" aria-label="Main navigation">
-          <a href="/" className="flex items-center space-x-2" aria-label="BuildMediaStrategies home">
-            <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center" aria-hidden="true">
-              <div className="w-3.5 h-3.5 bg-black rounded-full"></div>
-            </div>
-            <span className="text-white font-normal text-lg">BuildMediaStrategies</span>
-          </a>
-
-          <div className="hidden md:flex items-center space-x-7">
-            <a href="/web-design" className="text-white hover:text-gray-300 transition-colors">Web Design</a>
-            <a href="/ai-operations" className="text-white hover:text-gray-300 transition-colors">AI Operations</a>
-            <a href="/industries" className="text-white hover:text-gray-300 transition-colors">Industries</a>
-            <a href="/portfolio" className="text-white hover:text-gray-300 transition-colors">Portfolio</a>
-            <a href="#testimonials" className="text-white hover:text-gray-300 transition-colors">Testimonials</a>
-            <a href="/contact" className="text-white hover:text-gray-300 transition-colors">Contact</a>
-          </div>
-
-          <div className="flex items-center space-x-3.5">
-            <button onClick={() => setIsRegistrationModalOpen(true)} className="hidden md:block px-5 py-1.5 border border-gray-600 text-white rounded-full hover:border-gray-400 transition-all duration-300 hover:shadow-lg">
-              Register Now
-            </button>
-            <button onClick={() => setIsMobileMenuOpen(true)} className="md:hidden text-white" aria-label="Open mobile menu" aria-expanded={isMobileMenuOpen}>
-              <Menu className="w-5 h-5" aria-hidden="true" />
-            </button>
-          </div>
-        </nav>
-
-        {isMobileMenuOpen && (
-          <div className="fixed inset-0 z-50 md:hidden" role="dialog" aria-modal="true" aria-label="Mobile menu">
-            <div className="absolute inset-0 bg-black bg-opacity-50" onClick={() => setIsMobileMenuOpen(false)} aria-hidden="true" />
-            <nav className="absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-black bg-opacity-95 backdrop-blur-md" role="navigation" aria-label="Mobile navigation">
-              <div className="flex items-center justify-between p-6 border-b border-gray-700">
-                <div className="flex items-center space-x-2">
-                  <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center"><div className="w-3.5 h-3.5 bg-black rounded-full" /></div>
-                  <span className="text-white font-normal text-lg">BuildMediaStrategies</span>
-                </div>
-                <button onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-gray-300 transition-colors" aria-label="Close mobile menu">
-                  <X className="w-6 h-6" aria-hidden="true" />
-                </button>
-              </div>
-
-              <div className="p-6 space-y-4">
-                <a href="/web-design" className="block text-white text-lg hover:text-gray-300 transition-colors py-3 active:bg-white/10 rounded-lg px-3 -mx-3" onClick={() => setIsMobileMenuOpen(false)}>Web Design</a>
-                <a href="/ai-operations" className="block text-white text-lg hover:text-gray-300 transition-colors py-3 active:bg-white/10 rounded-lg px-3 -mx-3" onClick={() => setIsMobileMenuOpen(false)}>AI Operations</a>
-                <a href="/industries" className="block text-white text-lg hover:text-gray-300 transition-colors py-3 active:bg-white/10 rounded-lg px-3 -mx-3" onClick={() => setIsMobileMenuOpen(false)}>Industries</a>
-                <a href="/portfolio" className="block text-white text-lg hover:text-gray-300 transition-colors py-3 active:bg-white/10 rounded-lg px-3 -mx-3" onClick={() => setIsMobileMenuOpen(false)}>Portfolio</a>
-                <a href="#testimonials" className="block text-white text-lg hover:text-gray-300 transition-colors py-3 active:bg-white/10 rounded-lg px-3 -mx-3" onClick={() => setIsMobileMenuOpen(false)}>Testimonials</a>
-                <a href="/contact" className="block text-white text-lg hover:text-gray-300 transition-colors py-3 active:bg-white/10 rounded-lg px-3 -mx-3" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
-                <button onClick={() => { setIsMobileMenuOpen(false); setIsRegistrationModalOpen(true); }} className="w-full mt-6 px-5 py-3 border border-gray-600 text-white rounded-full hover:border-gray-400 active:bg-white/10 transition-all duration-300 hover:shadow-lg">
-                  Register Now
-                </button>
-              </div>
-            </nav>
-          </div>
-        )}
 
         {/* HERO CONTENT */}
         <header className="relative z-40 flex flex-col items-center justify-center px-5 sm:px-6 pt-24 sm:pt-20 pb-16 sm:pb-20 min-h-[80vh]">
