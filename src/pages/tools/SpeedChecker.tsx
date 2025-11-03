@@ -13,11 +13,11 @@ export default function SpeedCheckerPage() {
       description="Free website speed audit tool. Compare your site speed against modern standards and see how much faster we can make it. Instant results."
       canonical={canonical}
     >
-      <div className="min-h-[80vh] bg-gradient-to-b from-blue-50 to-purple-50">
-        <section className="max-w-5xl mx-auto px-6 py-12 sm:py-16">
+      <div className="min-h-[80vh] bg-black">
+        <section className="max-w-5xl mx-auto px-6 py-16 sm:py-24">
           <div className="text-center mb-8">
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">Website Speed Checker</h1>
-            <p className="text-gray-600 mt-2">Find out if your slow website is costing you customers</p>
+            <h1 className="text-3xl sm:text-4xl font-bold text-white">Website Speed Checker</h1>
+            <p className="text-gray-400 mt-2">Find out if your slow website is costing you customers</p>
           </div>
           <Suspense fallback={<div className="text-center text-gray-600">Loading...</div>}>
             <LazySpeedChecker />
@@ -30,7 +30,7 @@ export default function SpeedCheckerPage() {
             <a
               href="/web-design"
               onClick={() => { try { trackCTAClick('speed_checker_web_design_cta', { page: window.location.pathname }); } catch {} }}
-              className="inline-block px-5 py-2.5 rounded-lg text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 transition-all shadow-md"
+              className="inline-block px-6 py-3 rounded-full text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 transition-all duration-300 shadow-md hover:shadow-2xl hover:shadow-purple-500/20"
             >
               Explore Our Web Design Services
             </a>

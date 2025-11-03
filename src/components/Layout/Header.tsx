@@ -1,11 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
 
 export default function Header() {
   return (
-    <header className="w-full sticky top-0 z-40 backdrop-blur bg-black/40">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-        <a href="/" className="text-white font-bold">Build Media Strategies</a>
+    <header className="w-full sticky top-0 z-50 backdrop-blur bg-black/50 border-b border-white/5">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 py-3 flex items-center justify-between">
+        <Link to="/" className="text-white font-bold text-lg rounded-3xl px-3 py-1 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300">
+          Build Media Strategies
+        </Link>
         <Navigation />
       </div>
     </header>

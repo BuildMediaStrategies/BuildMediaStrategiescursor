@@ -1,11 +1,27 @@
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
 import ProjectCard from '../components/ProjectCard';
+import Portfolio3DCarousel from '../components/Portfolio/Portfolio3DCarousel';
 
 const pexels = (id: string, format: 'webp' | 'avif' = 'webp') => `/pexels/${id}.${format}`;
 
 export default function PortfolioPage() {
+  const [view, setView] = React.useState<'grid' | 'carousel'>(() =>
+    typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches ? 'grid' : 'carousel'
+  );
+  const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches;
+
+  React.useEffect(() => {
+    const mq = window.matchMedia('(max-width: 767px)');
+    const update = () => {
+      if (mq.matches) setView('grid');
+    };
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
+  }, []);
+
   const projects = [
     {
       title: 'CureCancer UCL',
@@ -87,6 +103,25 @@ export default function PortfolioPage() {
         pexels('pexels-276724'),
       ],
     },
+    {
+      title: 'Hamilton-Nexus',
+      summary: 'Website and project management dashboard for consulting ops.',
+      sector: 'Consulting',
+      stack: 'React, TypeScript, Supabase',
+      description:
+        'Built a unified client portal and internal dashboard to track projects, automate weekly status digests, and standardise reporting across engagements.',
+      features: [
+        'Role-based client access and views',
+        'Milestones, risks, and RAID tracking',
+        'Automated weekly status emails',
+        'Exportable PDF reports for leadership',
+      ],
+      images: [
+        pexels('pexels-3184292'),
+        pexels('pexels-3184296'),
+        pexels('pexels-4065876'),
+      ],
+    },
   ];
 
   return (
@@ -144,25 +179,58 @@ export default function PortfolioPage() {
           </div>
         </section>
 
+        <section className="px-5 lg:px-11 py-4" style={{ backgroundColor: '#0A0A0A' }}>
+          <div className="max-w-7xl mx-auto">
+            <div className="flex items-center gap-2">
+              <button onClick={() => setView('grid')} className={`px-3 py-1.5 text-sm border ${view === 'grid' ? 'border-white text-white' : 'border-gray-700 text-gray-300'}`}>Grid</button>
+              <button onClick={() => setView('carousel')} disabled={typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches} title={(typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches) ? 'Carousel is desktop only' : 'Show 3D carousel'} className={`px-3 py-1.5 text-sm border ${view === 'carousel' ? 'border-white text-white' : 'border-gray-700 text-gray-300'} ${(typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches) ? 'opacity-50 cursor-not-allowed' : ''}`}>3D Carousel</button>
+            </div>
+          </div>
+        </section>
+
         <section style={{ backgroundColor: '#0A0A0A' }}>
           <div className="w-full">
-            {projects.map((project, index) => (
-              <ProjectCard
-                key={index}
-                title={project.title}
-                summary={project.summary}
-                sector={project.sector}
-                stack={project.stack}
-                description={project.description}
-                features={project.features}
-                images={project.images}
-                imageOnRight={index % 2 === 0}
-                priorityImage={project.priorityImage}
-                imageWidth={project.imageWidth}
-                imageHeight={project.imageHeight}
-                imageSizes={project.imageSizes}
-              />
-            ))}
+            {view === 'carousel' && (
+              <div className="max-w-7xl mx-auto px-5 lg:px-11 pb-10">
+                <Portfolio3DCarousel />
+              </div>
+            )}
+            {view === 'grid' && projects.map((project, index) => {
+              const linkMap: Record<string, string> = {
+                'CureCancer UCL': 'curecancer-ucl',
+                'SOS Electrical': 'sos-electrical-ltd',
+                'Hamilton-Nexus': 'hamilton-nexus',
+              };
+              const slug = linkMap[project.title as keyof typeof linkMap];
+              return (
+                <div key={index}>
+                  <ProjectCard
+                    title={project.title}
+                    summary={project.summary}
+                    sector={project.sector}
+                    stack={project.stack}
+                    description={project.description}
+                    features={project.features}
+                    images={project.images}
+                    imageOnRight={index % 2 === 0}
+                    priorityImage={project.priorityImage}
+                    imageWidth={project.imageWidth}
+                    imageHeight={project.imageHeight}
+                    imageSizes={project.imageSizes}
+                  />
+                  {slug && (
+                    <div className="px-5 lg:px-11 py-6 border-b border-gray-800">
+                      <a
+                        href={`/case-studies/${slug}`}
+                        className="inline-block text-white hover:text-gray-300 transition-colors underline"
+                      >
+                        Read full case study →
+                      </a>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </section>
 

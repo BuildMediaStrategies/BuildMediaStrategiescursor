@@ -35,7 +35,7 @@ export default function BlogPostPage() {
       canonical={`https://buildmediastrategies.com/blog/${slug}`}
       type="article"
     >
-      <article className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-10">
+      <article className="max-w-6xl mx-auto px-6 py-16 sm:py-24 grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12">
         <div>
           <header className="mb-6">
             <div className="text-sm text-gray-400">{date}</div>
@@ -44,17 +44,17 @@ export default function BlogPostPage() {
           <div className="prose prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: rendered.html }} />
 
           {/* Author bio */}
-          <section className="mt-10 p-5 border border-gray-800 rounded-xl bg-black/30">
+          <section className="mt-10 p-6 border border-gray-800 rounded-3xl bg-black/30">
             <div className="text-sm text-gray-400">Written by</div>
             <div className="text-white font-semibold">{author}</div>
             <p className="text-gray-400 text-sm mt-1">We build fast, conversion‑focused sites and AI operations for Kent businesses.</p>
           </section>
 
           {/* CTA */}
-          <section className="mt-8 p-6 rounded-xl border border-gray-700 bg-gradient-to-r from-blue-50/10 to-purple-50/10">
+          <section className="mt-8 p-8 rounded-3xl border border-gray-700 bg-gradient-to-r from-blue-50/10 to-purple-50/10 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300">
             <div className="text-white font-semibold mb-2">Ready to modernise your website?</div>
             <p className="text-gray-300 text-sm mb-3">Get a free assessment. We’ll identify speed wins and conversion blockers in minutes.</p>
-            <a href="/contact" className="inline-block px-5 py-2.5 rounded-lg border border-gray-600 text-white hover:border-gray-400 transition-all">Book a Free Assessment</a>
+            <a href="/contact" className="inline-block px-5 py-2.5 rounded-full border border-gray-600 text-white hover:border-gray-400 transition-all duration-300 hover:shadow-lg">Book a Free Assessment</a>
           </section>
         </div>
 
@@ -62,7 +62,7 @@ export default function BlogPostPage() {
         <aside className="lg:sticky lg:top-20 h-fit">
           {/* TOC */}
           {rendered.toc.length > 0 && (
-            <div className="mb-6 p-4 border border-gray-800 rounded-xl bg-black/30">
+            <div className="mb-6 p-4 border border-gray-800 rounded-2xl bg-black/30">
               <div className="text-sm text-gray-400 mb-2">On this page</div>
               <nav className="space-y-1 text-sm">
                 {rendered.toc.map((t) => (
@@ -73,7 +73,7 @@ export default function BlogPostPage() {
           )}
 
           {/* Related */}
-          <div className="p-4 border border-gray-800 rounded-xl bg-black/30">
+          <div className="p-4 border border-gray-800 rounded-2xl bg-black/30">
             <div className="text-sm text-gray-400 mb-2">Related posts</div>
             <div className="space-y-2">
               {related.map((r) => (
@@ -88,4 +88,3 @@ export default function BlogPostPage() {
     </SEOWrapper>
   );
 }
-

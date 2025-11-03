@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect, Suspense, lazy } from 'react';
 import { trackPageView } from './lib/analytics/googleAnalytics';
+import Header from './components/Layout/Header';
+import Footer from './components/Layout/Footer';
 const ExitIntentPopup = lazy(() => import('./components/Conversion/ExitIntentPopup'));
 const HomePage = lazy(() => import('./pages/HomePage'));
 const WebDesignPage = lazy(() => import('./pages/WebDesignPage'));
@@ -17,13 +19,18 @@ const ROICalculatorPage = lazy(() => import('./pages/tools/ROICalculator'));
 const SpeedCheckerPage = lazy(() => import('./pages/tools/SpeedChecker'));
 const BlogIndexPage = lazy(() => import('./pages/Blog'));
 const BlogPostPage = lazy(() => import('./pages/BlogPost'));
+const LiveActivity = lazy(() => import('./components/SocialProof/LiveActivity'));
+const CaseStudyPage = lazy(() => import('./pages/CaseStudy'));
+const AboutPage = lazy(() => import('./pages/About'));
 
 function App() {
   return (
     <Router>
       <RouteChangeTracker />
+      <Header />
       <Suspense fallback={null}>
         <ExitIntentPopup />
+        <LiveActivity />
       </Suspense>
       <Suspense fallback={<div style={{ padding: 24 }}>Loading…</div>}>
         <Routes>
@@ -42,8 +49,11 @@ function App() {
           <Route path="/tools/speed-checker" element={<SpeedCheckerPage />} />
           <Route path="/blog" element={<BlogIndexPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
+          <Route path="/case-studies/:slug" element={<CaseStudyPage />} />
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
       </Suspense>
+      <Footer />
     </Router>
   );
 }

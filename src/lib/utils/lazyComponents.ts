@@ -6,7 +6,7 @@ import { lazy } from 'react';
  */
 
 // Below-the-fold sections
-export const LazyTestimonialsSection = lazy(() => import('../../components/TestimonialsSection'));
+export const LazyTestimonialsSection = lazy(() => import('../../components/Testimonials/TestimonialShowcase'));
 export const LazyFAQSection = lazy(() => import('../../components/FAQSection'));
 export const LazyGoogleReviews = lazy(() => import('../../components/GoogleReviews'));
 export const LazyCTABanner = lazy(() => import('../../components/CTABanner'));
