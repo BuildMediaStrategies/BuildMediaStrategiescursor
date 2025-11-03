@@ -1,27 +1,16 @@
-import { useEffect } from 'react';
 import { InfiniteSlider } from './motion-primitives/infinite-slider';
 import { ProgressiveBlur } from './motion-primitives/progressive-blur';
 
-const CURE_SRC = '/assets/curecancer-white.png';
-
 export default function LogoCloud() {
-  // Pin CureCancer logo in memory so remounts never miss cache
-  useEffect(() => {
-    const img = new Image();
-    img.decoding = 'sync';
-    (img as any).fetchPriority = 'high';
-    img.crossOrigin = 'anonymous';
-    img.src = `${CURE_SRC}?v=precache1`;
-    // keep a ref on window to avoid GC
-    (window as any).__cureCancerPreload = img;
-  }, []);
-
   return (
     <section className="bg-black overflow-hidden py-16">
       {/* Force-white filter for black PNGs (GitHub only) */}
       <style>{`
         .as-white { filter: brightness(0) invert(1) contrast(140%); }
       `}</style>
+
+      {/* Preload CureCancer asset so it’s in cache before the slider renders */}
+      <link rel="preload" as="image" href="/assets/curecancer-white.png" />
 
       <div className="group relative m-auto max-w-7xl px-6">
         <div className="flex flex-col items-center md:flex-row">
@@ -30,18 +19,6 @@ export default function LogoCloud() {
           </div>
 
           <div className="relative py-6 md:w-[calc(100%-11rem)]">
-            {/* Invisible preloader (kept minimal; does not affect layout) */}
-            <img
-              src={`${CURE_SRC}?v=precache2`}
-              alt=""
-              width={1}
-              height={1}
-              className="hidden"
-              loading="eager"
-              decoding="async"
-              crossOrigin="anonymous"
-            />
-
             <InfiniteSlider speed={30} speedOnHover={20} gap={120}>
               {/* UCL (icon-only, matches SOS size) */}
               <div className="flex">
@@ -88,22 +65,15 @@ export default function LogoCloud() {
                 />
               </div>
 
-              {/* CureCancer (bigger + high-priority, with retry) */}
+              {/* CureCancer (larger for visibility, eager + high priority) */}
               <div className="flex">
                 <img
                   className="mx-10 h-16 md:h-[4.8rem] w-auto object-contain opacity-95 contrast-125"
-                  src={`${CURE_SRC}?v=live1`}
+                  src="/assets/curecancer-white.png"
                   alt="CureCancer UCL Logo"
                   loading="eager"
-                  decoding="sync"
-                  crossOrigin="anonymous"
-                  // simple cache-busting retry if a CDN edge misses
-                  onError={(e) => {
-                    const el = e.currentTarget as HTMLImageElement;
-                    const url = new URL(el.src, window.location.href);
-                    url.searchParams.set('v', String(Date.now()));
-                    el.src = url.toString();
-                  }}
+                  fetchpriority="high"
+                  decoding="async"
                 />
               </div>
 
@@ -129,8 +99,16 @@ export default function LogoCloud() {
             {/* edge fades */}
             <div className="bg-gradient-to-r from-black absolute inset-y-0 left-0 w-20" />
             <div className="bg-gradient-to-l from-black absolute inset-y-0 right-0 w-20" />
-            <ProgressiveBlur className="pointer-events-none absolute left-0 top-0 h-full w-20" direction="left" blurIntensity={1} />
-            <ProgressiveBlur className="pointer-events-none absolute right-0 top-0 h-full w-20" direction="right" blurIntensity={1} />
+            <ProgressiveBlur
+              className="pointer-events-none absolute left-0 top-0 h-full w-20"
+              direction="left"
+              blurIntensity={1}
+            />
+            <ProgressiveBlur
+              className="pointer-events-none absolute right-0 top-0 h-full w-20"
+              direction="right"
+              blurIntensity={1}
+            />
           </div>
         </div>
       </div>
