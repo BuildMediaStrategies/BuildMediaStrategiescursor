@@ -1,14 +1,26 @@
+import { useEffect } from 'react';
 import { InfiniteSlider } from './motion-primitives/infinite-slider';
 import { ProgressiveBlur } from './motion-primitives/progressive-blur';
 
+const CURE_SRC = '/assets/curecancer-white.png';
+
 export default function LogoCloud() {
+  // Pin CureCancer logo in memory so remounts never miss cache
+  useEffect(() => {
+    const img = new Image();
+    img.decoding = 'sync';
+    (img as any).fetchPriority = 'high';
+    img.crossOrigin = 'anonymous';
+    img.src = `${CURE_SRC}?v=precache1`;
+    // keep a ref on window to avoid GC
+    (window as any).__cureCancerPreload = img;
+  }, []);
+
   return (
     <section className="bg-black overflow-hidden py-16">
       {/* Force-white filter for black PNGs (GitHub only) */}
       <style>{`
-        .as-white {
-          filter: brightness(0) invert(1) contrast(140%);
-        }
+        .as-white { filter: brightness(0) invert(1) contrast(140%); }
       `}</style>
 
       <div className="group relative m-auto max-w-7xl px-6">
@@ -18,108 +30,16 @@ export default function LogoCloud() {
           </div>
 
           <div className="relative py-6 md:w-[calc(100%-11rem)]">
-            {/* Invisible preloader to ensure CureCancer asset is cached before the slider uses it */}
-            <div className="hidden" aria-hidden="true">
-              <img
-                src="/assets/curecancer-white.png?v=1"
-                alt=""
-                width={1}
-                height={1}
-                loading="eager"
-                decoding="async"
-              />
-            </div>
-
-            <InfiniteSlider speed={30} speedOnHover={20} gap={120}>
-              {/* UCL (new icon-only logo, matches SOS size) */}
-              <div className="flex">
-                <img
-                  className="mx-10 h-14 md:h-[4.2rem] w-auto object-contain"
-                  src="/assets/ucl icon only.png"
-                  alt="UCL Icon Logo"
-                />
-              </div>
-
-              {/* Hamilton Nexus */}
-              <div className="flex">
-                <img
-                  className="mx-10 h-12 md:h-14 w-auto object-contain"
-                  src="/assets/HAMILTON NEXUS.png"
-                  alt="Hamilton Nexus Logo"
-                />
-              </div>
-
-              {/* GitHub (force white) */}
-              <div className="flex">
-                <img
-                  className="mx-10 h-12 md:h-14 w-auto object-contain as-white"
-                  src="/assets/GitHub-logo.png"
-                  alt="GitHub Logo"
-                />
-              </div>
-
-              {/* Cursor (icon only) */}
-              <div className="flex">
-                <img
-                  className="mx-10 h-14 md:h-16 w-auto object-contain"
-                  src="/assets/cursor icon only.png"
-                  alt="Cursor AI Logo"
-                />
-              </div>
-
-              {/* SOS Electrical (slightly larger) */}
-              <div className="flex">
-                <img
-                  className="mx-10 h-14 md:h-[4.2rem] w-auto object-contain"
-                  src="/assets/sos electrical tp logo icon.png"
-                  alt="SOS Electrical Logo"
-                />
-              </div>
-
-              {/* CureCancer (significantly larger for visibility) */}
-              <div className="flex">
-                <img
-                  className="mx-10 h-16 md:h-[4.8rem] w-auto object-contain opacity-95 contrast-125"
-                  src="/assets/curecancer-white.png"
-                  alt="CureCancer UCL Logo"
-                />
-              </div>
-
-              {/* Repeat Hamilton Nexus */}
-              <div className="flex">
-                <img
-                  className="mx-10 h-12 md:h-14 w-auto object-contain"
-                  src="/assets/HAMILTON NEXUS.png"
-                  alt="Hamilton Nexus Logo"
-                />
-              </div>
-
-              {/* Repeat GitHub (force white) */}
-              <div className="flex">
-                <img
-                  className="mx-10 h-12 md:h-14 w-auto object-contain as-white"
-                  src="/assets/GitHub-logo.png"
-                  alt="GitHub Logo"
-                />
-              </div>
-            </InfiniteSlider>
-
-            {/* edge fades */}
-            <div className="bg-gradient-to-r from-black absolute inset-y-0 left-0 w-20" />
-            <div className="bg-gradient-to-l from-black absolute inset-y-0 right-0 w-20" />
-            <ProgressiveBlur
-              className="pointer-events-none absolute left-0 top-0 h-full w-20"
-              direction="left"
-              blurIntensity={1}
+            {/* Invisible preloader (kept minimal; does not affect layout) */}
+            <img
+              src={`${CURE_SRC}?v=precache2`}
+              alt=""
+              width={1}
+              height={1}
+              className="hidden"
+              loading="eager"
+              decoding="async"
+              crossOrigin="anonymous"
             />
-            <ProgressiveBlur
-              className="pointer-events-none absolute right-0 top-0 h-full w-20"
-              direction="right"
-              blurIntensity={1}
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+
+            <InfiniteSlider speed={30} speedOn
