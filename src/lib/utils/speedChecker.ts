@@ -52,6 +52,9 @@ async function runPsi(url: string, strategy: Strategy, apiKey?: string) {
 
   const resp = await fetch(`${PSI_ENDPOINT}?${params.toString()}`);
   if (!resp.ok) {
+    if (resp.status === 429) {
+      throw new Error('QUOTA_EXCEEDED');
+    }
     const text = await resp.text().catch(() => '');
     throw new Error(`PSI ${strategy} request failed: ${resp.status} ${resp.statusText} ${text}`.trim());
   }
@@ -82,6 +85,60 @@ export async function checkWebsiteSpeed(inputUrl: string, options?: { apiKey?: s
     mobile,
     desktop,
   };
+}
+
+function generateSimulatedMetrics(url: string, strategy: Strategy): PsiMetrics {
+  let hash = 0;
+  for (let i = 0; i < url.length; i++) hash = (hash * 31 + url.charCodeAt(i)) >>> 0;
+  hash += strategy === 'mobile' ? 1 : 2;
+
+  const rand = () => {
+    hash ^= hash << 13;
+    hash ^= hash >>> 17;
+    hash ^= hash << 5;
+    return ((hash >>> 0) % 1000) / 1000;
+  };
+
+  const isMobile = strategy === 'mobile';
+  const baseScore = isMobile ? 45 + rand() * 25 : 60 + rand() * 30;
+  const score = Math.round(baseScore);
+
+  const fcpSec = +(isMobile ? 1.2 + rand() * 1.8 : 0.8 + rand() * 1.2).toFixed(2);
+  const lcpSec = +(isMobile ? 2.5 + rand() * 2.5 : 1.5 + rand() * 2.0).toFixed(2);
+  const cls = +(rand() * 0.15).toFixed(3);
+  const speedIndexSec = +(isMobile ? 2.0 + rand() * 3.0 : 1.2 + rand() * 2.0).toFixed(2);
+  const interactiveSec = +(isMobile ? 3.0 + rand() * 4.0 : 2.0 + rand() * 3.0).toFixed(2);
+
+  return { score, fcpSec, lcpSec, cls, speedIndexSec, interactiveSec };
+}
+
+export async function checkWebsiteSpeedWithFallback(inputUrl: string, options?: { apiKey?: string }): Promise<CheckWebsiteSpeedResult & { simulated?: boolean }> {
+  try {
+    return await checkWebsiteSpeed(inputUrl, options);
+  } catch (err: any) {
+    if (err?.message === 'QUOTA_EXCEEDED') {
+      const url = (() => {
+        try {
+          const u = new URL(inputUrl.includes('://') ? inputUrl : `https://${inputUrl}`);
+          return u.toString();
+        } catch {
+          throw new Error('Invalid URL');
+        }
+      })();
+
+      const mobile = generateSimulatedMetrics(url, 'mobile');
+      const desktop = generateSimulatedMetrics(url, 'desktop');
+
+      return {
+        mobileScore: mobile.score,
+        desktopScore: desktop.score,
+        mobile,
+        desktop,
+        simulated: true,
+      };
+    }
+    throw err;
+  }
 }
 
 export default checkWebsiteSpeed;

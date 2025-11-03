@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { AlertTriangle, Loader2, Zap } from 'lucide-react';
-import { checkWebsiteSpeed, CheckWebsiteSpeedResult } from '../../lib/utils/speedChecker';
+import { checkWebsiteSpeedWithFallback, CheckWebsiteSpeedResult } from '../../lib/utils/speedChecker';
 import { trackToolUsage, trackCTAClick } from '../../lib/analytics/conversions';
 
 interface FormState {
@@ -22,7 +22,7 @@ const pct = (n: number) => `${Math.round(n)}%`;
 export default function WebsiteSpeedChecker() {
   const [form, setForm] = useState<FormState>({ url: '' });
   const [loading, setLoading] = useState(false);
-  const [results, setResults] = useState<CheckWebsiteSpeedResult | null>(null);
+  const [results, setResults] = useState<(CheckWebsiteSpeedResult & { simulated?: boolean }) | null>(null);
   const [error, setError] = useState<string | undefined>(undefined);
 
   const mobileVsDesktop = useMemo(() => {
@@ -44,8 +44,7 @@ export default function WebsiteSpeedChecker() {
     setLoading(true);
     setResults(null);
     try {
-      // Real PageSpeed Insights call – can take 15–30 seconds
-      const r = await checkWebsiteSpeed(value);
+      const r = await checkWebsiteSpeedWithFallback(value);
       setResults(r);
       try {
         trackToolUsage('speed_checker', {
@@ -54,6 +53,7 @@ export default function WebsiteSpeedChecker() {
           desktop_score: r.desktopScore,
           mobile_lcp: r.mobile.lcpSec,
           desktop_lcp: r.desktop.lcpSec,
+          simulated: r.simulated || false,
         });
       } catch {}
     } catch (err: any) {
@@ -109,11 +109,11 @@ export default function WebsiteSpeedChecker() {
               disabled={loading}
               className="inline-flex items-center justify-center whitespace-nowrap px-5 py-3 rounded-lg text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 transition-all shadow-md disabled:opacity-60"
             >
-              {loading ? (<><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Running PSI...</>) : 'Check Speed'}
+              {loading ? (<><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Analyzing...</>) : 'Check Speed'}
             </button>
           </div>
           {form.error && <p className="text-sm text-red-600 mt-2">{form.error}</p>}
-          {loading && <p className="text-sm text-gray-600 mt-2">Real PageSpeed Insights analysis can take 15–30 seconds.</p>}
+          {loading && <p className="text-sm text-gray-600 mt-2">Analyzing website performance...</p>}
           {error && <p className="text-sm text-red-600 mt-2">{error}</p>}
         </form>
 
@@ -121,6 +121,19 @@ export default function WebsiteSpeedChecker() {
         <div className={`px-6 py-6 transition-all duration-500 ${results ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}`}>
           {results && (
             <div className="space-y-8">
+              {results.simulated && (
+                <div className="rounded-xl border border-amber-200 bg-amber-50 p-5">
+                  <div className="flex items-start gap-3">
+                    <div className="mt-0.5"><AlertTriangle className="w-5 h-5 text-amber-600" /></div>
+                    <div>
+                      <div className="font-semibold text-amber-700 mb-1">Simulated Results</div>
+                      <p className="text-sm text-amber-700">
+                        Google PageSpeed API quota exceeded. Showing simulated performance estimates based on typical website patterns. Contact us for a comprehensive real-world audit.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
               {/* A) Performance Scores */}
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Performance Scores</h3>
@@ -203,19 +216,24 @@ export default function WebsiteSpeedChecker() {
                     </div>
                   </div>
                 </div>
-                <p className="text-xs text-gray-500 mt-2">Metrics are fetched directly from Google PageSpeed Insights for the requested URL.</p>
+                <p className="text-xs text-gray-500 mt-2">
+                  {results.simulated
+                    ? 'Metrics are simulated estimates. For accurate measurements, contact us for a professional audit.'
+                    : 'Metrics are fetched directly from Google PageSpeed Insights for the requested URL.'}
+                </p>
               </div>
 
-              {/* D) Info Note */}
-              <div className="rounded-xl border border-blue-200 bg-blue-50 p-5">
-                <div className="flex items-start gap-3">
-                  <div className="mt-0.5"><AlertTriangle className="w-5 h-5 text-blue-600" /></div>
-                  <div>
-                    <div className="font-semibold text-blue-700 mb-1">About these results</div>
-                    <p className="text-sm text-blue-700">Scores and metrics shown are direct from Google PageSpeed Insights with no manipulation. Reruns may vary slightly due to test conditions.</p>
+              {!results.simulated && (
+                <div className="rounded-xl border border-blue-200 bg-blue-50 p-5">
+                  <div className="flex items-start gap-3">
+                    <div className="mt-0.5"><AlertTriangle className="w-5 h-5 text-blue-600" /></div>
+                    <div>
+                      <div className="font-semibold text-blue-700 mb-1">About these results</div>
+                      <p className="text-sm text-blue-700">Scores and metrics shown are direct from Google PageSpeed Insights with no manipulation. Reruns may vary slightly due to test conditions.</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
           )}
         </div>
