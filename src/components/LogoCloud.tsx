@@ -20,12 +20,12 @@ export default function LogoCloud() {
           <div className="relative py-6 md:w-[calc(100%-11rem)]">
             <InfiniteSlider speed={30} speedOnHover={20} gap={120}>
               
-              {/* UCL */}
+              {/* UCL (new icon-only logo, matches SOS size) */}
               <div className="flex">
                 <img
-                  className="mx-10 h-12 md:h-14 w-auto object-contain"
-                  src="/assets/ucl-logo@2x.png"
-                  alt="UCL Logo"
+                  className="mx-10 h-14 md:h-[4.2rem] w-auto object-contain"
+                  src="/assets/ucl icon only.png"
+                  alt="UCL Icon Logo"
                 />
               </div>
 
