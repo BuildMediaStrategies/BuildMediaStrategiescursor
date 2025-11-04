@@ -1,6 +1,7 @@
 import { Check, ArrowRight } from 'lucide-react';
 import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
+import Header from '../components/Layout/Header';
 
 export default function WebDesignDover() {
   const services = [
@@ -56,22 +57,8 @@ export default function WebDesignDover() {
         ogType="website"
       />
 
+      <Header />
       <div className="min-h-screen" style={{ backgroundColor: '#000000' }}>
-        {/* NAVIGATION */}
-        <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 lg:px-11 py-5 bg-black bg-opacity-30 backdrop-blur-sm">
-          <a href="/" className="flex items-center space-x-2">
-            <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center">
-              <div className="w-3.5 h-3.5 bg-black rounded-full"></div>
-            </div>
-            <span className="text-white font-normal text-lg">BuildMediaStrategies</span>
-          </a>
-          <a
-            href="/kent-services"
-            className="px-5 py-1.5 border border-gray-600 text-white rounded-full hover:border-gray-400 transition-all duration-300 text-sm"
-          >
-            Kent Services
-          </a>
-        </nav>
 
         {/* HERO SECTION */}
         <section className="pt-32 pb-20 px-5 sm:px-6" style={{ backgroundColor: '#000000' }}>

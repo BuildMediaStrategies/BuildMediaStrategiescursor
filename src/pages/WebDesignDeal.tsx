@@ -1,5 +1,6 @@
 import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
+import Header from '../components/Layout/Header';
 
 export default function WebDesignDeal() {
   return (
@@ -11,21 +12,8 @@ export default function WebDesignDeal() {
         keywords="web design Deal, Deal web designer, websites Deal Kent, Deal business websites"
       />
 
+      <Header />
       <div className="min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>
-        <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 lg:px-11 py-5 bg-black bg-opacity-30 backdrop-blur-sm">
-          <a href="/" className="flex items-center space-x-2">
-            <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center">
-              <div className="w-3.5 h-3.5 bg-black rounded-full"></div>
-            </div>
-            <span className="text-white font-normal text-lg">BuildMediaStrategies</span>
-          </a>
-          <a
-            href="/"
-            className="px-5 py-1.5 border border-gray-600 text-white rounded-full hover:border-gray-400 transition-all duration-300 text-sm"
-          >
-            Back to Home
-          </a>
-        </nav>
 
         <section className="pt-32 pb-20 px-6">
           <div className="max-w-4xl mx-auto">

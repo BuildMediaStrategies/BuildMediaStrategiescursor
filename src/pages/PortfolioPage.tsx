@@ -4,6 +4,7 @@ import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
 import ProjectCard from '../components/ProjectCard';
 import Portfolio3DCarousel from '../components/Portfolio/Portfolio3DCarousel';
+import Header from '../components/Layout/Header';
 
 const pexels = (id: string, format: 'webp' | 'avif' = 'webp') => `/pexels/${id}.${format}`;
 
@@ -142,27 +143,7 @@ export default function PortfolioPage() {
         />
       </Helmet>
 
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 lg:px-11 py-5 bg-black bg-opacity-30 backdrop-blur-sm">
-        <a href="/" className="flex items-center space-x-2">
-          <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center">
-            <div className="w-3.5 h-3.5 bg-black rounded-full"></div>
-          </div>
-          <span className="text-white font-normal text-lg">BuildMediaStrategies</span>
-        </a>
-
-        <div className="hidden md:flex items-center space-x-7">
-          <a href="/web-design" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Web Design</a>
-          <a href="/ai-operations" className="text-white cursor-pointer hover:text-gray-300 transition-colors">AI Operations</a>
-          <a href="/industries" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Industries</a>
-          <a href="/portfolio" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Portfolio</a>
-          <a href="/#testimonials" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Testimonials</a>
-          <a href="/contact" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Contact</a>
-        </div>
-
-        <button className="md:hidden text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-        </button>
-      </nav>
+      <Header />
 
       <div className="bg-black min-h-screen pt-24">
         <section className="py-16 lg:py-20 px-5 lg:px-11" style={{ backgroundColor: '#0A0A0A' }}>

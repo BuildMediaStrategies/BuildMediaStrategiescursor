@@ -4,6 +4,7 @@ import { trackFormSubmission } from '../lib/analytics/conversions';
 // import { createClient } from '@supabase/supabase-js';
 import SEO from '../components/SEO';
 import Footer from '../components/Footer';
+import Header from '../components/Layout/Header';
 
 // Temporarily disabled - will configure in Phase 3
 // const supabase = createClient(
@@ -84,26 +85,7 @@ export default function ContactPage() {
           Skip to main content
         </a>
 
-        <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 lg:px-11 py-5 bg-black bg-opacity-30 backdrop-blur-sm" role="navigation" aria-label="Main navigation">
-          <a href="/" className="flex items-center space-x-2" aria-label="BuildMediaStrategies home">
-            <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center" aria-hidden="true">
-              <div className="w-3.5 h-3.5 bg-black rounded-full"></div>
-            </div>
-            <span className="text-white font-normal text-lg">BuildMediaStrategies</span>
-          </a>
-
-          <div className="hidden md:flex items-center space-x-7">
-            <a href="/web-design" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Web Design</a>
-            <a href="/ai-operations" className="text-white cursor-pointer hover:text-gray-300 transition-colors">AI Operations</a>
-            <a href="/portfolio" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Portfolio</a>
-            <a href="/#testimonials" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Testimonials</a>
-            <a href="/contact" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Contact</a>
-          </div>
-
-          <button className="md:hidden text-white" aria-label="Open mobile menu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-          </button>
-        </nav>
+        <Header />
 
         <main id="main-content" className="bg-black min-h-screen pt-24" style={{ backgroundColor: '#0A0A0A' }}>
           <div className="max-w-2xl mx-auto px-5 py-20">
