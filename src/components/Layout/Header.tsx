@@ -15,9 +15,9 @@ export default function Header() {
             <img
               src="/logo.png"
               alt="Build Media Strategies"
-              className="h-[5.6rem] w-auto object-contain -my-[0.4rem] scale-105"
-              width="260"
-              height="56"
+              className="h-[6rem] w-auto object-contain -my-[0.6rem] scale-[1.18]"
+              width="280"
+              height="64"
               loading="eager"
               fetchPriority="high"
             />
