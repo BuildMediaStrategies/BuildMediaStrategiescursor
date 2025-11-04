@@ -1,6 +1,5 @@
 import { Zap, Target, Smartphone, Cpu, Shield, TrendingUp } from 'lucide-react';
 import SEOWrapper from '../components/SEO/SEOWrapper';
-import Footer from '../components/Footer';
 import { BentoCard, BentoGrid } from '../components/ui/bento-grid';
 import { PexelsImage } from '../components/media/PexelsImage';
 
@@ -261,8 +260,6 @@ export default function WebDesignPage() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </>
   );
 }

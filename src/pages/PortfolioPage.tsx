@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import SEOWrapper from '../components/SEO/SEOWrapper';
-import Footer from '../components/Footer';
 import ProjectCard from '../components/ProjectCard';
 import Portfolio3DCarousel from '../components/Portfolio/Portfolio3DCarousel';
 
@@ -214,8 +213,6 @@ export default function PortfolioPage() {
 
         <div className="h-20" style={{ backgroundColor: '#0A0A0A' }}></div>
       </div>
-
-      <Footer />
     </>
   );
 }

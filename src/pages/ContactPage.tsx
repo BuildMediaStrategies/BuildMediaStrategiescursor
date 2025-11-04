@@ -3,7 +3,6 @@ import { trackFormSubmission } from '../lib/analytics/conversions';
 // Temporarily disabled - will configure in Phase 3
 // import { createClient } from '@supabase/supabase-js';
 import SEO from '../components/SEO';
-import Footer from '../components/Footer';
 
 // Temporarily disabled - will configure in Phase 3
 // const supabase = createClient(
@@ -115,8 +114,6 @@ export default function ContactPage() {
             </div>
           </div>
         </main>
-
-        <Footer />
       </>
     );
   }
@@ -321,8 +318,6 @@ export default function ContactPage() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </>
   );
 }

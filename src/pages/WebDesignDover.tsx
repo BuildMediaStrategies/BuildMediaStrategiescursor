@@ -1,6 +1,5 @@
 import { Check, ArrowRight } from 'lucide-react';
 import SEOWrapper from '../components/SEO/SEOWrapper';
-import Footer from '../components/Footer';
 
 export default function WebDesignDover() {
   const services = [
@@ -299,8 +298,6 @@ export default function WebDesignDover() {
           </div>
         </section>
       </div>
-
-      <Footer />
     </>
   );
 }

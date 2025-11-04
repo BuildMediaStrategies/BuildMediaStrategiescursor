@@ -1,5 +1,4 @@
 import SEOWrapper from '../components/SEO/SEOWrapper';
-import Footer from '../components/Footer';
 import { Timeline } from '../components/ui/timeline';
 import { PexelsImage } from '../components/media/PexelsImage';
 
@@ -372,8 +371,6 @@ export default function AIOperationsPage() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </>
   );
 }

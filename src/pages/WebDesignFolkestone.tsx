@@ -1,5 +1,4 @@
 import SEOWrapper from '../components/SEO/SEOWrapper';
-import Footer from '../components/Footer';
 
 export default function WebDesignFolkestone() {
   return (
@@ -94,8 +93,6 @@ export default function WebDesignFolkestone() {
           </div>
         </section>
       </div>
-
-      <Footer />
     </>
   );
 }

@@ -1,5 +1,4 @@
 import SEOWrapper from '../components/SEO/SEOWrapper';
-import Footer from '../components/Footer';
 
 export default function WebDesignDeal() {
   return (
@@ -91,8 +90,6 @@ export default function WebDesignDeal() {
           </div>
         </section>
       </div>
-
-      <Footer />
     </>
   );
 }

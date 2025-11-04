@@ -5,7 +5,6 @@ const StatisticsSection = lazy(() => import('../components/StatisticsSection'));
 const DashboardSection = lazy(() => import('../components/DashboardSection'));
 const SecuritySection = lazy(() => import('../components/SecuritySection'));
 const InterviewBookingSection = lazy(() => import('../components/InterviewBookingSection'));
-const Footer = lazy(() => import('../components/Footer'));
 const RegistrationModal = lazy(() => import('../components/RegistrationModal'));
 const TrustBar = lazy(() => import('../components/SocialProof/TrustBar'));
 import {
@@ -162,10 +161,6 @@ export default function HomePage() {
           <LazyGoogleReviews />
         </Suspense>
       </main>
-
-      <Suspense fallback={null}>
-        <Footer />
-      </Suspense>
       <Suspense fallback={null}>
         <RegistrationModal isOpen={isRegistrationModalOpen} onClose={() => setIsRegistrationModalOpen(false)} />
       </Suspense>

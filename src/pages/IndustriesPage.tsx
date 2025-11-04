@@ -1,5 +1,4 @@
 import SEOWrapper from '../components/SEO/SEOWrapper';
-import Footer from '../components/Footer';
 import { PexelsImage } from '../components/media/PexelsImage';
 
 export default function IndustriesPage() {
@@ -220,8 +219,6 @@ export default function IndustriesPage() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </>
   );
 }

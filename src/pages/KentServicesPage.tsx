@@ -1,6 +1,5 @@
 import { ArrowRight, Check } from 'lucide-react';
 import SEOWrapper from '../components/SEO/SEOWrapper';
-import Footer from '../components/Footer';
 
 export default function KentServicesPage() {
   const locations = [
@@ -333,8 +332,6 @@ export default function KentServicesPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }

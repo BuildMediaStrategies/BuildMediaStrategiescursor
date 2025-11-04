@@ -1,5 +1,4 @@
 import SEOWrapper from '../components/SEO/SEOWrapper';
-import Footer from '../components/Footer';
 
 export default function WebDesignCanterbury() {
   return (
@@ -92,8 +91,6 @@ export default function WebDesignCanterbury() {
           </div>
         </section>
       </div>
-
-      <Footer />
     </>
   );
 }
