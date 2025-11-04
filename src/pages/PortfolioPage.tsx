@@ -1,125 +1,45 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { ArrowRight } from 'lucide-react';
 import SEOWrapper from '../components/SEO/SEOWrapper';
-import ProjectCard from '../components/ProjectCard';
-import Portfolio3DCarousel from '../components/Portfolio/Portfolio3DCarousel';
-
-const pexels = (id: string, format: 'webp' | 'avif' = 'webp') => `/pexels/${id}.${format}`;
+import { caseStudies } from '../data/caseStudies';
 
 export default function PortfolioPage() {
-  const [view, setView] = React.useState<'grid' | 'carousel'>(() =>
-    typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches ? 'grid' : 'carousel'
-  );
-  const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches;
-
-  React.useEffect(() => {
-    const mq = window.matchMedia('(max-width: 767px)');
-    const update = () => {
-      if (mq.matches) setView('grid');
-    };
-    mq.addEventListener('change', update);
-    return () => mq.removeEventListener('change', update);
-  }, []);
-
-  const projects = [
+  const featuredProjects = [
     {
       title: 'CureCancer UCL',
-      summary: 'Charity website and AI operations for admin workflows.',
+      description: 'Charity website and AI operations for admin workflows',
       sector: 'Charity',
-      stack: 'React, TypeScript, AI Automation',
-      description: 'Built a comprehensive digital platform for cancer research charity operations. Integrated AI-driven workflow automation to streamline administrative tasks, donation processing, and volunteer coordination. The website serves as both a public-facing platform and an internal operations hub.',
-      features: [
-        'Custom donation platform with automated receipt generation',
-        'AI-powered admin workflow automation reducing manual tasks by 60%',
-        'Volunteer management system with automated scheduling',
-        'Mobile-optimized fundraising campaign pages',
-        'Real-time analytics dashboard for campaign performance',
-      ],
-      images: [
-        pexels('pexels-6647039', 'avif'),
-        pexels('pexels-6647112'),
-        pexels('pexels-6647028'),
-      ],
-      priorityImage: true,
-      imageWidth: 1200,
-      imageHeight: 800,
-      imageSizes: '(max-width: 1024px) 100vw, 60vw',
+      logo: '/ucl-icon.png',
+      slug: 'curecancer-ucl',
+      metrics: {
+        loadTime: '-72%',
+        conversions: '+165%',
+        revenue: '+£28K/qtr',
+      },
     },
     {
       title: 'SOS Electrical',
-      summary: 'Trades website and AI lead capture.',
+      description: 'Trades website and AI lead capture automation',
       sector: 'Trades',
-      stack: 'React, Vite, AI Integration',
-      description: 'Developed a high-converting website for an electrical services company with intelligent lead capture. AI system qualifies leads, schedules consultations, and manages customer inquiries 24/7. The platform reduced response time from hours to seconds while maintaining personal service quality.',
-      features: [
-        'AI chatbot handling initial customer inquiries and qualification',
-        'Smart scheduling system with automated calendar integration',
-        'Service area mapping with automatic quote adjustments',
-        'Mobile-first design optimized for on-site access',
-        'Lead tracking dashboard with conversion analytics',
-      ],
-      images: [
-        pexels('pexels-257736'),
-        pexels('pexels-1249611'),
-        pexels('architecture-building-amsterdam-blue-sky-162539'),
-      ],
-    },
-    {
-      title: 'Little & Co',
-      summary: 'Branding and web build for a consumer brand.',
-      sector: 'Branding',
-      stack: 'React, TypeScript, Custom Design',
-      description: 'Created a complete brand identity and digital presence for a premium consumer brand. From logo design to web development, every touchpoint was crafted to communicate quality and trust. The website serves as a brand showcase and e-commerce platform with seamless user experience.',
-      features: [
-        'Complete brand identity design including logo and style guide',
-        'Custom e-commerce platform with curated product experience',
-        'High-quality product photography integration',
-        'Streamlined checkout process with 40% conversion improvement',
-        'Content management system for easy product updates',
-      ],
-      images: [
-        pexels('pexels-4065876'),
-        pexels('pexels-3184292'),
-        pexels('pexels-3184296'),
-      ],
-    },
-    {
-      title: 'JCAS P&D + Interior Design',
-      summary: 'Website plus AI operations for quoting and invoicing.',
-      sector: 'Interior Design',
-      stack: 'React, Supabase, AI Automation',
-      description: 'Designed and built a complete business operations system for an interior design and painting firm. AI handles quote generation, invoice processing, and project tracking. The system transformed their workflow from manual spreadsheets to automated operations, saving 15+ hours per week.',
-      features: [
-        'AI-powered quoting system with automatic material calculations',
-        'Automated invoice generation and client billing',
-        'Project management dashboard with timeline tracking',
-        'Client portal for real-time project updates and approvals',
-        'Document automation for contracts and work orders',
-      ],
-      images: [
-        pexels('pexels-1648776'),
-        pexels('pexels-1090638'),
-        pexels('pexels-276724'),
-      ],
+      logo: '/sos-icon.png',
+      slug: 'sos-electrical-ltd',
+      metrics: {
+        loadTime: '-68%',
+        conversions: '+142%',
+        revenue: '+£12K/mo',
+      },
     },
     {
       title: 'Hamilton-Nexus',
-      summary: 'Website and project management dashboard for consulting ops.',
+      description: 'Website and project management dashboard for consulting operations',
       sector: 'Consulting',
-      stack: 'React, TypeScript, Supabase',
-      description:
-        'Built a unified client portal and internal dashboard to track projects, automate weekly status digests, and standardise reporting across engagements.',
-      features: [
-        'Role-based client access and views',
-        'Milestones, risks, and RAID tracking',
-        'Automated weekly status emails',
-        'Exportable PDF reports for leadership',
-      ],
-      images: [
-        pexels('pexels-3184292'),
-        pexels('pexels-3184296'),
-        pexels('pexels-4065876'),
-      ],
+      logo: '/hamilton-nexus-icon.png',
+      slug: 'hamilton-nexus',
+      metrics: {
+        loadTime: '-54%',
+        conversions: '+96%',
+        revenue: '+£17K/qtr',
+      },
     },
   ];
 
@@ -131,87 +51,158 @@ export default function PortfolioPage() {
         canonical="https://buildmediastrategies.com/portfolio"
         keywords="web design portfolio Kent, case studies, client results Dover Deal"
       />
-      <Helmet>
-        <link
-          rel="preload"
-          as="image"
-          href="/pexels/pexels-6647039.avif"
-          type="image/avif"
-          fetchpriority="high"
-        />
-      </Helmet>
 
-      <div className="bg-black min-h-screen pt-24">
-        <section className="py-16 lg:py-20 px-5 lg:px-11" style={{ backgroundColor: '#0A0A0A' }}>
+      <div className="min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>
+        {/* Hero Section */}
+        <section className="pt-32 pb-20 px-6">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-4xl lg:text-6xl font-sans font-bold text-white mb-4 leading-tight">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               Selected Work
             </h1>
-            <p className="text-lg lg:text-xl font-sans font-normal leading-relaxed" style={{ color: '#BBBBBB' }}>
+            <p className="text-xl sm:text-2xl text-gray-400 max-w-3xl leading-relaxed">
               Real projects for real businesses, built to solve specific problems and drive measurable outcomes.
             </p>
-            <p className="text-sm font-sans font-normal mt-4" style={{ color: '#888888' }}>
-              View related services: <a href="/web-design" className="text-white hover:underline">Web Design</a> • <a href="/ai-operations" className="text-white hover:underline">AI Operations</a>
-            </p>
-          </div>
-        </section>
-
-        <section className="px-5 lg:px-11 py-4" style={{ backgroundColor: '#0A0A0A' }}>
-          <div className="max-w-7xl mx-auto">
-            <div className="flex items-center gap-2">
-              <button onClick={() => setView('grid')} className={`px-3 py-1.5 text-sm border ${view === 'grid' ? 'border-white text-white' : 'border-gray-700 text-gray-300'}`}>Grid</button>
-              <button onClick={() => setView('carousel')} disabled={typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches} title={(typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches) ? 'Carousel is desktop only' : 'Show 3D carousel'} className={`px-3 py-1.5 text-sm border ${view === 'carousel' ? 'border-white text-white' : 'border-gray-700 text-gray-300'} ${(typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches) ? 'opacity-50 cursor-not-allowed' : ''}`}>3D Carousel</button>
+            <div className="mt-8 flex flex-wrap gap-3 text-sm">
+              <span className="text-gray-500">View related services:</span>
+              <a
+                href="/web-design"
+                className="text-purple-400 hover:text-purple-300 transition-colors underline"
+              >
+                Web Design
+              </a>
+              <span className="text-gray-700">•</span>
+              <a
+                href="/ai-operations"
+                className="text-purple-400 hover:text-purple-300 transition-colors underline"
+              >
+                AI Operations
+              </a>
             </div>
           </div>
         </section>
 
-        <section style={{ backgroundColor: '#0A0A0A' }}>
-          <div className="w-full">
-            {view === 'carousel' && (
-              <div className="max-w-7xl mx-auto px-5 lg:px-11 pb-10">
-                <Portfolio3DCarousel />
-              </div>
-            )}
-            {view === 'grid' && projects.map((project, index) => {
-              const linkMap: Record<string, string> = {
-                'CureCancer UCL': 'curecancer-ucl',
-                'SOS Electrical': 'sos-electrical-ltd',
-                'Hamilton-Nexus': 'hamilton-nexus',
-              };
-              const slug = linkMap[project.title as keyof typeof linkMap];
-              return (
-                <div key={index}>
-                  <ProjectCard
-                    title={project.title}
-                    summary={project.summary}
-                    sector={project.sector}
-                    stack={project.stack}
-                    description={project.description}
-                    features={project.features}
-                    images={project.images}
-                    imageOnRight={index % 2 === 0}
-                    priorityImage={project.priorityImage}
-                    imageWidth={project.imageWidth}
-                    imageHeight={project.imageHeight}
-                    imageSizes={project.imageSizes}
-                  />
-                  {slug && (
-                    <div className="px-5 lg:px-11 py-6 border-b border-gray-800">
-                      <a
-                        href={`/case-studies/${slug}`}
-                        className="inline-block text-white hover:text-gray-300 transition-colors underline"
-                      >
-                        Read full case study →
-                      </a>
+        {/* Featured Projects Grid */}
+        <section className="px-6 pb-20">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              {featuredProjects.map((project, index) => (
+                <a
+                  key={index}
+                  href={`/case-studies/${project.slug}`}
+                  className="group relative bg-black/50 border border-gray-800 rounded-2xl p-8 hover:border-purple-500/50 hover:shadow-[0_0_40px_rgba(168,85,247,0.25)] transition-all duration-300"
+                >
+                  {/* Logo */}
+                  <div className="mb-8 h-16 flex items-center">
+                    <img
+                      src={project.logo}
+                      alt={`${project.title} logo`}
+                      className="h-12 w-auto object-contain filter brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity"
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className="mb-6">
+                    <div className="text-sm text-gray-500 mb-2">{project.sector}</div>
+                    <h2 className="text-2xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors">
+                      {project.title}
+                    </h2>
+                    <p className="text-gray-400 leading-relaxed">
+                      {project.description}
+                    </p>
+                  </div>
+
+                  {/* Metrics */}
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center justify-between py-2 border-t border-gray-800">
+                      <span className="text-sm text-gray-500">Load Time</span>
+                      <span className="text-sm font-semibold text-white">{project.metrics.loadTime}</span>
                     </div>
-                  )}
-                </div>
-              );
-            })}
+                    <div className="flex items-center justify-between py-2 border-t border-gray-800">
+                      <span className="text-sm text-gray-500">Conversions</span>
+                      <span className="text-sm font-semibold text-white">{project.metrics.conversions}</span>
+                    </div>
+                    <div className="flex items-center justify-between py-2 border-t border-b border-gray-800">
+                      <span className="text-sm text-gray-500">Revenue Impact</span>
+                      <span className="text-sm font-semibold text-white">{project.metrics.revenue}</span>
+                    </div>
+                  </div>
+
+                  {/* CTA */}
+                  <div className="flex items-center text-purple-400 group-hover:text-purple-300 transition-colors">
+                    <span className="text-sm font-medium">Read case study</span>
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
         </section>
 
-        <div className="h-20" style={{ backgroundColor: '#0A0A0A' }}></div>
+        {/* Other Projects Section */}
+        <section className="px-6 pb-20">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12">Other Projects</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-black/50 border border-gray-800 rounded-2xl p-8 hover:border-gray-700 transition-colors">
+                <div className="text-sm text-gray-500 mb-3">Branding</div>
+                <h3 className="text-xl font-bold text-white mb-3">Little & Co</h3>
+                <p className="text-gray-400 mb-4 leading-relaxed">
+                  Complete brand identity and web build for a premium consumer brand. From logo design to e-commerce platform.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-xs px-3 py-1 rounded-full bg-gray-800/50 border border-gray-700 text-gray-400">
+                    React
+                  </span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-gray-800/50 border border-gray-700 text-gray-400">
+                    TypeScript
+                  </span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-gray-800/50 border border-gray-700 text-gray-400">
+                    E-commerce
+                  </span>
+                </div>
+              </div>
+
+              <div className="bg-black/50 border border-gray-800 rounded-2xl p-8 hover:border-gray-700 transition-colors">
+                <div className="text-sm text-gray-500 mb-3">Interior Design</div>
+                <h3 className="text-xl font-bold text-white mb-3">JCAS P&D + Interior Design</h3>
+                <p className="text-gray-400 mb-4 leading-relaxed">
+                  Website plus AI operations for automated quoting and invoicing. Saving 15+ hours per week on admin.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-xs px-3 py-1 rounded-full bg-gray-800/50 border border-gray-700 text-gray-400">
+                    React
+                  </span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-gray-800/50 border border-gray-700 text-gray-400">
+                    Supabase
+                  </span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-gray-800/50 border border-gray-700 text-gray-400">
+                    AI Automation
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="px-6 pb-32">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="bg-purple-500/5 border border-purple-500/30 rounded-2xl p-12 shadow-[0_0_40px_rgba(168,85,247,0.2)]">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                Ready to see results like these?
+              </h2>
+              <p className="text-xl text-gray-400 mb-8 leading-relaxed">
+                Let's discuss your project and how we can help drive measurable growth for your business.
+              </p>
+              <a
+                href="/contact"
+                className="inline-block px-8 py-4 bg-purple-500/10 border border-purple-500 rounded-full text-white font-semibold hover:bg-purple-500/20 hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-300"
+              >
+                Start Your Project
+              </a>
+            </div>
+          </div>
+        </section>
       </div>
     </>
   );

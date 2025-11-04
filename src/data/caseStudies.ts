@@ -3,6 +3,7 @@ export type CaseStudy = {
   title: string;
   client: string;
   sector: string;
+  logo?: string;
   hero: {
     subtitle?: string;
     image?: string;
@@ -42,6 +43,7 @@ export const caseStudies: CaseStudy[] = [
     title: 'CureCancer @ UCL',
     client: 'CureCancer @ University College London',
     sector: 'Charity / Research',
+    logo: '/ucl-icon.png',
     hero: {
       subtitle: 'Website rebuild and marketing management for research fundraising',
       metrics: {
@@ -106,6 +108,7 @@ export const caseStudies: CaseStudy[] = [
     title: 'SOS Electrical LTD',
     client: 'SOS Electrical LTD',
     sector: 'Trades',
+    logo: '/sos-icon.png',
     hero: {
       subtitle: 'Website and lead generation automation',
       metrics: {
@@ -159,6 +162,7 @@ export const caseStudies: CaseStudy[] = [
     title: 'Hamilton-Nexus',
     client: 'Hamilton-Nexus',
     sector: 'Consulting / Operations',
+    logo: '/hamilton-nexus-icon.png',
     hero: {
       subtitle: 'Website and project management dashboard',
       metrics: {
