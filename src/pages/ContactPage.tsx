@@ -126,32 +126,7 @@ export default function ContactPage() {
         canonical="https://buildmediastrategies.com/contact"
         keywords="contact web designer Kent, free consultation, web design quote Dover"
       />
-      <a href="#main-content" className="skip-to-content">
-        Skip to main content
-      </a>
-
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 lg:px-11 py-5 bg-black bg-opacity-30 backdrop-blur-sm" role="navigation" aria-label="Main navigation">
-        <a href="/" className="flex items-center space-x-2" aria-label="BuildMediaStrategies home">
-          <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center" aria-hidden="true">
-            <div className="w-3.5 h-3.5 bg-black rounded-full"></div>
-          </div>
-          <span className="text-white font-normal text-lg">BuildMediaStrategies</span>
-        </a>
-
-        <div className="hidden md:flex items-center space-x-7">
-          <a href="/web-design" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Web Design</a>
-          <a href="/ai-operations" className="text-white cursor-pointer hover:text-gray-300 transition-colors">AI Operations</a>
-          <a href="/portfolio" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Portfolio</a>
-          <a href="/#testimonials" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Testimonials</a>
-          <a href="/contact" className="text-white cursor-pointer hover:text-gray-300 transition-colors">Contact</a>
-        </div>
-
-        <button className="md:hidden text-white" aria-label="Open mobile menu">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-        </button>
-      </nav>
-
-      <main id="main-content" className="bg-black min-h-screen pt-24" style={{ backgroundColor: '#0A0A0A' }}>
+      <main className="bg-black min-h-screen pt-24" style={{ backgroundColor: '#0A0A0A' }}>
         <div className="max-w-4xl mx-auto px-5 sm:px-6 py-12 sm:py-16 lg:py-20">
           <div className="text-center mb-12 sm:mb-16">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-white mb-4 sm:mb-6 leading-tight">
