@@ -61,6 +61,7 @@ function App() {
 function RouteChangeTracker() {
   const location = useLocation();
   useEffect(() => {
+    window.scrollTo(0, 0);
     trackPageView(location.pathname);
   }, [location.pathname]);
   return null;

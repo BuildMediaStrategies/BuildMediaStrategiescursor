@@ -6,26 +6,13 @@ export default function Footer() {
     <footer className="py-16 px-6" style={{ backgroundColor: '#0A0A0A' }} role="contentinfo">
       <div className="max-w-7xl mx-auto">
         {/* Main Content Area */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 lg:gap-8 mb-16 text-center md:text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12 text-center md:text-left">
           {/* Logo and Branding */}
           <div className="lg:col-span-1">
-            <a href="/" className="flex items-center space-x-2" aria-label="BuildMediaStrategies home">
-              <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center" aria-hidden="true">
-                <div className="w-3 h-3 bg-black rounded-full"></div>
-              </div>
-              <span className="text-white font-bold text-xl">BuildMediaStrategies</span>
+            <a href="/" className="inline-block text-white font-bold text-xl hover:text-gray-300 transition-colors" aria-label="BuildMediaStrategies home">
+              Build Media Strategies
             </a>
-          </div>
-
-          {/* Company Column */}
-          <div className="lg:col-span-1">
-            <h3 className="text-white font-semibold text-base mb-4">Company</h3>
-            <ul className="space-y-3">
-              <li><a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">Our Process</a></li>
-              <li><a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">Portfolio</a></li>
-              <li><a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">Contact</a></li>
-            </ul>
+            <p className="text-gray-400 text-sm mt-4">Web design and AI operations for businesses across Kent.</p>
           </div>
 
           {/* Services Column */}
@@ -34,16 +21,14 @@ export default function Footer() {
             <ul className="space-y-3">
               <li><a href="/web-design" className="text-gray-400 text-sm hover:text-white transition-colors">Web Design</a></li>
               <li><a href="/ai-operations" className="text-gray-400 text-sm hover:text-white transition-colors">AI Operations</a></li>
-              <li><a href="/industries" className="text-gray-400 text-sm hover:text-white transition-colors">Industries</a></li>
               <li><a href="/portfolio" className="text-gray-400 text-sm hover:text-white transition-colors">Portfolio</a></li>
-              <li><a href="/#testimonials" className="text-gray-400 text-sm hover:text-white transition-colors">Testimonials</a></li>
               <li><a href="/contact" className="text-gray-400 text-sm hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
 
           {/* Areas We Serve Column */}
           <div className="lg:col-span-1">
-            <h3 className="text-white font-semibold text-base mb-4">Areas We Serve</h3>
+            <h3 className="text-white font-semibold text-base mb-4">Kent Areas</h3>
             <ul className="space-y-3">
               <li><a href="/web-design-dover" className="text-gray-400 text-sm hover:text-white transition-colors">Dover</a></li>
               <li><a href="/web-design-deal" className="text-gray-400 text-sm hover:text-white transition-colors">Deal</a></li>
@@ -52,42 +37,14 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Resources Column */}
+          {/* Company Column */}
           <div className="lg:col-span-1">
-            <h3 className="text-white font-semibold text-base mb-4">Resources</h3>
+            <h3 className="text-white font-semibold text-base mb-4">Company</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">Blog</a></li>
-              <li><a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">Case Studies</a></li>
-              <li><a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">Whitepapers</a></li>
-              <li><a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">eBooks</a></li>
+              <li><a href="/about" className="text-gray-400 text-sm hover:text-white transition-colors">About</a></li>
+              <li><a href="/blog" className="text-gray-400 text-sm hover:text-white transition-colors">Blog</a></li>
+              <li><a href="/industries" className="text-gray-400 text-sm hover:text-white transition-colors">Industries</a></li>
             </ul>
-          </div>
-
-          {/* Privacy Column */}
-          <div className="lg:col-span-1">
-            <h3 className="text-white font-semibold text-base mb-4">Privacy</h3>
-            <ul className="space-y-3">
-              <li><a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">Cookie Policy</a></li>
-              <li><a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">Data Protection</a></li>
-              <li><a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">Third-Party Services</a></li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Explore Section */}
-        <div className="border-t border-gray-800 pt-8 pb-8">
-          <h3 className="text-white font-semibold text-base mb-4">Explore</h3>
-          <div className="flex flex-wrap gap-4">
-            <a href="/web-design" className="text-gray-400 text-sm hover:text-white transition-colors">Web Design</a>
-            <span className="text-gray-700">•</span>
-            <a href="/ai-operations" className="text-gray-400 text-sm hover:text-white transition-colors">AI Operations</a>
-            <span className="text-gray-700">•</span>
-            <a href="/industries" className="text-gray-400 text-sm hover:text-white transition-colors">Industries</a>
-            <span className="text-gray-700">•</span>
-            <a href="/portfolio" className="text-gray-400 text-sm hover:text-white transition-colors">Portfolio</a>
-            <span className="text-gray-700">•</span>
-            <a href="/contact" className="text-gray-400 text-sm hover:text-white transition-colors">Contact</a>
           </div>
         </div>
 
