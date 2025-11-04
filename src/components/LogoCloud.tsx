@@ -9,8 +9,8 @@ export default function LogoCloud() {
         .as-white { filter: brightness(0) invert(1) contrast(140%); }
       `}</style>
 
-      {/* Preload CureCancer asset so it’s in cache before the slider renders */}
-      <link rel="preload" as="image" href="/assets/curecancer-white.png" />
+      {/* (Optional) you can remove this since we’re not preloading CureCancer now */}
+      {/* <link rel="preload" as="image" href="/assets/curecancer-white.png" /> */}
 
       <div className="group relative m-auto max-w-7xl px-6">
         <div className="flex flex-col items-center md:flex-row">
@@ -65,15 +65,12 @@ export default function LogoCloud() {
                 />
               </div>
 
-              {/* CureCancer (larger for visibility, eager + high priority) */}
+              {/* CureCancer slot -> use existing UCL icon until CureCancer asset is added */}
               <div className="flex">
                 <img
                   className="mx-10 h-16 md:h-[4.8rem] w-auto object-contain opacity-95 contrast-125"
-                  src="/assets/curecancer-white.png"
+                  src="/assets/ucl icon only.png"
                   alt="CureCancer UCL Logo"
-                  loading="eager"
-                  fetchpriority="high"
-                  decoding="async"
                 />
               </div>
 
