@@ -2,7 +2,6 @@ import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
 import { Timeline } from '../components/ui/timeline';
 import { PexelsImage } from '../components/media/PexelsImage';
-import Header from '../components/Layout/Header';
 
 export default function AIOperationsPage() {
   const cardImage = (id: string, alt: string) => (
@@ -296,8 +295,6 @@ export default function AIOperationsPage() {
       <a href="#main-content" className="skip-to-content">
         Skip to main content
       </a>
-
-      <Header />
 
       <main id="main-content" className="bg-black min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>
         <section className="pt-32 pb-12 px-5 lg:px-11" aria-labelledby="hero-heading">

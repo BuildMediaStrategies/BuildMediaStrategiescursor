@@ -4,7 +4,6 @@ import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
 import ProjectCard from '../components/ProjectCard';
 import Portfolio3DCarousel from '../components/Portfolio/Portfolio3DCarousel';
-import Header from '../components/Layout/Header';
 
 const pexels = (id: string, format: 'webp' | 'avif' = 'webp') => `/pexels/${id}.${format}`;
 
@@ -142,8 +141,6 @@ export default function PortfolioPage() {
           fetchpriority="high"
         />
       </Helmet>
-
-      <Header />
 
       <div className="bg-black min-h-screen pt-24">
         <section className="py-16 lg:py-20 px-5 lg:px-11" style={{ backgroundColor: '#0A0A0A' }}>

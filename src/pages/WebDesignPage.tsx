@@ -3,7 +3,6 @@ import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
 import { BentoCard, BentoGrid } from '../components/ui/bento-grid';
 import { PexelsImage } from '../components/media/PexelsImage';
-import Header from '../components/Layout/Header';
 
 export default function WebDesignPage() {
   const features = [
@@ -144,8 +143,6 @@ export default function WebDesignPage() {
       <a href="#main-content" className="skip-to-content">
         Skip to main content
       </a>
-
-      <Header />
 
       <main id="main-content" className="bg-black min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>
         <section className="pt-32 pb-16 px-5 lg:px-11" aria-labelledby="hero-heading">

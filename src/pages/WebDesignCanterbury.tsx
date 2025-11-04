@@ -1,6 +1,5 @@
 import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
-import Header from '../components/Layout/Header';
 
 export default function WebDesignCanterbury() {
   return (
@@ -12,7 +11,6 @@ export default function WebDesignCanterbury() {
         keywords="web design Canterbury, Canterbury web designer, websites Canterbury Kent"
       />
 
-      <Header />
       <div className="min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>
 
         <section className="pt-32 pb-20 px-6">

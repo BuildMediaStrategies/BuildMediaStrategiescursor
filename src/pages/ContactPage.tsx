@@ -4,7 +4,6 @@ import { trackFormSubmission } from '../lib/analytics/conversions';
 // import { createClient } from '@supabase/supabase-js';
 import SEO from '../components/SEO';
 import Footer from '../components/Footer';
-import Header from '../components/Layout/Header';
 
 // Temporarily disabled - will configure in Phase 3
 // const supabase = createClient(
@@ -84,8 +83,6 @@ export default function ContactPage() {
         <a href="#main-content" className="skip-to-content">
           Skip to main content
         </a>
-
-        <Header />
 
         <main id="main-content" className="bg-black min-h-screen pt-24" style={{ backgroundColor: '#0A0A0A' }}>
           <div className="max-w-2xl mx-auto px-5 py-20">

@@ -1,6 +1,5 @@
 import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
-import Header from '../components/Layout/Header';
 
 export default function WebDesignFolkestone() {
   return (
@@ -12,7 +11,6 @@ export default function WebDesignFolkestone() {
         keywords="web design Folkestone, Folkestone web designer, websites Folkestone Kent"
       />
 
-      <Header />
       <div className="min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>
 
         <section className="pt-32 pb-20 px-6">

@@ -1,7 +1,6 @@
 import { Check, ArrowRight } from 'lucide-react';
 import SEOWrapper from '../components/SEO/SEOWrapper';
 import Footer from '../components/Footer';
-import Header from '../components/Layout/Header';
 
 export default function WebDesignDover() {
   const services = [
@@ -57,7 +56,6 @@ export default function WebDesignDover() {
         ogType="website"
       />
 
-      <Header />
       <div className="min-h-screen" style={{ backgroundColor: '#000000' }}>
 
         {/* HERO SECTION */}
