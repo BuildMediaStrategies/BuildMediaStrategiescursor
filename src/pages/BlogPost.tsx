@@ -18,7 +18,12 @@ export default function BlogPostPage() {
   if (!post) {
     return (
       <SEOWrapper title="Post not found" description="Post not found" canonical={`https://buildmediastrategies.com/blog/${slug}` }>
-        <div className="max-w-3xl mx-auto px-6 py-12 text-white">Post not found.</div>
+        <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#0A0A0A' }}>
+          <div className="text-center">
+            <h1 className="text-3xl font-bold text-white mb-4">Post not found</h1>
+            <a href="/blog" className="text-purple-400 hover:text-purple-300 transition-colors">← Back to blog</a>
+          </div>
+        </div>
       </SEOWrapper>
     );
   }
@@ -35,56 +40,80 @@ export default function BlogPostPage() {
       canonical={`https://buildmediastrategies.com/blog/${slug}`}
       type="article"
     >
-      <article className="max-w-6xl mx-auto px-6 py-16 sm:py-24 grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12">
-        <div>
-          <header className="mb-6">
-            <div className="text-sm text-gray-400">{date}</div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-white mt-1">{title}</h1>
-          </header>
-          <div className="prose prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: rendered.html }} />
+      <div className="min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>
+        <article className="max-w-6xl mx-auto px-6 py-24 sm:py-32 grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12">
+          <div>
+            <a href="/blog" className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors mb-8 text-sm">
+              ← Back to blog
+            </a>
 
-          {/* Author bio */}
-          <section className="mt-10 p-6 border border-gray-800 rounded-3xl bg-black/30">
-            <div className="text-sm text-gray-400">Written by</div>
-            <div className="text-white font-semibold">{author}</div>
-            <p className="text-gray-400 text-sm mt-1">We build fast, conversion‑focused sites and AI operations for Kent businesses.</p>
-          </section>
+            <header className="mb-10">
+              <div className="text-sm text-gray-500 mb-3">{date}</div>
+              <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight">{title}</h1>
+              <div className="mt-6 flex items-center gap-3">
+                <div className="text-gray-400 text-sm">
+                  By <span className="text-white font-medium">{author}</span>
+                </div>
+              </div>
+            </header>
 
-          {/* CTA */}
-          <section className="mt-8 p-8 rounded-3xl border border-gray-700 bg-gradient-to-r from-blue-50/10 to-purple-50/10 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300">
-            <div className="text-white font-semibold mb-2">Ready to modernise your website?</div>
-            <p className="text-gray-300 text-sm mb-3">Get a free assessment. We’ll identify speed wins and conversion blockers in minutes.</p>
-            <a href="/contact" className="inline-block px-5 py-2.5 rounded-full border border-gray-600 text-white hover:border-gray-400 transition-all duration-300 hover:shadow-lg">Book a Free Assessment</a>
-          </section>
-        </div>
+            <div className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-p:text-gray-300 prose-a:text-purple-400 prose-a:no-underline hover:prose-a:text-purple-300 prose-strong:text-white prose-code:text-purple-300 prose-code:bg-gray-900 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:bg-gray-900 prose-pre:border prose-pre:border-gray-800" dangerouslySetInnerHTML={{ __html: rendered.html }} />
 
-        {/* Sidebar */}
-        <aside className="lg:sticky lg:top-20 h-fit">
-          {/* TOC */}
-          {rendered.toc.length > 0 && (
-            <div className="mb-6 p-4 border border-gray-800 rounded-2xl bg-black/30">
-              <div className="text-sm text-gray-400 mb-2">On this page</div>
-              <nav className="space-y-1 text-sm">
-                {rendered.toc.map((t) => (
-                  <a key={t.id} href={`#${t.id}`} className={`block hover:underline ${t.level === 2 ? 'pl-0' : 'pl-3'}`}>{t.text}</a>
-                ))}
-              </nav>
-            </div>
-          )}
+            {/* Author bio */}
+            <section className="mt-12 p-8 border border-gray-800 rounded-2xl bg-black/50">
+              <div className="text-sm text-gray-500 mb-2">Written by</div>
+              <div className="text-white font-bold text-lg mb-2">{author}</div>
+              <p className="text-gray-400 leading-relaxed">We build fast, conversion-focused websites and AI operations for Kent businesses. Helping companies modernize their digital presence and automate workflows.</p>
+            </section>
 
-          {/* Related */}
-          <div className="p-4 border border-gray-800 rounded-2xl bg-black/30">
-            <div className="text-sm text-gray-400 mb-2">Related posts</div>
-            <div className="space-y-2">
-              {related.map((r) => (
-                <a key={r.slug} href={`/blog/${r.slug}`} className="block text-sm text-white hover:underline">
-                  {r.frontmatter.title || r.slug}
-                </a>
-              ))}
-            </div>
+            {/* CTA */}
+            <section className="mt-8 p-8 rounded-2xl border border-purple-500/30 bg-purple-500/5 shadow-[0_0_30px_rgba(168,85,247,0.15)] hover:shadow-[0_0_40px_rgba(168,85,247,0.25)] transition-all duration-300">
+              <div className="text-white font-bold text-xl mb-3">Ready to modernise your website?</div>
+              <p className="text-gray-300 mb-6 leading-relaxed">Get a free assessment. We'll identify speed wins and conversion blockers in minutes.</p>
+              <a href="/contact" className="inline-block px-6 py-3 rounded-full bg-purple-500/10 border border-purple-500 text-white hover:bg-purple-500/20 hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all duration-300 font-medium">
+                Book a Free Assessment
+              </a>
+            </section>
           </div>
-        </aside>
-      </article>
+
+          {/* Sidebar */}
+          <aside className="lg:sticky lg:top-24 h-fit space-y-6">
+            {/* TOC */}
+            {rendered.toc.length > 0 && (
+              <div className="p-5 border border-gray-800 rounded-2xl bg-black/50">
+                <div className="text-sm font-semibold text-white mb-3">On this page</div>
+                <nav className="space-y-2 text-sm">
+                  {rendered.toc.map((t) => (
+                    <a
+                      key={t.id}
+                      href={`#${t.id}`}
+                      className={`block text-gray-400 hover:text-purple-400 transition-colors ${t.level === 2 ? 'pl-0' : 'pl-4'}`}
+                    >
+                      {t.text}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+            )}
+
+            {/* Related */}
+            <div className="p-5 border border-gray-800 rounded-2xl bg-black/50">
+              <div className="text-sm font-semibold text-white mb-3">Related posts</div>
+              <div className="space-y-3">
+                {related.map((r) => (
+                  <a
+                    key={r.slug}
+                    href={`/blog/${r.slug}`}
+                    className="block text-sm text-gray-400 hover:text-purple-400 transition-colors leading-snug"
+                  >
+                    {r.frontmatter.title || r.slug}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </aside>
+        </article>
+      </div>
     </SEOWrapper>
   );
 }
