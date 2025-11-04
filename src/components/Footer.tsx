@@ -10,11 +10,17 @@ export default function Footer() {
           {/* Logo and Branding */}
           <div className="lg:col-span-1">
             <a href="/" className="inline-block hover:opacity-80 transition-opacity" aria-label="BuildMediaStrategies home">
-              <img
-                src="/logo.png"
-                alt="Build Media Strategies"
-                className="h-8 w-auto object-contain"
-              />
+              <picture>
+                <source srcSet="/logo.webp" type="image/webp" />
+                <img
+                  src="/logo.png"
+                  alt="Build Media Strategies"
+                  className="h-8 w-auto object-contain"
+                  width="200"
+                  height="32"
+                  loading="lazy"
+                />
+              </picture>
             </a>
             <p className="text-gray-400 text-sm mt-4">Web design and AI operations for businesses across Kent.</p>
           </div>
