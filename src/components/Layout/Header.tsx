@@ -12,7 +12,7 @@ export default function Header() {
             <img
               src="/logo.png"
               alt="Build Media Strategies"
-              className="h-[4.6rem] w-auto object-contain"
+              className="h-[4.8rem] w-auto object-contain"
               width="200"
               height="32"
               loading="eager"
