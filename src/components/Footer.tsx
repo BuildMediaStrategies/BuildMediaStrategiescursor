@@ -9,8 +9,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12 text-center md:text-left">
           {/* Logo and Branding */}
           <div className="lg:col-span-1">
-            <a href="/" className="inline-block text-white font-bold text-xl hover:text-gray-300 transition-colors" aria-label="BuildMediaStrategies home">
-              Build Media Strategies
+            <a href="/" className="inline-block hover:opacity-80 transition-opacity" aria-label="BuildMediaStrategies home">
+              <img
+                src="/logo.png"
+                alt="Build Media Strategies"
+                className="h-8 w-auto object-contain"
+              />
             </a>
             <p className="text-gray-400 text-sm mt-4">Web design and AI operations for businesses across Kent.</p>
           </div>
