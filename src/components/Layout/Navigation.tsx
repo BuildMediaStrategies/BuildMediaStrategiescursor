@@ -75,14 +75,16 @@ export default function Navigation() {
           {/* Header matching the main nav - white background with logo */}
           <div className="bg-white/90 backdrop-blur-sm border-b border-gray-100">
             <div className="px-5 py-3 flex items-center justify-between">
-              <img
-                src="/assets/bmsnewlogo sky.png"
-                alt="Build Media Strategies"
-                className="h-8 w-auto object-contain scale-[3.25] origin-left translate-y-[12px]"
-                width="320"
-                height="88"
-                loading="eager"
-              />
+              <div className="flex items-center rounded-3xl px-3 py-1 -ml-8">
+                <img
+                  src="/assets/bmsnewlogo sky.png"
+                  alt="Build Media Strategies"
+                  className="h-8 w-auto object-contain scale-[3.25] origin-left translate-y-[12px]"
+                  width="320"
+                  height="88"
+                  loading="eager"
+                />
+              </div>
               {/* Clickable X button */}
               <button
                 type="button"
