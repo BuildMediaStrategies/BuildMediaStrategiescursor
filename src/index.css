@@ -127,3 +127,86 @@ a.link-sky:hover{ opacity:.85; }
 a:focus-visible, button:focus-visible{
   outline:2px solid #2E7BFF; outline-offset:2px;
 }
+
+/* Button styles with gradient */
+.btn-gradient {
+  background: var(--sky-gradient);
+  color: white;
+  border: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 122, 0, 0.3), 0 5px 15px rgba(46, 123, 255, 0.2);
+}
+
+.btn-gradient-outline {
+  background: white;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient-outline::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: var(--sky-gradient);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.btn-gradient-outline:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 122, 0, 0.2), 0 5px 15px rgba(46, 123, 255, 0.15);
+}
+
+/* Gradient glow effects */
+.glow-gradient {
+  box-shadow: 0 0 20px rgba(255, 122, 0, 0.3), 0 0 40px rgba(46, 123, 255, 0.2);
+}
+
+.glow-gradient-hover {
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-gradient-hover:hover {
+  box-shadow: 0 0 30px rgba(255, 122, 0, 0.4), 0 0 60px rgba(46, 123, 255, 0.3);
+}
+
+/* Section backgrounds */
+.section-white {
+  background: #ffffff;
+}
+
+.section-gradient-subtle {
+  background: linear-gradient(135deg, #fff 0%, #fff5f0 50%, #f0f5ff 100%);
+}
+
+/* Card with gradient border */
+.card-gradient-border {
+  background: white;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.card-gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: var(--sky-gradient);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}

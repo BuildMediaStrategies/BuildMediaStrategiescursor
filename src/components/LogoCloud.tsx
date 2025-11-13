@@ -36,14 +36,11 @@ const logos: Logo[] = [
 
 export default function LogoCloud() {
   return (
-    <section className="bg-black overflow-hidden py-16">
-      {/* Force-white filter for black PNGs (GitHub only) */}
-      <style>{`.as-white { filter: brightness(0) invert(1) contrast(140%); }`}</style>
-
+    <section className="bg-white overflow-hidden py-16 border-y border-gray-200">
       <div className="group relative m-auto max-w-7xl px-6">
         <div className="flex flex-col items-center md:flex-row">
-          <div className="md:max-w-44 md:border-r md:pr-6">
-            <p className="text-end text-sm text-white">Trusted by businesses that scale</p>
+          <div className="md:max-w-44 md:border-r md:border-gray-200 md:pr-6">
+            <p className="text-end text-sm text-sky-gradient font-medium">Trusted by businesses that scale</p>
           </div>
 
           <div className="relative py-6 md:w-[calc(100%-11rem)]">
@@ -64,8 +61,8 @@ export default function LogoCloud() {
             </InfiniteSlider>
 
             {/* edge fades */}
-            <div className="bg-gradient-to-r from-black absolute inset-y-0 left-0 w-20" />
-            <div className="bg-gradient-to-l from-black absolute inset-y-0 right-0 w-20" />
+            <div className="bg-gradient-to-r from-white absolute inset-y-0 left-0 w-20" />
+            <div className="bg-gradient-to-l from-white absolute inset-y-0 right-0 w-20" />
             <ProgressiveBlur className="pointer-events-none absolute left-0 top-0 h-full w-20" direction="left" blurIntensity={1} />
             <ProgressiveBlur className="pointer-events-none absolute right-0 top-0 h-full w-20" direction="right" blurIntensity={1} />
           </div>

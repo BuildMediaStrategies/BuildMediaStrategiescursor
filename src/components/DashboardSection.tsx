@@ -1,29 +1,25 @@
 export default function DashboardSection() {
   return (
-    <section className="py-12 sm:py-16 lg:py-20 px-5 sm:px-6 text-center lg:text-left" style={{ backgroundColor: '#0A0A0A' }}>
+    <section className="py-12 sm:py-16 lg:py-20 px-5 sm:px-6 text-center lg:text-left bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
           {/* Right Section: Text Content */}
           <div className="lg:order-2 lg:pl-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold text-white mb-5 sm:mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold text-gray-900 mb-5 sm:mb-6 leading-tight">
               Web Design That<br/>
-              <span className="bg-gradient-to-b from-white to-gray-600 bg-clip-text text-transparent">
+              <span className="text-sky-gradient">
                 Drives Revenue
               </span>
             </h2>
 
-            <p className="text-base sm:text-lg font-sans font-normal mb-6 sm:mb-8 leading-relaxed" style={{ color: '#BBBBBB' }}>
+            <p className="text-base sm:text-lg font-sans font-normal mb-6 sm:mb-8 leading-relaxed text-gray-600">
               Every pixel serves a purpose. We build websites designed to convert
               visitors into paying customers and deliver measurable ROI.
             </p>
 
             <a
               href="/portfolio"
-              className="inline-block px-6 py-3 rounded-lg font-sans font-normal text-white border transition-all duration-300 hover:border-gray-400 hover:shadow-lg active:scale-95"
-              style={{
-                backgroundColor: '#1A1A1A',
-                borderColor: '#444444'
-              }}
+              className="btn-gradient inline-block px-6 py-3 rounded-lg font-sans font-normal text-white active:scale-95"
             >
               View Our Work
             </a>

@@ -12,9 +12,9 @@ export default function Navigation() {
   ];
 
   const itemClass = ({ isActive }: { isActive: boolean }) =>
-    `link-sky px-3 py-2 rounded-3xl transition-all duration-300 font-bold ${
+    `link-sky px-3 py-2 rounded-3xl transition-all duration-300 font-bold glow-gradient-hover ${
       isActive
-        ? 'bg-gradient-to-r from-orange-100/30 to-blue-100/30'
+        ? 'bg-gradient-to-r from-orange-100/30 to-blue-100/30 glow-gradient'
         : 'hover:bg-gray-50'
     }`;
 
@@ -48,8 +48,8 @@ export default function Navigation() {
               key={l.to}
               to={l.to}
               className={({ isActive }) =>
-                `link-sky block px-4 py-3 rounded-2xl transition-all duration-300 font-bold ${
-                  isActive ? 'bg-gradient-to-r from-orange-100/30 to-blue-100/30' : 'hover:bg-gray-50'
+                `link-sky block px-4 py-3 rounded-2xl transition-all duration-300 font-bold glow-gradient-hover ${
+                  isActive ? 'bg-gradient-to-r from-orange-100/30 to-blue-100/30 glow-gradient' : 'hover:bg-gray-50'
                 }`
               }
               onClick={() => setOpen(false)}

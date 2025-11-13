@@ -54,30 +54,30 @@ export default function GoogleReviews() {
   };
 
   return (
-    <section className="py-20 px-6" style={{ backgroundColor: '#0A0A0A' }}>
+    <section className="py-20 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-sans font-bold text-white mb-6 leading-tight">
+          <h2 className="text-5xl font-sans font-bold text-gray-900 mb-6 leading-tight">
             What Our Clients Say
             <br />
-            <span className="bg-gradient-to-b from-white to-gray-600 bg-clip-text text-transparent">
+            <span className="text-sky-gradient">
               About Working With Us
             </span>
           </h2>
-          <p className="text-lg font-sans font-normal mb-8" style={{ color: '#BBBBBB' }}>
+          <p className="text-lg font-sans font-normal mb-8 text-gray-600">
             Trusted by businesses across East Kent
           </p>
 
           <div className="flex flex-col md:flex-row items-center justify-center md:space-x-8 space-y-4 md:space-y-0 mb-4">
             <div className="flex items-center space-x-3">
               {renderStars(5)}
-              <span className="text-4xl font-bold text-white">{averageRating}</span>
+              <span className="text-4xl font-bold text-gray-900">{averageRating}</span>
             </div>
             <div className="text-center md:text-left">
-              <div className="text-sm font-normal" style={{ color: '#BBBBBB' }}>
+              <div className="text-sm font-normal text-gray-600">
                 Based on
               </div>
-              <div className="text-xl font-bold text-white">
+              <div className="text-xl font-bold text-gray-900">
                 {totalReviews} Google Reviews
               </div>
             </div>
@@ -88,23 +88,22 @@ export default function GoogleReviews() {
           {reviews.map((review, index) => (
             <div
               key={index}
-              className="rounded-2xl p-6 transition-all duration-300 hover:scale-105"
-              style={{ backgroundColor: '#1A1A1A' }}
+              className="bg-white border-2 border-gray-200 hover:border-gray-300 card-gradient-border rounded-2xl p-6 transition-all duration-300 hover:scale-105"
             >
               <div className="flex items-center justify-between mb-4">
                 {renderStars(review.rating)}
-                <span className="text-xs" style={{ color: '#888888' }}>
+                <span className="text-xs text-gray-500">
                   {review.time}
                 </span>
               </div>
 
-              <p className="text-base font-normal leading-relaxed mb-4" style={{ color: '#BBBBBB' }}>
+              <p className="text-base font-normal leading-relaxed mb-4 text-gray-600">
                 "{review.text}"
               </p>
 
-              <div className="border-t border-gray-700 pt-4">
-                <div className="text-white font-semibold text-sm">{review.author}</div>
-                <div className="text-xs" style={{ color: '#888888' }}>
+              <div className="border-t border-gray-200 pt-4">
+                <div className="text-gray-900 font-semibold text-sm">{review.author}</div>
+                <div className="text-xs text-gray-500">
                   {review.location}
                 </div>
               </div>
@@ -117,7 +116,7 @@ export default function GoogleReviews() {
             href="https://g.page/r/YOUR_GOOGLE_PLACE_ID/review"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-2 px-8 py-4 bg-white text-black font-medium rounded-full hover:bg-gray-100 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1"
+            className="btn-gradient inline-flex items-center space-x-2 px-8 py-4 text-white font-medium rounded-full transition-all duration-300 transform hover:-translate-y-1"
           >
             <span>Leave a Review</span>
             <ExternalLink className="w-4 h-4" />

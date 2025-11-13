@@ -37,17 +37,17 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="py-20 px-6 text-center" style={{ backgroundColor: '#0A0A0A' }} aria-labelledby="faq-heading">
+    <section className="py-20 px-6 text-center bg-white" aria-labelledby="faq-heading">
       <div className="max-w-4xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 id="faq-heading" className="text-5xl font-sans font-bold text-white mb-6 leading-tight">
+          <h2 id="faq-heading" className="text-5xl font-sans font-bold text-gray-900 mb-6 leading-tight">
             Frequently Asked<br/>
-            <span className="bg-gradient-to-b from-white to-gray-600 bg-clip-text text-transparent">
+            <span className="text-sky-gradient">
               Questions
             </span>
           </h2>
-          <p className="text-lg font-sans font-normal" style={{ color: '#BBBBBB' }}>
+          <p className="text-lg font-sans font-normal text-gray-600">
             Ready to discuss your project? Let's talk.
           </p>
         </div>
@@ -57,8 +57,7 @@ export default function FAQSection() {
           {faqData.map((faq, index) => (
             <div
               key={index}
-              className="rounded-2xl transition-all duration-300"
-              style={{ backgroundColor: '#1A1A1A' }}
+              className="bg-white border-2 border-gray-200 hover:border-gray-300 card-gradient-border rounded-2xl transition-all duration-300"
             >
               <button
                 onClick={() => toggleAccordion(index)}
@@ -66,14 +65,14 @@ export default function FAQSection() {
                 aria-expanded={expandedIndex === index}
                 aria-controls={`faq-answer-${index}`}
               >
-                <h3 className="text-xl font-sans font-bold text-white pr-4 flex-1 text-center">
+                <h3 className="text-xl font-sans font-bold text-sky-gradient pr-4 flex-1 text-center">
                   {faq.question}
                 </h3>
                 <div className="flex-shrink-0" aria-hidden="true">
                   {expandedIndex === index ? (
-                    <ChevronUp className="w-6 h-6 text-white" />
+                    <ChevronUp className="w-6 h-6 text-gray-900" />
                   ) : (
-                    <ChevronDown className="w-6 h-6 text-white" />
+                    <ChevronDown className="w-6 h-6 text-gray-900" />
                   )}
                 </div>
               </button>
@@ -84,7 +83,7 @@ export default function FAQSection() {
                   className="px-8 pb-6 animate-in slide-in-from-top-2 duration-300 text-center"
                   role="region"
                 >
-                  <p className="text-base font-sans font-normal leading-relaxed" style={{ color: '#BBBBBB' }}>
+                  <p className="text-base font-sans font-normal leading-relaxed text-gray-600">
                     {faq.answer}
                   </p>
                 </div>

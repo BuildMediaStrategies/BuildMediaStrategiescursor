@@ -2,28 +2,24 @@ import { Lock, Hexagon } from 'lucide-react';
 
 export default function SecuritySection() {
   return (
-    <section className="py-12 sm:py-16 lg:py-20 px-5 sm:px-6 text-center lg:text-left" style={{ backgroundColor: '#0A0A0A' }}>
+    <section className="py-12 sm:py-16 lg:py-20 px-5 sm:px-6 text-center lg:text-left section-gradient-subtle">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 sm:gap-12 lg:gap-16 items-center">
           {/* Left Section: Text Content */}
           <div className="lg:col-span-3 lg:pr-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold text-white mb-5 sm:mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold text-gray-900 mb-5 sm:mb-6 leading-tight">
               AI Operations<br/>
-              <span className="bg-gradient-to-b from-white to-gray-600 bg-clip-text text-transparent">Built for Scale</span>
+              <span className="text-sky-gradient">Built for Scale</span>
             </h2>
 
-            <p className="text-base sm:text-lg font-sans font-normal mb-6 sm:mb-8 leading-relaxed" style={{ color: '#BBBBBB' }}>
+            <p className="text-base sm:text-lg font-sans font-normal mb-6 sm:mb-8 leading-relaxed text-gray-600">
               Automate repetitive work, eliminate bottlenecks, and scale operations
               without scaling headcount. AI that delivers immediate productivity gains.
             </p>
 
             <a
               href="/ai-operations"
-              className="inline-block px-6 py-3 rounded-lg font-sans font-normal text-white border transition-all duration-300 hover:border-gray-400 hover:shadow-lg active:scale-95"
-              style={{
-                backgroundColor: '#1A1A1A',
-                borderColor: '#444444'
-              }}
+              className="btn-gradient inline-block px-6 py-3 rounded-lg font-sans font-normal text-white active:scale-95"
             >
               Explore AI Solutions
             </a>

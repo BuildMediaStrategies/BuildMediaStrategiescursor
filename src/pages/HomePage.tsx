@@ -88,27 +88,27 @@ export default function HomePage() {
             <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal md:font-medium text-white leading-tight drop-shadow-2xl mb-1">
               Websites That Convert.
             </span>
-            <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal md:font-medium bg-gradient-to-b from-white to-gray-600 bg-clip-text text-transparent leading-tight drop-shadow-2xl">
+            <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal md:font-medium text-sky-gradient leading-tight drop-shadow-2xl">
               AI That Accelerates.
             </span>
           </h1>
 
           <p className="text-center text-gray-300 text-sm sm:text-base max-w-lg mb-6 sm:mb-8 leading-relaxed font-normal opacity-0 animate-fadeInDelay px-4 sm:px-0">
-            High-performance <a href="/web-design" className="text-white hover:underline">websites</a> that drive sales.<br /> <a href="/ai-operations" className="text-white hover:underline">AI systems</a> that multiply your team's output.
+            High-performance <a href="/web-design" className="text-white hover:text-sky-gradient transition-all">websites</a> that drive sales.<br /> <a href="/ai-operations" className="text-white hover:text-sky-gradient transition-all">AI systems</a> that multiply your team's output.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-3">
             <a
               href="/contact"
               onClick={() => { try { trackCTAClick('home_contact_cta', { page: window.location.pathname }); } catch {} }}
-              className="inline-block px-7 sm:px-6 py-3.5 sm:py-3 bg-black text-white font-normal rounded-full border border-gray-700 hover:border-gray-500 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 transform hover:-translate-y-1 active:scale-95 opacity-0 animate-fadeInDelay"
+              className="btn-gradient inline-block px-7 sm:px-6 py-3.5 sm:py-3 text-white font-normal rounded-full active:scale-95 opacity-0 animate-fadeInDelay"
             >
               Get Started Today
             </a>
             <a
               href="/tools/speed-checker"
               onClick={() => { try { trackCTAClick('home_speed_checker_cta', { page: window.location.pathname }); } catch {} }}
-              className="inline-block px-7 sm:px-6 py-3.5 sm:py-3 bg-white/5 text-white font-normal rounded-full border border-gray-700 hover:border-gray-500 transition-all duration-300 opacity-0 animate-fadeInDelay"
+              className="btn-gradient-outline inline-block px-7 sm:px-6 py-3.5 sm:py-3 text-sky-gradient font-normal rounded-full transition-all duration-300 opacity-0 animate-fadeInDelay"
             >
               Check Your Site Speed
             </a>
@@ -141,19 +141,19 @@ export default function HomePage() {
         </Suspense>
 
         {/* Lazy-loaded sections below the fold */}
-        <Suspense fallback={<div className="py-20" style={{ backgroundColor: '#0A0A0A' }} />}>
+        <Suspense fallback={<div className="py-20 bg-white" />}>
           <LazyEffortlessSecuritySection />
         </Suspense>
 
-        <Suspense fallback={<div className="py-20" style={{ backgroundColor: '#0A0A0A' }} />}>
+        <Suspense fallback={<div className="py-20 bg-white" />}>
           <div id="faq"><LazyFAQSection /></div>
         </Suspense>
 
-        <Suspense fallback={<div className="py-20" style={{ backgroundColor: '#0A0A0A' }} />}>
+        <Suspense fallback={<div className="py-20 bg-white" />}>
           <LazyCTABanner />
         </Suspense>
 
-        <Suspense fallback={<div className="py-20" style={{ backgroundColor: '#0A0A0A' }} />}>
+        <Suspense fallback={<div className="py-20 bg-white" />}>
           <LazyGoogleReviews />
         </Suspense>
       </main>
