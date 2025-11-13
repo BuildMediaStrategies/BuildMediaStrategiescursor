@@ -71,7 +71,7 @@ export default function HomePage() {
         {/* HERO CONTENT */}
         <header className="relative z-40 flex flex-col items-center justify-center px-5 sm:px-6 pt-24 sm:pt-20 pb-16 sm:pb-20 min-h-[80vh]">
           <h1 className="text-center mb-5 sm:mb-6 opacity-0 animate-fadeInUpDelay">
-            <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal md:font-medium text-white leading-tight drop-shadow-2xl mb-1">
+            <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal md:font-medium text-sky-gradient leading-tight drop-shadow-2xl mb-1">
               Websites That Convert.
             </span>
             <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal md:font-medium text-sky-gradient leading-tight drop-shadow-2xl">
@@ -79,8 +79,8 @@ export default function HomePage() {
             </span>
           </h1>
 
-          <p className="text-center text-white text-sm sm:text-base max-w-lg mb-6 sm:mb-8 leading-relaxed font-normal opacity-0 animate-fadeInDelay px-4 sm:px-0">
-            High-performance <a href="/web-design" className="text-white hover:text-sky-gradient transition-all">websites</a> that drive sales.<br /> <a href="/ai-operations" className="text-white hover:text-sky-gradient transition-all">AI systems</a> that multiply your team's output.
+          <p className="text-center text-black text-sm sm:text-base max-w-lg mb-6 sm:mb-8 leading-relaxed font-normal opacity-0 animate-fadeInDelay px-4 sm:px-0">
+            High-performance <a href="/web-design" className="text-sky-gradient hover:opacity-80 transition-all">websites</a> that drive sales.<br /> <a href="/ai-operations" className="text-sky-gradient hover:opacity-80 transition-all">AI systems</a> that multiply your team's output.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-3">
