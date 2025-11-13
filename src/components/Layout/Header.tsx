@@ -13,7 +13,7 @@ export default function Header() {
           <img
             src="/assets/bmsnewlogo sky.png"
             alt="Build Media Strategies"
-            className="h-8 sm:h-10 md:h-12 w-auto object-contain scale-[3] sm:scale-[3.5] origin-left"
+            className="h-8 sm:h-10 md:h-12 w-auto object-contain scale-[3.25] sm:scale-[3.75] origin-left translate-y-[3px]"
             width="320"
             height="88"
             loading="eager"
