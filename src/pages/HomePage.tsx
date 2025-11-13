@@ -53,7 +53,7 @@ export default function HomePage() {
             objectPosition: 'center 50%',
             transform: 'translateY(26vh)',
             willChange: 'transform',
-            // remove brightness/contrast tweaks so the PNG white stays true
+            // no brightness/contrast tweaks so PNG white stays true
           }}
         />
 
@@ -113,19 +113,29 @@ export default function HomePage() {
       {/* REST OF PAGE */}
       <main id="main-content">
         <Suspense fallback={null}>
-          <div id="partners"><LogoCloud /></div>
+          <div id="partners">
+            <LogoCloud />
+          </div>
         </Suspense>
+
         <Suspense fallback={null}>
-          <div id="features"><StatisticsSection /></div>
+          <div id="features">
+            <StatisticsSection />
+          </div>
         </Suspense>
+
         <Suspense fallback={null}>
           <DashboardSection />
         </Suspense>
+
         <Suspense fallback={null}>
-          <div id="security"><SecuritySection /></div>
+          <div id="security">
+            <SecuritySection />
+          </div>
         </Suspense>
+
         <Suspense fallback={null}>
-          <InterviewBookingSection /></div>
+          <InterviewBookingSection />
         </Suspense>
 
         {/* Lazy-loaded sections below the fold */}
@@ -134,7 +144,9 @@ export default function HomePage() {
         </Suspense>
 
         <Suspense fallback={<div className="py-20 bg-white" />}>
-          <div id="faq"><LazyFAQSection /></div>
+          <div id="faq">
+            <LazyFAQSection />
+          </div>
         </Suspense>
 
         <Suspense fallback={<div className="py-20 bg-white" />}>
@@ -145,6 +157,7 @@ export default function HomePage() {
           <LazyGoogleReviews />
         </Suspense>
       </main>
+
       <Suspense fallback={null}>
         <RegistrationModal
           isOpen={isRegistrationModalOpen}
