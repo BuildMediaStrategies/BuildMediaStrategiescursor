@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
-  
+
   const links = [
     { to: '/web-design', label: 'Web Design' },
     { to: '/ai-operations', label: 'AI Ops' },
@@ -37,7 +37,11 @@ export default function Navigation() {
       <ul className="hidden md:flex gap-1 text-sm items-center">
         {links.map((l) => (
           <li key={l.to}>
-            <NavLink to={l.to} className={itemClass} onClick={() => setOpen(false)}>
+            <NavLink
+              to={l.to}
+              className={itemClass}
+              onClick={() => setOpen(false)}
+            >
               {l.label}
             </NavLink>
           </li>
@@ -69,12 +73,10 @@ export default function Navigation() {
         />
       </button>
 
-      {/* ================================
-          FULL-SCREEN WHITE MOBILE MENU
-         ================================ */}
+      {/* FULL-SCREEN WHITE MOBILE MENU (under header, above hero) */}
       {open && (
         <div
-          className="fixed inset-x-0 top-[72px] bottom-0 z-40 bg-white overflow-y-auto md:hidden animate-fadeIn"
+          className="fixed inset-x-0 top-[72px] bottom-0 z-[45] bg-white overflow-y-auto md:hidden animate-fadeIn"
         >
           {/* Menu Items */}
           <div className="px-6 pt-6 space-y-3">
