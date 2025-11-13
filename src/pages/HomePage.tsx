@@ -6,7 +6,6 @@ const DashboardSection = lazy(() => import('../components/DashboardSection'));
 const SecuritySection = lazy(() => import('../components/SecuritySection'));
 const InterviewBookingSection = lazy(() => import('../components/InterviewBookingSection'));
 const RegistrationModal = lazy(() => import('../components/RegistrationModal'));
-const TrustBar = lazy(() => import('../components/SocialProof/TrustBar'));
 import {
   LazyTestimonialsSection,
   LazyFAQSection,
@@ -121,9 +120,6 @@ export default function HomePage() {
 
       {/* REST OF PAGE */}
       <main id="main-content">
-        <Suspense fallback={null}>
-          <TrustBar />
-        </Suspense>
         <Suspense fallback={null}>
           <div id="partners"><LogoCloud /></div>
         </Suspense>
