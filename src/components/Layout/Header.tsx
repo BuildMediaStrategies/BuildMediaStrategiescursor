@@ -13,9 +13,9 @@ export default function Header() {
           <img
             src="/assets/bmsnewlogo sky.png"
             alt="Build Media Strategies"
-            className="h-[4rem] w-auto object-contain"
-            width="280"
-            height="64"
+            className="h-[5.5rem] w-auto object-contain"
+            width="320"
+            height="88"
             loading="eager"
             fetchPriority="high"
           />
