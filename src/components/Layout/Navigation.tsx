@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { createPortal } from 'react-dom';
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
@@ -49,7 +50,7 @@ export default function Navigation() {
         aria-label="Toggle menu"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className="md:hidden relative z-[110] w-10 h-10 flex flex-col items-center justify-center gap-1.5 transition-all duration-300"
+        className="md:hidden relative z-[10000] w-10 h-10 flex flex-col items-center justify-center gap-1.5 transition-all duration-300"
       >
         <span
           className={`block h-0.5 w-6 rounded-full transition-all duration-300 ease-out ${
@@ -68,9 +69,9 @@ export default function Navigation() {
         />
       </button>
 
-      {/* Mobile Fullscreen Menu */}
-      {open && (
-        <div className="md:hidden fixed inset-0 z-[100] bg-white" aria-hidden={false}>
+      {/* Mobile Fullscreen Menu - Rendered via Portal to escape parent z-index */}
+      {open && createPortal(
+        <div className="md:hidden fixed inset-0 z-[9999] bg-white" aria-hidden={false}>
           {/* Gradient Header */}
           <div className="bg-sky-gradient px-6 py-8 flex items-center justify-between">
             <h2 className="text-white font-bold text-2xl">Menu</h2>
@@ -110,7 +111,8 @@ export default function Navigation() {
               Get Started
             </a>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
 
       <style>{`
