@@ -36,30 +36,26 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-black" />
 
         {/* HERO IMAGE */}
-        <picture>
-          <source srcSet="/hero-image.avif" type="image/avif" />
-          <source srcSet="/hero-image.webp" type="image/webp" />
-          <img
-            id="hero-img"
-            src="/hero-image.png"
-            alt=""
-            aria-hidden="true"
-            loading="eager"
-            decoding="async"
-            fetchpriority="high"
-            width={1920}
-            height={1080}
-            className="pointer-events-none select-none absolute inset-0 w-full h-full z-0"
-            style={{
-              // Desktop: fill and lift
-              objectFit: 'cover',
-              objectPosition: 'center 50%',
-              transform: 'translateY(18vh)',
-              willChange: 'transform',
-              filter: 'brightness(0.9) contrast(1.1)',
-            }}
-          />
-        </picture>
+        <img
+          id="hero-img"
+          src="/hero-image-new.png"
+          alt=""
+          aria-hidden="true"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+          width={1920}
+          height={1080}
+          className="pointer-events-none select-none absolute inset-0 w-full h-full z-0"
+          style={{
+            // Desktop: fill and lift
+            objectFit: 'cover',
+            objectPosition: 'center 50%',
+            transform: 'translateY(18vh)',
+            willChange: 'transform',
+            filter: 'brightness(0.9) contrast(1.1)',
+          }}
+        />
 
         {/* Mobile overrides (show full browsers, remove dim at bottom) */}
         <style>{`
