@@ -49,7 +49,7 @@ export default function Navigation() {
         aria-label="Toggle menu"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className="md:hidden relative z-[60] w-10 h-10 flex flex-col items-center justify-center gap-1.5 transition-all duration-300"
+        className="md:hidden relative z-[110] w-10 h-10 flex flex-col items-center justify-center gap-1.5 transition-all duration-300"
       >
         <span
           className={`block h-0.5 w-6 rounded-full transition-all duration-300 ease-out ${
@@ -74,50 +74,50 @@ export default function Navigation() {
 
       {/* Mobile Fullscreen Menu */}
       {open && (
-        <div
-          className="md:hidden fixed inset-0 z-50 bg-white animate-fadeIn flex flex-col"
-          aria-hidden={false}
-        >
-          {/* Gradient Header */}
-          <div className="bg-gradient-to-r from-sky-400 to-blue-600 px-6 py-8 flex items-center justify-between">
-            <h2 className="text-white font-bold text-2xl">Menu</h2>
-          </div>
+        <>
+          {/* Full white background overlay that covers EVERYTHING */}
+          <div className="md:hidden fixed inset-0 z-[100] bg-white" aria-hidden={false}>
+            {/* Gradient Header */}
+            <div className="bg-gradient-to-r from-sky-400 to-blue-600 px-6 py-8 flex items-center justify-between">
+              <h2 className="text-white font-bold text-2xl">Menu</h2>
+            </div>
 
-          {/* Menu Items - Centered Vertically */}
-          <div className="flex-1 flex flex-col justify-center px-8 py-12 space-y-4">
-            {links.map((l, index) => (
-              <NavLink
-                key={l.to}
-                to={l.to}
-                className={({ isActive }) =>
-                  `block px-8 py-6 rounded-2xl font-bold text-2xl text-center transition-all duration-300 transform hover:scale-[1.02] ${
-                    isActive
-                      ? 'bg-gradient-to-r from-sky-50 to-blue-50 text-sky-gradient border-2 border-sky-200 shadow-lg'
-                      : 'text-black hover:bg-gray-50'
-                  }`
-                }
-                style={{
-                  animationDelay: `${index * 80}ms`,
-                  animation: 'slideInFromRight 0.4s ease-out forwards',
-                }}
+            {/* Menu Items - Centered Vertically */}
+            <div className="flex-1 h-[calc(100vh-180px)] flex flex-col justify-center px-8 space-y-4">
+              {links.map((l, index) => (
+                <NavLink
+                  key={l.to}
+                  to={l.to}
+                  className={({ isActive }) =>
+                    `block px-8 py-6 rounded-2xl font-bold text-2xl text-center transition-all duration-300 transform hover:scale-[1.02] bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text ${
+                      isActive
+                        ? 'text-transparent border-2 border-sky-200 shadow-lg bg-sky-50/50'
+                        : 'text-transparent hover:opacity-80'
+                    }`
+                  }
+                  style={{
+                    animationDelay: `${index * 80}ms`,
+                    animation: 'slideInFromRight 0.4s ease-out forwards',
+                  }}
+                  onClick={() => setOpen(false)}
+                >
+                  {l.label}
+                </NavLink>
+              ))}
+            </div>
+
+            {/* Footer CTA */}
+            <div className="absolute bottom-0 left-0 right-0 px-8 pb-10 bg-white">
+              <a
+                href="/contact"
                 onClick={() => setOpen(false)}
+                className="block text-center px-8 py-5 bg-gradient-to-r from-sky-400 to-blue-600 text-white font-bold text-xl rounded-full hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 shadow-lg"
               >
-                {l.label}
-              </NavLink>
-            ))}
+                Get Started
+              </a>
+            </div>
           </div>
-
-          {/* Footer CTA */}
-          <div className="px-8 pb-10">
-            <a
-              href="/contact"
-              onClick={() => setOpen(false)}
-              className="block text-center px-8 py-5 bg-gradient-to-r from-sky-400 to-blue-600 text-white font-bold text-xl rounded-full hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 shadow-lg"
-            >
-              Get Started
-            </a>
-          </div>
-        </div>
+        </>
       )}
 
       <style>{`
