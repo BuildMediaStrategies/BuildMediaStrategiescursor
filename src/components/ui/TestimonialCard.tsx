@@ -17,7 +17,7 @@ export default function TestimonialCard({ quote, author, company, location, phot
           <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
         ))}
       </div>
-      <div className="text-lg text-gray-700 mb-5">“{quote}”</div>
+      <div className="text-lg text-black mb-5">“{quote}”</div>
       <div className="flex items-center gap-3">
         {photo ? (
           <img src={photo} alt={author} className="w-12 h-12 rounded-full object-cover" />
@@ -26,7 +26,7 @@ export default function TestimonialCard({ quote, author, company, location, phot
         )}
         <div>
           <div className="font-bold text-gray-900">{author}</div>
-          <div className="text-sm text-gray-600">{company}{location ? `, ${location}` : ''}</div>
+          <div className="text-sm text-black">{company}{location ? `, ${location}` : ''}</div>
         </div>
       </div>
     </div>

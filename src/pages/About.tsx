@@ -177,7 +177,7 @@ export default function About() {
                 <article key={i} className="border border-gray-800 bg-black p-6 flex flex-col">
                   <div className="flex items-center gap-1 mb-3" aria-label={`${t.rating} star rating`}>
                     {Array.from({ length: 5 }).map((_, s) => (
-                      <Star key={s} className={`w-4 h-4 ${s < t.rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-600'}`} />
+                      <Star key={s} className={`w-4 h-4 ${s < t.rating ? 'text-yellow-400 fill-yellow-400' : 'text-black'}`} />
                     ))}
                   </div>
                   <blockquote className="text-gray-200 leading-relaxed mb-4">“{t.quote}”</blockquote>

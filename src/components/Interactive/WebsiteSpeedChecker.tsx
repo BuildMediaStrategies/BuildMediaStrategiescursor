@@ -86,15 +86,15 @@ export default function WebsiteSpeedChecker() {
               <Zap className="w-5 h-5 text-blue-600" />
             </div>
             <div>
-              <h2 className="text-xl font-semibold text-gray-900">Free Website Speed Audit</h2>
-              <p className="text-sm text-gray-600">See how your site stacks up against ours (and your competitors)</p>
+              <h2 className="text-xl font-semibold text-sky-gradient">Free Website Speed Audit</h2>
+              <p className="text-sm text-black">See how your site stacks up against ours (and your competitors)</p>
             </div>
           </div>
         </div>
 
         {/* Form */}
         <form onSubmit={onSubmit} className="p-6 border-b border-gray-100">
-          <label htmlFor="url" className="block text-sm font-medium text-gray-700 mb-2">Enter your website URL</label>
+          <label htmlFor="url" className="block text-sm font-medium text-black mb-2">Enter your website URL</label>
           <div className="flex flex-col sm:flex-row gap-3">
             <input
               id="url"
@@ -113,7 +113,7 @@ export default function WebsiteSpeedChecker() {
             </button>
           </div>
           {form.error && <p className="text-sm text-red-600 mt-2">{form.error}</p>}
-          {loading && <p className="text-sm text-gray-600 mt-2">Analyzing website performance...</p>}
+          {loading && <p className="text-sm text-black mt-2">Analyzing website performance...</p>}
           {error && <p className="text-sm text-red-600 mt-2">{error}</p>}
         </form>
 
@@ -136,7 +136,7 @@ export default function WebsiteSpeedChecker() {
               )}
               {/* A) Performance Scores */}
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Performance Scores</h3>
+                <h3 className="text-lg font-semibold text-sky-gradient mb-3">Performance Scores</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className={`rounded-xl p-4 border ${scoreColor(results.mobileScore)}`}>
                     <div className="text-sm font-medium">Mobile Score</div>
@@ -151,72 +151,72 @@ export default function WebsiteSpeedChecker() {
 
               {/* B) Speed Index Comparison Bars */}
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Speed Index (lower is better)</h3>
+                <h3 className="text-lg font-semibold text-sky-gradient mb-3">Speed Index (lower is better)</h3>
                 <div className="space-y-3">
                   <div>
-                    <div className="flex items-center justify-between text-sm text-gray-600 mb-1">
+                    <div className="flex items-center justify-between text-sm text-black mb-1">
                       <span>Mobile</span>
-                      <span className="text-gray-700 font-medium">{results.mobile.speedIndexSec.toFixed(2)}s</span>
+                      <span className="text-black font-medium">{results.mobile.speedIndexSec.toFixed(2)}s</span>
                     </div>
                     <div className="h-3 bg-blue-100 rounded-full overflow-hidden border border-blue-200">
                       <div className="h-full bg-blue-500" style={{ width: barWidth(results.mobile.speedIndexSec) }} />
                     </div>
                   </div>
                   <div>
-                    <div className="flex items-center justify-between text-sm text-gray-600 mb-1">
+                    <div className="flex items-center justify-between text-sm text-black mb-1">
                       <span>Desktop</span>
-                      <span className="text-gray-700 font-medium">{results.desktop.speedIndexSec.toFixed(2)}s</span>
+                      <span className="text-black font-medium">{results.desktop.speedIndexSec.toFixed(2)}s</span>
                     </div>
                     <div className="h-3 bg-purple-100 rounded-full overflow-hidden border border-purple-200">
                       <div className="h-full bg-purple-500" style={{ width: barWidth(results.desktop.speedIndexSec) }} />
                     </div>
                   </div>
                   {mobileVsDesktop.diffSec > 0 && (
-                    <p className="text-sm text-gray-600 mt-1">{mobileVsDesktop.faster === 'mobile' ? 'Mobile' : 'Desktop'} appears ~{mobileVsDesktop.diffSec}s faster by Speed Index.</p>
+                    <p className="text-sm text-black mt-1">{mobileVsDesktop.faster === 'mobile' ? 'Mobile' : 'Desktop'} appears ~{mobileVsDesktop.diffSec}s faster by Speed Index.</p>
                   )}
                 </div>
               </div>
 
               {/* C) Core Web Vitals */}
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Core Web Vitals</h3>
+                <h3 className="text-lg font-semibold text-sky-gradient mb-3">Core Web Vitals</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="rounded-xl p-4 border border-gray-200">
-                    <div className="text-sm font-medium text-gray-700 mb-2">Mobile</div>
+                    <div className="text-sm font-medium text-black mb-2">Mobile</div>
                     <div className="grid grid-cols-3 gap-3 text-center">
                       <div>
-                        <div className="text-xs text-gray-600">FCP</div>
+                        <div className="text-xs text-black">FCP</div>
                         <div className="text-lg font-semibold text-gray-900">{results.mobile.fcpSec}s</div>
                       </div>
                       <div>
-                        <div className="text-xs text-gray-600">LCP</div>
+                        <div className="text-xs text-black">LCP</div>
                         <div className="text-lg font-semibold text-gray-900">{results.mobile.lcpSec}s</div>
                       </div>
                       <div>
-                        <div className="text-xs text-gray-600">CLS</div>
+                        <div className="text-xs text-black">CLS</div>
                         <div className="text-lg font-semibold text-gray-900">{results.mobile.cls}</div>
                       </div>
                     </div>
                   </div>
                   <div className="rounded-xl p-4 border border-gray-200">
-                    <div className="text-sm font-medium text-gray-700 mb-2">Desktop</div>
+                    <div className="text-sm font-medium text-black mb-2">Desktop</div>
                     <div className="grid grid-cols-3 gap-3 text-center">
                       <div>
-                        <div className="text-xs text-gray-600">FCP</div>
+                        <div className="text-xs text-black">FCP</div>
                         <div className="text-lg font-semibold text-gray-900">{results.desktop.fcpSec}s</div>
                       </div>
                       <div>
-                        <div className="text-xs text-gray-600">LCP</div>
+                        <div className="text-xs text-black">LCP</div>
                         <div className="text-lg font-semibold text-gray-900">{results.desktop.lcpSec}s</div>
                       </div>
                       <div>
-                        <div className="text-xs text-gray-600">CLS</div>
+                        <div className="text-xs text-black">CLS</div>
                         <div className="text-lg font-semibold text-gray-900">{results.desktop.cls}</div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <p className="text-xs text-gray-500 mt-2">
+                <p className="text-xs text-black mt-2">
                   {results.simulated
                     ? 'Metrics are simulated estimates. For accurate measurements, contact us for a professional audit.'
                     : 'Metrics are fetched directly from Google PageSpeed Insights for the requested URL.'}

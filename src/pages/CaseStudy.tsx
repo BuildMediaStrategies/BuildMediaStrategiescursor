@@ -91,7 +91,7 @@ export default function CaseStudyPage() {
                 .filter(Boolean)
                 .map((detail: any, i: number) => (
                   <div key={i} className="bg-[#1A1A1A] border border-gray-800 rounded-2xl p-6 hover:border-gray-700 transition-all duration-300">
-                    <div className="text-sm text-gray-500 mb-2">{detail.label}</div>
+                    <div className="text-sm text-black mb-2">{detail.label}</div>
                     <div className="text-lg text-white font-medium">{detail.value}</div>
                   </div>
                 ))}
@@ -219,7 +219,7 @@ export default function CaseStudyPage() {
                   <div>
                     <div className="font-bold text-white text-lg">{cs.testimonial.author}</div>
                     <div className="text-gray-400">{cs.testimonial.company}</div>
-                    {cs.testimonial.location && <div className="text-gray-500 text-sm">{cs.testimonial.location}</div>}
+                    {cs.testimonial.location && <div className="text-black text-sm">{cs.testimonial.location}</div>}
                   </div>
                 </div>
               </div>

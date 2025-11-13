@@ -80,10 +80,10 @@ export default function ContactPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h1 className="text-4xl lg:text-5xl font-sans font-bold text-gray-900 mb-4">
+              <h1 className="text-4xl lg:text-5xl font-sans font-bold text-sky-gradient mb-4">
                 Message Received
               </h1>
-              <p className="text-lg font-sans font-normal mb-8 leading-relaxed text-gray-700">
+              <p className="text-lg font-sans font-normal mb-8 leading-relaxed text-black">
                 Thanks for reaching out. We will get back to you within one business day.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -119,10 +119,10 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto px-5 sm:px-6 py-12 sm:py-16 lg:py-20">
           <div className="text-center mb-12 sm:mb-16">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold mb-4 sm:mb-6 leading-tight">
-              <span className="text-gray-900">Let's Build Something</span>
+              <span className="text-sky-gradient">Let's Build Something</span>
               <span className="block text-sky-gradient">Exceptional Together</span>
             </h1>
-            <p className="text-lg sm:text-xl font-sans font-normal leading-relaxed max-w-2xl mx-auto text-gray-700">
+            <p className="text-lg sm:text-xl font-sans font-normal leading-relaxed max-w-2xl mx-auto text-black">
               Tell us about your project and we'll get back to you within 24 hours.
             </p>
           </div>
@@ -144,7 +144,7 @@ export default function ContactPage() {
             </div>
 
               <div className="group">
-                <label htmlFor="name" className="block text-gray-900 font-sans font-medium mb-3 text-sm tracking-wide uppercase">
+                <label htmlFor="name" className="block text-black font-sans font-medium mb-3 text-sm tracking-wide uppercase">
                   Name *
                 </label>
                 <input
@@ -159,7 +159,7 @@ export default function ContactPage() {
               </div>
 
               <div className="group">
-                <label htmlFor="email" className="block text-gray-900 font-sans font-medium mb-3 text-sm tracking-wide uppercase">
+                <label htmlFor="email" className="block text-black font-sans font-medium mb-3 text-sm tracking-wide uppercase">
                   Email *
                 </label>
                 <input
@@ -175,7 +175,7 @@ export default function ContactPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                 <div className="group">
-                  <label htmlFor="phone" className="block text-gray-900 font-sans font-medium mb-3 text-sm tracking-wide uppercase">
+                  <label htmlFor="phone" className="block text-black font-sans font-medium mb-3 text-sm tracking-wide uppercase">
                     Phone
                   </label>
                   <input
@@ -189,7 +189,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="group">
-                  <label htmlFor="company" className="block text-gray-900 font-sans font-medium mb-3 text-sm tracking-wide uppercase">
+                  <label htmlFor="company" className="block text-black font-sans font-medium mb-3 text-sm tracking-wide uppercase">
                     Company
                   </label>
                   <input
@@ -204,7 +204,7 @@ export default function ContactPage() {
               </div>
 
               <div className="group">
-                <label htmlFor="message" className="block text-gray-900 font-sans font-medium mb-3 text-sm tracking-wide uppercase">
+                <label htmlFor="message" className="block text-black font-sans font-medium mb-3 text-sm tracking-wide uppercase">
                   Message *
                 </label>
                 <textarea
@@ -227,7 +227,7 @@ export default function ContactPage() {
                   onChange={(e) => setFormData({ ...formData, gdprConsent: e.target.checked })}
                   className="mt-1.5 w-5 h-5 bg-transparent border-2 border-gray-400 rounded focus:ring-2 focus:ring-sky-gradient focus:border-sky-gradient accent-sky-gradient cursor-pointer flex-shrink-0"
                 />
-                <label htmlFor="gdpr" className="text-sm sm:text-base font-sans font-normal leading-relaxed cursor-pointer text-gray-700">
+                <label htmlFor="gdpr" className="text-sm sm:text-base font-sans font-normal leading-relaxed cursor-pointer text-black">
                   I consent to BuildMediaStrategies collecting and storing my personal information for the purpose of responding to my inquiry. By submitting this form, you agree to our <a href="#" className="text-sky-gradient underline hover:opacity-80 focus:outline focus:outline-2 focus:outline-sky-gradient">Privacy Policy</a>. *
                 </label>
               </div>
@@ -254,10 +254,10 @@ export default function ContactPage() {
         <div className="w-full py-12 sm:py-16 lg:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-5 sm:px-6">
             <div className="text-center mb-10 sm:mb-12">
-              <h2 className="text-3xl sm:text-4xl font-sans font-bold text-gray-900 mb-3 sm:mb-4">
+              <h2 className="text-3xl sm:text-4xl font-sans font-bold text-sky-gradient mb-3 sm:mb-4">
                 Find Us
               </h2>
-              <p className="text-base sm:text-lg font-sans font-normal text-gray-700">
+              <p className="text-base sm:text-lg font-sans font-normal text-black">
                 Serving businesses across Kent and beyond
               </p>
             </div>
@@ -270,8 +270,8 @@ export default function ContactPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
-                  <p className="text-xl sm:text-2xl font-sans font-bold text-gray-900 mb-2">Kent, United Kingdom</p>
-                  <p className="text-sm sm:text-base font-sans font-normal text-gray-700">Dover • Deal • Canterbury • Folkestone</p>
+                  <p className="text-xl sm:text-2xl font-sans font-bold text-sky-gradient mb-2">Kent, United Kingdom</p>
+                  <p className="text-sm sm:text-base font-sans font-normal text-black">Dover • Deal • Canterbury • Folkestone</p>
                 </div>
               </div>
             </div>

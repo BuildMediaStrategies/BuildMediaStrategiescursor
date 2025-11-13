@@ -7,12 +7,12 @@ export default function SecuritySection() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 sm:gap-12 lg:gap-16 items-center">
           {/* Left Section: Text Content */}
           <div className="lg:col-span-3 lg:pr-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold text-gray-900 mb-5 sm:mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold text-sky-gradient mb-5 sm:mb-6 leading-tight">
               AI Operations<br/>
               <span className="text-sky-gradient">Built for Scale</span>
             </h2>
 
-            <p className="text-base sm:text-lg font-sans font-normal mb-6 sm:mb-8 leading-relaxed text-gray-600">
+            <p className="text-base sm:text-lg font-sans font-normal mb-6 sm:mb-8 leading-relaxed text-black">
               Automate repetitive work, eliminate bottlenecks, and scale operations
               without scaling headcount. AI that delivers immediate productivity gains.
             </p>

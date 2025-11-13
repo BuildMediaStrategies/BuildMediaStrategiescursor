@@ -55,9 +55,9 @@ export default function LiveStats() {
           </div>
           <div className="flex-1">
             <div className="text-sm text-gray-800">{MESSAGES[index]}</div>
-            <div className="text-xs text-gray-500 mt-1">Just now</div>
+            <div className="text-xs text-black mt-1">Just now</div>
           </div>
-          <button onClick={() => setDismissed(true)} className="text-gray-400 hover:text-gray-600 text-sm">✕</button>
+          <button onClick={() => setDismissed(true)} className="text-gray-400 hover:text-black text-sm">✕</button>
         </div>
       </div>
     </div>

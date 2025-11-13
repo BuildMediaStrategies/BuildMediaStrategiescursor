@@ -45,7 +45,7 @@ export default function GoogleReviews() {
             className={`w-5 h-5 ${
               index < rating
                 ? 'fill-yellow-400 text-yellow-400'
-                : 'fill-gray-600 text-gray-600'
+                : 'fill-gray-600 text-black'
             }`}
           />
         ))}
@@ -57,27 +57,27 @@ export default function GoogleReviews() {
     <section className="py-20 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-sans font-bold text-gray-900 mb-6 leading-tight">
+          <h2 className="text-5xl font-sans font-bold text-sky-gradient mb-6 leading-tight">
             What Our Clients Say
             <br />
             <span className="text-sky-gradient">
               About Working With Us
             </span>
           </h2>
-          <p className="text-lg font-sans font-normal mb-8 text-gray-600">
+          <p className="text-lg font-sans font-normal mb-8 text-black">
             Trusted by businesses across East Kent
           </p>
 
           <div className="flex flex-col md:flex-row items-center justify-center md:space-x-8 space-y-4 md:space-y-0 mb-4">
             <div className="flex items-center space-x-3">
               {renderStars(5)}
-              <span className="text-4xl font-bold text-gray-900">{averageRating}</span>
+              <span className="text-4xl font-bold text-sky-gradient">{averageRating}</span>
             </div>
             <div className="text-center md:text-left">
-              <div className="text-sm font-normal text-gray-600">
+              <div className="text-sm font-normal text-black">
                 Based on
               </div>
-              <div className="text-xl font-bold text-gray-900">
+              <div className="text-xl font-bold text-sky-gradient">
                 {totalReviews} Google Reviews
               </div>
             </div>
@@ -92,18 +92,18 @@ export default function GoogleReviews() {
             >
               <div className="flex items-center justify-between mb-4">
                 {renderStars(review.rating)}
-                <span className="text-xs text-gray-500">
+                <span className="text-xs text-black">
                   {review.time}
                 </span>
               </div>
 
-              <p className="text-base font-normal leading-relaxed mb-4 text-gray-600">
+              <p className="text-base font-normal leading-relaxed mb-4 text-black">
                 "{review.text}"
               </p>
 
               <div className="border-t border-gray-200 pt-4">
-                <div className="text-gray-900 font-semibold text-sm">{review.author}</div>
-                <div className="text-xs text-gray-500">
+                <div className="text-black font-semibold text-sm">{review.author}</div>
+                <div className="text-xs text-black">
                   {review.location}
                 </div>
               </div>

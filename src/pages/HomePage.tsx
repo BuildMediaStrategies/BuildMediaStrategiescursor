@@ -79,7 +79,7 @@ export default function HomePage() {
             </span>
           </h1>
 
-          <p className="text-center text-gray-300 text-sm sm:text-base max-w-lg mb-6 sm:mb-8 leading-relaxed font-normal opacity-0 animate-fadeInDelay px-4 sm:px-0">
+          <p className="text-center text-white text-sm sm:text-base max-w-lg mb-6 sm:mb-8 leading-relaxed font-normal opacity-0 animate-fadeInDelay px-4 sm:px-0">
             High-performance <a href="/web-design" className="text-white hover:text-sky-gradient transition-all">websites</a> that drive sales.<br /> <a href="/ai-operations" className="text-white hover:text-sky-gradient transition-all">AI systems</a> that multiply your team's output.
           </p>
 

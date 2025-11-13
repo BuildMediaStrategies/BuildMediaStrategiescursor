@@ -12,7 +12,7 @@ export default function InterviewBookingSection() {
               <span className="text-sky-gradient">From Strategy to Launch</span>
             </h2>
 
-            <p className="text-base sm:text-lg font-sans font-normal mb-6 sm:mb-8 leading-relaxed text-gray-600">
+            <p className="text-base sm:text-lg font-sans font-normal mb-6 sm:mb-8 leading-relaxed text-black">
               From strategy to launch, we build websites and AI systems that deliver
               measurable business results. No fluff, just outcomes you can track.
             </p>
@@ -21,15 +21,15 @@ export default function InterviewBookingSection() {
             <ul className="space-y-4 mb-8">
               <li className="flex items-center space-x-3">
                 <Check className="w-5 h-5 text-orange-500 flex-shrink-0" aria-hidden="true" />
-                <span className="text-base sm:text-lg font-sans font-normal text-gray-700">Strategic discovery sessions</span>
+                <span className="text-base sm:text-lg font-sans font-normal text-black">Strategic discovery sessions</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Check className="w-5 h-5 text-orange-500 flex-shrink-0" aria-hidden="true" />
-                <span className="text-base sm:text-lg font-sans font-normal text-gray-700">Conversion-optimized design</span>
+                <span className="text-base sm:text-lg font-sans font-normal text-black">Conversion-optimized design</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Check className="w-5 h-5 text-orange-500 flex-shrink-0" aria-hidden="true" />
-                <span className="text-base sm:text-lg font-sans font-normal text-gray-700">Continuous optimization</span>
+                <span className="text-base sm:text-lg font-sans font-normal text-black">Continuous optimization</span>
               </li>
             </ul>
 

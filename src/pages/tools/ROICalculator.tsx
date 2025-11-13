@@ -18,7 +18,7 @@ export default function ROICalculatorPage() {
             <h1 className="text-3xl sm:text-4xl font-bold text-white">Calculate Your AI Automation Savings</h1>
             <p className="text-gray-400 mt-2">See how much time and money you could save by automating repetitive tasks</p>
           </div>
-          <Suspense fallback={<div className="text-center text-gray-600">Loading...</div>}>
+          <Suspense fallback={<div className="text-center text-black">Loading...</div>}>
             <LazyROICalculator />
           </Suspense>
         </section>

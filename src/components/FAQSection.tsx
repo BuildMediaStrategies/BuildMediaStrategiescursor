@@ -47,7 +47,7 @@ export default function FAQSection() {
               Questions
             </span>
           </h2>
-          <p className="text-lg font-sans font-normal text-gray-600">
+          <p className="text-lg font-sans font-normal text-black">
             Ready to discuss your project? Let's talk.
           </p>
         </div>
@@ -83,7 +83,7 @@ export default function FAQSection() {
                   className="px-8 pb-6 animate-in slide-in-from-top-2 duration-300 text-center"
                   role="region"
                 >
-                  <p className="text-base font-sans font-normal leading-relaxed text-gray-600">
+                  <p className="text-base font-sans font-normal leading-relaxed text-black">
                     {faq.answer}
                   </p>
                 </div>

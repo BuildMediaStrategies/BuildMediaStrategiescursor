@@ -27,14 +27,14 @@ export default function BlogIndexPage() {
             <span className="text-gray-900">Latest </span>
             <span className="text-sky-gradient">Articles</span>
           </h1>
-          <p className="text-gray-700 text-lg mb-12">Web design insights, AI automation tips, and digital strategy for Kent businesses.</p>
+          <p className="text-black text-lg mb-12">Web design insights, AI automation tips, and digital strategy for Kent businesses.</p>
 
           <div className="flex flex-wrap gap-3 mb-12">
             <button
               className={`px-4 py-2 rounded-full border-2 transition-all duration-300 ${
                 active === 'All'
                   ? 'border-sky-gradient text-sky-gradient font-semibold'
-                  : 'border-gray-300 text-gray-600 hover:border-gray-400'
+                  : 'border-gray-300 text-black hover:border-gray-400'
               }`}
               onClick={() => setActive('All')}
             >
@@ -46,7 +46,7 @@ export default function BlogIndexPage() {
                 className={`px-4 py-2 rounded-full border-2 transition-all duration-300 ${
                   active === c
                     ? 'border-sky-gradient text-sky-gradient font-semibold'
-                    : 'border-gray-300 text-gray-600 hover:border-gray-400'
+                    : 'border-gray-300 text-black hover:border-gray-400'
                 }`}
                 onClick={() => setActive(c)}
               >
@@ -62,18 +62,18 @@ export default function BlogIndexPage() {
                 href={`/blog/${p.slug}`}
                 className="group rounded-2xl border-2 border-gray-200 hover:border-sky-gradient hover:shadow-lg transition-all duration-300 p-6 block bg-white"
               >
-                <div className="text-xs text-gray-600 mb-3">{p.frontmatter.date || ''}</div>
-                <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-sky-gradient transition-colors leading-tight">
+                <div className="text-xs text-black mb-3">{p.frontmatter.date || ''}</div>
+                <h2 className="text-xl font-bold text-sky-gradient mb-3 group-hover:text-sky-gradient transition-colors leading-tight">
                   {p.frontmatter.title || p.slug}
                 </h2>
-                <p className="text-sm text-gray-700 mb-4 line-clamp-3 leading-relaxed">
+                <p className="text-sm text-black mb-4 line-clamp-3 leading-relaxed">
                   {p.frontmatter.excerpt || ''}
                 </p>
                 <div className="flex gap-2 flex-wrap">
                   {(p.frontmatter.categories || []).map((c) => (
                     <span
                       key={c}
-                      className="text-xs px-2.5 py-1 rounded-full bg-gray-100 border border-gray-300 text-gray-700"
+                      className="text-xs px-2.5 py-1 rounded-full bg-gray-100 border border-gray-300 text-black"
                     >
                       {c}
                     </span>

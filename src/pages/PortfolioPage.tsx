@@ -59,11 +59,11 @@ export default function PortfolioPage() {
               <span className="text-gray-900">Selected </span>
               <span className="text-sky-gradient">Work</span>
             </h1>
-            <p className="text-xl sm:text-2xl text-gray-700 max-w-3xl leading-relaxed">
+            <p className="text-xl sm:text-2xl text-black max-w-3xl leading-relaxed">
               Real projects for real businesses, built to solve specific problems and drive measurable outcomes.
             </p>
             <div className="mt-8 flex flex-wrap gap-3 text-sm">
-              <span className="text-gray-600">View related services:</span>
+              <span className="text-black">View related services:</span>
               <a
                 href="/web-design"
                 className="text-sky-gradient hover:opacity-80 transition-opacity underline"
@@ -99,26 +99,26 @@ export default function PortfolioPage() {
                   </div>
 
                   <div className="mb-6">
-                    <div className="text-sm text-gray-600 mb-2">{project.sector}</div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-sky-gradient transition-colors">
+                    <div className="text-sm text-black mb-2">{project.sector}</div>
+                    <h2 className="text-2xl font-bold text-sky-gradient mb-3 group-hover:text-sky-gradient transition-colors">
                       {project.title}
                     </h2>
-                    <p className="text-gray-700 leading-relaxed">
+                    <p className="text-black leading-relaxed">
                       {project.description}
                     </p>
                   </div>
 
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center justify-between py-2 border-t border-gray-200">
-                      <span className="text-sm text-gray-600">Load Time</span>
+                      <span className="text-sm text-black">Load Time</span>
                       <span className="text-sm font-semibold text-gray-900">{project.metrics.loadTime}</span>
                     </div>
                     <div className="flex items-center justify-between py-2 border-t border-gray-200">
-                      <span className="text-sm text-gray-600">Conversions</span>
+                      <span className="text-sm text-black">Conversions</span>
                       <span className="text-sm font-semibold text-gray-900">{project.metrics.conversions}</span>
                     </div>
                     <div className="flex items-center justify-between py-2 border-t border-b border-gray-200">
-                      <span className="text-sm text-gray-600">Revenue Impact</span>
+                      <span className="text-sm text-black">Revenue Impact</span>
                       <span className="text-sm font-semibold text-gray-900">{project.metrics.revenue}</span>
                     </div>
                   </div>
@@ -135,41 +135,41 @@ export default function PortfolioPage() {
 
         <section className="px-6 pb-20">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-12">Other Projects</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-sky-gradient mb-12">Other Projects</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-gray-300 transition-colors">
-                <div className="text-sm text-gray-600 mb-3">Branding</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Little & Co</h3>
-                <p className="text-gray-700 mb-4 leading-relaxed">
+                <div className="text-sm text-black mb-3">Branding</div>
+                <h3 className="text-xl font-bold text-sky-gradient mb-3">Little & Co</h3>
+                <p className="text-black mb-4 leading-relaxed">
                   Complete brand identity and web build for a premium consumer brand. From logo design to e-commerce platform.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="text-xs px-3 py-1 rounded-full bg-gray-100 border border-gray-300 text-gray-700">
+                  <span className="text-xs px-3 py-1 rounded-full bg-gray-100 border border-gray-300 text-black">
                     React
                   </span>
-                  <span className="text-xs px-3 py-1 rounded-full bg-gray-100 border border-gray-300 text-gray-700">
+                  <span className="text-xs px-3 py-1 rounded-full bg-gray-100 border border-gray-300 text-black">
                     TypeScript
                   </span>
-                  <span className="text-xs px-3 py-1 rounded-full bg-gray-100 border border-gray-300 text-gray-700">
+                  <span className="text-xs px-3 py-1 rounded-full bg-gray-100 border border-gray-300 text-black">
                     E-commerce
                   </span>
                 </div>
               </div>
 
               <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-gray-300 transition-colors">
-                <div className="text-sm text-gray-600 mb-3">Interior Design</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">JCAS P&D + Interior Design</h3>
-                <p className="text-gray-700 mb-4 leading-relaxed">
+                <div className="text-sm text-black mb-3">Interior Design</div>
+                <h3 className="text-xl font-bold text-sky-gradient mb-3">JCAS P&D + Interior Design</h3>
+                <p className="text-black mb-4 leading-relaxed">
                   Website plus AI operations for automated quoting and invoicing. Saving 15+ hours per week on admin.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="text-xs px-3 py-1 rounded-full bg-gray-100 border border-gray-300 text-gray-700">
+                  <span className="text-xs px-3 py-1 rounded-full bg-gray-100 border border-gray-300 text-black">
                     React
                   </span>
-                  <span className="text-xs px-3 py-1 rounded-full bg-gray-100 border border-gray-300 text-gray-700">
+                  <span className="text-xs px-3 py-1 rounded-full bg-gray-100 border border-gray-300 text-black">
                     Supabase
                   </span>
-                  <span className="text-xs px-3 py-1 rounded-full bg-gray-100 border border-gray-300 text-gray-700">
+                  <span className="text-xs px-3 py-1 rounded-full bg-gray-100 border border-gray-300 text-black">
                     AI Automation
                   </span>
                 </div>
@@ -185,7 +185,7 @@ export default function PortfolioPage() {
                 <span className="text-gray-900">Ready to see </span>
                 <span className="text-sky-gradient">results like these?</span>
               </h2>
-              <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+              <p className="text-xl text-black mb-8 leading-relaxed">
                 Let's discuss your project and how we can help drive measurable growth for your business.
               </p>
               <a

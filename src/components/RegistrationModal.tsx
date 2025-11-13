@@ -62,7 +62,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
               <h2 id="registration-modal-title" className="text-2xl font-bold text-gray-900">Create Account</h2>
               <button
                 onClick={handleClose}
-                className="text-gray-400 hover:text-gray-600 transition-colors"
+                className="text-gray-400 hover:text-black transition-colors"
                 aria-label="Close registration modal"
               >
                 <X className="w-6 h-6" aria-hidden="true" />
@@ -73,7 +73,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Full Name */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-black mb-2">
                   Full Name
                 </label>
                 <div className="relative">
@@ -92,7 +92,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 
               {/* Email */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-black mb-2">
                   Email Address
                 </label>
                 <div className="relative">
@@ -111,7 +111,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 
               {/* Phone */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-black mb-2">
                   Phone Number
                 </label>
                 <div className="relative">
@@ -130,7 +130,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 
               {/* Password */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-black mb-2">
                   Password
                 </label>
                 <div className="relative">
@@ -149,7 +149,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 
               {/* Confirm Password */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-black mb-2">
                   Confirm Password
                 </label>
                 <div className="relative">
@@ -174,7 +174,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
                   required
                   className="mt-1 w-4 h-4 text-black border-gray-300 rounded focus:ring-black"
                 />
-                <label htmlFor="gdpr-consent" className="text-sm text-gray-600">
+                <label htmlFor="gdpr-consent" className="text-sm text-black">
                   I consent to BuildMediaStrategies collecting and storing my personal information for account creation and service delivery. Read our{' '}
                   <a href="#" className="text-black hover:underline focus:outline focus:outline-2 focus:outline-black">Privacy Policy</a>.
                 </label>
@@ -188,7 +188,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
                   required
                   className="mt-1 w-4 h-4 text-black border-gray-300 rounded focus:ring-black"
                 />
-                <label htmlFor="terms" className="text-sm text-gray-600">
+                <label htmlFor="terms" className="text-sm text-black">
                   I agree to the{' '}
                   <a href="#" className="text-black hover:underline focus:outline focus:outline-2 focus:outline-black">Terms of Service</a>
                 </label>
@@ -204,7 +204,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
             </form>
 
             {/* Login Link */}
-            <p className="text-center text-sm text-gray-600 mt-6">
+            <p className="text-center text-sm text-black mt-6">
               Already have an account?{' '}
               <a href="#" className="text-black hover:underline font-medium">
                 Sign in
@@ -219,8 +219,8 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Registration Successful!</h2>
-            <p className="text-gray-600 mb-6">
+            <h2 className="text-2xl font-bold text-sky-gradient mb-2">Registration Successful!</h2>
+            <p className="text-black mb-6">
               Welcome to OpenMint! Your account has been created successfully.
             </p>
             <button

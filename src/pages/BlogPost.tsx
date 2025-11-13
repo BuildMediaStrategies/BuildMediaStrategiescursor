@@ -48,26 +48,26 @@ export default function BlogPostPage() {
             </a>
 
             <header className="mb-10">
-              <div className="text-sm text-gray-600 mb-3">{date}</div>
+              <div className="text-sm text-black mb-3">{date}</div>
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">{title}</h1>
               <div className="mt-6 flex items-center gap-3">
-                <div className="text-gray-700 text-sm">
+                <div className="text-black text-sm">
                   By <span className="text-gray-900 font-medium">{author}</span>
                 </div>
               </div>
             </header>
 
-            <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-sky-gradient prose-a:no-underline hover:prose-a:opacity-80 prose-strong:text-gray-900 prose-code:text-sky-gradient prose-code:bg-gray-100 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:bg-gray-100 prose-pre:border prose-pre:border-gray-200" dangerouslySetInnerHTML={{ __html: rendered.html }} />
+            <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-black prose-a:text-sky-gradient prose-a:no-underline hover:prose-a:opacity-80 prose-strong:text-gray-900 prose-code:text-sky-gradient prose-code:bg-gray-100 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:bg-gray-100 prose-pre:border prose-pre:border-gray-200" dangerouslySetInnerHTML={{ __html: rendered.html }} />
 
             <section className="mt-12 p-8 border-2 border-gray-200 rounded-2xl bg-gray-50">
-              <div className="text-sm text-gray-600 mb-2">Written by</div>
+              <div className="text-sm text-black mb-2">Written by</div>
               <div className="text-gray-900 font-bold text-lg mb-2">{author}</div>
-              <p className="text-gray-700 leading-relaxed">We build fast, conversion-focused websites and AI operations for Kent businesses. Helping companies modernize their digital presence and automate workflows.</p>
+              <p className="text-black leading-relaxed">We build fast, conversion-focused websites and AI operations for Kent businesses. Helping companies modernize their digital presence and automate workflows.</p>
             </section>
 
             <section className="mt-8 p-8 rounded-2xl border-2 border-gray-200 bg-gray-50 hover:border-sky-gradient transition-all duration-300">
               <div className="text-gray-900 font-bold text-xl mb-3">Ready to modernise your website?</div>
-              <p className="text-gray-700 mb-6 leading-relaxed">Get a free assessment. We'll identify speed wins and conversion blockers in minutes.</p>
+              <p className="text-black mb-6 leading-relaxed">Get a free assessment. We'll identify speed wins and conversion blockers in minutes.</p>
               <a href="/contact" className="btn-gradient inline-block px-6 py-3 rounded-full text-white font-medium">
                 Book a Free Assessment
               </a>
@@ -83,7 +83,7 @@ export default function BlogPostPage() {
                     <a
                       key={t.id}
                       href={`#${t.id}`}
-                      className={`block text-gray-700 hover:text-sky-gradient transition-colors ${t.level === 2 ? 'pl-0' : 'pl-4'}`}
+                      className={`block text-black hover:text-sky-gradient transition-colors ${t.level === 2 ? 'pl-0' : 'pl-4'}`}
                     >
                       {t.text}
                     </a>
@@ -99,7 +99,7 @@ export default function BlogPostPage() {
                   <a
                     key={r.slug}
                     href={`/blog/${r.slug}`}
-                    className="block text-sm text-gray-700 hover:text-sky-gradient transition-colors leading-snug"
+                    className="block text-sm text-black hover:text-sky-gradient transition-colors leading-snug"
                   >
                     {r.frontmatter.title || r.slug}
                   </a>

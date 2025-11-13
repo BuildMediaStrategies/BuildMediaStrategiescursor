@@ -10,7 +10,7 @@ export default function EffortlessSecuritySection() {
               On Every Device
             </span>
           </h2>
-          <p className="text-lg font-sans font-normal text-gray-700">
+          <p className="text-lg font-sans font-normal text-black">
             Mobile-first design ensures your customers enjoy a flawless experience wherever they are
           </p>
         </div>

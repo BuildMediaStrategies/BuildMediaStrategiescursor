@@ -14,7 +14,7 @@ export default function SpeedChecker() {
   return (
     <div className="space-y-2">
       <button className="bg-black text-white rounded px-3 py-2" onClick={check}>Run Speed Check</button>
-      {result && <div className="text-sm text-gray-500">Result: {result}</div>}
+      {result && <div className="text-sm text-black">Result: {result}</div>}
     </div>
   );
 }

@@ -5,14 +5,14 @@ export default function DashboardSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
           {/* Right Section: Text Content */}
           <div className="lg:order-2 lg:pl-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold text-gray-900 mb-5 sm:mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold text-sky-gradient mb-5 sm:mb-6 leading-tight">
               Web Design That<br/>
               <span className="text-sky-gradient">
                 Drives Revenue
               </span>
             </h2>
 
-            <p className="text-base sm:text-lg font-sans font-normal mb-6 sm:mb-8 leading-relaxed text-gray-600">
+            <p className="text-base sm:text-lg font-sans font-normal mb-6 sm:mb-8 leading-relaxed text-black">
               Every pixel serves a purpose. We build websites designed to convert
               visitors into paying customers and deliver measurable ROI.
             </p>

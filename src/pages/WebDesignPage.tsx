@@ -152,7 +152,7 @@ export default function WebDesignPage() {
                 Convert Visitors
               </span>
             </h1>
-            <p className="text-lg sm:text-xl font-sans font-normal leading-relaxed max-w-3xl mx-auto mb-10 text-gray-700">
+            <p className="text-lg sm:text-xl font-sans font-normal leading-relaxed max-w-3xl mx-auto mb-10 text-black">
               Fast, mobile-first sites that turn browsers into buyers and drive measurable business growth.
             </p>
             <a
@@ -167,10 +167,10 @@ export default function WebDesignPage() {
         <section className="py-16 lg:py-20 px-5 lg:px-11">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-gray-900 mb-6 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-sky-gradient mb-6 leading-tight">
                 What You Get
               </h2>
-              <p className="text-base sm:text-lg font-sans font-normal max-w-2xl mx-auto text-gray-700">
+              <p className="text-base sm:text-lg font-sans font-normal max-w-2xl mx-auto text-black">
                 Complete web design solutions that deliver results
               </p>
             </div>
@@ -185,46 +185,46 @@ export default function WebDesignPage() {
 
         <section className="py-16 lg:py-20 px-5 lg:px-11 border-t border-gray-200" aria-labelledby="process-heading">
           <div className="max-w-5xl mx-auto">
-            <h2 id="process-heading" className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-gray-900 mb-12 text-center leading-tight">
+            <h2 id="process-heading" className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-sky-gradient mb-12 text-center leading-tight">
               How We Build
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="border-l-2 border-sky-gradient pl-6 sm:pl-8">
                 <div className="text-3xl font-sans font-bold text-sky-gradient mb-2">01</div>
-                <h3 className="text-xl sm:text-2xl font-sans font-bold text-gray-900 mb-4">
+                <h3 className="text-xl sm:text-2xl font-sans font-bold text-sky-gradient mb-4">
                   Discovery & Strategy
                 </h3>
-                <p className="text-base sm:text-lg font-sans font-normal leading-relaxed text-gray-700">
+                <p className="text-base sm:text-lg font-sans font-normal leading-relaxed text-black">
                   Study your business and audience. Map the customer journey and design a site that guides visitors toward conversion.
                 </p>
               </div>
 
               <div className="border-l-2 border-sky-gradient pl-6 sm:pl-8">
                 <div className="text-3xl font-sans font-bold text-sky-gradient mb-2">02</div>
-                <h3 className="text-xl sm:text-2xl font-sans font-bold text-gray-900 mb-4">
+                <h3 className="text-xl sm:text-2xl font-sans font-bold text-sky-gradient mb-4">
                   Design & Prototype
                 </h3>
-                <p className="text-base sm:text-lg font-sans font-normal leading-relaxed text-gray-700">
+                <p className="text-base sm:text-lg font-sans font-normal leading-relaxed text-black">
                   Custom mockups focused on clarity and conversions. You approve designs before we write any code.
                 </p>
               </div>
 
               <div className="border-l-2 border-sky-gradient pl-6 sm:pl-8">
                 <div className="text-3xl font-sans font-bold text-sky-gradient mb-2">03</div>
-                <h3 className="text-xl sm:text-2xl font-sans font-bold text-gray-900 mb-4">
+                <h3 className="text-xl sm:text-2xl font-sans font-bold text-sky-gradient mb-4">
                   Development & Testing
                 </h3>
-                <p className="text-base sm:text-lg font-sans font-normal leading-relaxed text-gray-700">
+                <p className="text-base sm:text-lg font-sans font-normal leading-relaxed text-black">
                   Clean, scalable code built with modern frameworks. Rigorous testing across devices and browsers.
                 </p>
               </div>
 
               <div className="border-l-2 border-sky-gradient pl-6 sm:pl-8">
                 <div className="text-3xl font-sans font-bold text-sky-gradient mb-2">04</div>
-                <h3 className="text-xl sm:text-2xl font-sans font-bold text-gray-900 mb-4">
+                <h3 className="text-xl sm:text-2xl font-sans font-bold text-sky-gradient mb-4">
                   Launch & Optimize
                 </h3>
-                <p className="text-base sm:text-lg font-sans font-normal leading-relaxed text-gray-700">
+                <p className="text-base sm:text-lg font-sans font-normal leading-relaxed text-black">
                   Smooth deployment with zero downtime. Continuous optimization based on real user behavior.
                 </p>
               </div>
@@ -240,7 +240,7 @@ export default function WebDesignPage() {
                 That Actually Works?
               </span>
             </h2>
-            <p className="text-base sm:text-lg font-sans font-normal mb-10 leading-relaxed max-w-2xl mx-auto text-gray-700">
+            <p className="text-base sm:text-lg font-sans font-normal mb-10 leading-relaxed max-w-2xl mx-auto text-black">
               Let's create a fast, mobile-first site that converts visitors into customers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

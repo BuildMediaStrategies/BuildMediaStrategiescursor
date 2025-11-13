@@ -19,14 +19,14 @@ export default function SpeedCheckerPage() {
             <h1 className="text-3xl sm:text-4xl font-bold text-white">Website Speed Checker</h1>
             <p className="text-gray-400 mt-2">Find out if your slow website is costing you customers</p>
           </div>
-          <Suspense fallback={<div className="text-center text-gray-600">Loading...</div>}>
+          <Suspense fallback={<div className="text-center text-black">Loading...</div>}>
             <LazySpeedChecker />
           </Suspense>
 
           {/* Extra content */}
           <div className="mt-12 max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-2">How We Make Sites Fast</h2>
-            <p className="text-gray-600 mb-4">We use modern frameworks, edge caching, optimized media, and performance budgets—backed by strict Core Web Vitals monitoring.</p>
+            <h2 className="text-2xl font-semibold text-sky-gradient mb-2">How We Make Sites Fast</h2>
+            <p className="text-black mb-4">We use modern frameworks, edge caching, optimized media, and performance budgets—backed by strict Core Web Vitals monitoring.</p>
             <a
               href="/web-design"
               onClick={() => { try { trackCTAClick('speed_checker_web_design_cta', { page: window.location.pathname }); } catch {} }}

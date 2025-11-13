@@ -80,8 +80,8 @@ export default function AIDemo() {
               <Bot className="w-5 h-5 text-blue-600" />
             </div>
             <div>
-              <h2 className="text-xl font-semibold text-gray-900">AI Assistant Demo</h2>
-              <p className="text-sm text-gray-600">See how AI can handle your customer queries 24/7</p>
+              <h2 className="text-xl font-semibold text-sky-gradient">AI Assistant Demo</h2>
+              <p className="text-sm text-black">See how AI can handle your customer queries 24/7</p>
             </div>
           </div>
         </div>
@@ -100,7 +100,7 @@ export default function AIDemo() {
               </div>
               {m.role === 'user' && (
                 <div className="ml-2 mt-1 w-7 h-7 rounded-full bg-gray-200 border border-gray-300 flex items-center justify-center">
-                  <User className="w-4 h-4 text-gray-700" />
+                  <User className="w-4 h-4 text-black" />
                 </div>
               )}
             </div>
@@ -144,7 +144,7 @@ export default function AIDemo() {
               <Send className="w-4 h-4 mr-2" /> Send
             </button>
           </div>
-          <p className="mt-2 text-xs text-gray-500">This is a demo. Real implementations are trained on your business data.</p>
+          <p className="mt-2 text-xs text-black">This is a demo. Real implementations are trained on your business data.</p>
         </div>
       </div>
     </div>

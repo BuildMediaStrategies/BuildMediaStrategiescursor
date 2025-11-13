@@ -153,7 +153,7 @@ export default function ExitIntentPopup() {
             </div>
           </div>
 
-          <p className="text-xs text-gray-500 text-center mb-6">
+          <p className="text-xs text-black text-center mb-6">
             Based on our client results across Kent
           </p>
 
@@ -175,7 +175,7 @@ export default function ExitIntentPopup() {
             </button>
           </form>
 
-          <p className="text-xs text-gray-500 text-center mt-3">
+          <p className="text-xs text-black text-center mt-3">
             No spam. Unsubscribe anytime.
           </p>
         </div>

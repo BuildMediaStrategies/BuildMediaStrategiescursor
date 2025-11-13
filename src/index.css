@@ -104,6 +104,12 @@ html, body, #root { background:#fff; }
   background-clip:text;
   color:transparent;
 }
+.heading-gradient{
+  background:var(--sky-gradient);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
 .bg-sky-gradient{ background:var(--sky-gradient); }
 .border-sky-gradient{
   position:relative;
