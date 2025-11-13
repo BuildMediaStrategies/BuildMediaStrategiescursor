@@ -12,14 +12,25 @@ export default function Navigation() {
   ];
 
   const itemClass = ({ isActive }: { isActive: boolean }) =>
-    `link-sky px-3 py-2 rounded-3xl transition-all duration-300 font-bold glow-gradient-hover ${
+    `link-sky px-3 py-2 rounded-3xl transition-all duration-300 font-bold ${
       isActive
-        ? 'bg-gradient-to-r from-orange-100/30 to-blue-100/30 glow-gradient'
+        ? 'bg-gradient-to-r from-orange-100/30 to-blue-100/30'
         : 'hover:bg-gray-50'
     }`;
 
   return (
-    <nav aria-label="Main navigation" className="relative">
+    <nav aria-label="Main navigation" className="relative flex items-center justify-between">
+      {/* Logo */}
+      <a href="/" className="flex items-center space-x-2">
+        <img
+          src="/assets/bmsnewlogo sky.png"
+          alt="BuildMediaStrategies logo"
+          className="h-8 w-auto object-contain"
+          loading="eager"
+          fetchPriority="high"
+        />
+      </a>
+
       {/* Desktop */}
       <ul className="hidden md:flex gap-1 text-sm items-center">
         {links.map((l) => (
@@ -48,8 +59,8 @@ export default function Navigation() {
               key={l.to}
               to={l.to}
               className={({ isActive }) =>
-                `link-sky block px-4 py-3 rounded-2xl transition-all duration-300 font-bold glow-gradient-hover ${
-                  isActive ? 'bg-gradient-to-r from-orange-100/30 to-blue-100/30 glow-gradient' : 'hover:bg-gray-50'
+                `link-sky block px-4 py-3 rounded-2xl transition-all duration-300 font-bold ${
+                  isActive ? 'bg-gradient-to-r from-orange-100/30 to-blue-100/30' : 'hover:bg-gray-50'
                 }`
               }
               onClick={() => setOpen(false)}
@@ -62,4 +73,3 @@ export default function Navigation() {
     </nav>
   );
 }
-
