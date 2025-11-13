@@ -128,9 +128,6 @@ export default function HomePage() {
           <div id="partners"><LogoCloud /></div>
         </Suspense>
         <Suspense fallback={null}>
-          <div id="features"><StatisticsSection /></div>
-        </Suspense>
-        <Suspense fallback={null}>
           <DashboardSection />
         </Suspense>
         <Suspense fallback={null}>
