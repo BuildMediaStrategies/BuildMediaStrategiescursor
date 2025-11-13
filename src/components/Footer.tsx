@@ -29,10 +29,10 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <h3 className="text-white font-semibold text-base mb-4">Services</h3>
             <ul className="space-y-3">
-              <li><a href="/web-design" className="text-gray-400 text-sm hover:text-white transition-colors">Web Design</a></li>
-              <li><a href="/ai-operations" className="text-gray-400 text-sm hover:text-white transition-colors">AI Operations</a></li>
-              <li><a href="/portfolio" className="text-gray-400 text-sm hover:text-white transition-colors">Portfolio</a></li>
-              <li><a href="/contact" className="text-gray-400 text-sm hover:text-white transition-colors">Contact</a></li>
+              <li><a href="/web-design" className="link-sky text-sm transition-colors">Web Design</a></li>
+              <li><a href="/ai-operations" className="link-sky text-sm transition-colors">AI Operations</a></li>
+              <li><a href="/portfolio" className="link-sky text-sm transition-colors">Portfolio</a></li>
+              <li><a href="/contact" className="link-sky text-sm transition-colors">Contact</a></li>
             </ul>
           </div>
 
@@ -40,10 +40,10 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <h3 className="text-white font-semibold text-base mb-4">Kent Areas</h3>
             <ul className="space-y-3">
-              <li><a href="/web-design-dover" className="text-gray-400 text-sm hover:text-white transition-colors">Dover</a></li>
-              <li><a href="/web-design-deal" className="text-gray-400 text-sm hover:text-white transition-colors">Deal</a></li>
-              <li><a href="/web-design-canterbury" className="text-gray-400 text-sm hover:text-white transition-colors">Canterbury</a></li>
-              <li><a href="/web-design-folkestone" className="text-gray-400 text-sm hover:text-white transition-colors">Folkestone</a></li>
+              <li><a href="/web-design-dover" className="link-sky text-sm transition-colors">Dover</a></li>
+              <li><a href="/web-design-deal" className="link-sky text-sm transition-colors">Deal</a></li>
+              <li><a href="/web-design-canterbury" className="link-sky text-sm transition-colors">Canterbury</a></li>
+              <li><a href="/web-design-folkestone" className="link-sky text-sm transition-colors">Folkestone</a></li>
             </ul>
           </div>
 
@@ -51,9 +51,9 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <h3 className="text-white font-semibold text-base mb-4">Company</h3>
             <ul className="space-y-3">
-              <li><a href="/about" className="text-gray-400 text-sm hover:text-white transition-colors">About</a></li>
-              <li><a href="/blog" className="text-gray-400 text-sm hover:text-white transition-colors">Blog</a></li>
-              <li><a href="/industries" className="text-gray-400 text-sm hover:text-white transition-colors">Industries</a></li>
+              <li><a href="/about" className="link-sky text-sm transition-colors">About</a></li>
+              <li><a href="/blog" className="link-sky text-sm transition-colors">Blog</a></li>
+              <li><a href="/industries" className="link-sky text-sm transition-colors">Industries</a></li>
             </ul>
           </div>
         </div>

@@ -4,11 +4,11 @@ import Navigation from './Navigation';
 
 export default function Header() {
   return (
-    <header className="w-full sticky top-0 z-50 bg-black border-b border-white/5 shadow-[0_4px_20px_rgba(168,85,247,0.3)]">
+    <header className="w-full sticky top-0 z-50 bg-white/90 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 py-3 flex items-center justify-between">
         <Link
           to="/"
-          className="flex items-center rounded-3xl px-3 py-1 hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all duration-300"
+          className="flex items-center rounded-3xl px-3 py-1 hover:opacity-80 transition-all duration-300"
         >
           <picture className="flex items-center h-16 overflow-hidden">
             <source srcSet="/logo.webp" type="image/webp" />
@@ -25,6 +25,8 @@ export default function Header() {
         </Link>
         <Navigation />
       </div>
+      {/* gradient divider below nav */}
+      <div className="w-full h-px bg-sky-gradient" />
     </header>
   );
 }

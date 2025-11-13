@@ -74,3 +74,56 @@ div {
     scroll-behavior: auto !important;
   }
 }
+
+:root{
+  /* Sky sweep stops */
+  --sky-o:#FF7A00; /* orange */
+  --sky-r:#FF2A2A; /* red */
+  --sky-p:#FF2EC9; /* hot pink */
+  --sky-m:#E11AF5; /* magenta */
+  --sky-v:#9B1FFF; /* violet */
+  --sky-b:#2E7BFF; /* blue */
+
+  --sky-gradient: linear-gradient(90deg,
+    var(--sky-o) 0%,
+    var(--sky-r) 18%,
+    var(--sky-p) 36%,
+    var(--sky-m) 54%,
+    var(--sky-v) 72%,
+    var(--sky-b) 100%
+  );
+}
+
+/* Site background defaults to white */
+html, body, #root { background:#fff; }
+
+/* Utilities (no package needed) */
+.text-sky-gradient{
+  background:var(--sky-gradient);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.bg-sky-gradient{ background:var(--sky-gradient); }
+.border-sky-gradient{
+  position:relative;
+}
+.border-sky-gradient::after{
+  content:"";
+  position:absolute; left:0; right:0; bottom:-1px; height:1px;
+  background:var(--sky-gradient);
+  pointer-events:none;
+}
+
+/* Optional: global link style with opt-out */
+a.link-sky{ @apply no-underline; }
+a.link-sky{
+  background:var(--sky-gradient);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+a.link-sky:hover{ opacity:.85; }
+
+/* Keep focus visible */
+a:focus-visible, button:focus-visible{
+  outline:2px solid #2E7BFF; outline-offset:2px;
+}
