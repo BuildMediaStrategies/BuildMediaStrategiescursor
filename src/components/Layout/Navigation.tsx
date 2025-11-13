@@ -73,13 +73,34 @@ export default function Navigation() {
         />
       </button>
 
-      {/* FULL-SCREEN WHITE MOBILE MENU (under header, above hero) */}
+      {/* FULL-SCREEN MOBILE MENU OVERLAY */}
       {open && (
-        <div
-          className="fixed inset-x-0 top-[72px] bottom-0 z-[45] bg-white overflow-y-auto md:hidden animate-fadeIn"
-        >
-          {/* Menu Items */}
-          <div className="px-6 pt-6 space-y-3">
+        <div className="fixed inset-0 z-[55] bg-white md:hidden animate-fadeIn flex flex-col">
+          {/* Gradient header bar inside overlay (looks like navbar) */}
+          <div className="flex items-center justify-between px-4 py-3 border-b border-sky-100 bg-sky-gradient">
+            <div className="flex items-center">
+              <img
+                src="/assets/bmsnewlogo sky.png"
+                alt="Build Media Strategies"
+                className="h-8 w-auto object-contain"
+                loading="lazy"
+              />
+            </div>
+            <button
+              type="button"
+              aria-label="Close menu"
+              onClick={() => setOpen(false)}
+              className="w-9 h-9 flex items-center justify-center rounded-lg bg-white/10 border border-white/40"
+            >
+              <span className="relative block w-4 h-4">
+                <span className="absolute inset-0 bg-white h-[2px] w-full rotate-45 origin-center" />
+                <span className="absolute inset-0 bg-white h-[2px] w-full -rotate-45 origin-center" />
+              </span>
+            </button>
+          </div>
+
+          {/* Links */}
+          <div className="flex-1 px-6 pt-6 space-y-3 overflow-y-auto">
             {links.map((l, index) => (
               <NavLink
                 key={l.to}
@@ -103,7 +124,7 @@ export default function Navigation() {
           </div>
 
           {/* Bottom CTA */}
-          <div className="px-6 py-8 border-t border-gray-200 mt-10">
+          <div className="px-6 py-8 border-t border-gray-200 bg-white">
             <a
               href="/contact"
               onClick={() => setOpen(false)}
