@@ -52,17 +52,17 @@ export default function Navigation() {
         className="md:hidden relative z-[60] w-10 h-10 flex flex-col items-center justify-center gap-1.5 transition-all duration-300"
       >
         <span
-          className={`block h-0.5 w-6 bg-gradient-to-r from-sky-400 to-blue-600 transition-all duration-300 ease-out ${
+          className={`block h-0.5 w-6 bg-sky-gradient transition-all duration-300 ease-out ${
             open ? 'rotate-45 translate-y-2' : ''
           }`}
         />
         <span
-          className={`block h-0.5 w-6 bg-gradient-to-r from-sky-400 to-blue-600 transition-all duration-300 ease-out ${
+          className={`block h-0.5 w-6 bg-sky-gradient transition-all duration-300 ease-out ${
             open ? 'opacity-0' : ''
           }`}
         />
         <span
-          className={`block h-0.5 w-6 bg-gradient-to-r from-sky-400 to-blue-600 transition-all duration-300 ease-out ${
+          className={`block h-0.5 w-6 bg-sky-gradient transition-all duration-300 ease-out ${
             open ? '-rotate-45 -translate-y-2' : ''
           }`}
         />
@@ -81,7 +81,7 @@ export default function Navigation() {
           {/* Menu Panel */}
           <div className="md:hidden fixed inset-y-0 right-0 w-[280px] bg-white z-50 shadow-2xl animate-slideInRight">
             {/* Gradient Header */}
-            <div className="bg-gradient-to-r from-sky-400 to-blue-600 p-6">
+            <div className="bg-sky-gradient p-6">
               <h2 className="text-white font-bold text-xl">Menu</h2>
             </div>
 
@@ -92,10 +92,10 @@ export default function Navigation() {
                   key={l.to}
                   to={l.to}
                   className={({ isActive }) =>
-                    `block px-5 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-[1.02] ${
+                    `block px-5 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-[1.02] text-sky-gradient ${
                       isActive
-                        ? 'bg-gradient-to-r from-sky-50 to-blue-50 text-sky-gradient border-2 border-sky-200'
-                        : 'text-black hover:bg-gray-50'
+                        ? 'bg-sky-50 border-2 border-sky-200'
+                        : 'hover:bg-sky-50'
                     }`
                   }
                   style={{
@@ -110,11 +110,11 @@ export default function Navigation() {
             </div>
 
             {/* Footer CTA */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-gray-100">
+            <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-gray-100 bg-white">
               <a
                 href="/contact"
                 onClick={() => setOpen(false)}
-                className="block text-center px-6 py-3 bg-gradient-to-r from-sky-400 to-blue-600 text-white font-bold rounded-full hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
+                className="block text-center px-6 py-3 bg-sky-gradient text-white font-bold rounded-full hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
               >
                 Get Started
               </a>
