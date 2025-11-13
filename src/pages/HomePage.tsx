@@ -104,9 +104,6 @@ export default function HomePage() {
             </a>
           </div>
         </header>
-
-        {/* Hide the bottom fade on mobile to avoid dimming the browsers */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-black z-30 hidden sm:block" aria-hidden="true" />
       </div>
 
       {/* REST OF PAGE */}
