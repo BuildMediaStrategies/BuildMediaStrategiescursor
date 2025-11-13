@@ -71,20 +71,26 @@ export default function Navigation() {
 
       {/* Mobile Fullscreen Menu - Rendered via Portal to escape parent z-index */}
       {open && createPortal(
-        <div className="md:hidden fixed inset-0 z-[9999] bg-white" aria-hidden={false}>
-          {/* Gradient Header */}
-          <div className="bg-sky-gradient px-6 py-8 flex items-center justify-between">
-            <h2 className="text-white font-bold text-2xl">Menu</h2>
-            <button
-              type="button"
-              aria-label="Close menu"
-              onClick={() => setOpen(false)}
-              className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10 transition-all duration-300"
-            >
-              <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
+        <div className="md:hidden fixed inset-0 z-[9999] bg-white animate-fadeIn" aria-hidden={false}>
+          {/* Header matching the main nav - white background with logo */}
+          <div className="bg-white/90 backdrop-blur-sm border-b border-gray-100">
+            <div className="px-5 py-3 flex items-center justify-between">
+              <img
+                src="/assets/bmsnewlogo sky.png"
+                alt="Build Media Strategies"
+                className="h-8 w-auto object-contain scale-[3.25] origin-left translate-y-[12px] -ml-8"
+                width="320"
+                height="88"
+                loading="eager"
+              />
+              {/* Burger shown as X */}
+              <div className="w-10 h-10 flex flex-col items-center justify-center gap-1.5">
+                <span className="block h-0.5 w-6 rounded-full bg-white rotate-45 translate-y-2" style={{ background: 'linear-gradient(135deg, #FF6B35 0%, #F7931E 25%, #FDC830 50%, #4FACFE 75%, #00F2FE 100%)' }} />
+                <span className="block h-0.5 w-6 rounded-full opacity-0" />
+                <span className="block h-0.5 w-6 rounded-full bg-white -rotate-45 -translate-y-2" style={{ background: 'linear-gradient(135deg, #FF6B35 0%, #F7931E 25%, #FDC830 50%, #4FACFE 75%, #00F2FE 100%)' }} />
+              </div>
+            </div>
+            <div className="w-full h-px bg-sky-gradient" />
           </div>
 
           {/* Menu Items - Centered Vertically */}
@@ -144,6 +150,10 @@ export default function Navigation() {
           to {
             opacity: 1;
           }
+        }
+
+        .animate-fadeIn {
+          animation: fadeIn 0.2s ease-out forwards;
         }
       `}</style>
     </nav>
