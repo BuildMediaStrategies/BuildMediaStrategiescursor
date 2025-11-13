@@ -48,8 +48,8 @@ export default function About() {
 
   return (
     <SEOWrapper
-      title="About | Build Media Strategies"
-      description="We build fast, honest, human‑centred systems for Kent businesses. No corporate theatre—just work that holds up in the real world."
+      title="About | Web Design & AI Automation Agency Kent Dover"
+      description="Founded by Joshua Johnson, Build Media Strategies delivers web design and AI automation for Kent businesses. 5+ years experience serving Dover, Deal, Canterbury & Folkestone."
       canonical={canonical}
     >
       <div className="bg-black text-white">
@@ -67,10 +67,9 @@ export default function About() {
         <section className="px-5 lg:px-11 py-14 border-b border-gray-800" style={{ backgroundColor: '#0A0A0A' }}>
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
             <div>
-              <h2 className="text-2xl font-bold mb-3">How we started</h2>
+              <h2 className="text-2xl font-bold mb-3">Founded in Kent</h2>
               <p className="text-gray-300">
-                We started small, fixing slow sites and messy funnels for local businesses. Word spread—not because of a sales team, but because
-                things worked. Today, we still operate with the same principle: do the simple things well, and results follow.
+                Founded by Joshua Johnson and based in Dover, Kent, Build Media Strategies started by helping local businesses fix slow websites and improve their online presence. With over 5 years of experience in web design and AI automation, we've grown through word-of-mouth and real results. Today, we serve businesses across Dover, Deal, Canterbury, and Folkestone with the same principle: deliver measurable results through expert web design and intelligent automation.
               </p>
             </div>
             <div>

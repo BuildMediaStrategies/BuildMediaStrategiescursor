@@ -90,10 +90,10 @@ export default function WebDesignPage() {
   return (
     <>
       <SEOWrapper
-        title="Modern Web Design Kent | Fast, Conversion-Focused Websites"
-        description="Professional web design services across Kent. We build lightning-fast websites that actually convert. Modern React development, not WordPress. Serving Dover, Deal, Canterbury, Folkestone."
+        title="Web Design Kent | Fast Websites for Dover Deal Canterbury"
+        description="Web Design Kent services for Dover, Deal, Canterbury & Folkestone. Lightning-fast websites that convert visitors into sales. Modern design, expert SEO. Get your free quote."
         canonical="https://buildmediastrategies.com/web-design"
-        keywords="web design Kent, modern websites, fast web design, React websites Dover Deal Canterbury"
+        keywords="web design Kent, web design Dover, web design Deal, web design Canterbury, web design Folkestone, website design Kent, web designer Kent"
       />
       {/* Schema structured data - keeping for SEO */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
@@ -147,13 +147,13 @@ export default function WebDesignPage() {
         <section className="pt-32 pb-16 px-5 lg:px-11" aria-labelledby="hero-heading">
           <div className="max-w-5xl mx-auto text-center">
             <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold mb-6 leading-tight">
-              <span className="block text-gray-900">Websites Built To</span>
-              <span className="block text-sky-gradient">
-                Convert Visitors
-              </span>
+              <span className="block text-sky-gradient">Web Design Kent</span>
             </h1>
+            <p className="text-lg sm:text-xl font-sans font-normal leading-relaxed max-w-3xl mx-auto mb-4 text-black">
+              Professional web design services for businesses across Dover, Deal, Canterbury, and Folkestone. We build lightning-fast, conversion-focused websites that drive measurable results. Our Kent-based team combines modern web design with expert SEO to help local businesses thrive online. Every website we create is optimized for speed, mobile performance, and search rankings.
+            </p>
             <p className="text-lg sm:text-xl font-sans font-normal leading-relaxed max-w-3xl mx-auto mb-10 text-black">
-              Fast, mobile-first sites that turn browsers into buyers and drive measurable business growth.
+              Fast, mobile-first sites that turn browsers into buyers and drive business growth.
             </p>
             <a
               href="/contact"
@@ -168,7 +168,7 @@ export default function WebDesignPage() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-sky-gradient mb-6 leading-tight">
-                What You Get
+                High-Performance Websites for Kent Businesses
               </h2>
               <p className="text-base sm:text-lg font-sans font-normal max-w-2xl mx-auto text-black">
                 Complete web design solutions that deliver results

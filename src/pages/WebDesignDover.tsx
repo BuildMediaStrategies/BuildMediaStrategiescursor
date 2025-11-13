@@ -47,10 +47,10 @@ export default function WebDesignDover() {
   return (
     <>
       <SEOWrapper
-        title="Web Design Dover Kent | Fast, Modern Websites"
-        description="Professional web design services for Dover businesses. Modern technology, fast load times, real results."
+        title="Web Design Dover | Fast Websites for Kent Businesses"
+        description="Web Design Dover that loads fast, ranks high, and converts visitors into sales. Kent-based agency delivering high-performance websites. Get your free audit today."
         canonical="https://buildmediastrategies.com/web-design-dover"
-        keywords="web design Dover, Dover web designer, websites Dover Kent, Dover business websites"
+        keywords="web design Dover, web design agency Dover, Dover web designer, website design Dover Kent, web developer Dover"
         schemaType="service"
         ogType="website"
       />
@@ -61,12 +61,11 @@ export default function WebDesignDover() {
         <section className="pt-32 pb-20 px-5 sm:px-6" style={{ backgroundColor: '#000000' }}>
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Web Design{' '}
-              <span className="bg-gradient-to-b from-white to-gray-600 bg-clip-text text-transparent">
-                Dover
-              </span>{' '}
-              Kent | Fast, Modern Websites
+              Web Design Dover
             </h1>
+            <p className="text-xl text-gray-300 mb-4 max-w-3xl mx-auto">
+              Web Design Dover services for local businesses across Kent. We build fast, high-performance websites that rank on Google and convert visitors into customers. Our Dover-based web design agency specializes in modern website design, expert SEO, and mobile-first development for businesses in Dover, Deal, Canterbury, and Folkestone.
+            </p>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
               Professional web design services for Dover businesses. Modern technology, fast load times, real results.
             </p>
@@ -92,7 +91,7 @@ export default function WebDesignDover() {
           <div className="max-w-4xl mx-auto">
             <div className="rounded-2xl p-8 md:p-12" style={{ backgroundColor: '#1A1A1A' }}>
               <h2 className="text-3xl font-bold text-white mb-6">
-                Web Design for Dover Businesses
+                Why Choose Our Dover Web Design Agency
               </h2>
               <p className="text-lg text-gray-300 leading-relaxed">
                 Dover's strategic location and thriving port economy create unique opportunities for businesses. Whether you're in logistics, tourism, or retail, your website needs to work as hard as you do. We build fast, mobile-optimized sites that convert Dover's local and international visitors into customers.

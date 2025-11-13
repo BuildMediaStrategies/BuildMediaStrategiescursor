@@ -110,10 +110,10 @@ export default function ContactPage() {
   return (
     <>
       <SEO
-        title="Contact Us | Free Consultation | Build Media Strategies Kent"
-        description="Get a free consultation for your web design or AI automation project. Serving businesses across Dover, Deal, Canterbury, and Folkestone."
+        title="Contact | Web Design & AI Automation Kent Dover Deal"
+        description="Contact our web design and AI automation agency serving Kent. Free consultation for Dover, Deal, Canterbury & Folkestone businesses. Start your project today."
         canonical="https://buildmediastrategies.com/contact"
-        keywords="contact web designer Kent, free consultation, web design quote Dover"
+        keywords="contact web designer Kent, web design quote Dover, AI automation consultation, free website audit Kent"
       />
       <main className="bg-white min-h-screen pt-24" >
         <div className="max-w-4xl mx-auto px-5 sm:px-6 py-12 sm:py-16 lg:py-20">

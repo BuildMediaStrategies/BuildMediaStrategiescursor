@@ -186,10 +186,10 @@ export default function AIOperationsPage() {
   return (
     <>
       <SEOWrapper
-        title="AI Business Automation Kent | Cut Costs, Save Time"
-        description="AI automation for Kent businesses. Automate customer service, scheduling, and repetitive tasks. See ROI in weeks, not months. Real automation that works 24/7."
+        title="AI Automation Kent | AI Systems Dover Deal Canterbury"
+        description="AI Automation Kent for Dover, Deal, Canterbury & Folkestone businesses. AI systems that cut costs and scale operations 24/7. Automate tasks, not people. Get started today."
         canonical="https://buildmediastrategies.com/ai-operations"
-        keywords="AI automation Kent, business automation, AI operations Dover, workflow automation"
+        keywords="AI automation Kent, AI automation Dover, AI operations Kent, AI systems Kent, AI automation agency Kent, business automation Dover Deal Canterbury"
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
           "@context": "https://schema.org",
@@ -242,9 +242,11 @@ export default function AIOperationsPage() {
         <section className="pt-32 pb-12 px-5 lg:px-11" aria-labelledby="hero-heading">
           <div className="max-w-5xl mx-auto text-center">
             <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold mb-6 leading-tight">
-              <span className="block text-gray-900">AI Systems That</span>
-              <span className="block text-sky-gradient">Work While You Sleep</span>
+              <span className="block text-sky-gradient">AI Automation Kent</span>
             </h1>
+            <p className="text-lg sm:text-xl font-sans font-normal leading-relaxed max-w-3xl mx-auto mb-4 text-black">
+              AI automation services for businesses across Dover, Deal, Canterbury, and Folkestone. We build intelligent AI systems that automate repetitive tasks, cut operational costs, and scale your business operations 24/7. Our Kent-based team specializes in AI automation for customer service, scheduling, lead qualification, and workflow optimization. Transform your business with AI systems that deliver measurable results.
+            </p>
             <p className="text-lg sm:text-xl font-sans font-normal leading-relaxed max-w-3xl mx-auto mb-10 text-black">
               Automate customer service, lead qualification, invoicing, and scheduling. Built for Kent businesses ready to scale without hiring more staff.
             </p>
@@ -261,7 +263,7 @@ export default function AIOperationsPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-sky-gradient mb-6 leading-tight">
-                What We Automate
+                AI Systems for Dover, Deal, Canterbury & Folkestone
               </h2>
               <p className="text-base sm:text-lg font-sans font-normal max-w-2xl mx-auto text-black">
                 Real AI systems solving real business problems

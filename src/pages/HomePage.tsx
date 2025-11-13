@@ -21,11 +21,11 @@ export default function HomePage() {
   return (
     <>
       <SEOWrapper
-        title="Web Design & AI Operations in Kent"
-        description="High-performance websites and AI operations for businesses across Dover, Deal, Canterbury, and Folkestone. Drive sales and scale operations with custom web design and intelligent automation."
+        title="Web Design Kent | AI Automation Dover Deal Canterbury"
+        description="Web Design Kent and AI Automation services for Dover, Deal, Canterbury & Folkestone businesses. Fast websites that convert. AI systems that scale. Get your free audit today."
         canonical="https://buildmediastrategies.com/"
         schemaType="homepage"
-        keywords="web design Kent, AI operations, business websites Dover, Canterbury web design, Folkestone web developer, AI automation Kent, web development Deal"
+        keywords="web design Kent, web design Dover, web design Deal, web design Canterbury, web design Folkestone, AI automation Kent, AI automation Dover, AI operations Kent"
         ogType="website"
       />
       <a href="#main-content" className="skip-to-content">Skip to main content</a>
