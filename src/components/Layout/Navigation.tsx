@@ -68,63 +68,54 @@ export default function Navigation() {
         />
       </button>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Fullscreen Menu */}
       {open && (
-        <>
-          {/* Backdrop */}
-          <div
-            className="md:hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-40 animate-fadeIn"
-            onClick={() => setOpen(false)}
-            aria-hidden="true"
-          />
+        <div
+          className="md:hidden fixed inset-x-0 top-0 bottom-0 z-40 bg-white animate-fadeIn flex flex-col"
+          aria-hidden={false}
+        >
+          {/* Spacer so content sits below the sticky gradient header */}
+          <div className="h-20" />
 
-          {/* Menu Panel */}
-          <div className="md:hidden fixed inset-y-0 right-0 w-[280px] bg-white z-50 shadow-2xl animate-slideInRight">
-            {/* Gradient Header */}
-            <div className="bg-sky-gradient p-6">
-              <h2 className="text-white font-bold text-xl">Menu</h2>
-            </div>
-
-            {/* Menu Items */}
-            <div className="p-4 space-y-2">
-              {links.map((l, index) => (
-                <NavLink
-                  key={l.to}
-                  to={l.to}
-                  className={({ isActive }) =>
-                    `block px-5 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-[1.02] text-sky-gradient ${
-                      isActive
-                        ? 'bg-sky-50 border-2 border-sky-200'
-                        : 'hover:bg-sky-50'
-                    }`
-                  }
-                  style={{
-                    animationDelay: `${index * 50}ms`,
-                    animation: 'slideInFromRight 0.3s ease-out forwards',
-                  }}
-                  onClick={() => setOpen(false)}
-                >
-                  {l.label}
-                </NavLink>
-              ))}
-            </div>
-
-            {/* Footer CTA */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-gray-100 bg-white">
-              <a
-                href="/contact"
+          {/* Menu Items */}
+          <div className="flex-1 px-6 space-y-2">
+            {links.map((l, index) => (
+              <NavLink
+                key={l.to}
+                to={l.to}
+                className={({ isActive }) =>
+                  `block px-5 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-[1.02] text-sky-gradient ${
+                    isActive
+                      ? 'bg-sky-50 border-2 border-sky-200'
+                      : 'hover:bg-sky-50'
+                  }`
+                }
+                style={{
+                  animationDelay: `${index * 50}ms`,
+                  animation: 'slideInFromRight 0.3s ease-out forwards',
+                }}
                 onClick={() => setOpen(false)}
-                className="block text-center px-6 py-3 bg-sky-gradient text-white font-bold rounded-full hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
               >
-                Get Started
-              </a>
-            </div>
+                {l.label}
+              </NavLink>
+            ))}
           </div>
-        </>
+
+          {/* Footer CTA pinned to bottom */}
+          <div className="px-6 pb-8 pt-4 border-t border-gray-100 bg-white">
+            <a
+              href="/contact"
+              onClick={() => setOpen(false)}
+              className="block text-center px-6 py-3 bg-sky-gradient text-white font-bold rounded-full hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
+            >
+              Get Started
+            </a>
+          </div>
+        </div>
       )}
 
       <style>{`
-        @keyframes slideInRight {
+        @keyframes slideInFromRight {
           from {
             opacity: 0;
             transform: translateX(20px);
