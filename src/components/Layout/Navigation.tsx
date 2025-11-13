@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
+  
   const links = [
     { to: '/web-design', label: 'Web Design' },
     { to: '/ai-operations', label: 'AI Ops' },
@@ -11,7 +12,7 @@ export default function Navigation() {
     { to: '/contact', label: 'Contact' },
   ];
 
-  // Prevent scroll when menu is open
+  // Prevent scroll when mobile menu is open
   useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden';
@@ -52,33 +53,31 @@ export default function Navigation() {
         className="md:hidden relative z-[60] w-10 h-10 flex flex-col items-center justify-center gap-1.5 transition-all duration-300"
       >
         <span
-          className={`block h-0.5 w-6 bg-sky-gradient transition-all duration-300 ease-out ${
+          className={`block h-0.5 w-6 bg-gradient-to-r from-sky-400 to-blue-600 transition-all duration-300 ${
             open ? 'rotate-45 translate-y-2' : ''
           }`}
         />
         <span
-          className={`block h-0.5 w-6 bg-sky-gradient transition-all duration-300 ease-out ${
+          className={`block h-0.5 w-6 bg-gradient-to-r from-sky-400 to-blue-600 transition-all duration-300 ${
             open ? 'opacity-0' : ''
           }`}
         />
         <span
-          className={`block h-0.5 w-6 bg-sky-gradient transition-all duration-300 ease-out ${
+          className={`block h-0.5 w-6 bg-gradient-to-r from-sky-400 to-blue-600 transition-all duration-300 ${
             open ? '-rotate-45 -translate-y-2' : ''
           }`}
         />
       </button>
 
-      {/* Mobile Fullscreen Menu */}
+      {/* ================================
+          FULL-SCREEN WHITE MOBILE MENU
+         ================================ */}
       {open && (
         <div
-          className="md:hidden fixed inset-x-0 top-0 bottom-0 z-40 bg-white animate-fadeIn flex flex-col"
-          aria-hidden={false}
+          className="fixed inset-x-0 top-[72px] bottom-0 z-40 bg-white overflow-y-auto md:hidden animate-fadeIn"
         >
-          {/* Spacer so content sits below the sticky gradient header */}
-          <div className="h-20" />
-
           {/* Menu Items */}
-          <div className="flex-1 px-6 space-y-2">
+          <div className="px-6 pt-6 space-y-3">
             {links.map((l, index) => (
               <NavLink
                 key={l.to}
@@ -91,8 +90,8 @@ export default function Navigation() {
                   }`
                 }
                 style={{
-                  animationDelay: `${index * 50}ms`,
-                  animation: 'slideInFromRight 0.3s ease-out forwards',
+                  animationDelay: `${index * 40}ms`,
+                  animation: 'slideInFromRight 0.25s ease-out forwards',
                 }}
                 onClick={() => setOpen(false)}
               >
@@ -101,12 +100,12 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Footer CTA pinned to bottom */}
-          <div className="px-6 pb-8 pt-4 border-t border-gray-100 bg-white">
+          {/* Bottom CTA */}
+          <div className="px-6 py-8 border-t border-gray-200 mt-10">
             <a
               href="/contact"
               onClick={() => setOpen(false)}
-              className="block text-center px-6 py-3 bg-sky-gradient text-white font-bold rounded-full hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
+              className="block text-center px-6 py-3 bg-gradient-to-r from-orange-500 to-blue-600 text-white font-bold rounded-full hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
             >
               Get Started
             </a>
@@ -125,14 +124,9 @@ export default function Navigation() {
             transform: translateX(0);
           }
         }
-
         @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
+          from { opacity: 0; }
+          to { opacity: 1; }
         }
       `}</style>
     </nav>
