@@ -103,7 +103,7 @@ export default function WebDesignPage() {
           "provider": {
             "@type": "LocalBusiness",
             "name": "BuildMediaStrategies",
-            "image": "https://buildmediastrategies.com/logo.png",
+            "image": "https://buildmediastrategies.com/assets/bmsnewlogo%20sky.png",
             "description": "Professional web design and development services in Kent. Creating custom websites for businesses across Dover, Deal, Canterbury, and Folkestone.",
             "address": {
               "@type": "PostalAddress",

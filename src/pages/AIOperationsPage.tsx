@@ -255,7 +255,7 @@ export default function AIOperationsPage() {
           "provider": {
             "@type": "LocalBusiness",
             "name": "BuildMediaStrategies",
-            "image": "https://buildmediastrategies.com/logo.png",
+            "image": "https://buildmediastrategies.com/assets/bmsnewlogo%20sky.png",
             "description": "AI operations and automation services in Kent. Helping businesses across Dover, Deal, Canterbury, and Folkestone scale with intelligent systems.",
             "address": {
               "@type": "PostalAddress",

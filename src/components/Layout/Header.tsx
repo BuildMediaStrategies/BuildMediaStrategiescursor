@@ -10,18 +10,15 @@ export default function Header() {
           to="/"
           className="flex items-center rounded-3xl px-3 py-1 hover:opacity-80 transition-all duration-300"
         >
-          <picture className="flex items-center h-16 overflow-hidden">
-            <source srcSet="/logo.webp" type="image/webp" />
-            <img
-              src="/logo.png"
-              alt="Build Media Strategies"
-              className="h-[6rem] w-auto object-contain -my-[0.6rem] scale-[1.18]"
-              width="280"
-              height="64"
-              loading="eager"
-              fetchPriority="high"
-            />
-          </picture>
+          <img
+            src="/assets/bmsnewlogo sky.png"
+            alt="Build Media Strategies"
+            className="h-[4rem] w-auto object-contain"
+            width="280"
+            height="64"
+            loading="eager"
+            fetchPriority="high"
+          />
         </Link>
         <Navigation />
       </div>
