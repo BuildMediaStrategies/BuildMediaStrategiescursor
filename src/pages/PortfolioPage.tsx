@@ -66,14 +66,14 @@ export default function PortfolioPage() {
               <span className="text-gray-500">View related services:</span>
               <a
                 href="/web-design"
-                className="text-purple-400 hover:text-purple-300 transition-colors underline"
+                className="text-orange-400 hover:text-orange-300 transition-colors underline"
               >
                 Web Design
               </a>
               <span className="text-gray-700">•</span>
               <a
                 href="/ai-operations"
-                className="text-purple-400 hover:text-purple-300 transition-colors underline"
+                className="text-blue-400 hover:text-blue-300 transition-colors underline"
               >
                 AI Operations
               </a>
@@ -89,7 +89,7 @@ export default function PortfolioPage() {
                 <a
                   key={index}
                   href={`/case-studies/${project.slug}`}
-                  className="group relative bg-black/50 border border-gray-800 rounded-2xl p-8 hover:border-purple-500/50 hover:shadow-[0_0_40px_rgba(168,85,247,0.25)] transition-all duration-300"
+                  className="group relative bg-black/50 border border-gray-800 rounded-2xl p-8 hover:border-orange-500/50 hover:shadow-[0_0_40px_rgba(249,115,22,0.25)] transition-all duration-300"
                 >
                   {/* Logo */}
                   <div className="mb-8 h-16 flex items-center">
@@ -103,7 +103,7 @@ export default function PortfolioPage() {
                   {/* Content */}
                   <div className="mb-6">
                     <div className="text-sm text-gray-500 mb-2">{project.sector}</div>
-                    <h2 className="text-2xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors">
+                    <h2 className="text-2xl font-bold text-white mb-3 group-hover:text-orange-300 transition-colors">
                       {project.title}
                     </h2>
                     <p className="text-gray-400 leading-relaxed">
@@ -128,7 +128,7 @@ export default function PortfolioPage() {
                   </div>
 
                   {/* CTA */}
-                  <div className="flex items-center text-purple-400 group-hover:text-purple-300 transition-colors">
+                  <div className="flex items-center text-orange-400 group-hover:text-orange-300 transition-colors">
                     <span className="text-sm font-medium">Read case study</span>
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -187,7 +187,7 @@ export default function PortfolioPage() {
         {/* CTA Section */}
         <section className="px-6 pb-32">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-purple-500/5 border border-purple-500/30 rounded-2xl p-12 shadow-[0_0_40px_rgba(168,85,247,0.2)]">
+            <div className="bg-gradient-to-br from-orange-500/5 to-blue-500/5 border border-orange-500/30 rounded-2xl p-12 shadow-[0_0_40px_rgba(249,115,22,0.2)]">
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
                 Ready to see results like these?
               </h2>
@@ -196,7 +196,7 @@ export default function PortfolioPage() {
               </p>
               <a
                 href="/contact"
-                className="inline-block px-8 py-4 bg-purple-500/10 border border-purple-500 rounded-full text-white font-semibold hover:bg-purple-500/20 hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-300"
+                className="inline-block px-8 py-4 bg-white text-black rounded-full font-semibold hover:bg-gray-100 transition-all duration-300"
               >
                 Start Your Project
               </a>

@@ -51,7 +51,7 @@ export default function CaseStudyPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black" />
         </div>
         <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-6 py-20 sm:py-32">
-          <span className="inline-block px-4 py-2 bg-purple-600/20 border border-purple-500/30 rounded-full text-purple-300 text-sm mb-6 animate-fadeInUp">
+          <span className="inline-block px-4 py-2 bg-orange-600/20 border border-orange-500/30 rounded-full text-orange-300 text-sm mb-6 animate-fadeInUp">
             {cs.sector}
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fadeInUp" style={{ animationDelay: '0.1s' }}>
@@ -67,7 +67,7 @@ export default function CaseStudyPage() {
             {keyMetrics.map((metric, i) => (
               <div
                 key={i}
-                className="bg-[#1A1A1A]/80 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 hover:scale-105 hover:border-purple-500/50 transition-all duration-300"
+                className="bg-[#1A1A1A]/80 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 hover:scale-105 hover:border-orange-500/50 transition-all duration-300"
               >
                 <div className="text-3xl md:text-4xl font-bold text-green-500 mb-2">{metric.value}</div>
                 <div className="text-sm text-gray-400">{metric.label}</div>
@@ -96,11 +96,11 @@ export default function CaseStudyPage() {
                   </div>
                 ))}
 
-              <div className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 border border-purple-500/20 rounded-2xl p-6">
-                <div className="text-sm text-purple-300 mb-4">Technologies Used</div>
+              <div className="bg-gradient-to-br from-orange-900/20 to-blue-900/20 border border-orange-500/20 rounded-2xl p-6">
+                <div className="text-sm text-orange-300 mb-4">Technologies Used</div>
                 <div className="flex flex-wrap gap-2">
                   {cs.technologies.map((tech, i) => (
-                    <span key={i} className="px-3 py-1 bg-purple-600/30 border border-purple-500/30 rounded-full text-purple-200 text-sm">
+                    <span key={i} className="px-3 py-1 bg-orange-600/30 border border-orange-500/30 rounded-full text-orange-200 text-sm">
                       {tech}
                     </span>
                   ))}
@@ -136,11 +136,11 @@ export default function CaseStudyPage() {
             {[cs.solution.summary, ...cs.solution.highlights].map((content, i) => (
               <div
                 key={i}
-                className="bg-[#1A1A1A] border border-gray-800 rounded-3xl p-8 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 group"
+                className="bg-[#1A1A1A] border border-gray-800 rounded-3xl p-8 hover:border-orange-500/50 hover:shadow-2xl hover:shadow-orange-500/10 transition-all duration-500 group"
                 style={{ animation: 'fadeInUp 0.6s ease-out', animationDelay: `${i * 0.1}s`, animationFillMode: 'both' }}
               >
                 <div className="flex items-start gap-6">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center text-white font-bold text-xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-600 to-blue-600 flex items-center justify-center text-white font-bold text-xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                     {i + 1}
                   </div>
                   <div className="flex-1">
@@ -206,14 +206,14 @@ export default function CaseStudyPage() {
       {cs.testimonial && (
         <section className="py-16 sm:py-24 bg-black">
           <div className="max-w-4xl mx-auto px-5 sm:px-6">
-            <div className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 border border-purple-500/30 rounded-3xl p-8 md:p-12 relative overflow-hidden">
-              <div className="absolute top-6 right-6 text-purple-500/20">
+            <div className="bg-gradient-to-br from-orange-900/20 to-blue-900/20 border border-orange-500/30 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+              <div className="absolute top-6 right-6 text-orange-500/20">
                 <Quote className="w-24 h-24" />
               </div>
               <div className="relative z-10">
                 <p className="text-xl md:text-2xl text-white leading-relaxed mb-8 italic">“{cs.testimonial.quote}”</p>
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center text-white text-2xl font-bold">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-600 to-blue-600 flex items-center justify-center text-white text-2xl font-bold">
                     {cs.testimonial.author[0]}
                   </div>
                   <div>
@@ -241,13 +241,13 @@ export default function CaseStudyPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {related.map((study, i) => (
               <Link key={i} to={`/case-studies/${study.slug}`} className="group">
-                <div className="bg-[#1A1A1A] border border-gray-800 rounded-3xl overflow-hidden hover:border-purple-500/50 hover:scale-105 transition-all duration-300">
+                <div className="bg-[#1A1A1A] border border-gray-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:scale-105 transition-all duration-300">
                   <div className="aspect-video overflow-hidden">
                     <img src={study.hero.image || '/pexels/pexels-6647039.avif'} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   </div>
                   <div className="p-6">
-                    <span className="text-xs text-purple-400 mb-2 block">{study.sector}</span>
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">{study.title}</h3>
+                    <span className="text-xs text-orange-400 mb-2 block">{study.sector}</span>
+                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-orange-400 transition-colors">{study.title}</h3>
                     <p className="text-sm text-gray-400 mb-4 line-clamp-2">{study.hero.subtitle}</p>
                     <div className="text-green-500 font-semibold text-sm">{study.hero.metrics.conversionIncrease}</div>
                   </div>
@@ -261,8 +261,8 @@ export default function CaseStudyPage() {
       {/* FINAL CTA */}
       <section className="py-16 sm:py-24 bg-black">
         <div className="max-w-4xl mx-auto px-5 sm:px-6">
-          <div className="bg-gradient-to-br from-purple-600/20 to-blue-600/20 border border-purple-500/30 rounded-3xl p-12 text-center relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl animate-pulse" />
+          <div className="bg-gradient-to-br from-orange-600/20 to-blue-600/20 border border-orange-500/30 rounded-3xl p-12 text-center relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-64 h-64 bg-orange-500/20 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-0 right-0 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready for Results Like These?</h2>

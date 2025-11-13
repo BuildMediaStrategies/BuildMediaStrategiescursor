@@ -21,7 +21,7 @@ export default function BlogPostPage() {
         <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#0A0A0A' }}>
           <div className="text-center">
             <h1 className="text-3xl font-bold text-white mb-4">Post not found</h1>
-            <a href="/blog" className="text-purple-400 hover:text-purple-300 transition-colors">← Back to blog</a>
+            <a href="/blog" className="text-orange-400 hover:text-orange-300 transition-colors">← Back to blog</a>
           </div>
         </div>
       </SEOWrapper>
@@ -43,7 +43,7 @@ export default function BlogPostPage() {
       <div className="min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>
         <article className="max-w-6xl mx-auto px-6 py-24 sm:py-32 grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12">
           <div>
-            <a href="/blog" className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors mb-8 text-sm">
+            <a href="/blog" className="inline-flex items-center text-orange-400 hover:text-orange-300 transition-colors mb-8 text-sm">
               ← Back to blog
             </a>
 
@@ -57,7 +57,7 @@ export default function BlogPostPage() {
               </div>
             </header>
 
-            <div className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-p:text-gray-300 prose-a:text-purple-400 prose-a:no-underline hover:prose-a:text-purple-300 prose-strong:text-white prose-code:text-purple-300 prose-code:bg-gray-900 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:bg-gray-900 prose-pre:border prose-pre:border-gray-800" dangerouslySetInnerHTML={{ __html: rendered.html }} />
+            <div className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-p:text-gray-300 prose-a:text-orange-400 prose-a:no-underline hover:prose-a:text-orange-300 prose-strong:text-white prose-code:text-orange-300 prose-code:bg-gray-900 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:bg-gray-900 prose-pre:border prose-pre:border-gray-800" dangerouslySetInnerHTML={{ __html: rendered.html }} />
 
             {/* Author bio */}
             <section className="mt-12 p-8 border border-gray-800 rounded-2xl bg-black/50">
@@ -67,10 +67,10 @@ export default function BlogPostPage() {
             </section>
 
             {/* CTA */}
-            <section className="mt-8 p-8 rounded-2xl border border-purple-500/30 bg-purple-500/5 shadow-[0_0_30px_rgba(168,85,247,0.15)] hover:shadow-[0_0_40px_rgba(168,85,247,0.25)] transition-all duration-300">
+            <section className="mt-8 p-8 rounded-2xl border border-orange-500/30 bg-gradient-to-br from-orange-500/5 to-blue-500/5 shadow-[0_0_30px_rgba(249,115,22,0.15)] hover:shadow-[0_0_40px_rgba(249,115,22,0.25)] transition-all duration-300">
               <div className="text-white font-bold text-xl mb-3">Ready to modernise your website?</div>
               <p className="text-gray-300 mb-6 leading-relaxed">Get a free assessment. We'll identify speed wins and conversion blockers in minutes.</p>
-              <a href="/contact" className="inline-block px-6 py-3 rounded-full bg-purple-500/10 border border-purple-500 text-white hover:bg-purple-500/20 hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all duration-300 font-medium">
+              <a href="/contact" className="inline-block px-6 py-3 rounded-full bg-white text-black hover:bg-gray-100 transition-all duration-300 font-medium">
                 Book a Free Assessment
               </a>
             </section>
@@ -87,7 +87,7 @@ export default function BlogPostPage() {
                     <a
                       key={t.id}
                       href={`#${t.id}`}
-                      className={`block text-gray-400 hover:text-purple-400 transition-colors ${t.level === 2 ? 'pl-0' : 'pl-4'}`}
+                      className={`block text-gray-400 hover:text-orange-400 transition-colors ${t.level === 2 ? 'pl-0' : 'pl-4'}`}
                     >
                       {t.text}
                     </a>
@@ -104,7 +104,7 @@ export default function BlogPostPage() {
                   <a
                     key={r.slug}
                     href={`/blog/${r.slug}`}
-                    className="block text-sm text-gray-400 hover:text-purple-400 transition-colors leading-snug"
+                    className="block text-sm text-gray-400 hover:text-orange-400 transition-colors leading-snug"
                   >
                     {r.frontmatter.title || r.slug}
                   </a>

@@ -8,12 +8,12 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-5 sm:px-6 py-3 flex items-center justify-between">
         <Link
           to="/"
-          className="flex items-center rounded-3xl px-3 py-1 hover:opacity-80 transition-all duration-300"
+          className="flex items-center rounded-3xl px-3 py-1 hover:opacity-80 transition-all duration-300 -ml-8 sm:-ml-12"
         >
           <img
             src="/assets/bmsnewlogo sky.png"
             alt="Build Media Strategies"
-            className="h-12 w-auto object-contain scale-[2.5]"
+            className="h-8 sm:h-10 md:h-12 w-auto object-contain scale-[3] sm:scale-[3.5] origin-left"
             width="320"
             height="88"
             loading="eager"
