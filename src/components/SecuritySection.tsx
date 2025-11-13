@@ -26,7 +26,7 @@ export default function SecuritySection() {
           </div>
 
           {/* Right Section: Security Visuals */}
-          <div className="lg:col-span-2 relative flex items-center justify-end min-h-[400px] pl-8">
+          <div className="lg:col-span-2 relative">
             <video
               src="/assets/AI OPS CLIP.mp4"
               autoPlay
@@ -36,7 +36,7 @@ export default function SecuritySection() {
               preload="metadata"
               width={800}
               height={600}
-              className="w-full h-auto"
+              className="w-full h-auto rounded-2xl"
             />
           </div>
         </div>

@@ -23,7 +23,7 @@ export default function EffortlessSecuritySection() {
             loop
             muted
             playsInline
-            className="w-full max-w-2xl h-auto"
+            className="w-full max-w-2xl h-auto rounded-2xl"
           />
         </div>
       </div>
