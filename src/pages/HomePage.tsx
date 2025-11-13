@@ -35,12 +35,13 @@ export default function HomePage() {
         {/* Pure black base */}
         <div className="absolute inset-0 bg-black" />
 
-        {/* HERO IMAGE – NEW SKY GRADIENT ARTWORK */}
+        {/* HERO IMAGE */}
         <picture>
-          {/* You can add avif/webp versions later if you export them */}
+          <source srcSet="/hero-image.avif" type="image/avif" />
+          <source srcSet="/hero-image.webp" type="image/webp" />
           <img
             id="hero-img"
-            src="/assets/ChatGPT Image Nov 13, 2025, 09_15_18 AM.png"
+            src="/hero-image.png"
             alt=""
             aria-hidden="true"
             loading="eager"
@@ -50,7 +51,7 @@ export default function HomePage() {
             height={1080}
             className="pointer-events-none select-none absolute inset-0 w-full h-full z-0"
             style={{
-              // Desktop: fill and lift (same placement as previous hero)
+              // Desktop: fill and lift
               objectFit: 'cover',
               objectPosition: 'center 50%',
               transform: 'translateY(18vh)',
@@ -132,7 +133,7 @@ export default function HomePage() {
           <div id="security"><SecuritySection /></div>
         </Suspense>
         <Suspense fallback={null}>
-          <InterviewBookingSection /></div>
+          <InterviewBookingSection />
         </Suspense>
 
         {/* Lazy-loaded sections below the fold */}
@@ -153,10 +154,7 @@ export default function HomePage() {
         </Suspense>
       </main>
       <Suspense fallback={null}>
-        <RegistrationModal
-          isOpen={isRegistrationModalOpen}
-          onClose={() => setIsRegistrationModalOpen(false)}
-        />
+        <RegistrationModal isOpen={isRegistrationModalOpen} onClose={() => setIsRegistrationModalOpen(false)} />
       </Suspense>
     </>
   );
