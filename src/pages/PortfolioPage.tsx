@@ -52,7 +52,10 @@ export default function PortfolioPage() {
         keywords="web design portfolio Kent, case studies, client results Dover Deal"
       />
 
-      <div className="min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>
+      <div className="relative min-h-screen overflow-hidden">
+        <div className="absolute inset-0 bg-black" />
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-blue-500/10" />
+        <div className="relative z-10">
         {/* Hero Section */}
         <section className="pt-32 pb-20 px-6">
           <div className="max-w-7xl mx-auto">
@@ -203,6 +206,7 @@ export default function PortfolioPage() {
             </div>
           </div>
         </section>
+        </div>
       </div>
     </>
   );

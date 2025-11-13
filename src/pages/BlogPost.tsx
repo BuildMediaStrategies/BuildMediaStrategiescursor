@@ -18,10 +18,14 @@ export default function BlogPostPage() {
   if (!post) {
     return (
       <SEOWrapper title="Post not found" description="Post not found" canonical={`https://buildmediastrategies.com/blog/${slug}` }>
-        <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#0A0A0A' }}>
+        <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 bg-black" />
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-blue-500/10" />
+          <div className="relative z-10">
           <div className="text-center">
             <h1 className="text-3xl font-bold text-white mb-4">Post not found</h1>
             <a href="/blog" className="text-orange-400 hover:text-orange-300 transition-colors">← Back to blog</a>
+          </div>
           </div>
         </div>
       </SEOWrapper>
@@ -40,7 +44,10 @@ export default function BlogPostPage() {
       canonical={`https://buildmediastrategies.com/blog/${slug}`}
       type="article"
     >
-      <div className="min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>
+      <div className="relative min-h-screen overflow-hidden">
+        <div className="absolute inset-0 bg-black" />
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-blue-500/10" />
+        <div className="relative z-10">
         <article className="max-w-6xl mx-auto px-6 py-24 sm:py-32 grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12">
           <div>
             <a href="/blog" className="inline-flex items-center text-orange-400 hover:text-orange-300 transition-colors mb-8 text-sm">
@@ -113,6 +120,7 @@ export default function BlogPostPage() {
             </div>
           </aside>
         </article>
+        </div>
       </div>
     </SEOWrapper>
   );

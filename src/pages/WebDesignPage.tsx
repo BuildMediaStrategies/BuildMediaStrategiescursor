@@ -143,7 +143,10 @@ export default function WebDesignPage() {
         Skip to main content
       </a>
 
-      <main id="main-content" className="bg-black min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>
+      <main id="main-content" className="relative min-h-screen overflow-hidden">
+        <div className="absolute inset-0 bg-black" />
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-blue-500/10" />
+        <div className="relative z-10">
         <section className="pt-32 pb-16 px-5 lg:px-11" aria-labelledby="hero-heading">
           <div className="max-w-5xl mx-auto text-center">
             <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-white mb-6 leading-tight">
@@ -259,6 +262,7 @@ export default function WebDesignPage() {
             </div>
           </div>
         </section>
+        </div>
       </main>
     </>
   );

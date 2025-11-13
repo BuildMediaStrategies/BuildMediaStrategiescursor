@@ -21,7 +21,10 @@ export default function BlogIndexPage() {
       description="Insights on performance, speed, SEO and modern web for Kent businesses."
       canonical="https://buildmediastrategies.com/blog"
     >
-      <div className="min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>
+      <div className="relative min-h-screen overflow-hidden">
+        <div className="absolute inset-0 bg-black" />
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-blue-500/10" />
+        <div className="relative z-10">
         <section className="max-w-6xl mx-auto px-6 py-24 sm:py-32">
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Latest Articles</h1>
           <p className="text-gray-400 text-lg mb-12">Web design insights, AI automation tips, and digital strategy for Kent businesses.</p>
@@ -80,6 +83,7 @@ export default function BlogIndexPage() {
             ))}
           </div>
         </section>
+        </div>
       </div>
     </SEOWrapper>
   );

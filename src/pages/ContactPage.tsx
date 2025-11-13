@@ -83,7 +83,7 @@ export default function ContactPage() {
           Skip to main content
         </a>
 
-        <main id="main-content" className="bg-black min-h-screen pt-24" style={{ backgroundColor: '#0A0A0A' }}>
+        <main id="main-content" className="bg-black min-h-screen pt-24" >
           <div className="max-w-2xl mx-auto px-5 py-20">
             <div className="text-center">
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6" aria-hidden="true">
@@ -126,7 +126,7 @@ export default function ContactPage() {
         canonical="https://buildmediastrategies.com/contact"
         keywords="contact web designer Kent, free consultation, web design quote Dover"
       />
-      <main className="bg-black min-h-screen pt-24" style={{ backgroundColor: '#0A0A0A' }}>
+      <main className="bg-black min-h-screen pt-24" >
         <div className="max-w-4xl mx-auto px-5 sm:px-6 py-12 sm:py-16 lg:py-20">
           <div className="text-center mb-12 sm:mb-16">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-white mb-4 sm:mb-6 leading-tight">
