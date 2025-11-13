@@ -32,8 +32,8 @@ export default function HomePage() {
 
       {/* HERO */}
       <div className="relative overflow-hidden" style={{ minHeight: '100vh' }} id="home">
-        {/* Pure black base */}
-        <div className="absolute inset-0 bg-black" />
+        {/* Pure white base */}
+        <div className="absolute inset-0 bg-white" />
 
         {/* HERO IMAGE */}
         <img
@@ -72,7 +72,7 @@ export default function HomePage() {
         `}</style>
 
         {/* Top cover kills any seam under nav */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 z-20 bg-gradient-to-b from-black via-black to-transparent h-32 md:h-[20vh]" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-20 bg-gradient-to-b from-white via-white to-transparent h-32 md:h-[20vh]" />
 
         {/* Readability veil */}
         <div id="hero-veil" className="absolute inset-0 z-10 bg-gradient-to-b from-black/0 via-black/20 to-black/40" />
