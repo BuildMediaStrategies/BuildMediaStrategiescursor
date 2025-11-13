@@ -32,7 +32,7 @@ export default function HomePage() {
 
       {/* HERO */}
       <div className="relative overflow-hidden" style={{ minHeight: '100vh' }} id="home">
-        {/* Pure white base */}
+        {/* Pure white base behind everything */}
         <div className="absolute inset-0 bg-white" />
 
         {/* HERO IMAGE */}
@@ -48,22 +48,22 @@ export default function HomePage() {
           height={1080}
           className="pointer-events-none select-none absolute inset-0 w-full h-full z-0"
           style={{
+            // Desktop: push image further down so headings sit on solid white
             objectFit: 'cover',
             objectPosition: 'center 50%',
-            transform: 'translateY(18vh)',
+            transform: 'translateY(26vh)',
             willChange: 'transform',
-            filter: 'brightness(0.9) contrast(1.1)',
+            // remove brightness/contrast tweaks so the PNG white stays true
           }}
         />
 
-        {/* Mobile overrides (show full browsers) */}
+        {/* Mobile overrides (show full browsers, no shift) */}
         <style>{`
           @media (max-width: 1023px) {
             #hero-img{
               object-fit: contain !important;
               object-position: center 72% !important;
               transform: none !important;
-              filter: brightness(1) contrast(1.05) !important;
             }
           }
         `}</style>
@@ -86,14 +86,22 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-center gap-3">
             <a
               href="/contact"
-              onClick={() => { try { trackCTAClick('home_contact_cta', { page: window.location.pathname }); } catch {} }}
+              onClick={() => {
+                try {
+                  trackCTAClick('home_contact_cta', { page: window.location.pathname });
+                } catch {}
+              }}
               className="btn-gradient inline-block px-7 sm:px-6 py-3.5 sm:py-3 text-white font-normal rounded-full active:scale-95 opacity-0 animate-fadeInDelay"
             >
               Get Started Today
             </a>
             <a
               href="/tools/speed-checker"
-              onClick={() => { try { trackCTAClick('home_speed_checker_cta', { page: window.location.pathname }); } catch {} }}
+              onClick={() => {
+                try {
+                  trackCTAClick('home_speed_checker_cta', { page: window.location.pathname });
+                } catch {}
+              }}
               className="btn-gradient inline-block px-7 sm:px-6 py-3.5 sm:py-3 text-white font-normal rounded-full active:scale-95 opacity-0 animate-fadeInDelay"
             >
               Check Your Site Speed
@@ -117,7 +125,7 @@ export default function HomePage() {
           <div id="security"><SecuritySection /></div>
         </Suspense>
         <Suspense fallback={null}>
-          <InterviewBookingSection />
+          <InterviewBookingSection /></div>
         </Suspense>
 
         {/* Lazy-loaded sections below the fold */}
@@ -138,7 +146,10 @@ export default function HomePage() {
         </Suspense>
       </main>
       <Suspense fallback={null}>
-        <RegistrationModal isOpen={isRegistrationModalOpen} onClose={() => setIsRegistrationModalOpen(false)} />
+        <RegistrationModal
+          isOpen={isRegistrationModalOpen}
+          onClose={() => setIsRegistrationModalOpen(false)}
+        />
       </Suspense>
     </>
   );
