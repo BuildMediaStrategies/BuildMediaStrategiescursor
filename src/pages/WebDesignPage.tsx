@@ -143,24 +143,21 @@ export default function WebDesignPage() {
         Skip to main content
       </a>
 
-      <main id="main-content" className="relative min-h-screen overflow-hidden">
-        <div className="absolute inset-0 bg-black" />
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-blue-500/10" />
-        <div className="relative z-10">
+      <main id="main-content" className="bg-white min-h-screen">
         <section className="pt-32 pb-16 px-5 lg:px-11" aria-labelledby="hero-heading">
           <div className="max-w-5xl mx-auto text-center">
-            <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-white mb-6 leading-tight">
-              Websites Built To
-              <span className="block bg-gradient-to-b from-white to-gray-600 bg-clip-text text-transparent">
+            <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold mb-6 leading-tight">
+              <span className="block text-gray-900">Websites Built To</span>
+              <span className="block text-sky-gradient">
                 Convert Visitors
               </span>
             </h1>
-            <p className="text-lg sm:text-xl font-sans font-normal leading-relaxed max-w-3xl mx-auto mb-10" style={{ color: '#BBBBBB' }}>
+            <p className="text-lg sm:text-xl font-sans font-normal leading-relaxed max-w-3xl mx-auto mb-10 text-gray-700">
               Fast, mobile-first sites that turn browsers into buyers and drive measurable business growth.
             </p>
             <a
               href="/contact"
-              className="inline-block px-8 py-4 bg-white text-black font-sans font-medium hover:bg-gray-100 transition-colors text-center"
+              className="btn-gradient inline-block px-8 py-4 text-white font-sans font-medium rounded-full text-center"
             >
               Start Your Project
             </a>
@@ -170,10 +167,10 @@ export default function WebDesignPage() {
         <section className="py-16 lg:py-20 px-5 lg:px-11">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-white mb-6 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-gray-900 mb-6 leading-tight">
                 What You Get
               </h2>
-              <p className="text-base sm:text-lg font-sans font-normal max-w-2xl mx-auto" style={{ color: '#BBBBBB' }}>
+              <p className="text-base sm:text-lg font-sans font-normal max-w-2xl mx-auto text-gray-700">
                 Complete web design solutions that deliver results
               </p>
             </div>
@@ -186,48 +183,48 @@ export default function WebDesignPage() {
           </div>
         </section>
 
-        <section className="py-16 lg:py-20 px-5 lg:px-11 border-t border-gray-800" aria-labelledby="process-heading">
+        <section className="py-16 lg:py-20 px-5 lg:px-11 border-t border-gray-200" aria-labelledby="process-heading">
           <div className="max-w-5xl mx-auto">
-            <h2 id="process-heading" className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-white mb-12 text-center leading-tight">
+            <h2 id="process-heading" className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-gray-900 mb-12 text-center leading-tight">
               How We Build
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="border-l-2 border-white pl-6 sm:pl-8">
-                <div className="text-3xl font-sans font-bold text-white mb-2">01</div>
-                <h3 className="text-xl sm:text-2xl font-sans font-bold text-white mb-4">
+              <div className="border-l-2 border-sky-gradient pl-6 sm:pl-8">
+                <div className="text-3xl font-sans font-bold text-sky-gradient mb-2">01</div>
+                <h3 className="text-xl sm:text-2xl font-sans font-bold text-gray-900 mb-4">
                   Discovery & Strategy
                 </h3>
-                <p className="text-base sm:text-lg font-sans font-normal leading-relaxed" style={{ color: '#BBBBBB' }}>
+                <p className="text-base sm:text-lg font-sans font-normal leading-relaxed text-gray-700">
                   Study your business and audience. Map the customer journey and design a site that guides visitors toward conversion.
                 </p>
               </div>
 
-              <div className="border-l-2 border-white pl-6 sm:pl-8">
-                <div className="text-3xl font-sans font-bold text-white mb-2">02</div>
-                <h3 className="text-xl sm:text-2xl font-sans font-bold text-white mb-4">
+              <div className="border-l-2 border-sky-gradient pl-6 sm:pl-8">
+                <div className="text-3xl font-sans font-bold text-sky-gradient mb-2">02</div>
+                <h3 className="text-xl sm:text-2xl font-sans font-bold text-gray-900 mb-4">
                   Design & Prototype
                 </h3>
-                <p className="text-base sm:text-lg font-sans font-normal leading-relaxed" style={{ color: '#BBBBBB' }}>
+                <p className="text-base sm:text-lg font-sans font-normal leading-relaxed text-gray-700">
                   Custom mockups focused on clarity and conversions. You approve designs before we write any code.
                 </p>
               </div>
 
-              <div className="border-l-2 border-white pl-6 sm:pl-8">
-                <div className="text-3xl font-sans font-bold text-white mb-2">03</div>
-                <h3 className="text-xl sm:text-2xl font-sans font-bold text-white mb-4">
+              <div className="border-l-2 border-sky-gradient pl-6 sm:pl-8">
+                <div className="text-3xl font-sans font-bold text-sky-gradient mb-2">03</div>
+                <h3 className="text-xl sm:text-2xl font-sans font-bold text-gray-900 mb-4">
                   Development & Testing
                 </h3>
-                <p className="text-base sm:text-lg font-sans font-normal leading-relaxed" style={{ color: '#BBBBBB' }}>
+                <p className="text-base sm:text-lg font-sans font-normal leading-relaxed text-gray-700">
                   Clean, scalable code built with modern frameworks. Rigorous testing across devices and browsers.
                 </p>
               </div>
 
-              <div className="border-l-2 border-white pl-6 sm:pl-8">
-                <div className="text-3xl font-sans font-bold text-white mb-2">04</div>
-                <h3 className="text-xl sm:text-2xl font-sans font-bold text-white mb-4">
+              <div className="border-l-2 border-sky-gradient pl-6 sm:pl-8">
+                <div className="text-3xl font-sans font-bold text-sky-gradient mb-2">04</div>
+                <h3 className="text-xl sm:text-2xl font-sans font-bold text-gray-900 mb-4">
                   Launch & Optimize
                 </h3>
-                <p className="text-base sm:text-lg font-sans font-normal leading-relaxed" style={{ color: '#BBBBBB' }}>
+                <p className="text-base sm:text-lg font-sans font-normal leading-relaxed text-gray-700">
                   Smooth deployment with zero downtime. Continuous optimization based on real user behavior.
                 </p>
               </div>
@@ -235,34 +232,33 @@ export default function WebDesignPage() {
           </div>
         </section>
 
-        <section className="py-20 lg:py-24 px-5 lg:px-11 bg-black">
+        <section className="py-20 lg:py-24 px-5 lg:px-11 bg-gray-50">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-white mb-6 leading-tight">
-              Ready To Build A Website
-              <span className="block bg-gradient-to-b from-white to-gray-600 bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold mb-6 leading-tight">
+              <span className="block text-gray-900">Ready To Build A Website</span>
+              <span className="block text-sky-gradient">
                 That Actually Works?
               </span>
             </h2>
-            <p className="text-base sm:text-lg font-sans font-normal mb-10 leading-relaxed max-w-2xl mx-auto" style={{ color: '#BBBBBB' }}>
+            <p className="text-base sm:text-lg font-sans font-normal mb-10 leading-relaxed max-w-2xl mx-auto text-gray-700">
               Let's create a fast, mobile-first site that converts visitors into customers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contact"
-                className="inline-block px-8 py-4 bg-white text-black font-sans font-medium hover:bg-gray-100 transition-colors text-center"
+                className="btn-gradient inline-block px-8 py-4 text-white font-sans font-medium rounded-full text-center"
               >
                 Get Started
               </a>
               <a
                 href="/portfolio"
-                className="inline-block px-8 py-4 border border-white text-white font-sans font-medium hover:bg-white hover:text-black transition-colors text-center"
+                className="btn-gradient-outline inline-block px-8 py-4 text-sky-gradient font-sans font-medium rounded-full text-center"
               >
                 View Our Work
               </a>
             </div>
           </div>
         </section>
-        </div>
       </main>
     </>
   );
