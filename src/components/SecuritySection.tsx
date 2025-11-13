@@ -28,7 +28,7 @@ export default function SecuritySection() {
           {/* Right Section: Security Visuals */}
           <div className="lg:col-span-2 relative flex items-center justify-end min-h-[400px] pl-8">
             <video
-              src="https://res.cloudinary.com/doevp9obh/video/upload/v1759016113/Video_Generation_From_Image_nxyrmc.mov"
+              src="/assets/AI OPS CLIP.mp4"
               autoPlay
               loop
               muted

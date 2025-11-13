@@ -17,8 +17,8 @@ export default function EffortlessSecuritySection() {
 
         {/* Central Graphic */}
         <div className="flex items-center justify-center min-h-[500px] relative">
-          <video 
-            src="https://res.cloudinary.com/doevp9obh/video/upload/v1759017760/Image_Animation_and_Video_Generation_d3z80b.mov"
+          <video
+            src="/assets/built-for-screens.mp4"
             autoPlay
             loop
             muted

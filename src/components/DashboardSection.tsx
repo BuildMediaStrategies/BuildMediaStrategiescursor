@@ -28,7 +28,7 @@ export default function DashboardSection() {
           {/* Left Section: Dashboard Visualization */}
           <div className="lg:order-1 relative">
             <video
-              src="https://res.cloudinary.com/doevp9obh/video/upload/v1759016097/Image_Animation_Video_Ready_hvsl7j.mov"
+              src="/assets/web design clip.mp4"
               autoPlay
               loop
               muted
