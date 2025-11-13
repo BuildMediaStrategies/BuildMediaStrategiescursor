@@ -146,10 +146,6 @@ export default function HomePage() {
         </Suspense>
 
         <Suspense fallback={<div className="py-20" style={{ backgroundColor: '#0A0A0A' }} />}>
-          <div id="testimonials"><LazyTestimonialsSection /></div>
-        </Suspense>
-
-        <Suspense fallback={<div className="py-20" style={{ backgroundColor: '#0A0A0A' }} />}>
           <div id="faq"><LazyFAQSection /></div>
         </Suspense>
 
