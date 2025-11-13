@@ -75,6 +75,16 @@ export default function Navigation() {
           {/* Gradient Header */}
           <div className="bg-sky-gradient px-6 py-8 flex items-center justify-between">
             <h2 className="text-white font-bold text-2xl">Menu</h2>
+            <button
+              type="button"
+              aria-label="Close menu"
+              onClick={() => setOpen(false)}
+              className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10 transition-all duration-300"
+            >
+              <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
           </div>
 
           {/* Menu Items - Centered Vertically */}
