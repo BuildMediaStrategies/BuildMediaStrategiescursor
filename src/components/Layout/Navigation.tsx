@@ -53,71 +53,64 @@ export default function Navigation() {
       >
         <span
           className={`block h-0.5 w-6 rounded-full transition-all duration-300 ease-out ${
-            open
-              ? 'rotate-45 translate-y-2 bg-white'
-              : 'bg-gradient-to-r from-sky-400 to-blue-600'
+            open ? 'rotate-45 translate-y-2 bg-white' : 'bg-sky-gradient'
           }`}
         />
         <span
-          className={`block h-0.5 w-6 rounded-full bg-gradient-to-r from-sky-400 to-blue-600 transition-all duration-300 ease-out ${
+          className={`block h-0.5 w-6 rounded-full bg-sky-gradient transition-all duration-300 ease-out ${
             open ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
           }`}
         />
         <span
           className={`block h-0.5 w-6 rounded-full transition-all duration-300 ease-out ${
-            open
-              ? '-rotate-45 -translate-y-2 bg-white'
-              : 'bg-gradient-to-r from-sky-400 to-blue-600'
+            open ? '-rotate-45 -translate-y-2 bg-white' : 'bg-sky-gradient'
           }`}
         />
       </button>
 
       {/* Mobile Fullscreen Menu */}
       {open && (
-        <>
-          {/* Full white background overlay that covers EVERYTHING */}
-          <div className="md:hidden fixed inset-0 z-[100] bg-white" aria-hidden={false}>
-            {/* Gradient Header */}
-            <div className="bg-gradient-to-r from-sky-400 to-blue-600 px-6 py-8 flex items-center justify-between">
-              <h2 className="text-white font-bold text-2xl">Menu</h2>
-            </div>
-
-            {/* Menu Items - Centered Vertically */}
-            <div className="flex-1 h-[calc(100vh-180px)] flex flex-col justify-center px-8 space-y-4">
-              {links.map((l, index) => (
-                <NavLink
-                  key={l.to}
-                  to={l.to}
-                  className={({ isActive }) =>
-                    `block px-8 py-6 rounded-2xl font-bold text-2xl text-center transition-all duration-300 transform hover:scale-[1.02] bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text ${
-                      isActive
-                        ? 'text-transparent border-2 border-sky-200 shadow-lg bg-sky-50/50'
-                        : 'text-transparent hover:opacity-80'
-                    }`
-                  }
-                  style={{
-                    animationDelay: `${index * 80}ms`,
-                    animation: 'slideInFromRight 0.4s ease-out forwards',
-                  }}
-                  onClick={() => setOpen(false)}
-                >
-                  {l.label}
-                </NavLink>
-              ))}
-            </div>
-
-            {/* Footer CTA */}
-            <div className="absolute bottom-0 left-0 right-0 px-8 pb-10 bg-white">
-              <a
-                href="/contact"
-                onClick={() => setOpen(false)}
-                className="block text-center px-8 py-5 bg-gradient-to-r from-sky-400 to-blue-600 text-white font-bold text-xl rounded-full hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 shadow-lg"
-              >
-                Get Started
-              </a>
-            </div>
+        <div className="md:hidden fixed inset-0 z-[100] bg-white" aria-hidden={false}>
+          {/* Gradient Header */}
+          <div className="bg-sky-gradient px-6 py-8 flex items-center justify-between">
+            <h2 className="text-white font-bold text-2xl">Menu</h2>
           </div>
-        </>
+
+          {/* Menu Items - Centered Vertically */}
+          <div className="flex-1 min-h-[calc(100vh-250px)] flex flex-col justify-center px-8 space-y-4">
+            {links.map((l, index) => (
+              <NavLink
+                key={l.to}
+                to={l.to}
+                className={({ isActive }) =>
+                  `block px-8 py-6 rounded-2xl font-bold text-2xl text-center transition-all duration-300 transform hover:scale-[1.02] text-sky-gradient ${
+                    isActive
+                      ? 'border-2 border-orange-200 shadow-lg bg-orange-50/30'
+                      : 'hover:bg-gray-50/50'
+                  }`
+                }
+                style={{
+                  animationDelay: `${index * 80}ms`,
+                  animation: 'slideInFromRight 0.4s ease-out forwards',
+                }}
+                onClick={() => setOpen(false)}
+              >
+                {l.label}
+              </NavLink>
+            ))}
+          </div>
+
+          {/* Footer CTA */}
+          <div className="px-8 pb-10 pt-6 bg-white">
+            <a
+              href="/contact"
+              onClick={() => setOpen(false)}
+              className="block text-center px-8 py-5 bg-sky-gradient text-white font-bold text-xl rounded-full hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 shadow-lg"
+            >
+              Get Started
+            </a>
+          </div>
+        </div>
       )}
 
       <style>{`
