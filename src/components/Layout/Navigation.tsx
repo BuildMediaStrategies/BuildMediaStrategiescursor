@@ -78,7 +78,7 @@ export default function Navigation() {
               <img
                 src="/assets/bmsnewlogo sky.png"
                 alt="Build Media Strategies"
-                className="h-8 w-auto object-contain scale-[2.5] origin-left translate-y-[8px]"
+                className="h-8 w-auto object-contain scale-[3.25] origin-left translate-y-[12px]"
                 width="320"
                 height="88"
                 loading="eager"
