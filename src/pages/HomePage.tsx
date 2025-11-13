@@ -66,16 +66,11 @@ export default function HomePage() {
               transform: none !important;
               filter: brightness(1) contrast(1.05) !important;
             }
-            /* lighten the readability veil on mobile */
-            #hero-veil{ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.15) 50%, rgba(0,0,0,.25) 100%) !important; }
           }
         `}</style>
 
         {/* Top cover kills any seam under nav */}
         <div className="pointer-events-none absolute inset-x-0 top-0 z-20 bg-gradient-to-b from-white via-white to-transparent h-32 md:h-[20vh]" />
-
-        {/* Readability veil */}
-        <div id="hero-veil" className="absolute inset-0 z-10 bg-gradient-to-b from-black/0 via-black/20 to-black/40" />
 
         {/* HERO CONTENT */}
         <header className="relative z-40 flex flex-col items-center justify-center px-5 sm:px-6 pt-24 sm:pt-20 pb-16 sm:pb-20 min-h-[80vh]">
