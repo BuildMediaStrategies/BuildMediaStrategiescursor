@@ -12,7 +12,7 @@ export default function Navigation() {
     { to: '/contact', label: 'Contact' },
   ];
 
-  // Prevent scroll when mobile menu is open
+  // Prevent body scroll when menu is open
   useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden';
@@ -75,17 +75,15 @@ export default function Navigation() {
 
       {/* FULL-SCREEN MOBILE MENU OVERLAY */}
       {open && (
-        <div className="fixed inset-0 z-[55] bg-white md:hidden animate-fadeIn flex flex-col">
-          {/* Gradient header bar inside overlay (looks like navbar) */}
-          <div className="flex items-center justify-between px-4 py-3 border-b border-sky-100 bg-sky-gradient">
-            <div className="flex items-center">
-              <img
-                src="/assets/bmsnewlogo sky.png"
-                alt="Build Media Strategies"
-                className="h-8 w-auto object-contain"
-                loading="lazy"
-              />
-            </div>
+        <div className="fixed inset-0 z-[9999] bg-white md:hidden flex flex-col">
+          {/* Gradient bar at the very top */}
+          <div className="flex items-center justify-between px-4 py-3 bg-sky-gradient">
+            <img
+              src="/assets/bmsnewlogo sky.png"
+              alt="Build Media Strategies"
+              className="h-10 w-auto object-contain"
+              loading="lazy"
+            />
             <button
               type="button"
               aria-label="Close menu"
@@ -99,7 +97,7 @@ export default function Navigation() {
             </button>
           </div>
 
-          {/* Links */}
+          {/* Nav links in the middle, on solid white */}
           <div className="flex-1 px-6 pt-6 space-y-3 overflow-y-auto">
             {links.map((l, index) => (
               <NavLink
@@ -123,12 +121,12 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Bottom CTA */}
+          {/* Get Started button stuck to the bottom */}
           <div className="px-6 py-8 border-t border-gray-200 bg-white">
             <a
               href="/contact"
               onClick={() => setOpen(false)}
-              className="block text-center px-6 py-3 bg-gradient-to-r from-orange-500 to-blue-600 text-white font-bold rounded-full hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
+              className="block text-center px-6 py-3 bg-gradient-to-r from-orange-500 via-pink-500 to-blue-600 text-white font-bold rounded-full hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
             >
               Get Started
             </a>
@@ -146,10 +144,6 @@ export default function Navigation() {
             opacity: 1;
             transform: translateX(0);
           }
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
         }
       `}</style>
     </nav>
