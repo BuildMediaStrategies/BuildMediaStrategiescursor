@@ -13,11 +13,11 @@ export default function SpeedCheckerPage() {
       description="Free website speed audit tool. Compare your site speed against modern standards and see how much faster we can make it. Instant results."
       canonical={canonical}
     >
-      <div className="min-h-[80vh] bg-black">
+      <div className="min-h-[80vh] bg-white">
         <section className="max-w-5xl mx-auto px-6 py-16 sm:py-24">
           <div className="text-center mb-8">
-            <h1 className="text-3xl sm:text-4xl font-bold text-white">Website Speed Checker</h1>
-            <p className="text-gray-400 mt-2">Find out if your slow website is costing you customers</p>
+            <h1 className="text-3xl sm:text-4xl font-bold text-sky-gradient">Website Speed Checker</h1>
+            <p className="text-black mt-2">Find out if your slow website is costing you customers</p>
           </div>
           <Suspense fallback={<div className="text-center text-black">Loading...</div>}>
             <LazySpeedChecker />

@@ -12,10 +12,10 @@ export default function AIDemoPage() {
       description="Try our interactive AI assistant demo. See how AI can handle customer queries, book appointments, and provide 24/7 support for your business."
       canonical={canonical}
     >
-      <div className="min-h-[80vh] bg-gradient-to-b from-blue-50 to-purple-50">
+      <div className="min-h-[80vh] bg-white">
         <section className="max-w-5xl mx-auto px-6 py-12 sm:py-16">
           <div className="text-center mb-8">
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">AI Assistant Demo</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold text-sky-gradient">AI Assistant Demo</h1>
             <p className="text-black mt-2">Experience how AI can transform your customer interactions</p>
           </div>
           <Suspense fallback={<div className="text-center text-black">Loading...</div>}>
