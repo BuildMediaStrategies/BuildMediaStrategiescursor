@@ -15,13 +15,13 @@ export default function Footer() {
               aria-label="BuildMediaStrategies home"
             >
               <img
-                src="/assets/bmsnewlogo sky.png"
-                alt="Build Media Strategies"
-                className="h-12 w-auto object-contain"
-                width="240"
-                height="60"
-                loading="lazy"
-              />
+  src="/assets/bmsnewlogo sky.png"
+  alt="Build Media Strategies"
+  className="h-16 w-auto object-contain"
+  width="320"
+  height="80"
+  loading="lazy"
+/>
             </a>
             <p className="text-sm mt-4 text-black">
               Web design and AI operations for businesses across Kent.
