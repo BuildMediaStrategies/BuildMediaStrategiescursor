@@ -271,7 +271,7 @@ export default function AIOperationsPage() {
           </div>
         </section>
 
-        <section className="py-20 lg:py-24 px-5 lg:px-11 bg-gray-50">
+        <section className="py-20 lg:py-24 px-5 lg:px-11 bg-white">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold mb-6 leading-tight">
               <span className="block text-gray-900">Ready To Automate</span>
@@ -289,7 +289,7 @@ export default function AIOperationsPage() {
               </a>
               <a
                 href="/portfolio"
-                className="btn-gradient-outline inline-block px-8 py-4 text-sky-gradient font-sans font-medium rounded-full text-center"
+                className="btn-gradient inline-block px-8 py-4 text-white font-sans font-medium rounded-full text-center"
               >
                 View Case Studies
               </a>

@@ -2,7 +2,7 @@ import { Lock, Hexagon } from 'lucide-react';
 
 export default function SecuritySection() {
   return (
-    <section className="py-12 sm:py-16 lg:py-20 px-5 sm:px-6 text-center lg:text-left section-gradient-subtle">
+    <section className="py-12 sm:py-16 lg:py-20 px-5 sm:px-6 text-center lg:text-left bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 sm:gap-12 lg:gap-16 items-center">
           {/* Left Section: Text Content */}

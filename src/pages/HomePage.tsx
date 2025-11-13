@@ -108,7 +108,7 @@ export default function HomePage() {
             <a
               href="/tools/speed-checker"
               onClick={() => { try { trackCTAClick('home_speed_checker_cta', { page: window.location.pathname }); } catch {} }}
-              className="btn-gradient-outline inline-block px-7 sm:px-6 py-3.5 sm:py-3 text-sky-gradient font-normal rounded-full transition-all duration-300 opacity-0 animate-fadeInDelay"
+              className="btn-gradient inline-block px-7 sm:px-6 py-3.5 sm:py-3 text-white font-normal rounded-full active:scale-95 opacity-0 animate-fadeInDelay"
             >
               Check Your Site Speed
             </a>

@@ -1,16 +1,16 @@
 export default function EffortlessSecuritySection() {
   return (
-    <section className="py-20 px-6 text-center" style={{ backgroundColor: '#000000' }}>
+    <section className="py-20 px-6 text-center bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-sans font-bold text-white mb-6 leading-tight">
-            Built to Perform<br/>
-            <span className="bg-gradient-to-b from-white to-gray-600 bg-clip-text text-transparent">
+          <h2 className="text-5xl font-sans font-bold mb-6 leading-tight">
+            <span className="text-gray-900">Built to Perform</span><br/>
+            <span className="text-sky-gradient">
               On Every Device
             </span>
           </h2>
-          <p className="text-lg font-sans font-normal" style={{ color: '#BBBBBB' }}>
+          <p className="text-lg font-sans font-normal text-gray-700">
             Mobile-first design ensures your customers enjoy a flawless experience wherever they are
           </p>
         </div>

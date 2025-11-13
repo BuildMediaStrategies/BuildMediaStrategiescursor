@@ -95,7 +95,7 @@ export default function ContactPage() {
                 </a>
                 <a
                   href="/portfolio"
-                  className="btn-gradient-outline px-8 py-3 text-sky-gradient font-sans font-medium rounded-full text-center"
+                  className="btn-gradient px-8 py-3 text-white font-sans font-medium rounded-full text-center"
                 >
                   View Portfolio
                 </a>
@@ -251,7 +251,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="w-full py-12 sm:py-16 lg:py-20 bg-gray-50">
+        <div className="w-full py-12 sm:py-16 lg:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-5 sm:px-6">
             <div className="text-center mb-10 sm:mb-12">
               <h2 className="text-3xl sm:text-4xl font-sans font-bold text-gray-900 mb-3 sm:mb-4">

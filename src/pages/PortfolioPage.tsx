@@ -180,7 +180,7 @@ export default function PortfolioPage() {
 
         <section className="px-6 pb-32">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-gray-50 border-2 border-gray-200 rounded-2xl p-12">
+            <div className="bg-white border-2 border-gray-200 rounded-2xl p-12">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">
                 <span className="text-gray-900">Ready to see </span>
                 <span className="text-sky-gradient">results like these?</span>
