@@ -48,7 +48,6 @@ export default function HomePage() {
           height={1080}
           className="pointer-events-none select-none absolute inset-0 w-full h-full z-0"
           style={{
-            // Desktop: fill and lift
             objectFit: 'cover',
             objectPosition: 'center 50%',
             transform: 'translateY(18vh)',
@@ -57,20 +56,17 @@ export default function HomePage() {
           }}
         />
 
-        {/* Mobile overrides (show full browsers, remove dim at bottom) */}
+        {/* Mobile overrides (show full browsers) */}
         <style>{`
           @media (max-width: 1023px) {
             #hero-img{
               object-fit: contain !important;
-              object-position: center 72% !important; /* lowered slightly for perfect alignment */
+              object-position: center 72% !important;
               transform: none !important;
               filter: brightness(1) contrast(1.05) !important;
             }
           }
         `}</style>
-
-        {/* Top cover kills any seam under nav */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 z-20 bg-gradient-to-b from-white via-white to-transparent h-32 md:h-[20vh]" />
 
         {/* HERO CONTENT */}
         <header className="relative z-40 flex flex-col items-center justify-center px-5 sm:px-6 pt-24 sm:pt-20 pb-16 sm:pb-20 min-h-[80vh]">
