@@ -19,18 +19,7 @@ export default function Navigation() {
     }`;
 
   return (
-    <nav aria-label="Main navigation" className="relative flex items-center justify-between">
-      {/* Logo */}
-      <a href="/" className="flex items-center space-x-2">
-        <img
-          src="/assets/bmsnewlogo sky.png"
-          alt="BuildMediaStrategies logo"
-          className="h-8 w-auto object-contain"
-          loading="eager"
-          fetchPriority="high"
-        />
-      </a>
-
+    <nav aria-label="Main navigation" className="relative">
       {/* Desktop */}
       <ul className="hidden md:flex gap-1 text-sm items-center">
         {links.map((l) => (
