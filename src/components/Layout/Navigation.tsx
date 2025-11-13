@@ -52,18 +52,22 @@ export default function Navigation() {
         className="md:hidden relative z-[60] w-10 h-10 flex flex-col items-center justify-center gap-1.5 transition-all duration-300"
       >
         <span
-          className={`block h-0.5 w-6 bg-sky-gradient transition-all duration-300 ease-out ${
-            open ? 'rotate-45 translate-y-2' : ''
+          className={`block h-0.5 w-6 rounded-full transition-all duration-300 ease-out ${
+            open
+              ? 'rotate-45 translate-y-2 bg-white'
+              : 'bg-gradient-to-r from-sky-400 to-blue-600'
           }`}
         />
         <span
-          className={`block h-0.5 w-6 bg-sky-gradient transition-all duration-300 ease-out ${
-            open ? 'opacity-0' : ''
+          className={`block h-0.5 w-6 rounded-full bg-gradient-to-r from-sky-400 to-blue-600 transition-all duration-300 ease-out ${
+            open ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
           }`}
         />
         <span
-          className={`block h-0.5 w-6 bg-sky-gradient transition-all duration-300 ease-out ${
-            open ? '-rotate-45 -translate-y-2' : ''
+          className={`block h-0.5 w-6 rounded-full transition-all duration-300 ease-out ${
+            open
+              ? '-rotate-45 -translate-y-2 bg-white'
+              : 'bg-gradient-to-r from-sky-400 to-blue-600'
           }`}
         />
       </button>
@@ -75,26 +79,26 @@ export default function Navigation() {
           aria-hidden={false}
         >
           {/* Gradient Header */}
-          <div className="bg-gradient-to-r from-sky-400 to-blue-600 px-6 py-8">
+          <div className="bg-gradient-to-r from-sky-400 to-blue-600 px-6 py-8 flex items-center justify-between">
             <h2 className="text-white font-bold text-2xl">Menu</h2>
           </div>
 
-          {/* Menu Items */}
-          <div className="flex-1 px-6 py-8 space-y-3 overflow-y-auto">
+          {/* Menu Items - Centered Vertically */}
+          <div className="flex-1 flex flex-col justify-center px-8 py-12 space-y-4">
             {links.map((l, index) => (
               <NavLink
                 key={l.to}
                 to={l.to}
                 className={({ isActive }) =>
-                  `block px-6 py-5 rounded-2xl font-bold text-xl transition-all duration-300 transform hover:scale-[1.02] ${
+                  `block px-8 py-6 rounded-2xl font-bold text-2xl text-center transition-all duration-300 transform hover:scale-[1.02] ${
                     isActive
                       ? 'bg-gradient-to-r from-sky-50 to-blue-50 text-sky-gradient border-2 border-sky-200 shadow-lg'
-                      : 'text-black hover:bg-gray-50 border-2 border-transparent'
+                      : 'text-black hover:bg-gray-50'
                   }`
                 }
                 style={{
-                  animationDelay: `${index * 50}ms`,
-                  animation: 'slideInFromRight 0.3s ease-out forwards',
+                  animationDelay: `${index * 80}ms`,
+                  animation: 'slideInFromRight 0.4s ease-out forwards',
                 }}
                 onClick={() => setOpen(false)}
               >
@@ -104,11 +108,11 @@ export default function Navigation() {
           </div>
 
           {/* Footer CTA */}
-          <div className="px-6 pb-8 pt-4 bg-white">
+          <div className="px-8 pb-10">
             <a
               href="/contact"
               onClick={() => setOpen(false)}
-              className="block text-center px-8 py-4 bg-gradient-to-r from-sky-400 to-blue-600 text-white font-bold text-lg rounded-full hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 shadow-lg"
+              className="block text-center px-8 py-5 bg-gradient-to-r from-sky-400 to-blue-600 text-white font-bold text-xl rounded-full hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 shadow-lg"
             >
               Get Started
             </a>
