@@ -1,4 +1,4 @@
-import { useState, useEffect, FormEvent } from 'react';
+import { useState, FormEvent } from 'react';
 import { trackFormSubmission } from '../lib/analytics/conversions';
 import SEO from '../components/SEO';
 
@@ -16,10 +16,6 @@ export default function ContactPage() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState('');
   const [formLoadTime] = useState(Date.now());
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();

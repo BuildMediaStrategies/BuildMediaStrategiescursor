@@ -9,6 +9,7 @@ export type MetaTagsProps = {
   ogImage?: string;
   type?: 'website' | 'article';
   noindex?: boolean;
+  keywords?: string;
 };
 
 export function MetaTags({
@@ -18,6 +19,7 @@ export function MetaTags({
   ogImage,
   type = 'website',
   noindex = false,
+  keywords,
 }: MetaTagsProps) {
   const robots = noindex ? 'noindex, nofollow' : 'index, follow';
   const resolvedCanonical = canonical ?? (typeof window !== 'undefined' ? window.location.href : siteConfig.siteUrl);
@@ -28,6 +30,7 @@ export function MetaTags({
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="robots" content={robots} />
+      {keywords ? <meta name="keywords" content={keywords} /> : null}
 
       <link rel="canonical" href={resolvedCanonical} />
 

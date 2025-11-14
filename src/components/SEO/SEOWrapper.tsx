@@ -9,14 +9,27 @@ type SEOWrapperProps = PropsWithChildren<
     schemaType?: SchemaType;
     schemaOverrides?: SchemaOrgProps['overrides'];
     type?: MetaTagsProps['type'];
+    ogType?: MetaTagsProps['type'];
+    schema?: SchemaOrgProps['overrides'];
   }
 >;
 
-export function SEOWrapper({ children, schemaType = 'homepage', schemaOverrides, ...meta }: SEOWrapperProps) {
+export function SEOWrapper({
+  children,
+  schemaType = 'homepage',
+  schemaOverrides,
+  schema,
+  ogType,
+  type,
+  ...meta
+}: SEOWrapperProps) {
+  const resolvedSchema = schema ?? schemaOverrides;
+  const resolvedType = ogType ?? type;
+
   return (
     <>
-      <MetaTags {...meta} />
-      <SchemaOrg schemaType={schemaType} overrides={schemaOverrides} />
+      <MetaTags {...meta} type={resolvedType} />
+      <SchemaOrg schemaType={schemaType} overrides={resolvedSchema} />
       {children}
     </>
   );

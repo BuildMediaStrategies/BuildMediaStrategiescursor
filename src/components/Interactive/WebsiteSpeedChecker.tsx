@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { AlertTriangle, Loader2, Zap } from 'lucide-react';
 import { checkWebsiteSpeedWithFallback, CheckWebsiteSpeedResult } from '../../lib/utils/speedChecker';
-import { trackToolUsage, trackCTAClick } from '../../lib/analytics/conversions';
+import { trackToolUsage } from '../../lib/analytics/conversions';
 
 interface FormState {
   url: string;
@@ -16,8 +16,6 @@ const isValidUrl = (value: string) => {
     return false;
   }
 };
-
-const pct = (n: number) => `${Math.round(n)}%`;
 
 export default function WebsiteSpeedChecker() {
   const [form, setForm] = useState<FormState>({ url: '' });
@@ -241,4 +239,3 @@ export default function WebsiteSpeedChecker() {
     </div>
   );
 }
-

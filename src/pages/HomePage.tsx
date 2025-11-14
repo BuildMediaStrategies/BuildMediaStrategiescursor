@@ -1,10 +1,10 @@
 import { useState, Suspense, lazy } from 'react';
 import SEOWrapper from '../components/SEO/SEOWrapper';
-const LogoCloud = lazy(() => import('../components/LogoCloud'));
-const StatisticsSection = lazy(() => import('../components/StatisticsSection'));
-const DashboardSection = lazy(() => import('../components/DashboardSection'));
-const SecuritySection = lazy(() => import('../components/SecuritySection'));
-const InterviewBookingSection = lazy(() => import('../components/InterviewBookingSection'));
+import LogoCloud from '../components/LogoCloud';
+import StatisticsSection from '../components/StatisticsSection';
+import DashboardSection from '../components/DashboardSection';
+import SecuritySection from '../components/SecuritySection';
+import InterviewBookingSection from '../components/InterviewBookingSection';
 const RegistrationModal = lazy(() => import('../components/RegistrationModal'));
 import {
   LazyTestimonialsSection,
@@ -43,7 +43,7 @@ export default function HomePage() {
           aria-hidden="true"
           loading="eager"
           decoding="sync"
-          fetchpriority="high"
+          fetchPriority="high"
           width={1920}
           height={1080}
           className="pointer-events-none select-none absolute inset-0 w-full h-full z-0"
@@ -116,35 +116,29 @@ export default function HomePage() {
 
       {/* REST OF PAGE */}
       <main id="main-content">
-        <Suspense fallback={null}>
-          <div id="partners">
-            <LogoCloud />
-          </div>
-        </Suspense>
+        <div id="partners">
+          <LogoCloud />
+        </div>
 
-        <Suspense fallback={null}>
-          <div id="features">
-            <StatisticsSection />
-          </div>
-        </Suspense>
+        <div id="features">
+          <StatisticsSection />
+        </div>
 
-        <Suspense fallback={null}>
-          <DashboardSection />
-        </Suspense>
+        <DashboardSection />
 
-        <Suspense fallback={null}>
-          <div id="security">
-            <SecuritySection />
-          </div>
-        </Suspense>
+        <div id="security">
+          <SecuritySection />
+        </div>
 
-        <Suspense fallback={null}>
-          <InterviewBookingSection />
-        </Suspense>
+        <InterviewBookingSection />
 
         {/* Lazy-loaded sections below the fold */}
         <Suspense fallback={<div className="py-20 bg-white" />}>
           <LazyEffortlessSecuritySection />
+        </Suspense>
+
+        <Suspense fallback={<div className="py-20 bg-white" />}>
+          <LazyTestimonialsSection />
         </Suspense>
 
         <Suspense fallback={<div className="py-20 bg-white" />}>

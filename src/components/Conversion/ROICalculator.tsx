@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TrendingUp, Clock, DollarSign } from 'lucide-react';
+import { TrendingUp, Clock } from 'lucide-react';
 import { trackToolUsage, trackCTAClick } from '../../lib/analytics/conversions';
 
 export default function ROICalculator() {

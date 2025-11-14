@@ -24,7 +24,6 @@ export default function EffortlessSecuritySection() {
             muted
             playsInline
             preload="metadata"
-            loading="lazy"
             width={800}
             height={600}
             className="w-full max-w-2xl h-auto rounded-2xl"

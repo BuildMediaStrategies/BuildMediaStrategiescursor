@@ -8,6 +8,7 @@ declare global {
 const getMeasurementId = () => (import.meta as any).env?.VITE_GA_MEASUREMENT_ID as string | undefined;
 
 export function initGA(measurementId?: string) {
+  if (typeof window === 'undefined' || typeof document === 'undefined') return;
   const id = measurementId || getMeasurementId();
   if (!id) return; // silently no-op if no ID configured
 

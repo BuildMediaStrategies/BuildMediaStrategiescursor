@@ -1,6 +1,7 @@
-import { useState, useEffect, useCallback, FormEvent } from 'react';
+import { useState, useEffect, useCallback, useRef, FormEvent } from 'react';
 import { trackExitIntent } from '../../lib/analytics/conversions';
 import { X } from 'lucide-react';
+import { useFocusTrap } from '../../hooks/useFocusTrap';
 
 const STORAGE_KEY = 'exitIntentShown';
 const COOLDOWN_DAYS = 7;
@@ -11,6 +12,13 @@ export default function ExitIntentPopup() {
   const [isVisible, setIsVisible] = useState(false);
   const [email, setEmail] = useState('');
   const [hasShown, setHasShown] = useState(false);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  useFocusTrap(isVisible, dialogRef);
+
+  const handleClose = useCallback(() => {
+    setIsVisible(false);
+    try { trackExitIntent('dismiss', { page: window.location.pathname }); } catch {}
+  }, []);
 
   useEffect(() => {
     // Check localStorage for cooldown
@@ -50,18 +58,13 @@ export default function ExitIntentPopup() {
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isVisible) {
-        setIsVisible(false);
+        handleClose();
       }
     };
 
     document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
-  }, [isVisible]);
-
-  const handleClose = useCallback(() => {
-    setIsVisible(false);
-    try { trackExitIntent('dismiss', { page: window.location.pathname }); } catch {}
-  }, []);
+  }, [isVisible, handleClose]);
 
   const handleOverlayClick = useCallback((e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
@@ -101,6 +104,8 @@ export default function ExitIntentPopup() {
         className="relative w-full max-w-lg mx-4 rounded-2xl shadow-2xl transform scale-95 animate-scaleIn bg-white"
         style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)' }}
         onClick={(e) => e.stopPropagation()}
+        ref={dialogRef}
+        tabIndex={-1}
       >
         {/* Gradient border */}
         <div
@@ -164,9 +169,6 @@ export default function ExitIntentPopup() {
               placeholder="Enter your email"
               required
               className="w-full px-4 py-3 rounded-lg mb-4 bg-white border-2 border-gray-300 text-gray-900 placeholder-gray-500 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-offset-0 transition-all"
-              style={{
-                focusRingColor: 'transparent',
-              }}
               onFocus={(e) => {
                 e.target.style.borderImage = 'linear-gradient(90deg, #FF7A00 0%, #FF2A2A 18%, #FF2EC9 36%, #E11AF5 54%, #9B1FFF 72%, #2E7BFF 100%) 1';
                 e.target.style.borderImageSlice = '1';

@@ -1,10 +1,12 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect, Suspense, lazy } from 'react';
-import { trackPageView } from './lib/analytics/googleAnalytics';
+import CookieConsentBanner from './components/CookieConsentBanner';
+import { initGA, trackPageView } from './lib/analytics/googleAnalytics';
 import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
+import HomePage from './pages/HomePage';
+import { useCookieConsent } from './hooks/useCookieConsent';
 const ExitIntentPopup = lazy(() => import('./components/Conversion/ExitIntentPopup'));
-const HomePage = lazy(() => import('./pages/HomePage'));
 const WebDesignPage = lazy(() => import('./pages/WebDesignPage'));
 const AIOperationsPage = lazy(() => import('./pages/AIOperationsPage'));
 const IndustriesPage = lazy(() => import('./pages/IndustriesPage'));
@@ -20,16 +22,31 @@ const SpeedCheckerPage = lazy(() => import('./pages/tools/SpeedChecker'));
 const BlogIndexPage = lazy(() => import('./pages/Blog'));
 const BlogPostPage = lazy(() => import('./pages/BlogPost'));
 const AboutPage = lazy(() => import('./pages/About'));
+const PrivacyPage = lazy(() => import('./pages/PrivacyPage'));
+const TermsPage = lazy(() => import('./pages/TermsPage'));
+const CookiePolicyPage = lazy(() => import('./pages/CookiePolicyPage'));
+const AIDisclosurePage = lazy(() => import('./pages/AIDisclosurePage'));
 
 function App() {
+  const { status, initialized, accept, decline } = useCookieConsent();
+  const hasAnalyticsConsent = status === 'accepted';
+  const showCookieBanner = initialized && status === null;
+
+  useEffect(() => {
+    if (hasAnalyticsConsent) {
+      initGA();
+    }
+  }, [hasAnalyticsConsent]);
+
   return (
     <Router>
-      <RouteChangeTracker />
+      <RouteChangeTracker hasAnalyticsConsent={hasAnalyticsConsent} />
+
       <Header />
       <Suspense fallback={null}>
         <ExitIntentPopup />
       </Suspense>
-      <Suspense fallback={<div style={{ padding: 24 }}>Loading…</div>}>
+      <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/web-design" element={<WebDesignPage />} />
@@ -47,19 +64,29 @@ function App() {
           <Route path="/blog" element={<BlogIndexPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/cookie-policy" element={<CookiePolicyPage />} />
+          <Route path="/ai-disclosure" element={<AIDisclosurePage />} />
         </Routes>
       </Suspense>
       <Footer />
+      <CookieConsentBanner visible={showCookieBanner} onAccept={accept} onDecline={decline} />
     </Router>
   );
 }
 
-function RouteChangeTracker() {
+function RouteChangeTracker({ hasAnalyticsConsent }: { hasAnalyticsConsent: boolean }) {
   const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
-    trackPageView(location.pathname);
   }, [location.pathname]);
+
+  useEffect(() => {
+    if (hasAnalyticsConsent) {
+      trackPageView(location.pathname);
+    }
+  }, [location.pathname, hasAnalyticsConsent]);
   return null;
 }
 
