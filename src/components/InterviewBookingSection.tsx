@@ -1,8 +1,15 @@
 import { Check } from 'lucide-react';
+import aiDashboard from '../assets/ai-dashboard.png';
+
+const AI_SECTION_NOTICE = 'Visuals and stats may include automated AI outputs. Review insights before taking action.';
 
 export default function InterviewBookingSection() {
   return (
-    <section className="py-12 sm:py-16 lg:py-20 px-5 sm:px-6 text-center lg:text-left bg-white" aria-labelledby="growth-partner-heading">
+    <section
+      className="py-12 sm:py-16 lg:py-20 px-5 sm:px-6 text-center lg:text-left bg-white"
+      aria-labelledby="growth-partner-heading"
+      aria-description={AI_SECTION_NOTICE}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
           {/* Left Section: Text Content */}
@@ -43,20 +50,16 @@ export default function InterviewBookingSection() {
 
           {/* Right Section: Dashboard Interface */}
           <div className="relative flex items-center justify-center">
-            <picture>
-              <source srcSet="/assets/ChatGPT Image Oct 12, 2025, 11_58_36 AM.avif" type="image/avif" />
-              <source srcSet="/assets/ChatGPT Image Oct 12, 2025, 11_58_36 AM.webp" type="image/webp" />
-              <img
-                src="/assets/ChatGPT Image Oct 12, 2025, 11_58_36 AM.png"
-                alt="Modern web dashboard interface showing analytics, metrics, and user engagement data visualization"
-                loading="lazy"
-                decoding="async"
-                fetchpriority="low"
-                width={800}
-                height={600}
-                className="w-full h-auto"
-              />
-            </picture>
+            <img
+              src={aiDashboard}
+              alt="Modern web dashboard interface showing analytics, metrics, and user engagement data visualization"
+              loading="lazy"
+              decoding="async"
+              fetchPriority="low"
+              width={1536}
+              height={1024}
+              className="w-full h-auto"
+            />
           </div>
         </div>
       </div>

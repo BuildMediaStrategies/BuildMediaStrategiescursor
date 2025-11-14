@@ -18,7 +18,7 @@ export default function Header() {
             height="88"
             loading="eager"
             fetchPriority="high"
-            decoding="async"
+            decoding="sync"
           />
         </Link>
         <Navigation />

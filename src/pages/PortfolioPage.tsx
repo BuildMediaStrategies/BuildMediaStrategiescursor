@@ -98,7 +98,7 @@ export default function PortfolioPage() {
                       className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all"
                       loading="eager"
                       decoding="sync"
-                      fetchpriority="high"
+                      fetchPriority="high"
                       width="64"
                       height="64"
                     />

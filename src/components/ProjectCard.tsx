@@ -67,12 +67,11 @@ export default function ProjectCard({
               className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
               style={{ opacity: index === currentImageIndex ? 1 : 0 }}
               loading={priorityImage && index === 0 ? 'eager' : 'lazy'}
-              fetchpriority={priorityImage && index === 0 ? 'high' : undefined}
-              decoding="async"
+              fetchPriority={priorityImage && index === 0 ? 'high' : 'low'}
+              decoding={priorityImage && index === 0 ? 'sync' : 'async'}
               width={imageWidth}
               height={imageHeight}
               sizes={imageSizes}
-              srcSet={`${image.replace(/(\.[^.]+)$/u, '-sm.webp')} 600w, ${image.replace(/(\.[^.]+)$/u, '.webp')} 1200w`}
             />
           ) : null
         )}

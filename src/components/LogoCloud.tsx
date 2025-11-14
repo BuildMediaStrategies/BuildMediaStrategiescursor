@@ -6,32 +6,34 @@ type Logo = {
   src: string;
   alt: string;
   className: string;
+  width: number;
+  height: number;
 };
 
 const logos: Logo[] = [
   // UCL (icon-only, matches SOS size)
-  { src: '/ucl-icon.png', alt: 'UCL Icon Logo', className: 'mx-10 h-14 md:h-[4.2rem] w-auto object-contain' },
+  { src: '/ucl-icon.png', alt: 'UCL Icon Logo', className: 'mx-10 h-14 md:h-[4.2rem] w-auto object-contain', width: 1024, height: 1024 },
 
   // Hamilton Nexus
-  { src: '/hamilton-nexus-icon.png', alt: 'Hamilton Nexus Logo', className: 'mx-10 h-12 md:h-14 w-auto object-contain' },
+  { src: '/hamilton-nexus-icon.png', alt: 'Hamilton Nexus Logo', className: 'mx-10 h-12 md:h-14 w-auto object-contain', width: 158, height: 70 },
 
   // GitHub (force white via CSS filter)
-  { src: '/github-logo.png', alt: 'GitHub Logo', className: 'mx-10 h-12 md:h-14 w-auto object-contain as-white' },
+  { src: '/github-logo.png', alt: 'GitHub Logo', className: 'mx-10 h-12 md:h-14 w-auto object-contain as-white', width: 3840, height: 2160 },
 
   // Cursor (icon only)
-  { src: '/cursor-icon.png', alt: 'Cursor AI Logo', className: 'mx-10 h-14 md:h-16 w-auto object-contain' },
+  { src: '/cursor-icon.png', alt: 'Cursor AI Logo', className: 'mx-10 h-14 md:h-16 w-auto object-contain', width: 1200, height: 1200 },
 
   // SOS Electrical (slightly larger)
-  { src: '/sos-icon.png', alt: 'SOS Electrical Logo', className: 'mx-10 h-14 md:h-[4.2rem] w-auto object-contain' },
+  { src: '/sos-icon.png', alt: 'SOS Electrical Logo', className: 'mx-10 h-14 md:h-[4.2rem] w-auto object-contain', width: 500, height: 500 },
 
   // CureCancer (use the available UCL icon until CureCancer asset is added)
-  { src: '/ucl-icon.png', alt: 'CureCancer UCL Logo', className: 'mx-10 h-16 md:h-[4.8rem] w-auto object-contain opacity-95 contrast-125' },
+  { src: '/ucl-icon.png', alt: 'CureCancer UCL Logo', className: 'mx-10 h-16 md:h-[4.8rem] w-auto object-contain opacity-95 contrast-125', width: 1024, height: 1024 },
 
   // Repeat Hamilton Nexus (kept from your sequence)
-  { src: '/hamilton-nexus-icon.png', alt: 'Hamilton Nexus Logo', className: 'mx-10 h-12 md:h-14 w-auto object-contain' },
+  { src: '/hamilton-nexus-icon.png', alt: 'Hamilton Nexus Logo', className: 'mx-10 h-12 md:h-14 w-auto object-contain', width: 158, height: 70 },
 
   // Repeat GitHub (forced white)
-  { src: '/github-logo.png', alt: 'GitHub Logo', className: 'mx-10 h-12 md:h-14 w-auto object-contain as-white' },
+  { src: '/github-logo.png', alt: 'GitHub Logo', className: 'mx-10 h-12 md:h-14 w-auto object-contain as-white', width: 3840, height: 2160 },
 ];
 
 export default function LogoCloud() {
@@ -55,6 +57,9 @@ export default function LogoCloud() {
                   alt={logo.alt}
                   loading="lazy"
                   decoding="async"
+                  fetchPriority="low"
+                  width={logo.width}
+                  height={logo.height}
                 />
               ))}
               {/* pass 2 (hidden from a11y, identical visuals) */}
@@ -66,6 +71,9 @@ export default function LogoCloud() {
                   alt=""
                   loading="lazy"
                   decoding="async"
+                  fetchPriority="low"
+                  width={logo.width}
+                  height={logo.height}
                   aria-hidden="true"
                 />
               ))}

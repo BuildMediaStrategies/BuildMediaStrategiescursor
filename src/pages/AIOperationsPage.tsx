@@ -1,16 +1,9 @@
 import SEOWrapper from '../components/SEO/SEOWrapper';
 import { Timeline } from '../components/ui/timeline';
-import { PexelsImage } from '../components/media/PexelsImage';
+
+const AI_SECTION_NOTICE = 'AI systems can generate automated outputs. Review everything before acting on recommendations.';
 
 export default function AIOperationsPage() {
-  const cardImage = (id: string, alt: string) => (
-    <PexelsImage
-      id={id}
-      alt={alt}
-      loading="lazy"
-      imgClassName="w-full rounded-lg object-cover h-48 md:h-64 lg:h-80 shadow-lg"
-    />
-  );
 
   const aiServicesData = [
     {
@@ -37,11 +30,16 @@ export default function AIOperationsPage() {
               <span className="text-black">Smart routing to the right team member</span>
             </div>
           </div>
-          <picture>
-            <source srcSet="/bms-web-image.avif" type="image/avif" />
-            <source srcSet="/bms-web-image.webp" type="image/webp" />
-            <img src="/bms-web-image.png" alt="Full-stack development interface" className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg" loading="lazy" decoding="async" fetchpriority="low" width="800" height="600" />
-          </picture>
+          <img
+            src="/bms-web-image.png"
+            alt="Full-stack development interface"
+            className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
+            width="1024"
+            height="1024"
+          />
         </div>
       ),
     },
@@ -69,11 +67,16 @@ export default function AIOperationsPage() {
               <span className="text-black">Digital performance review systems</span>
             </div>
           </div>
-          <picture>
-            <source srcSet="/bms-mobile-img.avif" type="image/avif" />
-            <source srcSet="/bms-mobile-img.webp" type="image/webp" />
-            <img src="/bms-mobile-img.png" alt="Mobile app development interface" className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg" loading="lazy" decoding="async" fetchpriority="low" width="800" height="600" />
-          </picture>
+          <img
+            src="/bms-mobile-img.png"
+            alt="Mobile app development interface"
+            className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
+            width="1024"
+            height="1024"
+          />
         </div>
       ),
     },
@@ -101,11 +104,16 @@ export default function AIOperationsPage() {
               <span className="text-black">Bank reconciliation and reporting</span>
             </div>
           </div>
-          <picture>
-            <source srcSet="/bms-lead-img.avif" type="image/avif" />
-            <source srcSet="/bms-lead-img.webp" type="image/webp" />
-            <img src="/bms-lead-img.png" alt="Lead capture system dashboard" className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg" loading="lazy" decoding="async" fetchpriority="low" width="800" height="600" />
-          </picture>
+          <img
+            src="/bms-lead-img.png"
+            alt="Lead capture system dashboard"
+            className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
+            width="1024"
+            height="1024"
+          />
         </div>
       ),
     },
@@ -133,11 +141,16 @@ export default function AIOperationsPage() {
               <span className="text-black">Smart escalation to human agents when needed</span>
             </div>
           </div>
-          <picture>
-            <source srcSet="/bms-linkedin-img.avif" type="image/avif" />
-            <source srcSet="/bms-linkedin-img.webp" type="image/webp" />
-            <img src="/bms-linkedin-img.png" alt="LinkedIn lead generation interface" className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg" loading="lazy" decoding="async" fetchpriority="low" width="800" height="600" />
-          </picture>
+          <img
+            src="/bms-linkedin-img.png"
+            alt="LinkedIn lead generation interface"
+            className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
+            width="1024"
+            height="1024"
+          />
         </div>
       ),
     },
@@ -165,11 +178,16 @@ export default function AIOperationsPage() {
               <span className="text-black">Automatic reordering and supplier management</span>
             </div>
           </div>
-          <picture>
-            <source srcSet="/bms-chatbot-img.avif" type="image/avif" />
-            <source srcSet="/bms-chatbot-img.webp" type="image/webp" />
-            <img src="/bms-chatbot-img.png" alt="Customer support automation chatbot" className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg" loading="lazy" decoding="async" fetchpriority="low" width="800" height="600" />
-          </picture>
+          <img
+            src="/bms-chatbot-img.png"
+            alt="Customer support automation chatbot"
+            className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
+            width="1024"
+            height="1024"
+          />
         </div>
       ),
     },
@@ -197,11 +215,16 @@ export default function AIOperationsPage() {
               <span className="text-black">Real-time progress reporting</span>
             </div>
           </div>
-          <picture>
-            <source srcSet="/bms-call-img.avif" type="image/avif" />
-            <source srcSet="/bms-call-img.webp" type="image/webp" />
-            <img src="/bms-call-img.png" alt="Call automation system interface" className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg" loading="lazy" decoding="async" fetchpriority="low" width="800" height="600" />
-          </picture>
+          <img
+            src="/bms-call-img.png"
+            alt="Call automation system interface"
+            className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
+            width="1024"
+            height="1024"
+          />
         </div>
       ),
     },
@@ -270,7 +293,11 @@ export default function AIOperationsPage() {
       </a>
 
       <main id="main-content" className="bg-white min-h-screen">
-        <section className="pt-32 pb-12 px-5 lg:px-11" aria-labelledby="hero-heading">
+        <section
+          className="pt-32 pb-12 px-5 lg:px-11"
+          aria-labelledby="hero-heading"
+          aria-description={AI_SECTION_NOTICE}
+        >
           <div className="max-w-5xl mx-auto text-center">
             <h1
               id="hero-heading"
@@ -293,7 +320,7 @@ export default function AIOperationsPage() {
           </div>
         </section>
 
-        <section className="py-16 px-5 lg:px-11">
+        <section className="py-16 px-5 lg:px-11" aria-description={AI_SECTION_NOTICE}>
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-sky-gradient mb-6 leading-tight">
@@ -307,7 +334,7 @@ export default function AIOperationsPage() {
           </div>
         </section>
 
-        <section className="py-20 lg:py-24 px-5 lg:px-11 bg-white">
+        <section className="py-20 lg:py-24 px-5 lg:px-11 bg-white" aria-description={AI_SECTION_NOTICE}>
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold mb-6 leading-tight">
               <span className="block text-gray-900">Ready To Automate</span>

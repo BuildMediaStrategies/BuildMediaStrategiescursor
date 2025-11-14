@@ -49,8 +49,8 @@ export default function IndustriesPage() {
                   id="pexels-1216589"
                   alt="Construction workers at building site reviewing project plans"
                   loading="eager"
-                  fetchpriority="high"
-                  decoding="async"
+                  decoding="sync"
+                  fetchPriority="high"
                   width={1400}
                   height={933}
                   imgClassName="w-full h-auto"

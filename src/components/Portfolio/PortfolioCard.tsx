@@ -31,20 +31,16 @@ export default function PortfolioCard({
   return (
     <div className={`relative border border-gray-800 ${isCenter ? 'bg-black' : 'bg-[#0A0A0A]'} text-white overflow-hidden`}>
       {image ? (
-        <picture>
-          <source srcSet={image.replace(/\.(png|jpg|jpeg)$/, '.avif')} type="image/avif" />
-          <source srcSet={image.replace(/\.(png|jpg|jpeg)$/, '.webp')} type="image/webp" />
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-56 object-cover"
-            loading="lazy"
-            decoding="async"
-            fetchpriority="low"
-            width="800"
-            height="224"
-          />
-        </picture>
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-56 object-cover"
+          loading="lazy"
+          decoding="async"
+          fetchPriority="low"
+          width="800"
+          height="224"
+        />
       ) : (
         <div className="w-full h-56 bg-gradient-to-br from-gray-900 to-black" aria-hidden />
       )}

@@ -20,6 +20,9 @@ const responses: Record<string, string> = {
   default: "That's a great question! In a real implementation, I'd be trained on your specific business data. For now, try asking about 'hours', 'services', 'price', or say 'book' to schedule a consultation!",
 };
 
+const AI_OUTPUT_NOTICE =
+  'Responses in this demo are generated automatically. Verify important details with a human before acting.';
+
 export default function AIDemo() {
   const [messages, setMessages] = useState<Message[]>([{
     id: crypto.randomUUID(),
@@ -29,10 +32,15 @@ export default function AIDemo() {
   }]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
-  const endRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: 'smooth' });
+    const container = containerRef.current;
+    if (!container) return;
+    container.scrollTo({
+      top: container.scrollHeight,
+      behavior: 'smooth',
+    });
   }, [messages, isTyping]);
 
   const disabled = useMemo(() => isTyping || input.trim().length === 0, [isTyping, input]);
@@ -71,7 +79,12 @@ export default function AIDemo() {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto">
+    <div
+      className="w-full max-w-3xl mx-auto"
+      role="region"
+      aria-label="AI assistant demo"
+      aria-description={AI_OUTPUT_NOTICE}
+    >
       <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
         {/* Header */}
         <div className="bg-gradient-to-r from-blue-50 to-purple-50 px-6 py-5">
@@ -87,7 +100,7 @@ export default function AIDemo() {
         </div>
 
         {/* Messages Area */}
-        <div className="h-96 overflow-y-auto bg-gray-50 px-4 py-4 space-y-3">
+        <div ref={containerRef} className="h-96 overflow-y-auto bg-gray-50 px-4 py-4 space-y-3">
           {messages.map((m) => (
             <div key={m.id} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'} animate-[fadeIn_200ms_ease-out]`}>
               {m.role === 'assistant' && (
@@ -121,7 +134,6 @@ export default function AIDemo() {
               </div>
             </div>
           )}
-          <div ref={endRef} />
         </div>
 
         {/* Input Area */}
@@ -150,4 +162,3 @@ export default function AIDemo() {
     </div>
   );
 }
-

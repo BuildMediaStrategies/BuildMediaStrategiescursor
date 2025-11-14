@@ -20,7 +20,16 @@ export default function TestimonialCard({ quote, author, company, location, phot
       <div className="text-lg text-black mb-5">“{quote}”</div>
       <div className="flex items-center gap-3">
         {photo ? (
-          <img src={photo} alt={author} className="w-12 h-12 rounded-full object-cover" />
+          <img
+            src={photo}
+            alt={author}
+            className="w-12 h-12 rounded-full object-cover"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
+            width={48}
+            height={48}
+          />
         ) : (
           <div className="w-12 h-12 rounded-full bg-gray-200" aria-hidden />
         )}
@@ -32,4 +41,3 @@ export default function TestimonialCard({ quote, author, company, location, phot
     </div>
   );
 }
-

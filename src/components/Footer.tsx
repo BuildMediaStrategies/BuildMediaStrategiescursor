@@ -1,5 +1,5 @@
-import React from 'react';
 import { Instagram, Youtube } from 'lucide-react';
+import bmsLogo from '../assets/bms-logo.png';
 
 export default function Footer() {
   return (
@@ -14,20 +14,16 @@ export default function Footer() {
               className="inline-block hover:opacity-80 transition-opacity"
               aria-label="BuildMediaStrategies home"
             >
-              <picture>
-                <source srcSet="/assets/bmsnewlogo sky.avif" type="image/avif" />
-                <source srcSet="/assets/bmsnewlogo sky.webp" type="image/webp" />
-                <img
-                  src="/assets/bmsnewlogo sky.png"
-                  alt="Build Media Strategies"
-                  className="h-16 w-auto object-contain"
-                  width="320"
-                  height="80"
-                  loading="lazy"
-                  decoding="async"
-                  fetchpriority="low"
-                />
-              </picture>
+              <img
+                src={bmsLogo}
+                alt="Build Media Strategies"
+                className="h-16 w-auto object-contain"
+                width="800"
+                height="450"
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
+              />
             </a>
             <p className="text-sm mt-4 text-black">
               Web design and AI operations for businesses across Kent.
@@ -146,8 +142,24 @@ export default function Footer() {
           </div>
 
           {/* Copyright */}
-          <div className="text-xs text-black">
-            © Copyright BuildMediaStrategies 2025
+          <div className="text-xs text-black text-center md:text-left">
+            <span>© Copyright BuildMediaStrategies 2025</span>
+            <span aria-hidden="true"> · </span>
+            <a href="/privacy" className="link-sky text-xs transition-colors">
+              Privacy
+            </a>
+            <span aria-hidden="true"> · </span>
+            <a href="/terms" className="link-sky text-xs transition-colors">
+              Terms
+            </a>
+            <span aria-hidden="true"> · </span>
+            <a href="/cookie-policy" className="link-sky text-xs transition-colors">
+              Cookie Policy
+            </a>
+            <span aria-hidden="true"> · </span>
+            <a href="/ai-disclosure" className="link-sky text-xs transition-colors">
+              AI Disclosure
+            </a>
           </div>
         </div>
       </div>

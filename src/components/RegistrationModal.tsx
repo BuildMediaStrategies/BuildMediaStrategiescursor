@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { X, User, Mail, Lock, Phone } from 'lucide-react';
+import { useFocusTrap } from '../hooks/useFocusTrap';
 
 interface RegistrationModalProps {
   isOpen: boolean;
@@ -16,6 +17,9 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
     confirmPassword: ''
   });
 
+  const modalRef = useRef<HTMLDivElement>(null);
+  useFocusTrap(isOpen, modalRef);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -29,7 +33,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
     setIsSubmitted(true);
   };
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     setIsSubmitted(false);
     setFormData({
       fullName: '',
@@ -39,6 +43,25 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
       confirmPassword: ''
     });
     onClose();
+  }, [onClose]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        handleClose();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, handleClose]);
+
+  const handleBackdropClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (event.target === event.currentTarget) {
+      handleClose();
+    }
   };
 
   if (!isOpen) return null;
@@ -49,10 +72,13 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
       role="dialog"
       aria-modal="true"
       aria-labelledby="registration-modal-title"
+      onClick={handleBackdropClick}
     >
       <div
         className="bg-white rounded-2xl max-w-md w-full my-8"
         onClick={(e) => e.stopPropagation()}
+        ref={modalRef}
+        tabIndex={-1}
       >
         {!isSubmitted ? (
           // Registration Form
@@ -61,6 +87,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
             <div className="flex items-center justify-between mb-6">
               <h2 id="registration-modal-title" className="text-2xl font-bold text-gray-900">Create Account</h2>
               <button
+                type="button"
                 onClick={handleClose}
                 className="text-gray-400 hover:text-black transition-colors"
                 aria-label="Close registration modal"

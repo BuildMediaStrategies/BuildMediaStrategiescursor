@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { NavLink } from 'react-router-dom';
 import { createPortal } from 'react-dom';
+import bmsLogo from '../../assets/bms-logo.png';
+import { useFocusTrap } from '../../hooks/useFocusTrap';
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement | null>(null);
+  useFocusTrap(open, menuRef);
   const links = [
     { to: '/web-design', label: 'Web Design' },
     { to: '/ai-operations', label: 'AI Ops' },
@@ -23,6 +27,25 @@ export default function Navigation() {
       document.body.style.overflow = '';
     };
   }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setOpen(false);
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [open]);
+
+  const closeMenu = useCallback(() => setOpen(false), []);
+
+  const handleOverlayClick = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
+    if (event.target === event.currentTarget) {
+      setOpen(false);
+    }
+  }, []);
 
   const itemClass = ({ isActive }: { isActive: boolean }) =>
     `link-sky px-3 py-2 rounded-3xl transition-all duration-300 font-bold ${
@@ -51,6 +74,7 @@ export default function Navigation() {
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
         className="md:hidden relative z-[10000] w-10 h-10 flex flex-col items-center justify-center gap-1.5 transition-all duration-300"
+        aria-controls="mobile-nav-menu"
       >
         <span
           className={`block h-0.5 w-6 rounded-full transition-all duration-300 ease-out ${
@@ -71,25 +95,37 @@ export default function Navigation() {
 
       {/* Mobile Fullscreen Menu - Rendered via Portal to escape parent z-index */}
       {open && createPortal(
-        <div className="md:hidden fixed inset-0 z-[9999] bg-white animate-fadeIn" aria-hidden={false}>
+        <div
+          id="mobile-nav-menu"
+          ref={menuRef}
+          className="md:hidden fixed inset-0 z-[9999] bg-white animate-fadeIn"
+          aria-hidden={false}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile navigation menu"
+          tabIndex={-1}
+          onClick={handleOverlayClick}
+        >
           {/* Header matching the main nav - white background with logo */}
           <div className="bg-white/90 backdrop-blur-sm border-b border-gray-100">
             <div className="px-5 py-3 flex items-center justify-between">
               <div className="flex items-center rounded-3xl px-3 py-1 -ml-8">
                 <img
-                  src="/assets/bmsnewlogo sky.png"
+                  src={bmsLogo}
                   alt="Build Media Strategies"
                   className="h-8 w-auto object-contain scale-[3.25] origin-left translate-y-[12px]"
-                  width="320"
-                  height="88"
-                  loading="eager"
+                  width="800"
+                  height="450"
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
                 />
               </div>
               {/* Clickable X button */}
               <button
                 type="button"
                 aria-label="Close menu"
-                onClick={() => setOpen(false)}
+                onClick={closeMenu}
                 className="w-10 h-10 flex flex-col items-center justify-center gap-1.5 transition-all duration-300 hover:opacity-70"
               >
                 <span className="block h-0.5 w-6 rounded-full bg-white rotate-45 translate-y-2" style={{ background: 'linear-gradient(135deg, #FF6B35 0%, #F7931E 25%, #FDC830 50%, #4FACFE 75%, #00F2FE 100%)' }} />
@@ -117,7 +153,7 @@ export default function Navigation() {
                   animationDelay: `${index * 80}ms`,
                   animation: 'slideInFromRight 0.4s ease-out forwards',
                 }}
-                onClick={() => setOpen(false)}
+                onClick={closeMenu}
               >
                 {l.label}
               </NavLink>
@@ -128,7 +164,7 @@ export default function Navigation() {
           <div className="px-8 pb-10 pt-6 bg-white">
             <a
               href="/contact"
-              onClick={() => setOpen(false)}
+              onClick={closeMenu}
               className="block text-center px-8 py-5 bg-sky-gradient text-white font-bold text-xl rounded-full hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 shadow-lg"
             >
               Get Started
