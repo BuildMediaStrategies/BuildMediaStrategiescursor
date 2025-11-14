@@ -36,30 +36,26 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-white" />
 
         {/* HERO IMAGE */}
-        <picture>
-          <source srcSet="/hero-image-new.avif" type="image/avif" />
-          <source srcSet="/hero-image-new.webp" type="image/webp" />
-          <img
-            id="hero-img"
-            src="/hero-image-new.png"
-            alt=""
-            aria-hidden="true"
-            loading="eager"
-            decoding="async"
-            fetchpriority="high"
-            width={1920}
-            height={1080}
-            className="pointer-events-none select-none absolute inset-0 w-full h-full z-0"
-            style={{
-              // Desktop: push image further down so headings sit on solid white
-              objectFit: 'cover',
-              objectPosition: 'center 50%',
-              transform: 'translateY(26vh)',
-              willChange: 'transform',
-              // no brightness/contrast tweaks so PNG white stays true
-            }}
-          />
-        </picture>
+        <img
+          id="hero-img"
+          src="/hero-image-new.png"
+          alt=""
+          aria-hidden="true"
+          loading="eager"
+          decoding="sync"
+          fetchpriority="high"
+          width={1920}
+          height={1080}
+          className="pointer-events-none select-none absolute inset-0 w-full h-full z-0"
+          style={{
+            // Desktop: push image further down so headings sit on solid white
+            objectFit: 'cover',
+            objectPosition: 'center 50%',
+            transform: 'translateY(26vh)',
+            willChange: 'transform',
+            // no brightness/contrast tweaks so PNG white stays true
+          }}
+        />
 
         {/* Mobile overrides (show full browsers, no shift) */}
         <style>{`
