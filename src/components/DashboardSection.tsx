@@ -34,6 +34,7 @@ export default function DashboardSection() {
               muted
               playsInline
               preload="metadata"
+              loading="lazy"
               width={800}
               height={600}
               className="w-full h-auto rounded-2xl"

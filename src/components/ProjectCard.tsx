@@ -72,7 +72,7 @@ export default function ProjectCard({
               width={imageWidth}
               height={imageHeight}
               sizes={imageSizes}
-              srcSet={`${image.replace(/(\.[^.]+)$/u, '-sm$1')} 600w, ${image} 1200w`}
+              srcSet={`${image.replace(/(\.[^.]+)$/u, '-sm.webp')} 600w, ${image.replace(/(\.[^.]+)$/u, '.webp')} 1200w`}
             />
           ) : null
         )}

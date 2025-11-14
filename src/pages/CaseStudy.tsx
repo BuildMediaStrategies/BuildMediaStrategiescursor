@@ -47,7 +47,11 @@ export default function CaseStudyPage() {
       {/* HERO SECTION */}
       <div className="relative min-h-[60vh] bg-black overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImage} className="w-full h-full object-cover opacity-30" />
+          <picture>
+            <source srcSet={heroImage.replace(/\.(png|jpg|jpeg)$/, '.avif')} type="image/avif" />
+            <source srcSet={heroImage.replace(/\.(png|jpg|jpeg)$/, '.webp')} type="image/webp" />
+            <img src={heroImage} className="w-full h-full object-cover opacity-30" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080" />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black" />
         </div>
         <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-6 py-20 sm:py-32">

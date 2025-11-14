@@ -102,7 +102,11 @@ export default function TestimonialShowcase() {
                     <blockquote className="text-white text-lg leading-relaxed mb-5">“{t.quote}”</blockquote>
                     <div className="flex items-center gap-3 mt-auto">
                       {t.avatarUrl ? (
-                        <img src={t.avatarUrl} alt={t.author} className="w-10 h-10 rounded-full object-cover" loading="lazy" />
+                        <picture>
+                          <source srcSet={t.avatarUrl.replace(/\.(png|jpg|jpeg)$/, '.avif')} type="image/avif" />
+                          <source srcSet={t.avatarUrl.replace(/\.(png|jpg|jpeg)$/, '.webp')} type="image/webp" />
+                          <img src={t.avatarUrl} alt={t.author} className="w-10 h-10 rounded-full object-cover" loading="lazy" decoding="async" fetchpriority="low" width="40" height="40" />
+                        </picture>
                       ) : (
                         <div className="w-10 h-10 rounded-full bg-gray-700" aria-hidden />
                       )}

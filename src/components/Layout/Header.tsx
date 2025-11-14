@@ -10,15 +10,20 @@ export default function Header() {
           to="/"
           className="flex items-center rounded-3xl px-3 py-1 hover:opacity-80 transition-all duration-300 -ml-8 sm:-ml-12"
         >
-          <img
-            src="/assets/bmsnewlogo sky.png"
-            alt="Build Media Strategies"
-            className="h-8 sm:h-10 md:h-12 w-auto object-contain scale-[3.25] sm:scale-[3.75] origin-left translate-y-[12px]"
-            width="320"
-            height="88"
-            loading="eager"
-            fetchPriority="high"
-          />
+          <picture>
+            <source srcSet="/assets/bmsnewlogo sky.avif" type="image/avif" />
+            <source srcSet="/assets/bmsnewlogo sky.webp" type="image/webp" />
+            <img
+              src="/assets/bmsnewlogo sky.png"
+              alt="Build Media Strategies"
+              className="h-8 sm:h-10 md:h-12 w-auto object-contain scale-[3.25] sm:scale-[3.75] origin-left translate-y-[12px]"
+              width="320"
+              height="88"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </picture>
         </Link>
         <Navigation />
       </div>

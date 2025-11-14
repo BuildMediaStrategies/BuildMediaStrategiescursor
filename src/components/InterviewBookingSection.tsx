@@ -43,14 +43,20 @@ export default function InterviewBookingSection() {
 
           {/* Right Section: Dashboard Interface */}
           <div className="relative flex items-center justify-center">
-            <img
-              src="/assets/ChatGPT Image Oct 12, 2025, 11_58_36 AM.png"
-              alt="Modern web dashboard interface showing analytics, metrics, and user engagement data visualization"
-              loading="lazy"
-              width={800}
-              height={600}
-              className="w-full h-auto"
-            />
+            <picture>
+              <source srcSet="/assets/ChatGPT Image Oct 12, 2025, 11_58_36 AM.avif" type="image/avif" />
+              <source srcSet="/assets/ChatGPT Image Oct 12, 2025, 11_58_36 AM.webp" type="image/webp" />
+              <img
+                src="/assets/ChatGPT Image Oct 12, 2025, 11_58_36 AM.png"
+                alt="Modern web dashboard interface showing analytics, metrics, and user engagement data visualization"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
+                width={800}
+                height={600}
+                className="w-full h-auto"
+              />
+            </picture>
           </div>
         </div>
       </div>

@@ -49,13 +49,21 @@ export default function LogoCloud() {
               {/* pass 1 */}
               {logos.map((logo, i) => (
                 <div className="flex" key={`logo-1-${i}`}>
-                  <img className={logo.className} src={logo.src} alt={logo.alt} />
+                  <picture>
+                    <source srcSet={logo.src.replace(/\.(png|jpg|jpeg)$/, '.avif')} type="image/avif" />
+                    <source srcSet={logo.src.replace(/\.(png|jpg|jpeg)$/, '.webp')} type="image/webp" />
+                    <img className={logo.className} src={logo.src} alt={logo.alt} loading="lazy" decoding="async" fetchpriority="low" />
+                  </picture>
                 </div>
               ))}
               {/* pass 2 (hidden from a11y, identical visuals) */}
               {logos.map((logo, i) => (
                 <div className="flex" key={`logo-2-${i}`} aria-hidden="true">
-                  <img className={logo.className} src={logo.src} alt="" />
+                  <picture>
+                    <source srcSet={logo.src.replace(/\.(png|jpg|jpeg)$/, '.avif')} type="image/avif" />
+                    <source srcSet={logo.src.replace(/\.(png|jpg|jpeg)$/, '.webp')} type="image/webp" />
+                    <img className={logo.className} src={logo.src} alt="" loading="lazy" decoding="async" fetchpriority="low" />
+                  </picture>
                 </div>
               ))}
             </InfiniteSlider>

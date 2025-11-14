@@ -14,14 +14,20 @@ export default function Footer() {
               className="inline-block hover:opacity-80 transition-opacity"
               aria-label="BuildMediaStrategies home"
             >
-              <img
-  src="/assets/bmsnewlogo sky.png"
-  alt="Build Media Strategies"
-  className="h-16 w-auto object-contain"
-  width="320"
-  height="80"
-  loading="lazy"
-/>
+              <picture>
+                <source srcSet="/assets/bmsnewlogo sky.avif" type="image/avif" />
+                <source srcSet="/assets/bmsnewlogo sky.webp" type="image/webp" />
+                <img
+                  src="/assets/bmsnewlogo sky.png"
+                  alt="Build Media Strategies"
+                  className="h-16 w-auto object-contain"
+                  width="320"
+                  height="80"
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="low"
+                />
+              </picture>
             </a>
             <p className="text-sm mt-4 text-black">
               Web design and AI operations for businesses across Kent.
