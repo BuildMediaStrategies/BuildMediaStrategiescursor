@@ -48,16 +48,14 @@ export default function HomePage() {
           height={1080}
           className="pointer-events-none select-none absolute inset-0 w-full h-full z-0"
           style={{
-            // Desktop: push image further down so headings sit on solid white
             objectFit: 'cover',
             objectPosition: 'center 50%',
             transform: 'translateY(26vh)',
             willChange: 'transform',
-            // no brightness/contrast tweaks so PNG white stays true
           }}
         />
 
-        {/* Instant load and mobile overrides */}
+        {/* Mobile offset update ONLY */}
         <style>{`
           #hero-img {
             opacity: 1 !important;
@@ -68,7 +66,7 @@ export default function HomePage() {
             #hero-img{
               object-fit: contain !important;
               object-position: center 72% !important;
-              transform: translateY(40px) !important;
+              transform: translateY(80px) !important;
             }
           }
         `}</style>
@@ -85,7 +83,8 @@ export default function HomePage() {
           </h1>
 
           <p className="text-center text-black text-sm sm:text-base max-w-lg mb-6 sm:mb-8 leading-relaxed font-normal opacity-0 animate-fadeInDelay px-4 sm:px-0">
-            High-performance <a href="/web-design" className="text-sky-gradient hover:opacity-80 transition-all">websites</a> that drive sales.<br /> <a href="/ai-operations" className="text-sky-gradient hover:opacity-80 transition-all">AI systems</a> that multiply your team's output.
+            High-performance <a href="/web-design" className="text-sky-gradient hover:opacity-80 transition-all">websites</a> that drive sales.<br /> 
+            <a href="/ai-operations" className="text-sky-gradient hover:opacity-80 transition-all">AI systems</a> that multiply your team's output.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-3">
