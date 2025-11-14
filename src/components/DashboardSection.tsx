@@ -28,13 +28,12 @@ export default function DashboardSection() {
           {/* Left Section: Dashboard Visualization */}
           <div className="lg:order-1 relative">
             <video
-              src="/assets/web design clip.mp4"
+              src="/web-design-clip.mp4"
               autoPlay
               loop
               muted
               playsInline
               preload="metadata"
-              loading="lazy"
               width={800}
               height={600}
               className="w-full h-auto rounded-2xl"

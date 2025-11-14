@@ -28,13 +28,12 @@ export default function SecuritySection() {
           {/* Right Section: Security Visuals */}
           <div className="lg:col-span-2 relative">
             <video
-              src="/assets/AI OPS CLIP.mp4"
+              src="/ai-ops-clip.mp4"
               autoPlay
               loop
               muted
               playsInline
               preload="metadata"
-              loading="lazy"
               width={800}
               height={600}
               className="w-full h-auto rounded-2xl"

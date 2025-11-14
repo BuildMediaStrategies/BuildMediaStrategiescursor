@@ -18,7 +18,7 @@ export default function EffortlessSecuritySection() {
         {/* Central Graphic */}
         <div className="flex items-center justify-center min-h-[500px] relative">
           <video
-            src="/assets/built-for-screens.mp4"
+            src="/built-for-screens.mp4"
             autoPlay
             loop
             muted
