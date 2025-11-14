@@ -131,7 +131,7 @@ export default function HomePage() {
 
         <Suspense fallback={null}>
           <DashboardSection />
-        </SuspENSE>
+        </Suspense>
 
         <Suspense fallback={null}>
           <div id="security">
