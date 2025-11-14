@@ -68,7 +68,7 @@ export default function HomePage() {
             #hero-img{
               object-fit: contain !important;
               object-position: center 72% !important;
-              transform: none !important;
+              transform: translateY(40px) !important;
             }
           }
         `}</style>
@@ -131,7 +131,7 @@ export default function HomePage() {
 
         <Suspense fallback={null}>
           <DashboardSection />
-        </Suspense>
+        </SuspENSE>
 
         <Suspense fallback={null}>
           <div id="security">
