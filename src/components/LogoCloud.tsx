@@ -10,28 +10,28 @@ type Logo = {
 
 const logos: Logo[] = [
   // UCL (icon-only, matches SOS size)
-  { src: '/assets/ucl icon only.png', alt: 'UCL Icon Logo', className: 'mx-10 h-14 md:h-[4.2rem] w-auto object-contain' },
+  { src: '/ucl-icon.png', alt: 'UCL Icon Logo', className: 'mx-10 h-14 md:h-[4.2rem] w-auto object-contain' },
 
   // Hamilton Nexus
-  { src: '/assets/HAMILTON NEXUS.png', alt: 'Hamilton Nexus Logo', className: 'mx-10 h-12 md:h-14 w-auto object-contain' },
+  { src: '/hamilton-nexus-icon.png', alt: 'Hamilton Nexus Logo', className: 'mx-10 h-12 md:h-14 w-auto object-contain' },
 
   // GitHub (force white via CSS filter)
-  { src: '/assets/GitHub-logo.png', alt: 'GitHub Logo', className: 'mx-10 h-12 md:h-14 w-auto object-contain as-white' },
+  { src: '/github-logo.png', alt: 'GitHub Logo', className: 'mx-10 h-12 md:h-14 w-auto object-contain as-white' },
 
   // Cursor (icon only)
-  { src: '/assets/cursor icon only.png', alt: 'Cursor AI Logo', className: 'mx-10 h-14 md:h-16 w-auto object-contain' },
+  { src: '/cursor-icon.png', alt: 'Cursor AI Logo', className: 'mx-10 h-14 md:h-16 w-auto object-contain' },
 
   // SOS Electrical (slightly larger)
-  { src: '/assets/sos electrical tp logo icon.png', alt: 'SOS Electrical Logo', className: 'mx-10 h-14 md:h-[4.2rem] w-auto object-contain' },
+  { src: '/sos-icon.png', alt: 'SOS Electrical Logo', className: 'mx-10 h-14 md:h-[4.2rem] w-auto object-contain' },
 
   // CureCancer (use the available UCL icon until CureCancer asset is added)
-  { src: '/assets/ucl icon only.png', alt: 'CureCancer UCL Logo', className: 'mx-10 h-16 md:h-[4.8rem] w-auto object-contain opacity-95 contrast-125' },
+  { src: '/ucl-icon.png', alt: 'CureCancer UCL Logo', className: 'mx-10 h-16 md:h-[4.8rem] w-auto object-contain opacity-95 contrast-125' },
 
   // Repeat Hamilton Nexus (kept from your sequence)
-  { src: '/assets/HAMILTON NEXUS.png', alt: 'Hamilton Nexus Logo', className: 'mx-10 h-12 md:h-14 w-auto object-contain' },
+  { src: '/hamilton-nexus-icon.png', alt: 'Hamilton Nexus Logo', className: 'mx-10 h-12 md:h-14 w-auto object-contain' },
 
   // Repeat GitHub (forced white)
-  { src: '/assets/GitHub-logo.png', alt: 'GitHub Logo', className: 'mx-10 h-12 md:h-14 w-auto object-contain as-white' },
+  { src: '/github-logo.png', alt: 'GitHub Logo', className: 'mx-10 h-12 md:h-14 w-auto object-contain as-white' },
 ];
 
 export default function LogoCloud() {
@@ -48,23 +48,26 @@ export default function LogoCloud() {
             <InfiniteSlider speed={20} speedOnHover={15} gap={120}>
               {/* pass 1 */}
               {logos.map((logo, i) => (
-                <div className="flex" key={`logo-1-${i}`}>
-                  <picture>
-                    <source srcSet={logo.src.replace(/\.(png|jpg|jpeg)$/, '.avif')} type="image/avif" />
-                    <source srcSet={logo.src.replace(/\.(png|jpg|jpeg)$/, '.webp')} type="image/webp" />
-                    <img className={logo.className} src={logo.src} alt={logo.alt} loading="lazy" decoding="async" fetchpriority="low" />
-                  </picture>
-                </div>
+                <img
+                  key={`logo-1-${i}`}
+                  className={logo.className}
+                  src={logo.src}
+                  alt={logo.alt}
+                  loading="lazy"
+                  decoding="async"
+                />
               ))}
               {/* pass 2 (hidden from a11y, identical visuals) */}
               {logos.map((logo, i) => (
-                <div className="flex" key={`logo-2-${i}`} aria-hidden="true">
-                  <picture>
-                    <source srcSet={logo.src.replace(/\.(png|jpg|jpeg)$/, '.avif')} type="image/avif" />
-                    <source srcSet={logo.src.replace(/\.(png|jpg|jpeg)$/, '.webp')} type="image/webp" />
-                    <img className={logo.className} src={logo.src} alt="" loading="lazy" decoding="async" fetchpriority="low" />
-                  </picture>
-                </div>
+                <img
+                  key={`logo-2-${i}`}
+                  className={logo.className}
+                  src={logo.src}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  aria-hidden="true"
+                />
               ))}
             </InfiniteSlider>
 
