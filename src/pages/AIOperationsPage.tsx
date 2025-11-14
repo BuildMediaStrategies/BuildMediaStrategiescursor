@@ -37,7 +37,7 @@ export default function AIOperationsPage() {
               <span className="text-black">Smart routing to the right team member</span>
             </div>
           </div>
-          {cardImage('pexels-3184465', 'AI chatbot interface qualifying leads on laptop screen')}
+          <img src="/assets/bms-web-image.png" alt="Full-stack development interface" className="w-full rounded-lg object-cover h-48 md:h-64 lg:h-80 shadow-lg" loading="lazy" />
         </div>
       ),
     },
@@ -65,7 +65,7 @@ export default function AIOperationsPage() {
               <span className="text-black">Digital performance review systems</span>
             </div>
           </div>
-          {cardImage('pexels-3183197', 'HR professional reviewing automated employee onboarding dashboard')}
+          <img src="/assets/bms-mobile-img.png" alt="Mobile app development interface" className="w-full rounded-lg object-cover h-48 md:h-64 lg:h-80 shadow-lg" loading="lazy" />
         </div>
       ),
     },
@@ -93,7 +93,7 @@ export default function AIOperationsPage() {
               <span className="text-black">Bank reconciliation and reporting</span>
             </div>
           </div>
-          {cardImage('pexels-3184292', 'Financial dashboard showing automated invoicing and payment tracking')}
+          <img src="/assets/bms-lead-img.png" alt="Lead capture system dashboard" className="w-full rounded-lg object-cover h-48 md:h-64 lg:h-80 shadow-lg" loading="lazy" />
         </div>
       ),
     },
@@ -121,7 +121,7 @@ export default function AIOperationsPage() {
               <span className="text-black">Smart escalation to human agents when needed</span>
             </div>
           </div>
-          {cardImage('pexels-3183150', 'Customer support AI chatbot interface on multiple devices')}
+          <img src="/assets/bms-linkedin-img.png" alt="LinkedIn lead generation interface" className="w-full rounded-lg object-cover h-48 md:h-64 lg:h-80 shadow-lg" loading="lazy" />
         </div>
       ),
     },
@@ -149,7 +149,7 @@ export default function AIOperationsPage() {
               <span className="text-black">Automatic reordering and supplier management</span>
             </div>
           </div>
-          {cardImage('pexels-3184296', 'Inventory management dashboard showing automated stock tracking')}
+          <img src="/assets/bms-chatbot-img.png" alt="Customer support automation chatbot" className="w-full rounded-lg object-cover h-48 md:h-64 lg:h-80 shadow-lg" loading="lazy" />
         </div>
       ),
     },
@@ -177,7 +177,7 @@ export default function AIOperationsPage() {
               <span className="text-black">Real-time progress reporting</span>
             </div>
           </div>
-          {cardImage('pexels-3183150', 'Project management dashboard with automated task tracking and timelines')}
+          <img src="/assets/bms-call-img.png" alt="Call automation system interface" className="w-full rounded-lg object-cover h-48 md:h-64 lg:h-80 shadow-lg" loading="lazy" />
         </div>
       ),
     },
