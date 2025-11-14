@@ -98,19 +98,19 @@ export default function ExitIntentPopup() {
       aria-labelledby="exit-popup-title"
     >
       <div
-        className="relative w-full max-w-lg mx-4 rounded-2xl shadow-2xl transform scale-95 animate-scaleIn"
-        style={{ backgroundColor: '#1A1A1A', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)' }}
+        className="relative w-full max-w-lg mx-4 rounded-2xl shadow-2xl transform scale-95 animate-scaleIn bg-white"
+        style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)' }}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Subtle texture overlay */}
+        {/* Gradient border */}
         <div
-          className="absolute inset-0 opacity-5 rounded-2xl pointer-events-none"
+          className="absolute inset-0 rounded-2xl pointer-events-none"
           style={{
-            backgroundImage: `
-              linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%),
-              linear-gradient(-45deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%)
-            `,
-            backgroundSize: '20px 20px'
+            background: 'linear-gradient(90deg, #FF7A00 0%, #FF2A2A 18%, #FF2EC9 36%, #E11AF5 54%, #9B1FFF 72%, #2E7BFF 100%)',
+            padding: '2px',
+            WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+            WebkitMaskComposite: 'xor',
+            maskComposite: 'exclude'
           }}
           aria-hidden="true"
         />
@@ -118,7 +118,7 @@ export default function ExitIntentPopup() {
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-200 transition-colors z-10"
+          className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 transition-colors z-10"
           aria-label="Close popup"
         >
           <X className="w-6 h-6" />
@@ -127,33 +127,31 @@ export default function ExitIntentPopup() {
         {/* Content */}
         <div className="relative z-10 p-8">
           {/* Header */}
-          <h2 id="exit-popup-title" className="text-3xl font-bold text-white mb-3">
-            Before You{' '}
-            <span className="bg-gradient-to-b from-white to-gray-600 bg-clip-text text-transparent">
-              Go...
-            </span>
+          <h2 id="exit-popup-title" className="text-3xl font-bold mb-3">
+            <span className="text-black">Before You </span>
+            <span className="text-sky-gradient">Go...</span>
           </h2>
-          <p className="text-lg text-gray-300 mb-6">
+          <p className="text-lg text-gray-700 mb-6">
             See how much you could save with AI automation
           </p>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-3 gap-4 mb-6 rounded-xl p-6" style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)' }}>
+          <div className="grid grid-cols-3 gap-4 mb-6 rounded-xl p-6 bg-gray-50 border border-gray-200">
             <div className="text-center">
-              <div className="text-3xl font-bold text-white">75%</div>
-              <div className="text-sm text-gray-400 mt-1">Time Saved</div>
+              <div className="text-3xl font-bold text-sky-gradient">75%</div>
+              <div className="text-sm text-gray-600 mt-1">Time Saved</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-white">24/7</div>
-              <div className="text-sm text-gray-400 mt-1">Available</div>
+              <div className="text-3xl font-bold text-sky-gradient">24/7</div>
+              <div className="text-sm text-gray-600 mt-1">Available</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-white">10x</div>
-              <div className="text-sm text-gray-400 mt-1">ROI Average</div>
+              <div className="text-3xl font-bold text-sky-gradient">10x</div>
+              <div className="text-sm text-gray-600 mt-1">ROI Average</div>
             </div>
           </div>
 
-          <p className="text-xs text-black text-center mb-6">
+          <p className="text-xs text-gray-600 text-center mb-6">
             Based on our client results across Kent
           </p>
 
@@ -165,17 +163,27 @@ export default function ExitIntentPopup() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
               required
-              className="w-full px-4 py-3 rounded-lg mb-4 bg-black/50 border border-gray-700 text-white placeholder-gray-500 focus:border-gray-500 focus:outline-none transition-colors"
+              className="w-full px-4 py-3 rounded-lg mb-4 bg-white border-2 border-gray-300 text-gray-900 placeholder-gray-500 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-offset-0 transition-all"
+              style={{
+                focusRingColor: 'transparent',
+              }}
+              onFocus={(e) => {
+                e.target.style.borderImage = 'linear-gradient(90deg, #FF7A00 0%, #FF2A2A 18%, #FF2EC9 36%, #E11AF5 54%, #9B1FFF 72%, #2E7BFF 100%) 1';
+                e.target.style.borderImageSlice = '1';
+              }}
+              onBlur={(e) => {
+                e.target.style.borderImage = 'none';
+              }}
             />
             <button
               type="submit"
-              className="w-full px-7 py-3.5 border border-gray-600 text-white font-sans font-medium rounded-full hover:border-gray-400 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95"
+              className="w-full px-7 py-3.5 btn-gradient text-white font-sans font-medium rounded-full transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95"
             >
               Get Your Free AI Assessment
             </button>
           </form>
 
-          <p className="text-xs text-black text-center mt-3">
+          <p className="text-xs text-gray-600 text-center mt-3">
             No spam. Unsubscribe anytime.
           </p>
         </div>
