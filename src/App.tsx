@@ -3,7 +3,6 @@ import { useEffect, Suspense, lazy } from 'react';
 import { trackPageView } from './lib/analytics/googleAnalytics';
 import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
-const ExitIntentPopup = lazy(() => import('./components/Conversion/ExitIntentPopup'));
 const HomePage = lazy(() => import('./pages/HomePage'));
 const WebDesignPage = lazy(() => import('./pages/WebDesignPage'));
 const AIOperationsPage = lazy(() => import('./pages/AIOperationsPage'));
@@ -19,7 +18,6 @@ const ROICalculatorPage = lazy(() => import('./pages/tools/ROICalculator'));
 const SpeedCheckerPage = lazy(() => import('./pages/tools/SpeedChecker'));
 const BlogIndexPage = lazy(() => import('./pages/Blog'));
 const BlogPostPage = lazy(() => import('./pages/BlogPost'));
-const LiveActivity = lazy(() => import('./components/SocialProof/LiveActivity'));
 const AboutPage = lazy(() => import('./pages/About'));
 
 function App() {
@@ -27,10 +25,6 @@ function App() {
     <Router>
       <RouteChangeTracker />
       <Header />
-      <Suspense fallback={null}>
-        <ExitIntentPopup />
-        <LiveActivity />
-      </Suspense>
       <Suspense fallback={<div style={{ padding: 24 }}>Loading…</div>}>
         <Routes>
           <Route path="/" element={<HomePage />} />
