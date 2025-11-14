@@ -1,7 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import SEOWrapper from '../components/SEO/SEOWrapper';
-import { caseStudies } from '../data/caseStudies';
 
 export default function PortfolioPage() {
   const featuredProjects = [
@@ -10,7 +9,7 @@ export default function PortfolioPage() {
       description: 'Charity website and AI operations for admin workflows',
       sector: 'Charity',
       logo: '/ucl-icon.png',
-      slug: 'curecancer-ucl',
+      url: 'https://curecancer-ucl.org/',
       metrics: {
         loadTime: '-72%',
         conversions: '+165%',
@@ -22,7 +21,7 @@ export default function PortfolioPage() {
       description: 'Trades website and AI lead capture automation',
       sector: 'Trades',
       logo: '/sos-icon.png',
-      slug: 'sos-electrical-ltd',
+      url: 'https://soselectricalltd.co.uk/',
       metrics: {
         loadTime: '-68%',
         conversions: '+142%',
@@ -34,7 +33,7 @@ export default function PortfolioPage() {
       description: 'Website and project management dashboard for consulting operations',
       sector: 'Consulting',
       logo: '/hamilton-nexus-icon.png',
-      slug: 'hamilton-nexus',
+      url: 'https://hamilton-nexus.co.uk/',
       metrics: {
         loadTime: '-54%',
         conversions: '+96%',
@@ -87,7 +86,9 @@ export default function PortfolioPage() {
               {featuredProjects.map((project, index) => (
                 <a
                   key={index}
-                  href={`/case-studies/${project.slug}`}
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group relative bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-sky-gradient hover:shadow-lg transition-all duration-300"
                 >
                   <div className="mb-8 h-16 flex items-center">
@@ -133,7 +134,7 @@ export default function PortfolioPage() {
                   </div>
 
                   <div className="flex items-center text-sky-gradient group-hover:opacity-80 transition-opacity">
-                    <span className="text-sm font-medium">Read case study</span>
+                    <span className="text-sm font-medium">View live site</span>
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </a>

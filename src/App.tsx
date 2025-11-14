@@ -20,7 +20,6 @@ const SpeedCheckerPage = lazy(() => import('./pages/tools/SpeedChecker'));
 const BlogIndexPage = lazy(() => import('./pages/Blog'));
 const BlogPostPage = lazy(() => import('./pages/BlogPost'));
 const LiveActivity = lazy(() => import('./components/SocialProof/LiveActivity'));
-const CaseStudyPage = lazy(() => import('./pages/CaseStudy'));
 const AboutPage = lazy(() => import('./pages/About'));
 
 function App() {
@@ -49,7 +48,6 @@ function App() {
           <Route path="/tools/speed-checker" element={<SpeedCheckerPage />} />
           <Route path="/blog" element={<BlogIndexPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
-          <Route path="/case-studies/:slug" element={<CaseStudyPage />} />
           <Route path="/about" element={<AboutPage />} />
         </Routes>
       </Suspense>

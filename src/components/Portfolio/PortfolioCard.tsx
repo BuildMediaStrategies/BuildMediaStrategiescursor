@@ -68,7 +68,7 @@ export default function PortfolioCard({
           rel="noopener noreferrer"
           className="group inline-flex items-center gap-2 mt-4 text-white underline hover:opacity-80"
         >
-          View Case Study
+          View live site
           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
         </a>
       </div>
