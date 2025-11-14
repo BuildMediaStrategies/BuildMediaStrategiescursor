@@ -57,8 +57,13 @@ export default function HomePage() {
           }}
         />
 
-        {/* Mobile overrides (show full browsers, no shift) */}
+        {/* Instant load and mobile overrides */}
         <style>{`
+          #hero-img {
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
+          }
           @media (max-width: 1023px) {
             #hero-img{
               object-fit: contain !important;
