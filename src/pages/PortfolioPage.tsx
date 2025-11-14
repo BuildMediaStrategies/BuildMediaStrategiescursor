@@ -91,22 +91,19 @@ export default function PortfolioPage() {
                   rel="noopener noreferrer"
                   className="group relative bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-sky-gradient hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="mb-8 h-16 flex items-center">
-                    <picture>
-                      <source srcSet={project.logo.replace(/\.(png|jpg|jpeg)$/, '.avif')} type="image/avif" />
-                      <source srcSet={project.logo.replace(/\.(png|jpg|jpeg)$/, '.webp')} type="image/webp" />
-                      <img
-                        src={project.logo}
-                        alt={`${project.title} logo`}
-                        className="h-12 w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all"
-                        loading="lazy"
-                        decoding="async"
-                        fetchpriority="low"
-                        width="120"
-                        height="48"
-                      />
-                    </picture>
+                  <div className="absolute top-6 left-6 w-16 h-16 flex items-center justify-center">
+                    <img
+                      src={project.logo}
+                      alt={`${project.title} logo`}
+                      className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all"
+                      loading="eager"
+                      decoding="sync"
+                      fetchpriority="high"
+                      width="64"
+                      height="64"
+                    />
                   </div>
+                  <div className="pt-20"></div>
 
                   <div className="mb-6">
                     <div className="text-sm text-black mb-2">{project.sector}</div>
