@@ -1,11 +1,10 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect, Suspense, lazy } from 'react';
-import CookieConsentBanner from './components/CookieConsentBanner';
+import { useEffect, useRef, useState, Suspense, lazy } from 'react';
+import CookieConsentBanner, { COOKIE_CONSENT_EVENT, COOKIE_CONSENT_STORAGE_KEY } from './components/CookieConsentBanner';
 import { initGA, trackPageView } from './lib/analytics/googleAnalytics';
 import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
 import HomePage from './pages/HomePage';
-import { useCookieConsent } from './hooks/useCookieConsent';
 const ExitIntentPopup = lazy(() => import('./components/Conversion/ExitIntentPopup'));
 const WebDesignPage = lazy(() => import('./pages/WebDesignPage'));
 const AIOperationsPage = lazy(() => import('./pages/AIOperationsPage'));
@@ -28,13 +27,55 @@ const CookiePolicyPage = lazy(() => import('./pages/CookiePolicyPage'));
 const AIDisclosurePage = lazy(() => import('./pages/AIDisclosurePage'));
 
 function App() {
-  const { status, initialized, accept, decline } = useCookieConsent();
-  const hasAnalyticsConsent = status === 'accepted';
-  const showCookieBanner = initialized && status === null;
+  const [hasAnalyticsConsent, setHasAnalyticsConsent] = useState(false);
+  const gaInitializedRef = useRef(false);
 
   useEffect(() => {
-    if (hasAnalyticsConsent) {
+    if (typeof window === 'undefined') return;
+    try {
+      const stored = localStorage.getItem(COOKIE_CONSENT_STORAGE_KEY);
+      if (stored === 'accepted') {
+        setHasAnalyticsConsent(true);
+      }
+    } catch {
+      // Ignore storage errors and assume no consent.
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const handleChange = (event: Event) => {
+      const detail = (event as CustomEvent<'accepted' | 'declined'>).detail;
+      if (detail === 'accepted') {
+        setHasAnalyticsConsent(true);
+      } else if (detail === 'declined') {
+        setHasAnalyticsConsent(false);
+      }
+    };
+
+    window.addEventListener(COOKIE_CONSENT_EVENT, handleChange);
+    return () => window.removeEventListener(COOKIE_CONSENT_EVENT, handleChange);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const handleStorage = (event: StorageEvent) => {
+      if (event.key !== COOKIE_CONSENT_STORAGE_KEY) return;
+      if (event.newValue === 'accepted') {
+        setHasAnalyticsConsent(true);
+      } else if (event.newValue === 'declined') {
+        setHasAnalyticsConsent(false);
+      }
+    };
+
+    window.addEventListener('storage', handleStorage);
+    return () => window.removeEventListener('storage', handleStorage);
+  }, []);
+
+  useEffect(() => {
+    if (hasAnalyticsConsent && !gaInitializedRef.current) {
       initGA();
+      gaInitializedRef.current = true;
     }
   }, [hasAnalyticsConsent]);
 
@@ -71,7 +112,7 @@ function App() {
         </Routes>
       </Suspense>
       <Footer />
-      <CookieConsentBanner visible={showCookieBanner} onAccept={accept} onDecline={decline} />
+      <CookieConsentBanner />
     </Router>
   );
 }
