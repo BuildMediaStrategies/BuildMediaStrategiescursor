@@ -45,7 +45,7 @@ export default function LogoCloud() {
 
           <div className="relative py-6 md:w-[calc(100%-11rem)]">
             {/* Duplicate the sequence to make the loop seamless */}
-            <InfiniteSlider speed={30} speedOnHover={20} gap={120}>
+            <InfiniteSlider speed={20} speedOnHover={15} gap={120}>
               {/* pass 1 */}
               {logos.map((logo, i) => (
                 <div className="flex" key={`logo-1-${i}`}>

@@ -19,13 +19,19 @@ export function InfiniteSlider({
   
   return (
     <div className={`relative overflow-hidden ${className}`}>
-      <div 
-        className="flex animate-scroll hover:animate-scroll-slow"
+      <div
+        className="flex will-change-transform"
         style={{
           gap: `${gap}px`,
-          animationDuration: `${speed}s`,
+          animation: `scroll ${speed}s linear infinite`,
           '--hover-duration': `${speedOnHover}s`
         } as React.CSSProperties}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.animationDuration = `${speedOnHover}s`;
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.animationDuration = `${speed}s`;
+        }}
       >
         {/* First set of children */}
         {childrenArray.map((child, index) => (
