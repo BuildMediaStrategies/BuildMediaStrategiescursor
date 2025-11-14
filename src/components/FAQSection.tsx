@@ -12,8 +12,8 @@ const faqData: FAQItem[] = [
     answer: "We specialize in two core services: Web Design (custom websites, e-commerce, and conversion optimization) and AI Operations (workflow automation, intelligent systems, and operational efficiency). Both deliver measurable business results."
   },
   {
-    question: "How long does it take to see results?",
-    answer: "Web design projects typically launch within 4-8 weeks. AI operations start delivering efficiency gains within 2-4 weeks of implementation. Every project includes clear milestones so you track progress and value at each stage."
+    question: "How long does it take to build a website?",
+    answer: "Most websites are fully designed, built, and launched within 2–3 days. For urgent projects, we offer a same-day turnaround (1-day rush) where your website can go live within 24 hours."
   },
   {
     question: "Who do you work with?",
