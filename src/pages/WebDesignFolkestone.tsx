@@ -81,7 +81,7 @@ export default function WebDesignFolkestone() {
                 Ready to Elevate Your Online Presence?
               </h2>
               <p className="text-lg mb-8" style={{ color: '#BBBBBB' }}>
-                Serving businesses across Folkestone and East Kent — book your free consultation today.
+                Serving businesses across Folkestone and East Kent - book your free consultation today.
               </p>
               <a
                 href="/contact"

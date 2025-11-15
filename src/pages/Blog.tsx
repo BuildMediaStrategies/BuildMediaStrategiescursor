@@ -18,7 +18,7 @@ export default function BlogIndexPage() {
   return (
     <SEOWrapper
       title="Blog | BuildMediaStrategies"
-      description="Insights on performance, speed, SEO and modern web for Kent businesses."
+      description="Straightforward articles on faster sites, AI ops, and digital growth for local businesses."
       canonical="https://buildmediastrategies.com/blog"
     >
       <div className="bg-white min-h-screen">
@@ -27,7 +27,7 @@ export default function BlogIndexPage() {
             <span className="text-gray-900">Latest </span>
             <span className="text-sky-gradient">Articles</span>
           </h1>
-          <p className="text-black text-lg mb-12">Web design insights, AI automation tips, and digital strategy for Kent businesses.</p>
+          <p className="text-black text-lg mb-12">Short reads on faster builds, smarter automations, and practical marketing moves for local businesses.</p>
 
           <div className="flex flex-wrap gap-3 mb-12">
             <button

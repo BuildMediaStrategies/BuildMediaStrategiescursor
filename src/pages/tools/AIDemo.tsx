@@ -25,7 +25,7 @@ export default function AIDemoPage() {
           {/* Extra content */}
           <div className="mt-12 max-w-3xl mx-auto text-center">
             <h2 className="text-2xl font-semibold text-sky-gradient mb-2">How This Works For Your Business</h2>
-            <p className="text-black mb-4">We connect your assistant to your knowledge base, FAQs, CRM, and scheduling tools so it can answer questions, qualify leads, and book appointments—24/7.</p>
+            <p className="text-black mb-4">We connect your assistant to your knowledge base, FAQs, CRM, and scheduling tools so it can answer questions, qualify leads, and book appointments 24/7.</p>
             <a href="/contact" className="inline-block px-5 py-2.5 rounded-lg text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 transition-all shadow-md">Get Your Own AI Assistant</a>
           </div>
         </section>

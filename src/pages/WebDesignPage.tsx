@@ -106,10 +106,10 @@ export default function WebDesignPage() {
   return (
     <>
       <SEOWrapper
-        title="Web Design Kent | Fast Websites for Dover Deal Canterbury"
-        description="Web Design Kent services for Dover, Deal, Canterbury & Folkestone. Lightning-fast websites that convert visitors into sales. Modern design, expert SEO. Get your free quote."
+        title="Web Design in Kent | BuildMediaStrategies"
+        description="Done-for-you design, build, and launch in days. Fast sites that convert and keep leads engaged."
         canonical="https://buildmediastrategies.com/web-design"
-        keywords="web design Kent, web design Dover, web design Deal, web design Canterbury, web design Folkestone, website design Kent, web designer Kent"
+        keywords="web design, fast builds, Kent agency"
       />
       {/* Schema structured data - keeping for SEO */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
@@ -166,10 +166,10 @@ export default function WebDesignPage() {
               <span className="block text-sky-gradient">Web Design Kent</span>
             </h1>
             <p className="text-lg sm:text-xl font-sans font-normal leading-relaxed max-w-3xl mx-auto mb-4 text-black">
-              Professional web design services for businesses across Dover, Deal, Canterbury, and Folkestone. We build lightning-fast, conversion-focused websites that drive measurable results. Our Kent-based team combines modern web design with expert SEO to help local businesses thrive online. Every website we create is optimized for speed, mobile performance, and search rankings.
+              We plan, design, build, and launch your site in one streamlined sprint. Everything is handled for you - copy, integrations, analytics, and handover - so you can keep running the business.
             </p>
             <p className="text-lg sm:text-xl font-sans font-normal leading-relaxed max-w-3xl mx-auto mb-10 text-black">
-              Fast, mobile-first sites that turn browsers into buyers and drive business growth.
+              Most builds ship in two to three days, with a one-day rush option when you need it. The result: a fast, conversion-ready site focused on leads, calls, and bookings.
             </p>
             <a
               href="/contact"
@@ -184,10 +184,10 @@ export default function WebDesignPage() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-sky-gradient mb-6 leading-tight">
-                High-Performance Websites for Kent Businesses
+                High-Performance Websites for Growing Teams
               </h2>
               <p className="text-base sm:text-lg font-sans font-normal max-w-2xl mx-auto text-black">
-                Complete web design solutions that deliver results
+                Done-for-you builds with strategy, messaging, and tech handled under one roof.
               </p>
             </div>
 
@@ -211,7 +211,7 @@ export default function WebDesignPage() {
                   Discovery & Strategy
                 </h3>
                 <p className="text-base sm:text-lg font-sans font-normal leading-relaxed text-black">
-                  Study your business and audience. Map the customer journey and design a site that guides visitors toward conversion.
+                  We clarify your offer, audience, and goals through a fast discovery call so every screen speaks directly to the right buyer.
                 </p>
               </div>
 
@@ -221,7 +221,7 @@ export default function WebDesignPage() {
                   Design & Prototype
                 </h3>
                 <p className="text-base sm:text-lg font-sans font-normal leading-relaxed text-black">
-                  Custom mockups focused on clarity and conversions. You approve designs before we write any code.
+                  We translate strategy into clean layouts, persuasive copy, and interaction notes. Nothing moves forward until you're confident.
                 </p>
               </div>
 
@@ -231,7 +231,7 @@ export default function WebDesignPage() {
                   Development & Testing
                 </h3>
                 <p className="text-base sm:text-lg font-sans font-normal leading-relaxed text-black">
-                  Clean, scalable code built with modern frameworks. Rigorous testing across devices and browsers.
+                  We code the approved designs, wire up forms and automations, and stress test speed on every device.
                 </p>
               </div>
 
@@ -241,7 +241,7 @@ export default function WebDesignPage() {
                   Launch & Optimize
                 </h3>
                 <p className="text-base sm:text-lg font-sans font-normal leading-relaxed text-black">
-                  Smooth deployment with zero downtime. Continuous optimization based on real user behavior.
+                  Launch day includes CMS training, analytics checks, and a punch list for future optimizations.
                 </p>
               </div>
             </div>
@@ -257,20 +257,20 @@ export default function WebDesignPage() {
               </span>
             </h2>
             <p className="text-base sm:text-lg font-sans font-normal mb-10 leading-relaxed max-w-2xl mx-auto text-black">
-              Let's create a fast, mobile-first site that converts visitors into customers.
+              Ready for a site that loads in a blink and sells your offer clearly? We’ll handle the heavy lifting.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contact"
                 className="btn-gradient inline-block px-8 py-4 text-white font-sans font-medium rounded-full text-center"
               >
-                Get Started
+                Plan Your Build
               </a>
               <a
                 href="/portfolio"
                 className="btn-gradient inline-block px-8 py-4 text-white font-sans font-medium rounded-full text-center"
               >
-                View Our Work
+                View Recent Sites
               </a>
             </div>
           </div>

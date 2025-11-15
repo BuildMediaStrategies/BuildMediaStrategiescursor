@@ -14,19 +14,19 @@ export default function Portfolio() {
   const projects = [
     {
       id: 1,
-      title: 'CureCancer UCL — Donation Platform',
+      title: 'CureCancer UCL - Donation Platform',
       cat: 'B2B',
       url: 'https://curecancer-ucl.org/',
     },
     {
       id: 2,
-      title: 'SOS Electrical — Trades Website',
+      title: 'SOS Electrical - Trades Website',
       cat: 'Local',
       url: 'https://soselectricalltd.co.uk/',
     },
     {
       id: 3,
-      title: 'Hamilton Nexus — Surveying & Recruitment',
+      title: 'Hamilton Nexus - Surveying & Recruitment',
       cat: 'B2B',
       url: 'https://hamilton-nexus.co.uk/',
     },

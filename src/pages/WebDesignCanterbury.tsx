@@ -79,7 +79,7 @@ export default function WebDesignCanterbury() {
                 Start Your Digital Transformation Today
               </h2>
               <p className="text-lg mb-8" style={{ color: '#BBBBBB' }}>
-                Serving businesses across Canterbury and East Kent — book your free consultation today.
+                Serving businesses across Canterbury and East Kent - book your free consultation today.
               </p>
               <a
                 href="/contact"

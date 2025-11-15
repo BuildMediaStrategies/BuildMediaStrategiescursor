@@ -26,7 +26,7 @@ export default function SpeedCheckerPage() {
           {/* Extra content */}
           <div className="mt-12 max-w-3xl mx-auto text-center">
             <h2 className="text-2xl font-semibold text-sky-gradient mb-2">How We Make Sites Fast</h2>
-            <p className="text-black mb-4">We use modern frameworks, edge caching, optimized media, and performance budgets—backed by strict Core Web Vitals monitoring.</p>
+            <p className="text-black mb-4">We use modern frameworks, edge caching, optimized media, and performance budgets - backed by strict Core Web Vitals monitoring.</p>
             <a
               href="/web-design"
               onClick={() => { try { trackCTAClick('speed_checker_web_design_cta', { page: window.location.pathname }); } catch {} }}

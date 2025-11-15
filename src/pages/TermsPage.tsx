@@ -28,8 +28,8 @@ export default function TermsPage() {
           </p>
           <p>
             Either party may terminate an ongoing engagement with written notice if the other materially breaches the agreement
-            and fails to remedy the issue. Any obligations that by their nature should survive termination—such as confidentiality
-            or accrued payment obligations—remain in force.
+            and fails to remedy the issue. Any obligations that by their nature should survive termination - such as confidentiality
+            or accrued payment obligations - remain in force.
           </p>
           <p>
             We may update these terms periodically to reflect regulatory changes or new services. Continued use of the site or

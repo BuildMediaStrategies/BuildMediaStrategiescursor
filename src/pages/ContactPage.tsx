@@ -59,10 +59,10 @@ export default function ContactPage() {
     return (
       <>
         <SEO
-          title="Contact Us | Free Consultation | Build Media Strategies Kent"
-          description="Get a free consultation for your web design or AI automation project. Serving businesses across Dover, Deal, Canterbury, and Folkestone."
+          title="Contact | BuildMediaStrategies"
+          description="Thanks for reaching out. We’ll reply within one business day with next steps for your project."
           canonical="https://buildmediastrategies.com/contact"
-          keywords="contact web designer Kent, free consultation, web design quote Dover"
+          keywords="contact, web design, AI automation"
         />
         <a href="#main-content" className="skip-to-content">
           Skip to main content
@@ -106,10 +106,10 @@ export default function ContactPage() {
   return (
     <>
       <SEO
-        title="Contact | Web Design & AI Automation Kent Dover Deal"
-        description="Contact our web design and AI automation agency serving Kent. Free consultation for Dover, Deal, Canterbury & Folkestone businesses. Start your project today."
+        title="Contact | Web Design & AI Automation in Kent"
+        description="Share what you need to fix or launch and we’ll reply within 24 hours with a clear plan."
         canonical="https://buildmediastrategies.com/contact"
-        keywords="contact web designer Kent, web design quote Dover, AI automation consultation, free website audit Kent"
+        keywords="contact, web design, AI automation"
       />
       <main className="bg-white min-h-screen pt-24" >
         <div className="max-w-4xl mx-auto px-5 sm:px-6 py-12 sm:py-16 lg:py-20">
@@ -119,7 +119,7 @@ export default function ContactPage() {
               <span className="block text-sky-gradient">Exceptional Together</span>
             </h1>
             <p className="text-lg sm:text-xl font-sans font-normal leading-relaxed max-w-2xl mx-auto text-black">
-              Tell us about your project and we'll get back to you within 24 hours.
+              Share what you want to launch, fix, or automate. We’ll reply within 24 hours with a suggested plan, timeline, and next steps.
             </p>
           </div>
 
@@ -254,7 +254,7 @@ export default function ContactPage() {
                 Find Us
               </h2>
               <p className="text-base sm:text-lg font-sans font-normal text-black">
-                Serving businesses across Kent and beyond
+                Serving local businesses across Kent and beyond
               </p>
             </div>
             <div className="relative w-full h-96 sm:h-[500px] bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl overflow-hidden border-2 border-gray-300">
@@ -267,7 +267,7 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <p className="text-xl sm:text-2xl font-sans font-bold text-sky-gradient mb-2">Kent, United Kingdom</p>
-                  <p className="text-sm sm:text-base font-sans font-normal text-black">Dover • Deal • Canterbury • Folkestone</p>
+                  <p className="text-sm sm:text-base font-sans font-normal text-black">Working with nearby teams in person or remotely.</p>
                 </div>
               </div>
             </div>

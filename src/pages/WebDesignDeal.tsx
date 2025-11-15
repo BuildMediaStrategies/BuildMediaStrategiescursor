@@ -78,7 +78,7 @@ export default function WebDesignDeal() {
                 Let's Build Something Great Together
               </h2>
               <p className="text-lg mb-8" style={{ color: '#BBBBBB' }}>
-                Serving businesses across Deal and East Kent — book your free consultation today.
+                Serving businesses across Deal and East Kent - book your free consultation today.
               </p>
               <a
                 href="/contact"

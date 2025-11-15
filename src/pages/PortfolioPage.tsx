@@ -45,10 +45,10 @@ export default function PortfolioPage() {
   return (
     <>
       <SEOWrapper
-        title="Our Work | Client Results & Case Studies | Kent Web Design"
-        description="See how we've helped Kent businesses increase conversions by 180%, cut load times by 75%, and grow revenue. Real results, real clients."
+        title="Client Results & Case Studies | BuildMediaStrategies"
+        description="See the launches, dashboards, and automations we've built. Real metrics, fast turnarounds, and painless delivery."
         canonical="https://buildmediastrategies.com/portfolio"
-        keywords="web design portfolio Kent, case studies, client results Dover Deal"
+        keywords="web design portfolio, case studies, automation results"
       />
 
       <div className="bg-white min-h-screen">
@@ -59,7 +59,7 @@ export default function PortfolioPage() {
               <span className="text-sky-gradient">Work</span>
             </h1>
             <p className="text-xl sm:text-2xl text-black max-w-3xl leading-relaxed">
-              Real projects for real businesses, built to solve specific problems and drive measurable outcomes.
+              A look at the sites, dashboards, and AI workflows we shipped for growing teams across Kent. Every project started with a messy problem and ended with clearer, faster operations.
             </p>
             <div className="mt-8 flex flex-wrap gap-3 text-sm">
               <span className="text-black">View related services:</span>
@@ -148,7 +148,7 @@ export default function PortfolioPage() {
                 <div className="text-sm text-black mb-3">Branding</div>
                 <h3 className="text-xl font-bold text-sky-gradient mb-3">Little & Co</h3>
                 <p className="text-black mb-4 leading-relaxed">
-                  Complete brand identity and web build for a premium consumer brand. From logo design to e-commerce platform.
+                  Full brand refresh, e-commerce UX, and launch support handled in a single sprint so the team could focus on fulfilment.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="text-xs px-3 py-1 rounded-full bg-gray-100 border border-gray-300 text-black">
@@ -167,7 +167,7 @@ export default function PortfolioPage() {
                 <div className="text-sm text-black mb-3">Interior Design</div>
                 <h3 className="text-xl font-bold text-sky-gradient mb-3">JCAS P&D + Interior Design</h3>
                 <p className="text-black mb-4 leading-relaxed">
-                  Website plus AI operations for automated quoting and invoicing. Saving 15+ hours per week on admin.
+                  Website plus AI quoting and invoicing pipelines that now save 15+ hours a week in back-office tasks.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="text-xs px-3 py-1 rounded-full bg-gray-100 border border-gray-300 text-black">
@@ -193,7 +193,7 @@ export default function PortfolioPage() {
                 <span className="text-sky-gradient">results like these?</span>
               </h2>
               <p className="text-xl text-black mb-8 leading-relaxed">
-                Let's discuss your project and how we can help drive measurable growth for your business.
+                Tell us what needs to work better - we'll map the project, timeline, and results before we write a single line of code.
               </p>
               <a
                 href="/contact"

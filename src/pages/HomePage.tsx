@@ -19,11 +19,11 @@ export default function HomePage() {
   return (
     <>
       <SEOWrapper
-        title="Web Design Kent | AI Automation Dover Deal Canterbury"
-        description="Web Design Kent and AI Automation services for Dover, Deal, Canterbury & Folkestone businesses. Fast websites that convert. AI systems that scale. Get your free audit today."
+        title="Web Design & AI Automation in Kent | BuildMediaStrategies"
+        description="Launch fast, conversion-ready sites with AI systems that cut manual work for local teams. Book a build or automation sprint today."
         canonical="https://buildmediastrategies.com/"
         schemaType="homepage"
-        keywords="web design Kent, web design Dover, web design Deal, web design Canterbury, web design Folkestone, AI automation Kent, AI automation Dover, AI operations Kent"
+        keywords="web design, AI automation, Kent agency"
         ogType="website"
       />
       <a href="#main-content" className="skip-to-content">Skip to main content</a>
@@ -73,16 +73,16 @@ export default function HomePage() {
         <header className="relative z-40 flex flex-col items-center justify-start px-5 sm:px-6 pt-10 sm:pt-12 pb-16 sm:pb-20 min-h-[70vh]">
           <h1 className="text-center mb-5 sm:mb-6 opacity-0 animate-fadeInUpDelay">
             <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal md:font-medium text-sky-gradient leading-tight drop-shadow-2xl mb-1">
-              Websites That Convert.
+              Launch Faster.
             </span>
             <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal md:font-medium text-sky-gradient leading-tight drop-shadow-2xl">
-              AI That Accelerates.
+              Scale with AI.
             </span>
           </h1>
 
           <p className="text-center text-black text-sm sm:text-base max-w-lg mb-6 sm:mb-8 leading-relaxed font-normal opacity-0 animate-fadeInDelay px-4 sm:px-0">
-            High-performance <a href="/web-design" className="text-sky-gradient hover:opacity-80 transition-all">websites</a> that drive sales.<br /> 
-            <a href="/ai-operations" className="text-sky-gradient hover:opacity-80 transition-all">AI systems</a> that multiply your team's output.
+            We design and ship high-performing <a href="/web-design" className="text-sky-gradient hover:opacity-80 transition-all">websites</a> in a few days, with AI workflows that chase every lead for you.<br />
+            Built in Kent for local teams who want momentum without extra hires.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-3">
@@ -95,7 +95,7 @@ export default function HomePage() {
               }}
               className="btn-gradient inline-block px-7 sm:px-6 py-3.5 sm:py-3 text-white font-normal rounded-full active:scale-95 opacity-0 animate-fadeInDelay"
             >
-              Get Started Today
+              Book a Call
             </a>
             <a
               href="/tools/speed-checker"

@@ -40,7 +40,7 @@ export default function LeadCaptureForm() {
   if (success) {
     return (
       <div className="rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-gray-300">
-        Thank you — we’ll be in touch shortly.
+        Thank you - we’ll be in touch shortly.
       </div>
     );
   }

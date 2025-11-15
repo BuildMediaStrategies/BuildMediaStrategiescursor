@@ -11,7 +11,7 @@ export default function AIOperationsPage() {
       content: (
         <div>
           <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6 text-black">
-            AI that captures inquiries, qualifies leads based on your criteria, and routes high-value prospects to your sales team. Respond instantly to every inquiry, filter out time-wasters, and focus only on opportunities worth pursuing.
+            Turn every inbound form, chat, or email into a qualified opportunity. We capture the context, score the lead, and send only high-value prospects to your team with next steps.
           </p>
           <div className="mb-6">
             <div className="flex gap-2 items-start text-sm sm:text-base mb-2">
@@ -45,7 +45,7 @@ export default function AIOperationsPage() {
       content: (
         <div>
           <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6 text-black">
-            Automate employee onboarding, time tracking, leave requests, and performance reviews. AI handles the paperwork and scheduling while HR focuses on strategic initiatives and employee development.
+            Give new staff a seamless start while admin runs itself. Automations guide onboarding, approvals, and reviews so HR can focus on coaching instead of paperwork.
           </p>
           <div className="mb-6">
             <div className="flex gap-2 items-start text-sm sm:text-base mb-2">
@@ -79,7 +79,7 @@ export default function AIOperationsPage() {
       content: (
         <div>
           <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6 text-black">
-            Intelligent systems that generate invoices, track payments, send reminders, and reconcile accounts automatically. Get paid faster while eliminating hours of manual bookkeeping every week.
+            Stop chasing invoices or reconciling receipts at night. These workflows raise bills, follow up politely, and sync everything with your accounts package.
           </p>
           <div className="mb-6">
             <div className="flex gap-2 items-start text-sm sm:text-base mb-2">
@@ -113,7 +113,7 @@ export default function AIOperationsPage() {
       content: (
         <div>
           <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6 text-black">
-            AI-powered support that answers common questions, resolves issues, and escalates complex cases to your team. Provide instant help around the clock without hiring more staff.
+            Keep your pipeline warm on autopilot. AI sequences break the ice, nurture leads, and flag hot prospects for a personal follow-up at the perfect moment.
           </p>
           <div className="mb-6">
             <div className="flex gap-2 items-start text-sm sm:text-base mb-2">
@@ -147,7 +147,7 @@ export default function AIOperationsPage() {
       content: (
         <div>
           <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6 text-black">
-            Smart systems that monitor stock levels, predict demand, automate reordering, and optimize inventory across multiple locations. Never run out of hot-selling items or waste money on excess stock.
+            Let support tickets auto-triage before anyone opens the inbox. Answers go out instantly, and nuanced cases arrive with context so your team can jump straight to the solution.
           </p>
           <div className="mb-6">
             <div className="flex gap-2 items-start text-sm sm:text-base mb-2">
@@ -181,7 +181,7 @@ export default function AIOperationsPage() {
       content: (
         <div>
           <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6 text-black">
-            AI systems that track projects, assign tasks, monitor deadlines, and flag risks before they become problems. Keep projects on time and under budget without constant manual oversight.
+            Keep phones ringing without tying up staff. These bots answer, qualify, and route callers, logging every detail so humans step in only when needed.
           </p>
           <div className="mb-6">
             <div className="flex gap-2 items-start text-sm sm:text-base mb-2">
@@ -215,10 +215,10 @@ export default function AIOperationsPage() {
   return (
     <>
       <SEOWrapper
-        title="AI Automation Kent | AI Systems Dover Deal Canterbury"
-        description="AI Automation Kent for Dover, Deal, Canterbury & Folkestone businesses. AI systems that cut costs and scale operations 24/7. Automate tasks, not people. Get started today."
+        title="AI Automation in Kent | BuildMediaStrategies"
+        description="Automate follow-ups, admin, and support with done-for-you AI systems. Launch fast and keep every lead moving."
         canonical="https://buildmediastrategies.com/ai-operations"
-        keywords="AI automation Kent, AI automation Dover, AI operations Kent, AI systems Kent, AI automation agency Kent, business automation Dover Deal Canterbury"
+        keywords="AI automation, AI operations, Kent agency"
       />
       <script
         type="application/ld+json"
@@ -288,10 +288,7 @@ export default function AIOperationsPage() {
               <span className="block text-sky-gradient">AI Automation Kent</span>
             </h1>
             <p className="text-lg sm:text-xl font-sans font-normal leading-relaxed max-w-3xl mx-auto mb-4 text-black">
-              AI automation services for businesses across Dover, Deal, Canterbury, and Folkestone. We build intelligent AI systems that automate repetitive tasks, cut operational costs, and scale your business operations 24/7. Our Kent-based team specializes in AI automation for customer service, scheduling, lead qualification, and workflow optimization. Transform your business with AI systems that deliver measurable results.
-            </p>
-            <p className="text-lg sm:text-xl font-sans font-normal leading-relaxed max-w-3xl mx-auto mb-10 text-black">
-              Automate customer service, lead qualification, invoicing, and scheduling. Built for Kent businesses ready to scale without hiring more staff.
+              We build AI systems that reply instantly, score every lead, and update your team automatically without adding headcount. Start with one workflow, prove it works, then roll the same playbook across the rest of your ops.
             </p>
             <a
               href="/contact"
@@ -306,10 +303,10 @@ export default function AIOperationsPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-sky-gradient mb-6 leading-tight">
-                AI Systems for Dover, Deal, Canterbury & Folkestone
+                AI Systems That Handle the Busywork
               </h2>
               <p className="text-base sm:text-lg font-sans font-normal max-w-2xl mx-auto text-black">
-                Real AI systems solving real business problems
+                Scroll through the playbook to see how each layer takes admin off your plate.
               </p>
             </div>
             <Timeline data={aiServicesData} />
@@ -323,7 +320,7 @@ export default function AIOperationsPage() {
               <span className="block text-sky-gradient">Your Business Operations?</span>
             </h2>
             <p className="text-base sm:text-lg font-sans font-normal mb-10 leading-relaxed max-w-2xl mx-auto text-black">
-              Start with one workflow. Scale from there. See ROI in weeks, not months.
+              Start with one workflow, prove the ROI, then automate the rest. We build, monitor, and keep improving every play.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

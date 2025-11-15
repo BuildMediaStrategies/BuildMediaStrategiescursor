@@ -21,14 +21,14 @@ export default function About() {
     },
     {
       title: 'Long‑Term Thinking',
-      body: 'We build systems you can live with—easy to edit, easy to extend, and easy to trust.',
+      body: 'We build systems you can live with - easy to edit, easy to extend, and easy to trust.',
     },
   ];
 
   const process = [
     { title: 'Listen', content: 'We start with the real constraints: team, budget, timelines, and desired outcomes.' },
-    { title: 'Diagnose', content: "We map what's working and what's not—content, UX, speed, tracking, and ops." },
-    { title: 'Design', content: 'We design lightweight, modular systems—no bloat, just what moves the needle.' },
+    { title: 'Diagnose', content: "We map what's working and what's not - content, UX, speed, tracking, and ops." },
+    { title: 'Design', content: 'We design lightweight, modular systems - no bloat, just what moves the needle.' },
     { title: 'Build', content: "We ship in small, reviewable pieces. You'll see progress weekly, not just at the end." },
     { title: 'Iterate', content: "We measure, learn, and improve. Long after launch, we're still here." },
   ];
@@ -75,7 +75,7 @@ export default function About() {
             <div>
               <h2 className="text-2xl font-bold mb-3">What we do differently</h2>
               <p className="text-gray-300">
-                No jargon, no hidden extras, and no brittle hand‑offs. We design systems your team can actually use—fast, accessible, and
+                No jargon, no hidden extras, and no brittle hand‑offs. We design systems your team can actually use - fast, accessible, and
                 measurable. We'll show you the trade‑offs and help you choose what's right for your context.
               </p>
             </div>
@@ -180,7 +180,7 @@ export default function About() {
                     ))}
                   </div>
                   <blockquote className="text-gray-200 leading-relaxed mb-4">“{t.quote}”</blockquote>
-                  <div className="text-sm text-gray-400 mt-auto">{t.author} — {t.title}, {t.company}{t.location ? `, ${t.location}` : ''}</div>
+                <div className="text-sm text-gray-400 mt-auto">{t.author} - {t.title}, {t.company}{t.location ? `, ${t.location}` : ''}</div>
                 </article>
               ))}
             </div>
@@ -201,4 +201,3 @@ export default function About() {
     </SEOWrapper>
   );
 }
-
