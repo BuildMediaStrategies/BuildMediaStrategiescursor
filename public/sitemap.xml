@@ -1,78 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Homepage - Highest priority -->
+  <!-- Homepage -->
   <url>
     <loc>https://buildmediastrategies.com/</loc>
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2025-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Main Service Pages -->
+  <!-- Core Service Pages -->
   <url>
     <loc>https://buildmediastrategies.com/web-design</loc>
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2025-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://buildmediastrategies.com/ai-operations</loc>
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2025-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Location Pages - High priority for local SEO -->
+  <url>
+    <loc>https://buildmediastrategies.com/industries</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://buildmediastrategies.com/portfolio</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://buildmediastrategies.com/kent-services</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://buildmediastrategies.com/contact</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Location Pages -->
   <url>
     <loc>https://buildmediastrategies.com/web-design-dover</loc>
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2025-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://buildmediastrategies.com/web-design-deal</loc>
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2025-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://buildmediastrategies.com/web-design-canterbury</loc>
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2025-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://buildmediastrategies.com/web-design-folkestone</loc>
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2025-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Other Pages -->
+  <!-- Tools -->
   <url>
-    <loc>https://buildmediastrategies.com/industries</loc>
-    <lastmod>2025-11-01</lastmod>
+    <loc>https://buildmediastrategies.com/tools/roi-calculator</loc>
+    <lastmod>2025-11-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://buildmediastrategies.com/portfolio</loc>
-    <lastmod>2025-11-01</lastmod>
+    <loc>https://buildmediastrategies.com/tools/speed-checker</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Brand & Trust Pages -->
+  <url>
+    <loc>https://buildmediastrategies.com/about</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://buildmediastrategies.com/privacy</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://buildmediastrategies.com/terms</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://buildmediastrategies.com/cookie-policy</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://buildmediastrategies.com/ai-disclosure</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://buildmediastrategies.com/blog</loc>
+    <lastmod>2025-11-15</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://buildmediastrategies.com/contact</loc>
-    <lastmod>2025-11-01</lastmod>
+    <loc>https://buildmediastrategies.com/blog/modern-websites-kent-2025</loc>
+    <lastmod>2025-11-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
 
 </urlset>
