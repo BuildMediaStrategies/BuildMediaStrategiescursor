@@ -46,7 +46,7 @@ export default function CTABanner() {
             {/* CTA Button */}
             <a
               href="/contact"
-              className="inline-block px-7 sm:px-8 py-3.5 sm:py-4 bg-white font-sans font-medium rounded-full transition-all duration-300 transform hover:-translate-y-1 active:scale-95 text-sky-gradient text-lg shadow-xl hover:shadow-2xl"
+              className="btn-gradient inline-flex items-center justify-center px-10 py-4 mt-10 rounded-full text-white font-medium shadow-lg active:scale-95 transition-transform"
             >
               Start Your Project
             </a>

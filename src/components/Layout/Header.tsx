@@ -11,7 +11,7 @@ export default function Header() {
           className="flex items-center rounded-3xl px-3 py-1 hover:opacity-80 transition-all duration-300 -ml-8 sm:-ml-12"
         >
           <img
-            src="/logo.png"
+            src="/assets/logo.png"
             alt="Build Media Strategies"
             className="h-8 sm:h-10 md:h-12 w-auto object-contain scale-[3.25] sm:scale-[3.75] origin-left translate-y-[12px]"
             width="320"

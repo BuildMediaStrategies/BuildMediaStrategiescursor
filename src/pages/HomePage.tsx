@@ -7,9 +7,7 @@ import SecuritySection from '../components/SecuritySection';
 import InterviewBookingSection from '../components/InterviewBookingSection';
 const RegistrationModal = lazy(() => import('../components/RegistrationModal'));
 import {
-  LazyTestimonialsSection,
   LazyFAQSection,
-  LazyGoogleReviews,
   LazyCTABanner,
   LazyEffortlessSecuritySection,
 } from '../lib/utils/lazyComponents';
@@ -138,10 +136,6 @@ export default function HomePage() {
         </Suspense>
 
         <Suspense fallback={<div className="py-20 bg-white" />}>
-          <LazyTestimonialsSection />
-        </Suspense>
-
-        <Suspense fallback={<div className="py-20 bg-white" />}>
           <div id="faq">
             <LazyFAQSection />
           </div>
@@ -149,10 +143,6 @@ export default function HomePage() {
 
         <Suspense fallback={<div className="py-20 bg-white" />}>
           <LazyCTABanner />
-        </Suspense>
-
-        <Suspense fallback={<div className="py-20 bg-white" />}>
-          <LazyGoogleReviews />
         </Suspense>
       </main>
 

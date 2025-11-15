@@ -3,7 +3,6 @@ import React, { ReactNode } from 'react';
 interface InfiniteSliderProps {
   children: ReactNode;
   speed?: number;
-  speedOnHover?: number;
   gap?: number;
   className?: string;
 }
@@ -11,7 +10,6 @@ interface InfiniteSliderProps {
 export function InfiniteSlider({ 
   children, 
   speed = 40, 
-  speedOnHover = 20, 
   gap = 112,
   className = ""
 }: InfiniteSliderProps) {
@@ -23,15 +21,8 @@ export function InfiniteSlider({
         className="flex will-change-transform"
         style={{
           gap: `${gap}px`,
-          animation: `scroll ${speed}s linear infinite`,
-          '--hover-duration': `${speedOnHover}s`
+          animation: `scroll ${speed}s linear infinite`
         } as React.CSSProperties}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.animationDuration = `${speedOnHover}s`;
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.animationDuration = `${speed}s`;
-        }}
       >
         {/* First set of children */}
         {childrenArray.map((child, index) => (

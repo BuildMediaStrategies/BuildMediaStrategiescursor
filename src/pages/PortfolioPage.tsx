@@ -8,7 +8,7 @@ export default function PortfolioPage() {
       title: 'CureCancer UCL',
       description: 'Charity website and AI operations for admin workflows',
       sector: 'Charity',
-      logo: '/ucl-icon.png',
+      logo: '/assets/ucl-icon.png',
       url: 'https://curecancer-ucl.org/',
       metrics: {
         loadTime: '-72%',
@@ -20,7 +20,7 @@ export default function PortfolioPage() {
       title: 'SOS Electrical',
       description: 'Trades website and AI lead capture automation',
       sector: 'Trades',
-      logo: '/sos-icon.png',
+      logo: '/assets/sos-icon.png',
       url: 'https://soselectricalltd.co.uk/',
       metrics: {
         loadTime: '-68%',
@@ -32,7 +32,7 @@ export default function PortfolioPage() {
       title: 'Hamilton-Nexus',
       description: 'Website and project management dashboard for consulting operations',
       sector: 'Consulting',
-      logo: '/hamilton-nexus-icon.png',
+      logo: '/assets/hamilton-nexus-icon.png',
       url: 'https://hamilton-nexus.co.uk/',
       metrics: {
         loadTime: '-54%',
@@ -96,9 +96,9 @@ export default function PortfolioPage() {
                       src={project.logo}
                       alt={`${project.title} logo`}
                       className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all"
-                      loading="eager"
-                      decoding="sync"
-                      fetchPriority="high"
+                      loading="lazy"
+                      decoding="async"
+                      fetchPriority="low"
                       width="64"
                       height="64"
                     />

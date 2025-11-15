@@ -15,7 +15,11 @@ export default function WebDesignPage() {
         <PexelsImage
           id="pexels-326503"
           alt="Website conversion analytics"
-          loading="lazy"
+          loading="eager"
+          decoding="sync"
+          fetchPriority="high"
+          width={1920}
+          height={1280}
           imgClassName="absolute inset-0 h-full w-full object-cover opacity-60"
         />
       ),
@@ -32,6 +36,9 @@ export default function WebDesignPage() {
           id="pexels-270404"
           alt="Fast website performance metrics"
           loading="lazy"
+          decoding="async"
+          width={1920}
+          height={1280}
           imgClassName="absolute inset-0 h-full w-full object-cover opacity-60"
         />
       ),
@@ -48,6 +55,9 @@ export default function WebDesignPage() {
           id="pexels-57690"
           alt="Mobile responsive website design"
           loading="lazy"
+          decoding="async"
+          width={1920}
+          height={1280}
           imgClassName="absolute inset-0 h-full w-full object-cover opacity-60"
         />
       ),
@@ -64,6 +74,9 @@ export default function WebDesignPage() {
           id="pexels-3861969"
           alt="AI chatbot integration on website"
           loading="lazy"
+          decoding="async"
+          width={1920}
+          height={1280}
           imgClassName="absolute inset-0 h-full w-full object-cover opacity-60"
         />
       ),
@@ -80,6 +93,9 @@ export default function WebDesignPage() {
           id="pexels-270637"
           alt="SEO optimization dashboard"
           loading="lazy"
+          decoding="async"
+          width={1920}
+          height={1280}
           imgClassName="absolute inset-0 h-full w-full object-cover opacity-60"
         />
       ),

@@ -12,28 +12,28 @@ type Logo = {
 
 const logos: Logo[] = [
   // UCL (icon-only, matches SOS size)
-  { src: '/ucl-icon.png', alt: 'UCL Icon Logo', className: 'mx-10 h-14 md:h-[4.2rem] w-auto object-contain', width: 1024, height: 1024 },
+  { src: '/assets/ucl-icon.png', alt: 'UCL Icon Logo', className: 'mx-10 h-14 md:h-[4.2rem] w-auto object-contain', width: 1024, height: 1024 },
 
   // Hamilton Nexus
-  { src: '/hamilton-nexus-icon.png', alt: 'Hamilton Nexus Logo', className: 'mx-10 h-12 md:h-14 w-auto object-contain', width: 158, height: 70 },
+  { src: '/assets/hamilton-nexus-icon.png', alt: 'Hamilton Nexus Logo', className: 'mx-10 h-12 md:h-14 w-auto object-contain', width: 158, height: 70 },
 
   // GitHub (force white via CSS filter)
-  { src: '/github-logo.png', alt: 'GitHub Logo', className: 'mx-10 h-12 md:h-14 w-auto object-contain as-white', width: 3840, height: 2160 },
+  { src: '/assets/github-logo.png', alt: 'GitHub Logo', className: 'mx-10 h-12 md:h-14 w-auto object-contain as-white', width: 3840, height: 2160 },
 
   // Cursor (icon only)
-  { src: '/cursor-icon.png', alt: 'Cursor AI Logo', className: 'mx-10 h-14 md:h-16 w-auto object-contain', width: 1200, height: 1200 },
+  { src: '/assets/cursor-icon.png', alt: 'Cursor AI Logo', className: 'mx-10 h-14 md:h-16 w-auto object-contain', width: 1200, height: 1200 },
 
   // SOS Electrical (slightly larger)
-  { src: '/sos-icon.png', alt: 'SOS Electrical Logo', className: 'mx-10 h-14 md:h-[4.2rem] w-auto object-contain', width: 500, height: 500 },
+  { src: '/assets/sos-icon.png', alt: 'SOS Electrical Logo', className: 'mx-10 h-14 md:h-[4.2rem] w-auto object-contain', width: 500, height: 500 },
 
   // CureCancer (use the available UCL icon until CureCancer asset is added)
-  { src: '/ucl-icon.png', alt: 'CureCancer UCL Logo', className: 'mx-10 h-16 md:h-[4.8rem] w-auto object-contain opacity-95 contrast-125', width: 1024, height: 1024 },
+  { src: '/assets/ucl-icon.png', alt: 'CureCancer UCL Logo', className: 'mx-10 h-16 md:h-[4.8rem] w-auto object-contain opacity-95 contrast-125', width: 1024, height: 1024 },
 
   // Repeat Hamilton Nexus (kept from your sequence)
-  { src: '/hamilton-nexus-icon.png', alt: 'Hamilton Nexus Logo', className: 'mx-10 h-12 md:h-14 w-auto object-contain', width: 158, height: 70 },
+  { src: '/assets/hamilton-nexus-icon.png', alt: 'Hamilton Nexus Logo', className: 'mx-10 h-12 md:h-14 w-auto object-contain', width: 158, height: 70 },
 
   // Repeat GitHub (forced white)
-  { src: '/github-logo.png', alt: 'GitHub Logo', className: 'mx-10 h-12 md:h-14 w-auto object-contain as-white', width: 3840, height: 2160 },
+  { src: '/assets/github-logo.png', alt: 'GitHub Logo', className: 'mx-10 h-12 md:h-14 w-auto object-contain as-white', width: 3840, height: 2160 },
 ];
 
 export default function LogoCloud() {
@@ -47,7 +47,7 @@ export default function LogoCloud() {
 
           <div className="relative py-6 md:w-[calc(100%-11rem)]">
             {/* Duplicate the sequence to make the loop seamless */}
-            <InfiniteSlider speed={20} speedOnHover={15} gap={120}>
+            <InfiniteSlider speed={20} gap={120}>
               {/* pass 1 */}
               {logos.map((logo, i) => (
                 <img

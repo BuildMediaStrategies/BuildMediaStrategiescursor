@@ -64,6 +64,9 @@ export default function IndustriesPage() {
                   id="pexels-257736"
                   alt="Electrician working on electrical panel installation"
                   loading="lazy"
+                  decoding="async"
+                  width={1600}
+                  height={1067}
                   imgClassName="w-full h-auto"
                 />
               </div>
@@ -97,6 +100,9 @@ export default function IndustriesPage() {
                   id="pexels-585419"
                   alt="Construction team collaborating on large building project"
                   loading="lazy"
+                  decoding="async"
+                  width={1600}
+                  height={1067}
                   imgClassName="w-full h-auto"
                 />
               </div>

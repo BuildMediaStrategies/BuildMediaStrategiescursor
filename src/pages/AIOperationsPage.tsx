@@ -31,12 +31,12 @@ export default function AIOperationsPage() {
             </div>
           </div>
           <img
-            src="/bms-web-image.png"
+            src="/assets/bms-web-image.png"
             alt="Full-stack development interface"
             className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg"
-            loading="lazy"
-            decoding="async"
-            fetchPriority="low"
+            loading="eager"
+            decoding="sync"
+            fetchPriority="high"
             width="1024"
             height="1024"
           />
@@ -68,7 +68,7 @@ export default function AIOperationsPage() {
             </div>
           </div>
           <img
-            src="/bms-mobile-img.png"
+            src="/assets/bms-mobile-img.png"
             alt="Mobile app development interface"
             className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg"
             loading="lazy"
@@ -105,7 +105,7 @@ export default function AIOperationsPage() {
             </div>
           </div>
           <img
-            src="/bms-lead-img.png"
+            src="/assets/bms-lead-img.png"
             alt="Lead capture system dashboard"
             className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg"
             loading="lazy"
@@ -142,7 +142,7 @@ export default function AIOperationsPage() {
             </div>
           </div>
           <img
-            src="/bms-linkedin-img.png"
+            src="/assets/bms-linkedin-img.png"
             alt="LinkedIn lead generation interface"
             className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg"
             loading="lazy"
@@ -179,7 +179,7 @@ export default function AIOperationsPage() {
             </div>
           </div>
           <img
-            src="/bms-chatbot-img.png"
+            src="/assets/bms-chatbot-img.png"
             alt="Customer support automation chatbot"
             className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg"
             loading="lazy"
@@ -216,7 +216,7 @@ export default function AIOperationsPage() {
             </div>
           </div>
           <img
-            src="/bms-call-img.png"
+            src="/assets/bms-call-img.png"
             alt="Call automation system interface"
             className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg"
             loading="lazy"
