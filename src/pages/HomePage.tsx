@@ -70,7 +70,7 @@ export default function HomePage() {
         `}</style>
 
         {/* HERO CONTENT */}
-        <header className="relative z-40 flex flex-col items-center justify-center px-5 sm:px-6 pt-24 sm:pt-20 pb-16 sm:pb-20 min-h-[80vh]">
+        <header className="relative z-40 flex flex-col items-center justify-start px-5 sm:px-6 pt-10 sm:pt-12 pb-16 sm:pb-20 min-h-[70vh]">
           <h1 className="text-center mb-5 sm:mb-6 opacity-0 animate-fadeInUpDelay">
             <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal md:font-medium text-sky-gradient leading-tight drop-shadow-2xl mb-1">
               Websites That Convert.
