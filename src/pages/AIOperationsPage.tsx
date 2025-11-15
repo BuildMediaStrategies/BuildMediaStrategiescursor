@@ -10,9 +10,6 @@ export default function AIOperationsPage() {
       title: "Full-stack Development",
       content: (
         <div>
-          <h3 className="text-2xl sm:text-3xl font-sans font-bold text-sky-gradient mb-4">
-            Full-stack Development
-          </h3>
           <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6 text-black">
             AI that captures inquiries, qualifies leads based on your criteria, and routes high-value prospects to your sales team. Respond instantly to every inquiry, filter out time-wasters, and focus only on opportunities worth pursuing.
           </p>
@@ -47,9 +44,6 @@ export default function AIOperationsPage() {
       title: "Mobile App Development",
       content: (
         <div>
-          <h3 className="text-2xl sm:text-3xl font-sans font-bold text-sky-gradient mb-4">
-            Mobile App Development
-          </h3>
           <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6 text-black">
             Automate employee onboarding, time tracking, leave requests, and performance reviews. AI handles the paperwork and scheduling while HR focuses on strategic initiatives and employee development.
           </p>
@@ -84,9 +78,6 @@ export default function AIOperationsPage() {
       title: "Lead Capture Systems",
       content: (
         <div>
-          <h3 className="text-2xl sm:text-3xl font-sans font-bold text-sky-gradient mb-4">
-            Lead Capture Systems
-          </h3>
           <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6 text-black">
             Intelligent systems that generate invoices, track payments, send reminders, and reconcile accounts automatically. Get paid faster while eliminating hours of manual bookkeeping every week.
           </p>
@@ -121,9 +112,6 @@ export default function AIOperationsPage() {
       title: "LinkedIn Lead Generation",
       content: (
         <div>
-          <h3 className="text-2xl sm:text-3xl font-sans font-bold text-sky-gradient mb-4">
-            LinkedIn Lead Generation
-          </h3>
           <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6 text-black">
             AI-powered support that answers common questions, resolves issues, and escalates complex cases to your team. Provide instant help around the clock without hiring more staff.
           </p>
@@ -158,9 +146,6 @@ export default function AIOperationsPage() {
       title: "Customer Support Automation",
       content: (
         <div>
-          <h3 className="text-2xl sm:text-3xl font-sans font-bold text-sky-gradient mb-4">
-            Customer Support Automation
-          </h3>
           <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6 text-black">
             Smart systems that monitor stock levels, predict demand, automate reordering, and optimize inventory across multiple locations. Never run out of hot-selling items or waste money on excess stock.
           </p>
@@ -195,9 +180,6 @@ export default function AIOperationsPage() {
       title: "Call Automation",
       content: (
         <div>
-          <h3 className="text-2xl sm:text-3xl font-sans font-bold text-sky-gradient mb-4">
-            Call Automation
-          </h3>
           <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6 text-black">
             AI systems that track projects, assign tasks, monitor deadlines, and flag risks before they become problems. Keep projects on time and under budget without constant manual oversight.
           </p>
