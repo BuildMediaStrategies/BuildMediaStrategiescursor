@@ -1,5 +1,4 @@
 import { Check } from 'lucide-react';
-import aiDashboard from '../assets/ai-dashboard.png';
 
 const AI_SECTION_NOTICE = 'Visuals and stats may include automated AI outputs. Review insights before taking action.';
 
@@ -50,16 +49,20 @@ export default function InterviewBookingSection() {
 
           {/* Right Section: Dashboard Interface */}
           <div className="relative flex items-center justify-center">
-            <img
-              src={aiDashboard}
-              alt="Modern web dashboard interface showing analytics, metrics, and user engagement data visualization"
-              loading="lazy"
-              decoding="async"
-              fetchPriority="low"
-              width={1536}
-              height={1024}
-              className="w-full h-auto"
-            />
+            <picture>
+              <source srcSet="/assets/ai-dashboard.avif" type="image/avif" />
+              <source srcSet="/assets/ai-dashboard.webp" type="image/webp" />
+              <img
+                src="/assets/ai-dashboard.png"
+                alt="Modern web dashboard interface showing analytics, metrics, and user engagement data visualization"
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
+                width={1536}
+                height={1024}
+                className="w-full h-auto"
+              />
+            </picture>
           </div>
         </div>
       </div>

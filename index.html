@@ -17,11 +17,11 @@
     <meta name="description" content="Expert web design and development in Dover. Serving Deal, Canterbury, and Folkestone with custom websites that drive results." />
     <meta name="keywords" content="web design Dover, web development Kent, website design Deal, Canterbury web design, Folkestone website development" />
 
-    <!-- Preload critical images -->
-    <link rel="preload" as="image" href="/hero-image-new.png" fetchpriority="high" />
-    <link rel="preload" as="image" href="/assets/ucl-icon.png" fetchpriority="high" />
-    <link rel="preload" as="image" href="/assets/sos-icon.png" fetchpriority="high" />
-    <link rel="preload" as="image" href="/assets/hamilton-nexus-icon.png" fetchpriority="high" />
+    <!-- Preload critical images - AVIF for best performance -->
+    <link rel="preload" as="image" href="/hero-image-new.avif" type="image/avif" fetchpriority="high" />
+    <link rel="preload" as="image" href="/hero-image-new.webp" type="image/webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/assets/ucl-icon.avif" type="image/avif" fetchpriority="high" />
+    <link rel="preload" as="image" href="/assets/sos-icon.avif" type="image/avif" fetchpriority="high" />
 
     <!-- Sitemap -->
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
@@ -41,221 +41,12 @@
     <meta name="twitter:description" content="Expert web design and development in Dover. Serving Deal, Canterbury, and Folkestone with custom websites that drive results." />
     <meta name="twitter:image" content="https://buildmediastrategies.com/og-image.jpg" />
 
-    <!-- Local Business Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "BuildMediaStrategies",
-      "image": "https://buildmediastrategies.com/assets/logo.png",
-      "description": "Professional web design and development services in Dover, Kent. Creating custom websites for businesses across Deal, Canterbury, and Folkestone.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Dover",
-        "addressRegion": "Kent",
-        "addressCountry": "GB"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "51.1279",
-        "longitude": "1.3134"
-      },
-      "url": "https://buildmediastrategies.com",
-      "telephone": "+447915738448",
-      "priceRange": "££",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "17:00"
-      },
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "Dover"
-        },
-        {
-          "@type": "City",
-          "name": "Deal"
-        },
-        {
-          "@type": "City",
-          "name": "Canterbury"
-        },
-        {
-          "@type": "City",
-          "name": "Folkestone"
-        }
-      ],
-      "service": [
-        {
-          "@type": "Service",
-          "serviceType": "Web Design"
-        },
-        {
-          "@type": "Service",
-          "serviceType": "Web Development"
-        },
-        {
-          "@type": "Service",
-          "serviceType": "E-Commerce Development"
-        },
-        {
-          "@type": "Service",
-          "serviceType": "Website Maintenance"
-        }
-      ]
-    }
-    </script>
 
-    <!-- FAQPage Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Do you offer web design services in Canterbury and Folkestone?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, we provide professional web design and development services across Dover, Deal, Canterbury, Folkestone and all surrounding Kent areas. Our team works with businesses throughout East Kent to create custom websites that drive results."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What kind of websites do you build?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We build fast, mobile-friendly websites using modern React frameworks, tailored specifically for businesses in Kent. Our sites are responsive, secure, and optimized for search engines to help you attract more local customers."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you work with small businesses in Deal?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, we work with businesses of all sizes throughout East Kent including Deal, Dover, Canterbury, and Folkestone. Whether you're a small local business or a growing company, we create custom web solutions that fit your needs and budget."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How long does it take to build a website?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Project timelines vary based on complexity and requirements. A typical website takes 4-8 weeks from initial consultation to launch, while more complex projects may take 10-16 weeks. We provide a detailed timeline during our discovery phase and keep you informed throughout the process."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you provide website maintenance and support?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, we offer comprehensive maintenance and support packages to keep your website secure, updated, and performing optimally. Our ongoing support ensures your site continues to deliver results as your business grows."
-          }
-        }
-      ]
-    }
-    </script>
-
-    <!-- Web Design Service Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Web Design",
-      "description": "Professional web design and development services including custom websites, e-commerce platforms, and responsive designs for businesses across Kent.",
-      "provider": {
-        "@type": "Organization",
-        "name": "BuildMediaStrategies",
-        "url": "https://buildmediastrategies.com"
-      },
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "Dover"
-        },
-        {
-          "@type": "City",
-          "name": "Deal"
-        },
-        {
-          "@type": "City",
-          "name": "Canterbury"
-        },
-        {
-          "@type": "City",
-          "name": "Folkestone"
-        },
-        {
-          "@type": "State",
-          "name": "Kent"
-        }
-      ],
-      "serviceType": [
-        "Website Design",
-        "Web Development",
-        "E-Commerce Design"
-      ],
-      "url": "https://buildmediastrategies.com/web-design"
-    }
-    </script>
-
-    <!-- AI Operations Service Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "AI Operations",
-      "description": "AI-powered business automation services including lead generation, HR automation, financial processes, call handling, and social media management for businesses across Kent.",
-      "provider": {
-        "@type": "Organization",
-        "name": "BuildMediaStrategies",
-        "url": "https://buildmediastrategies.com"
-      },
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "Dover"
-        },
-        {
-          "@type": "City",
-          "name": "Deal"
-        },
-        {
-          "@type": "City",
-          "name": "Canterbury"
-        },
-        {
-          "@type": "City",
-          "name": "Folkestone"
-        },
-        {
-          "@type": "State",
-          "name": "Kent"
-        }
-      ],
-      "serviceType": [
-        "Lead Generation Automation",
-        "HR Automation",
-        "Financial Automation",
-        "Call Automation",
-        "Social Media Automation"
-      ],
-      "url": "https://buildmediastrategies.com/ai-operations"
-    }
-    </script>
-
+    <!-- Fonts - optimized loading with display=swap -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
     <!-- Critical CSS for instant hero image load -->
     <style>
@@ -270,5 +61,19 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Non-critical Schema.org markup - loaded after main content -->
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"LocalBusiness","name":"BuildMediaStrategies","image":"https://buildmediastrategies.com/assets/logo.png","description":"Professional web design and development services in Dover, Kent. Creating custom websites for businesses across Deal, Canterbury, and Folkestone.","address":{"@type":"PostalAddress","addressLocality":"Dover","addressRegion":"Kent","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":"51.1279","longitude":"1.3134"},"url":"https://buildmediastrategies.com","telephone":"+447915738448","priceRange":"££","openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"17:00"},"areaServed":[{"@type":"City","name":"Dover"},{"@type":"City","name":"Deal"},{"@type":"City","name":"Canterbury"},{"@type":"City","name":"Folkestone"}],"service":[{"@type":"Service","serviceType":"Web Design"},{"@type":"Service","serviceType":"Web Development"},{"@type":"Service","serviceType":"E-Commerce Development"},{"@type":"Service","serviceType":"Website Maintenance"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do you offer web design services in Canterbury and Folkestone?","acceptedAnswer":{"@type":"Answer","text":"Yes, we provide professional web design and development services across Dover, Deal, Canterbury, Folkestone and all surrounding Kent areas. Our team works with businesses throughout East Kent to create custom websites that drive results."}},{"@type":"Question","name":"What kind of websites do you build?","acceptedAnswer":{"@type":"Answer","text":"We build fast, mobile-friendly websites using modern React frameworks, tailored specifically for businesses in Kent. Our sites are responsive, secure, and optimized for search engines to help you attract more local customers."}},{"@type":"Question","name":"Do you work with small businesses in Deal?","acceptedAnswer":{"@type":"Answer","text":"Yes, we work with businesses of all sizes throughout East Kent including Deal, Dover, Canterbury, and Folkestone. Whether you're a small local business or a growing company, we create custom web solutions that fit your needs and budget."}},{"@type":"Question","name":"How long does it take to build a website?","acceptedAnswer":{"@type":"Answer","text":"Project timelines vary based on complexity and requirements. A typical website takes 4-8 weeks from initial consultation to launch, while more complex projects may take 10-16 weeks. We provide a detailed timeline during our discovery phase and keep you informed throughout the process."}},{"@type":"Question","name":"Do you provide website maintenance and support?","acceptedAnswer":{"@type":"Answer","text":"Yes, we offer comprehensive maintenance and support packages to keep your website secure, updated, and performing optimally. Our ongoing support ensures your site continues to deliver results as your business grows."}}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Service","name":"Web Design","description":"Professional web design and development services including custom websites, e-commerce platforms, and responsive designs for businesses across Kent.","provider":{"@type":"Organization","name":"BuildMediaStrategies","url":"https://buildmediastrategies.com"},"areaServed":[{"@type":"City","name":"Dover"},{"@type":"City","name":"Deal"},{"@type":"City","name":"Canterbury"},{"@type":"City","name":"Folkestone"},{"@type":"State","name":"Kent"}],"serviceType":["Website Design","Web Development","E-Commerce Design"],"url":"https://buildmediastrategies.com/web-design"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Service","name":"AI Operations","description":"AI-powered business automation services including lead generation, HR automation, financial processes, call handling, and social media management for businesses across Kent.","provider":{"@type":"Organization","name":"BuildMediaStrategies","url":"https://buildmediastrategies.com"},"areaServed":[{"@type":"City","name":"Dover"},{"@type":"City","name":"Deal"},{"@type":"City","name":"Canterbury"},{"@type":"City","name":"Folkestone"},{"@type":"State","name":"Kent"}],"serviceType":["Lead Generation Automation","HR Automation","Financial Automation","Call Automation","Social Media Automation"],"url":"https://buildmediastrategies.com/ai-operations"}
+    </script>
   </body>
 </html>

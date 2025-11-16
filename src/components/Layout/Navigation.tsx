@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { NavLink } from 'react-router-dom';
 import { createPortal } from 'react-dom';
-import bmsLogo from '../../assets/bms-logo.png';
 import { useFocusTrap } from '../../hooks/useFocusTrap';
 
 export default function Navigation() {
@@ -110,16 +109,20 @@ export default function Navigation() {
           <div className="bg-white/90 backdrop-blur-sm border-b border-gray-100">
             <div className="px-5 py-3 flex items-center justify-between">
               <div className="flex items-center rounded-3xl px-3 py-1 -ml-8">
-                <img
-                  src={bmsLogo}
-                  alt="Build Media Strategies"
-                  className="h-8 w-auto object-contain scale-[3.25] origin-left translate-y-[12px]"
-                  width="800"
-                  height="450"
-                  loading="lazy"
-                  decoding="async"
-                  fetchPriority="low"
-                />
+                <picture>
+                  <source srcSet="/assets/bms-logo.avif" type="image/avif" />
+                  <source srcSet="/assets/bms-logo.webp" type="image/webp" />
+                  <img
+                    src="/assets/bms-logo.png"
+                    alt="Build Media Strategies"
+                    className="h-8 w-auto object-contain scale-[3.25] origin-left translate-y-[12px]"
+                    width="800"
+                    height="450"
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
+                  />
+                </picture>
               </div>
               {/* Clickable X button */}
               <button

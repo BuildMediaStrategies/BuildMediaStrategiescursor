@@ -27,16 +27,20 @@ export default function AIOperationsPage() {
               <span className="text-black">Smart routing to the right team member</span>
             </div>
           </div>
-          <img
-            src="/assets/bms-web-image.png"
-            alt="Full-stack development interface"
-            className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg"
-            loading="eager"
-            decoding="sync"
-            fetchPriority="high"
-            width="1024"
-            height="1024"
-          />
+          <picture>
+            <source srcSet="/assets/bms-web-image.avif" type="image/avif" />
+            <source srcSet="/assets/bms-web-image.webp" type="image/webp" />
+            <img
+              src="/assets/bms-web-image.png"
+              alt="Full-stack development interface"
+              className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg"
+              loading="eager"
+              decoding="sync"
+              fetchPriority="high"
+              width="1024"
+              height="1024"
+            />
+          </picture>
         </div>
       ),
     },
@@ -61,16 +65,20 @@ export default function AIOperationsPage() {
               <span className="text-black">Digital performance review systems</span>
             </div>
           </div>
-          <img
-            src="/assets/bms-mobile-img.png"
-            alt="Mobile app development interface"
-            className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg"
-            loading="lazy"
-            decoding="async"
-            fetchPriority="low"
-            width="1024"
-            height="1024"
-          />
+          <picture>
+            <source srcSet="/assets/bms-mobile-img.avif" type="image/avif" />
+            <source srcSet="/assets/bms-mobile-img.webp" type="image/webp" />
+            <img
+              src="/assets/bms-mobile-img.png"
+              alt="Mobile app development interface"
+              className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg"
+              loading="lazy"
+              decoding="async"
+              fetchPriority="low"
+              width="1024"
+              height="1024"
+            />
+          </picture>
         </div>
       ),
     },
@@ -95,16 +103,20 @@ export default function AIOperationsPage() {
               <span className="text-black">Bank reconciliation and reporting</span>
             </div>
           </div>
-          <img
-            src="/assets/bms-lead-img.png"
-            alt="Lead capture system dashboard"
-            className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg"
-            loading="lazy"
-            decoding="async"
-            fetchPriority="low"
-            width="1024"
-            height="1024"
-          />
+          <picture>
+            <source srcSet="/assets/bms-lead-img.avif" type="image/avif" />
+            <source srcSet="/assets/bms-lead-img.webp" type="image/webp" />
+            <img
+              src="/assets/bms-lead-img.png"
+              alt="Lead capture system dashboard"
+              className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg"
+              loading="lazy"
+              decoding="async"
+              fetchPriority="low"
+              width="1024"
+              height="1024"
+            />
+          </picture>
         </div>
       ),
     },
@@ -129,16 +141,20 @@ export default function AIOperationsPage() {
               <span className="text-black">Smart escalation to human agents when needed</span>
             </div>
           </div>
-          <img
-            src="/assets/bms-linkedin-img.png"
-            alt="LinkedIn lead generation interface"
-            className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg"
-            loading="lazy"
-            decoding="async"
-            fetchPriority="low"
-            width="1024"
-            height="1024"
-          />
+          <picture>
+            <source srcSet="/assets/bms-linkedin-img.avif" type="image/avif" />
+            <source srcSet="/assets/bms-linkedin-img.webp" type="image/webp" />
+            <img
+              src="/assets/bms-linkedin-img.png"
+              alt="LinkedIn lead generation interface"
+              className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg"
+              loading="lazy"
+              decoding="async"
+              fetchPriority="low"
+              width="1024"
+              height="1024"
+            />
+          </picture>
         </div>
       ),
     },
@@ -163,16 +179,20 @@ export default function AIOperationsPage() {
               <span className="text-black">Automatic reordering and supplier management</span>
             </div>
           </div>
-          <img
-            src="/assets/bms-chatbot-img.png"
-            alt="Customer support automation chatbot"
-            className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg"
-            loading="lazy"
-            decoding="async"
-            fetchPriority="low"
-            width="1024"
-            height="1024"
-          />
+          <picture>
+            <source srcSet="/assets/bms-chatbot-img.avif" type="image/avif" />
+            <source srcSet="/assets/bms-chatbot-img.webp" type="image/webp" />
+            <img
+              src="/assets/bms-chatbot-img.png"
+              alt="Customer support automation chatbot"
+              className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg"
+              loading="lazy"
+              decoding="async"
+              fetchPriority="low"
+              width="1024"
+              height="1024"
+            />
+          </picture>
         </div>
       ),
     },
@@ -197,16 +217,20 @@ export default function AIOperationsPage() {
               <span className="text-black">Real-time progress reporting</span>
             </div>
           </div>
-          <img
-            src="/assets/bms-call-img.png"
-            alt="Call automation system interface"
-            className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg"
-            loading="lazy"
-            decoding="async"
-            fetchPriority="low"
-            width="1024"
-            height="1024"
-          />
+          <picture>
+            <source srcSet="/assets/bms-call-img.avif" type="image/avif" />
+            <source srcSet="/assets/bms-call-img.webp" type="image/webp" />
+            <img
+              src="/assets/bms-call-img.png"
+              alt="Call automation system interface"
+              className="w-full rounded-lg object-contain h-48 md:h-64 lg:h-80 shadow-lg"
+              loading="lazy"
+              decoding="async"
+              fetchPriority="low"
+              width="1024"
+              height="1024"
+            />
+          </picture>
         </div>
       ),
     },

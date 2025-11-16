@@ -1,5 +1,4 @@
 import { Instagram, Youtube } from 'lucide-react';
-import bmsLogo from '../assets/bms-logo.png';
 
 export default function Footer() {
   return (
@@ -14,16 +13,20 @@ export default function Footer() {
               className="inline-block hover:opacity-80 transition-opacity"
               aria-label="BuildMediaStrategies home"
             >
-              <img
-                src={bmsLogo}
-                alt="Build Media Strategies"
-                className="h-16 w-auto object-contain"
-                width="800"
-                height="450"
-                loading="lazy"
-                decoding="async"
-                fetchPriority="low"
-              />
+              <picture>
+                <source srcSet="/assets/bms-logo.avif" type="image/avif" />
+                <source srcSet="/assets/bms-logo.webp" type="image/webp" />
+                <img
+                  src="/assets/bms-logo.png"
+                  alt="Build Media Strategies"
+                  className="h-16 w-auto object-contain"
+                  width="800"
+                  height="450"
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
+                />
+              </picture>
             </a>
             <p className="text-sm mt-4 text-black">
               Web design and AI operations for businesses across Kent.
