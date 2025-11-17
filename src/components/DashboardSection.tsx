@@ -13,7 +13,7 @@ export default function DashboardSection() {
             </h2>
 
             <p className="text-base sm:text-lg font-sans font-normal mb-6 sm:mb-8 leading-relaxed text-black">
-              Every pixel serves a purpose. We build websites designed to convert
+              Every pixel serves a purpose. We build <a href="/web-design" className="text-sky-gradient hover:opacity-80 transition-opacity">web design</a> crafted to convert
               visitors into paying customers and deliver measurable ROI.
             </p>
 

@@ -14,7 +14,7 @@ export default function SecuritySection() {
 
             <p className="text-base sm:text-lg font-sans font-normal mb-6 sm:mb-8 leading-relaxed text-black">
               Automate repetitive work, eliminate bottlenecks, and scale operations
-              without scaling headcount. AI that delivers immediate productivity gains.
+              without scaling headcount. Our <a href="/ai-operations" className="text-sky-gradient hover:opacity-80 transition-opacity">AI automation services</a> deliver immediate productivity gains.
             </p>
 
             <a

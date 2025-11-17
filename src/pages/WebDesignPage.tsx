@@ -1,115 +1,157 @@
-import { Zap, Target, Smartphone, Cpu, Shield, TrendingUp } from 'lucide-react';
 import SEOWrapper from '../components/SEO/SEOWrapper';
-import { BentoCard, BentoGrid } from '../components/ui/bento-grid';
-import { PexelsImage } from '../components/media/PexelsImage';
+import { Timeline } from '../components/ui/timeline';
 
 export default function WebDesignPage() {
-  const features = [
+  const webDesignServices = [
     {
-      Icon: Target,
-      name: "Conversion Focused",
-      description: "Every element designed to turn visitors into customers. Strategic placement and intuitive navigation that drives action.",
-      href: "/contact",
-      cta: "See Conversion Playbook",
-      background: (
-        <PexelsImage
-          id="pexels-326503"
-          alt="Website conversion analytics"
-          loading="eager"
-          decoding="sync"
-          fetchPriority="high"
-          width={1920}
-          height={1280}
-          imgClassName="absolute inset-0 h-full w-full object-cover opacity-60"
-        />
+      title: 'Full-stack Web Development',
+      content: (
+        <div>
+          <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6 text-black">
+            Custom builds that connect marketing sites to CRMs, automations, and analytics without duct tape.
+          </p>
+          <div className="space-y-2">
+            <div className="flex gap-2 items-start text-sm sm:text-base">
+              <span className="text-sky-gradient">•</span>
+              <span className="text-black">React, Vite, and Supabase stacks tuned for your workflow.</span>
+            </div>
+            <div className="flex gap-2 items-start text-sm sm:text-base">
+              <span className="text-sky-gradient">•</span>
+              <span className="text-black">Speed + accessibility checks baked into every deploy.</span>
+            </div>
+          </div>
+        </div>
       ),
-      className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
     },
     {
-      Icon: Zap,
-      name: "Lightning Fast",
-      description: "Sub-2-second load times guaranteed. Speed optimization built into every stage of development.",
-      href: "/contact",
-      cta: "Review Speed Optimisation",
-      background: (
-        <PexelsImage
-          id="pexels-270404"
-          alt="Fast website performance metrics"
-          loading="lazy"
-          decoding="async"
-          width={1920}
-          height={1280}
-          imgClassName="absolute inset-0 h-full w-full object-cover opacity-60"
-        />
+      title: 'Conversion Optimised UI',
+      content: (
+        <div>
+          <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6 text-black">
+            Layouts scripted to put proof, offer clarity, and CTAs exactly where visitors make decisions.
+          </p>
+          <div className="space-y-2">
+            <div className="flex gap-2 items-start text-sm sm:text-base">
+              <span className="text-sky-gradient">•</span>
+              <span className="text-black">Hero copy frameworks that explain your offer in one scroll.</span>
+            </div>
+            <div className="flex gap-2 items-start text-sm sm:text-base">
+              <span className="text-sky-gradient">•</span>
+              <span className="text-black">Micro-interactions that move visitors toward calls or demos.</span>
+            </div>
+          </div>
+        </div>
       ),
-      className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
     },
     {
-      Icon: Smartphone,
-      name: "Mobile First",
-      description: "Perfect experience on every device. Responsive design that works flawlessly everywhere.",
-      href: "/contact",
-      cta: "Explore Mobile Experience",
-      background: (
-        <PexelsImage
-          id="pexels-57690"
-          alt="Mobile responsive website design"
-          loading="lazy"
-          decoding="async"
-          width={1920}
-          height={1280}
-          imgClassName="absolute inset-0 h-full w-full object-cover opacity-60"
-        />
+      title: 'Mobile-First Responsive Design',
+      content: (
+        <div>
+          <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6 text-black">
+            Every screen is tested on phones, tablets, and desktops with the same polish as the desktop hero.
+          </p>
+          <div className="space-y-2">
+            <div className="flex gap-2 items-start text-sm sm:text-base">
+              <span className="text-sky-gradient">•</span>
+              <span className="text-black">Touch-friendly spacing and inputs across the site.</span>
+            </div>
+            <div className="flex gap-2 items-start text-sm sm:text-base">
+              <span className="text-sky-gradient">•</span>
+              <span className="text-black">Type scales that stay readable without blowing up layouts.</span>
+            </div>
+          </div>
+        </div>
       ),
-      className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
     },
     {
-      Icon: Cpu,
-      name: "AI Integration",
-      description: "Smart systems that qualify leads, answer questions, and work 24/7.",
-      href: "/contact",
-      cta: "Discover AI Integration",
-      background: (
-        <PexelsImage
-          id="pexels-3861969"
-          alt="AI chatbot integration on website"
-          loading="lazy"
-          decoding="async"
-          width={1920}
-          height={1280}
-          imgClassName="absolute inset-0 h-full w-full object-cover opacity-60"
-        />
+      title: 'Raw Code / Not Template-Based',
+      content: (
+        <div>
+          <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6 text-black">
+            Zero theme bloat, just clean code that is easy to extend and doesn’t carry unused scripts.
+          </p>
+          <div className="space-y-2">
+            <div className="flex gap-2 items-start text-sm sm:text-base">
+              <span className="text-sky-gradient">•</span>
+              <span className="text-black">Components built from scratch for your funnels.</span>
+            </div>
+            <div className="flex gap-2 items-start text-sm sm:text-base">
+              <span className="text-sky-gradient">•</span>
+              <span className="text-black">No template overrides or mystery CSS slowing you down.</span>
+            </div>
+          </div>
+        </div>
       ),
-      className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
     },
     {
-      Icon: Shield,
-      name: "SEO Optimized",
-      description: "Built-in best practices. Structured data, meta tags, and technical optimization included.",
-      href: "/contact",
-      cta: "Check SEO Blueprint",
-      background: (
-        <PexelsImage
-          id="pexels-270637"
-          alt="SEO optimization dashboard"
-          loading="lazy"
-          decoding="async"
-          width={1920}
-          height={1280}
-          imgClassName="absolute inset-0 h-full w-full object-cover opacity-60"
-        />
+      title: 'SEO & Lighthouse 100/100 Builds',
+      content: (
+        <div>
+          <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6 text-black">
+            Technical SEO, schema, and caching live inside the sprint so you don’t need a separate retainer.
+          </p>
+          <div className="space-y-2">
+            <div className="flex gap-2 items-start text-sm sm:text-base">
+              <span className="text-sky-gradient">•</span>
+              <span className="text-black">Structured data + metadata wired up before handoff.</span>
+            </div>
+            <div className="flex gap-2 items-start text-sm sm:text-base">
+              <span className="text-sky-gradient">•</span>
+              <span className="text-black">Performance budgets enforced to protect Lighthouse scores.</span>
+            </div>
+          </div>
+        </div>
       ),
-      className: "lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4",
+    },
+    {
+      title: 'Rapid Deployment (2–3 Days)',
+      content: (
+        <div>
+          <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6 text-black">
+            Tight scopes and live collaboration get your build live without dragging over multiple weeks.
+          </p>
+          <div className="space-y-2">
+            <div className="flex gap-2 items-start text-sm sm:text-base">
+              <span className="text-sky-gradient">•</span>
+              <span className="text-black">Sprints mapped to launch milestones from day one.</span>
+            </div>
+            <div className="flex gap-2 items-start text-sm sm:text-base">
+              <span className="text-sky-gradient">•</span>
+              <span className="text-black">Content and assets slotted in as we ship each section.</span>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: 'Enterprise-Grade DX & UX',
+      content: (
+        <div>
+          <p className="text-base sm:text-lg font-sans font-normal leading-relaxed mb-6 text-black">
+            Developer experience and user experience stay aligned so anyone can extend the project later.
+          </p>
+          <div className="space-y-2">
+            <div className="flex gap-2 items-start text-sm sm:text-base">
+              <span className="text-sky-gradient">•</span>
+              <span className="text-black">Design system tokens synced with code for easy scaling.</span>
+            </div>
+            <div className="flex gap-2 items-start text-sm sm:text-base">
+              <span className="text-sky-gradient">•</span>
+              <span className="text-black">Accessibility and QA runs baked into every iteration.</span>
+            </div>
+          </div>
+        </div>
+      ),
     },
   ];
 
   return (
     <>
       <SEOWrapper
-        title="Web Design in Kent | BuildMediaStrategies"
-        description="Done-for-you design, build, and launch in days. Fast sites that convert and keep leads engaged."
+        title="Web Design Dover | Fast Websites That Convert | BuildMediaStrategies"
+        description="Web design in Dover for businesses across Kent, with fast, conversion-focused websites that turn visitors into customers."
         canonical="https://buildmediastrategies.com/web-design"
-        keywords="web design, fast builds, Kent agency"
+        keywords="web design Dover, web design in Dover, Dover web design agency, Kent web design"
       />
       {/* Schema structured data - keeping for SEO */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
@@ -120,7 +162,7 @@ export default function WebDesignPage() {
             "@type": "LocalBusiness",
             "name": "BuildMediaStrategies",
             "image": "https://buildmediastrategies.com/assets/bmsnewlogo%20sky.png",
-            "description": "Professional web design and development services in Kent. Creating custom websites for businesses across Dover, Deal, Canterbury, and Folkestone.",
+            "description": "Web design in Dover delivered for Kent businesses that need fast, conversion-focused websites.",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Dover",
@@ -142,7 +184,7 @@ export default function WebDesignPage() {
               { "@type": "City", "name": "Folkestone" }
             ]
           },
-          "description": "Custom web design services that convert visitors into customers. High-performance websites optimized for speed, conversions, and growth.",
+          "description": "Web design in Dover for businesses across Kent, delivering fast builds that convert visitors into customers.",
           "areaServed": [
             { "@type": "City", "name": "Dover" },
             { "@type": "City", "name": "Deal" },
@@ -162,14 +204,14 @@ export default function WebDesignPage() {
       <main id="main-content" className="bg-white min-h-screen">
         <section className="pt-32 pb-16 px-5 lg:px-11" aria-labelledby="hero-heading">
           <div className="max-w-5xl mx-auto text-center">
+            <div className="inline-flex items-center justify-center rounded-full px-4 py-1 bg-sky-gradient text-xs sm:text-sm font-medium text-white shadow-md shadow-[rgba(0,0,0,0.1)] mb-3">
+              Free first-year hosting included
+            </div>
             <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold mb-6 leading-tight">
-              <span className="block text-sky-gradient">Web Design Kent</span>
+              <span className="block text-sky-gradient">Web Design Dover That Turns Clicks Into Clients</span>
             </h1>
-            <p className="text-lg sm:text-xl font-sans font-normal leading-relaxed max-w-3xl mx-auto mb-4 text-black">
-              We plan, design, build, and launch your site in one streamlined sprint. Everything is handled for you - copy, integrations, analytics, and handover - so you can keep running the business.
-            </p>
-            <p className="text-lg sm:text-xl font-sans font-normal leading-relaxed max-w-3xl mx-auto mb-10 text-black">
-              Most builds ship in two to three days, with a one-day rush option when you need it. The result: a fast, conversion-ready site focused on leads, calls, and bookings.
+            <p className="text-base sm:text-lg font-sans font-normal leading-relaxed max-w-3xl mx-auto mb-10 text-black">
+              We design fast, conversion-focused websites for Dover businesses and teams across Kent, pairing crisp storytelling with mobile-first builds so every visit loads quickly, ranks well, and turns into an enquiry.
             </p>
             <a
               href="/contact"
@@ -180,22 +222,17 @@ export default function WebDesignPage() {
           </div>
         </section>
 
-        <section className="py-16 lg:py-20 px-5 lg:px-11">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-16 lg:py-20 px-5 lg:px-11 border-t border-gray-200" aria-labelledby="web-design-services-heading">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-sky-gradient mb-6 leading-tight">
-                High-Performance Websites for Growing Teams
+              <h2 id="web-design-services-heading" className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-sky-gradient mb-6 leading-tight">
+                Dover Web Design Sprints In Motion
               </h2>
               <p className="text-base sm:text-lg font-sans font-normal max-w-2xl mx-auto text-black">
-                Done-for-you builds with strategy, messaging, and tech handled under one roof.
+                Scroll through every layer we run for modern builds. It is the exact same animation from AI Ops, now focused on web services.
               </p>
             </div>
-
-            <BentoGrid className="lg:grid-rows-3 max-w-6xl mx-auto">
-              {features.map((feature) => (
-                <BentoCard key={feature.name} {...feature} />
-              ))}
-            </BentoGrid>
+            <Timeline data={webDesignServices} />
           </div>
         </section>
 

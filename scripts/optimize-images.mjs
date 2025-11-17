@@ -37,7 +37,8 @@ const inputs = [
   { in: 'assets/sos-icon.png', outBase: 'assets/sos-icon', maxWidth: 256 },
   { in: 'assets/hamilton-nexus-icon.png', outBase: 'assets/hamilton-nexus-icon', maxWidth: 256 },
   { in: 'assets/github-logo.png', outBase: 'assets/github-logo', maxWidth: 256 },
-  { in: 'assets/logo.png', outBase: 'assets/logo', maxWidth: 256 },
+  // Header logo needs to stay sharp even when scaled up - keep full width
+  { in: 'assets/logo.png', outBase: 'assets/logo', maxWidth: 1024 },
 ];
 
 // Also copy and optimize src/assets images to public/assets
@@ -122,4 +123,3 @@ async function main() {
 }
 
 main();
-

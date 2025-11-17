@@ -19,7 +19,7 @@ export default function Footer() {
                 <img
                   src="/assets/bms-logo.png"
                   alt="Build Media Strategies"
-                  className="h-16 w-auto object-contain"
+                  className="h-[72px] w-auto object-contain"
                   width="800"
                   height="450"
                   loading="lazy"

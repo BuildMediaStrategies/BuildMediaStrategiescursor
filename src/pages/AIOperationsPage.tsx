@@ -239,10 +239,10 @@ export default function AIOperationsPage() {
   return (
     <>
       <SEOWrapper
-        title="AI Automation in Kent | BuildMediaStrategies"
-        description="Automate follow-ups, admin, and support with done-for-you AI systems. Launch fast and keep every lead moving."
+        title="AI Automation Dover, Canterbury & Folkestone | BuildMediaStrategies"
+        description="AI automation for Dover, Canterbury, Folkestone, and wider Kent so local teams launch intelligent systems that handle leads, admin, and support."
         canonical="https://buildmediastrategies.com/ai-operations"
-        keywords="AI automation, AI operations, Kent agency"
+        keywords="AI automation Dover, AI automation Canterbury, AI automation Folkestone, AI systems Kent"
       />
       <script
         type="application/ld+json"
@@ -256,7 +256,7 @@ export default function AIOperationsPage() {
               "name": "BuildMediaStrategies",
               "image": "https://buildmediastrategies.com/assets/bmsnewlogo%20sky.png",
               "description":
-                "AI operations and automation services in Kent. Helping businesses across Dover, Deal, Canterbury, and Folkestone scale with intelligent systems.",
+                "AI automation services built in Dover for Kent businesses in Deal, Canterbury, and Folkestone that need done-for-you intelligent systems.",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Dover",
@@ -279,7 +279,7 @@ export default function AIOperationsPage() {
               ],
             },
             "description":
-              "AI automation systems that handle customer service, invoicing, scheduling, and repetitive tasks 24/7. Built for Kent businesses ready to scale.",
+              "AI automation for Kent businesses across Dover, Deal, Canterbury, and Folkestone to handle customer service, finance, and operations 24/7.",
             "areaServed": [
               { "@type": "City", "name": "Dover" },
               { "@type": "City", "name": "Deal" },
@@ -305,14 +305,17 @@ export default function AIOperationsPage() {
           aria-description={AI_SECTION_NOTICE}
         >
           <div className="max-w-5xl mx-auto text-center">
+            <div className="inline-flex items-center justify-center rounded-full px-4 py-1 bg-sky-gradient text-xs sm:text-sm font-medium text-white shadow-md shadow-[rgba(0,0,0,0.1)] mb-3">
+              Done-for-you AI systems, built in weeks
+            </div>
             <h1
               id="hero-heading"
               className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold mb-6 leading-tight"
             >
-              <span className="block text-sky-gradient">AI Automation Kent</span>
+              <span className="block text-sky-gradient">AI Automation for Dover, Canterbury &amp; Folkestone Businesses</span>
             </h1>
             <p className="text-lg sm:text-xl font-sans font-normal leading-relaxed max-w-3xl mx-auto mb-4 text-black">
-              We build AI systems that reply instantly, score every lead, and update your team automatically without adding headcount. Start with one workflow, prove it works, then roll the same playbook across the rest of your ops.
+              We build AI workflows that reply instantly, score leads, and sync updates for local teams across Dover, Canterbury, Folkestone, and wider Kent so operations, support, and sales keep moving without extra headcount.
             </p>
             <a
               href="/contact"

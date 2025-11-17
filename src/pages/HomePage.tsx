@@ -81,6 +81,9 @@ export default function HomePage() {
 
         {/* HERO CONTENT */}
         <header className="relative z-40 flex flex-col items-center justify-start px-5 sm:px-6 pt-10 sm:pt-12 pb-16 sm:pb-20 min-h-[70vh]">
+          <div className="inline-flex items-center justify-center rounded-full px-4 py-1 bg-sky-gradient text-xs sm:text-sm font-medium text-white shadow-md shadow-[rgba(0,0,0,0.1)] mb-3">
+            Free website &amp; speed audit included
+          </div>
           <h1 className="text-center mb-5 sm:mb-6 opacity-0 animate-fadeInUpDelay">
             <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal md:font-medium text-sky-gradient leading-tight drop-shadow-2xl mb-1">
               Launch Faster.
@@ -91,7 +94,7 @@ export default function HomePage() {
           </h1>
 
           <p className="text-center text-black text-sm sm:text-base max-w-lg mb-6 sm:mb-8 leading-relaxed font-normal opacity-0 animate-fadeInDelay px-4 sm:px-0">
-            We design and ship high-performing <a href="/web-design" className="text-sky-gradient hover:opacity-80 transition-all">websites</a> in a few days, with AI workflows that chase every lead for you.<br />
+            We design and ship high-performing <a href="/web-design" className="text-sky-gradient hover:opacity-80 transition-all">web design in Dover</a> in a few days, with <a href="/ai-operations" className="text-sky-gradient hover:opacity-80 transition-all">AI automation in Dover and Kent</a> that chases every lead for you.<br />
             Built in Kent for local teams who want momentum without extra hires.
           </p>
 
