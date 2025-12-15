@@ -52,29 +52,29 @@ export default function About() {
       description="Founded by Joshua Johnson, Build Media Strategies delivers web design and AI automation for Kent businesses. 5+ years experience serving Dover, Deal, Canterbury & Folkestone."
       canonical={canonical}
     >
-      <div className="bg-black text-white">
+      <div className="bg-white">
         {/* Hero */}
-        <section className="px-5 lg:px-11 pt-28 pb-16 border-b border-gray-800" style={{ backgroundColor: '#0A0A0A' }}>
+        <section className="px-5 lg:px-11 pt-28 pb-16 border-b border-gray-200">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight">Building things that genuinely help people</h1>
-            <p className="mt-4 text-lg text-gray-300 max-w-3xl">
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight text-sky-gradient">Building things that genuinely help people</h1>
+            <p className="mt-4 text-lg text-black max-w-3xl">
               We design and build lean, reliable websites and systems. We talk like humans, set clear expectations, and do what we say we'll do.
             </p>
           </div>
         </section>
 
         {/* Our story */}
-        <section className="px-5 lg:px-11 py-14 border-b border-gray-800" style={{ backgroundColor: '#0A0A0A' }}>
+        <section className="px-5 lg:px-11 py-14 border-b border-gray-200 bg-white">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
             <div>
-              <h2 className="text-2xl font-bold mb-3">Founded in Kent</h2>
-              <p className="text-gray-300">
+              <h2 className="text-2xl font-bold mb-3 text-sky-gradient">Founded in Kent</h2>
+              <p className="text-black">
                 Founded by Joshua Johnson and based in Dover, Kent, Build Media Strategies started by helping local businesses fix slow websites and improve their online presence. With over 5 years of experience in web design and AI automation, we've grown through word-of-mouth and real results. Today, we serve businesses across Dover, Deal, Canterbury, and Folkestone with the same principle: deliver measurable results through expert web design and intelligent automation.
               </p>
             </div>
             <div>
-              <h2 className="text-2xl font-bold mb-3">What we do differently</h2>
-              <p className="text-gray-300">
+              <h2 className="text-2xl font-bold mb-3 text-sky-gradient">What we do differently</h2>
+              <p className="text-black">
                 No jargon, no hidden extras, and no brittle hand‑offs. We design systems your team can actually use - fast, accessible, and
                 measurable. We'll show you the trade‑offs and help you choose what's right for your context.
               </p>
@@ -83,14 +83,14 @@ export default function About() {
         </section>
 
         {/* Our values */}
-        <section className="px-5 lg:px-11 py-14 border-b border-gray-800" style={{ backgroundColor: '#0A0A0A' }}>
+        <section className="px-5 lg:px-11 py-14 border-b border-gray-200 bg-white">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6">Our values</h2>
+            <h2 className="text-2xl font-bold mb-6 text-sky-gradient">Our values</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {values.map((v) => (
-                <div key={v.title} className="border border-gray-800 bg-black p-6">
-                  <div className="text-xl font-semibold mb-2">{v.title}</div>
-                  <p className="text-gray-300">{v.body}</p>
+                <div key={v.title} className="border border-gray-200 bg-white p-6 rounded-lg shadow-sm">
+                  <div className="text-xl font-semibold mb-2 text-sky-gradient">{v.title}</div>
+                  <p className="text-black">{v.body}</p>
                 </div>
               ))}
             </div>
@@ -101,45 +101,45 @@ export default function About() {
         <StatsCounter stats={stats} />
 
         {/* Process */}
-        <section className="px-0 py-14 border-t border-b border-gray-800" style={{ backgroundColor: '#0A0A0A' }}>
+        <section className="px-0 py-14 border-t border-b border-gray-200 bg-white">
           <div className="max-w-7xl mx-auto px-5 lg:px-11">
-            <h2 className="text-2xl font-bold mb-8">How we work</h2>
+            <h2 className="text-2xl font-bold mb-8 text-sky-gradient">How we work</h2>
           </div>
           <Timeline
             data={process.map((p) => ({
               title: p.title,
-              content: <p className="text-gray-300">{p.content}</p>,
+              content: <p className="text-black">{p.content}</p>,
             }))}
           />
         </section>
 
         {/* Technology stack */}
-        <section className="px-5 lg:px-11 py-14 border-b border-gray-800" style={{ backgroundColor: '#0A0A0A' }}>
+        <section className="px-5 lg:px-11 py-14 border-b border-gray-200 bg-white">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6">Technology we trust</h2>
+            <h2 className="text-2xl font-bold mb-6 text-sky-gradient">Technology we trust</h2>
             <div className="flex flex-wrap gap-3">
               {stack.map((t) => (
-                <span key={t} className="px-4 py-1.5 text-sm border border-gray-700 text-gray-200">{t}</span>
+                <span key={t} className="px-4 py-1.5 text-sm border border-gray-200 text-black rounded-lg">{t}</span>
               ))}
             </div>
           </div>
         </section>
 
         {/* Location info for Kent */}
-        <section className="px-5 lg:px-11 py-14 border-b border-gray-800" style={{ backgroundColor: '#0A0A0A' }}>
+        <section className="px-5 lg:px-11 py-14 border-b border-gray-200 bg-white">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
             <div>
-              <h2 className="text-2xl font-bold mb-3">Based in Kent</h2>
-              <p className="text-gray-300">
+              <h2 className="text-2xl font-bold mb-3 text-sky-gradient">Based in Kent</h2>
+              <p className="text-black">
                 We're local. Most projects start with a chat over coffee in Dover or Canterbury. We're happy to travel and equally comfortable
                 working fully remote when that's faster.
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-3">Areas we serve</h3>
+              <h3 className="text-lg font-semibold mb-3 text-sky-gradient">Areas we serve</h3>
               <div className="flex flex-wrap gap-2">
                 {localAreas.map((a) => (
-                  <span key={a} className="px-3 py-1.5 text-sm border border-gray-700 text-gray-200">{a}</span>
+                  <span key={a} className="px-3 py-1.5 text-sm border border-gray-200 text-black rounded-lg">{a}</span>
                 ))}
               </div>
             </div>
@@ -147,9 +147,9 @@ export default function About() {
         </section>
 
         {/* Why choose us */}
-        <section className="px-5 lg:px-11 py-14 border-b border-gray-800" style={{ backgroundColor: '#0A0A0A' }}>
+        <section className="px-5 lg:px-11 py-14 border-b border-gray-200 bg-white">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6">Why businesses choose us</h2>
+            <h2 className="text-2xl font-bold mb-6 text-sky-gradient">Why businesses choose us</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 'Straight talk, no jargon',
@@ -159,8 +159,8 @@ export default function About() {
                 'Accessible and mobile‑fast by default',
                 'We stick around after launch',
               ].map((d) => (
-                <div key={d} className="border border-gray-800 bg-black p-6">
-                  <div className="text-white font-medium">{d}</div>
+                <div key={d} className="border border-gray-200 bg-white p-6 rounded-lg shadow-sm">
+                  <div className="text-black font-medium">{d}</div>
                 </div>
               ))}
             </div>
@@ -168,19 +168,19 @@ export default function About() {
         </section>
 
         {/* Testimonials (relationship‑focused) */}
-        <section className="px-5 lg:px-11 py-14 border-b border-gray-800" style={{ backgroundColor: '#0A0A0A' }}>
+        <section className="px-5 lg:px-11 py-14 border-b border-gray-200 bg-white">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6">What our clients say</h2>
+            <h2 className="text-2xl font-bold mb-6 text-sky-gradient">What our clients say</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {selectedTestimonials.map((t, i) => (
-                <article key={i} className="border border-gray-800 bg-black p-6 flex flex-col">
+                <article key={i} className="border border-gray-200 bg-white p-6 flex flex-col rounded-lg shadow-sm">
                   <div className="flex items-center gap-1 mb-3" aria-label={`${t.rating} star rating`}>
                     {Array.from({ length: 5 }).map((_, s) => (
-                      <Star key={s} className={`w-4 h-4 ${s < t.rating ? 'text-yellow-400 fill-yellow-400' : 'text-black'}`} />
+                      <Star key={s} className={`w-4 h-4 ${s < t.rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`} />
                     ))}
                   </div>
-                  <blockquote className="text-gray-200 leading-relaxed mb-4">“{t.quote}”</blockquote>
-                <div className="text-sm text-gray-400 mt-auto">{t.author} - {t.title}, {t.company}{t.location ? `, ${t.location}` : ''}</div>
+                  <blockquote className="text-black leading-relaxed mb-4">"{t.quote}"</blockquote>
+                <div className="text-sm text-gray-600 mt-auto">{t.author} - {t.title}, {t.company}{t.location ? `, ${t.location}` : ''}</div>
                 </article>
               ))}
             </div>
@@ -188,13 +188,13 @@ export default function About() {
         </section>
 
         {/* CTA */}
-        <section className="px-5 lg:px-11 py-16" style={{ backgroundColor: '#0A0A0A' }}>
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4 border border-gray-800 bg-black p-6">
+        <section className="px-5 lg:px-11 py-16 bg-white">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-2 border-gray-200 bg-white p-6 rounded-lg shadow-sm">
             <div>
-              <h2 className="text-2xl font-bold">Ready to start?</h2>
-              <p className="text-gray-300 mt-1">Tell us what's not working and we'll share a simple plan.</p>
+              <h2 className="text-2xl font-bold text-sky-gradient">Ready to start?</h2>
+              <p className="text-black mt-1">Tell us what's not working and we'll share a simple plan.</p>
             </div>
-            <a href="/contact" className="inline-block px-6 py-3 bg-white text-black hover:bg-gray-200 transition">Book a conversation</a>
+            <a href="/contact" className="btn-gradient inline-block px-6 py-3 text-white rounded-lg">Book a conversation</a>
           </div>
         </section>
       </div>

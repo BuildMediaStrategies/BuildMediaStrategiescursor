@@ -120,13 +120,9 @@ export default function PortfolioPage() {
                       <span className="text-sm text-black">Load Time</span>
                       <span className="text-sm font-semibold text-gray-900">{project.metrics.loadTime}</span>
                     </div>
-                    <div className="flex items-center justify-between py-2 border-t border-gray-200">
+                    <div className="flex items-center justify-between py-2 border-t border-b border-gray-200">
                       <span className="text-sm text-black">Conversions</span>
                       <span className="text-sm font-semibold text-gray-900">{project.metrics.conversions}</span>
-                    </div>
-                    <div className="flex items-center justify-between py-2 border-t border-b border-gray-200">
-                      <span className="text-sm text-black">Revenue Impact</span>
-                      <span className="text-sm font-semibold text-gray-900">{project.metrics.revenue}</span>
                     </div>
                   </div>
 
@@ -169,7 +165,7 @@ export default function PortfolioPage() {
                 <p className="text-black mb-4 leading-relaxed">
                   Website plus AI quoting and invoicing pipelines that now save 15+ hours a week in back-office tasks.
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-4">
                   <span className="text-xs px-3 py-1 rounded-full bg-gray-100 border border-gray-300 text-black">
                     React
                   </span>
@@ -180,6 +176,15 @@ export default function PortfolioPage() {
                     AI Automation
                   </span>
                 </div>
+                <a
+                  href="https://jcaspds.co.uk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-sky-gradient hover:opacity-80 transition-opacity"
+                >
+                  <span className="text-sm font-medium">View Live Site</span>
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </a>
               </div>
             </div>
           </div>
